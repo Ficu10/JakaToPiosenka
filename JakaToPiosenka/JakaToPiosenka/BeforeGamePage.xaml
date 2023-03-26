@@ -1,12 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JakaToPiosenka.BeforeGamePage">
+             x:Class="JakaToPiosenka.BeforeGamePage"
+             BackgroundColor="LightBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Choose the time to guess the song" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="22" FontAttributes="Bold" TextColor="Black"/>
+
+            <Button BorderWidth="3" BorderColor = "White" Text = "15 Seconds" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="RoyalBlue"  Grid.Column="0" Grid.Row="1"/>
+            <Button BorderWidth="3" BorderColor = "White" Text = "30 Seconds" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="RoyalBlue"   Grid.Column="1" Grid.Row="1"/>
+            <Button BorderWidth="3" BorderColor = "White" Text = "45 Seconds" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="RoyalBlue"    Grid.Column="0" Grid.Row="2"/>
+            <Button BorderWidth="3" BorderColor = "White" Text = "60 Seconds" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="RoyalBlue"   Grid.Column="1" Grid.Row="2"/>
+
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

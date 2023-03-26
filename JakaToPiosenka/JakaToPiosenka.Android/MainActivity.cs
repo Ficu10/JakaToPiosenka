@@ -6,9 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-
-
-
+using Xamarin.Forms;
 
 namespace JakaToPiosenka.Droid
 {
@@ -17,23 +15,34 @@ namespace JakaToPiosenka.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            var decorView = Window.DecorView;
+            var uiOptions = (int)decorView.SystemUiVisibility;
+            uiOptions |= (int)SystemUiFlags.HideNavigation;
+            decorView.SystemUiVisibility = (StatusBarVisibility)uiOptions;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            if (MainPage.orientationPortrait == true)
+            MessagingCenter.Subscribe<OrientationMessage>(this, "SetOrientation", (message) =>
             {
-                RequestedOrientation = ScreenOrientation.Portrait;
-            }
-            else
-            {
-                RequestedOrientation = ScreenOrientation.Landscape;
-            }
+                if (message.IsLandscape)
+                {
+                    RequestedOrientation = ScreenOrientation.Landscape;
+                }
+                else
+                {
+                    RequestedOrientation = ScreenOrientation.Portrait;
+                }
+            });
+
+            RequestWindowFeature(WindowFeatures.NoTitle);
+            Window.AddFlags(WindowManagerFlags.Fullscreen);
+            Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
 
             base.OnCreate(savedInstanceState);
             
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
-        
+
     }
     
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JakaToPiosenka.Game"
+             BackgroundImageSource="blue.jpg">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition  Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="SongTitle" Text="dsdssdssdsds" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"   TextColor="White"  FontSize="50" Grid.Column="0" Grid.Row="1"  />
+
+            <Label x:Name="SongAuthor" HorizontalOptions="End" Margin="0,0,50,0" VerticalOptions="End" FontSize="30"  Text="asdasdasd" TextColor="White" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" />
+            <Label x:Name="Time" HorizontalOptions="Center" Margin="0,0,50,0" Text="aaaaaaaaa" FontSize="30" VerticalOptions="Start" TextColor="White" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

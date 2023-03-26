@@ -15,6 +15,30 @@ namespace JakaToPiosenka
         public BeforeGamePage()
         {
             InitializeComponent();
+           
+        }
+        async void Time15_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Game());
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = true }, "SetOrientation");
+        }
+
+        async void Time30_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Game());
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = true }, "SetOrientation");
+        }
+
+        async void Time45_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Game());
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = true }, "SetOrientation");
+        }
+
+        async void Time60_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Game());
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = true }, "SetOrientation");
         }
     }
 }
