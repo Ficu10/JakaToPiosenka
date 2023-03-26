@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
-using MobilePacemaker;
-using GuessTheSong;
+using JakaToPiosenka;
 
-namespace MobilePacemaker
+namespace JakaToPiosenka
 {
     public class SQLiteHelper
     {
