@@ -2,95 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:JakaToPiosenka"
-             BackgroundImage="kosmos.jpg"
-             
-            
-             x:Class="JakaToPiosenka.MainPage">
+             x:Class="JakaToPiosenka.MainPage"
+             BackgroundColor="Blue">
 
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition  Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="GoodAnswearButton"   Clicked="GoodAnswearButton_Clicked" BackgroundColor="Blue" IsVisible="False" Grid.Column="1" Grid.Row="0"  />
-        <Button x:Name="WrongAnswearButton"   Clicked="WrongAnswearButton_Clicked" BackgroundColor="Blue" IsVisible="False" Grid.Column="0" Grid.Row="0"    />
-        <Button x:Name="NowaGra" Clicked="NowaGra_Clicked" Text="Nowa Gra"/>
-       
-        
-
-    </Grid>-->
     <Grid>
         
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition  Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <!--<Button BorderWidth="7" BorderColor="LightSkyBlue" x:Name="Border" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HeightRequest="1200" WidthRequest="4000"  CornerRadius="15" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3"/>-->
-        <Image  x:Name="NewGameImage" HorizontalOptions="Center" Source="play.jpg"  VerticalOptions="Center" HeightRequest="100" WidthRequest="100"    Grid.Column="0" Grid.Row="1"/>
-        <Image  x:Name="SettingsImage" HorizontalOptions="Center" Source="settings.jpg"  VerticalOptions="Center" HeightRequest="100" WidthRequest="100"   Grid.Column="1" Grid.Row="1"/>
-
-
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="NewGame" HorizontalOptions="Center" BackgroundColor="Transparent" VerticalOptions="Center" HeightRequest="100" WidthRequest="100"   Clicked="NewGame_Clicked"   Grid.Column="0" Grid.Row="1"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="Settings" HorizontalOptions="Center" BackgroundColor="Transparent" VerticalOptions="Center" HeightRequest="100" WidthRequest="100"   Clicked="Settings_Clicked"   Grid.Column="1" Grid.Row="1"/>
-
-
-        <Image  x:Name="TimeSettingsImage" HorizontalOptions="Center" Source="UstwieniaCzasu.jpg"   VerticalOptions="Center" HeightRequest="70" WidthRequest="200"      Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Image  x:Name="TypeOfGameImage" HorizontalOptions="Center"  Source="rodzajMuzyki.jpg" VerticalOptions="Center" HeightRequest="70" WidthRequest="200"    Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="TimeSettings" HorizontalOptions="Center"   BackgroundColor="Transparent" VerticalOptions="Center" HeightRequest="55" WidthRequest="200"   Clicked="TimeSettings_Clicked"    Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="TypeOfGame" HorizontalOptions="Center" BackgroundColor="Transparent" VerticalOptions="Center" HeightRequest="55" WidthRequest="200"   Clicked="TypeOfGame_Clicked"   Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-
-        <Image x:Name="Time15Image" HorizontalOptions="End" Source="pSekund.jpg" HeightRequest="80" WidthRequest="160"   VerticalOptions="Center"  Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Image x:Name="Time30Image" HorizontalOptions="Start" Source="tSekund.jpg" HeightRequest="80" WidthRequest="160"  VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-        <Image x:Name="Time45Image" HorizontalOptions="End" Source="czSekund.jpg"  HeightRequest="80" WidthRequest="160" VerticalOptions="Start"    Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Image x:Name="Time60Image" HorizontalOptions="Start" Source="szSekund.jpg" HeightRequest="80" WidthRequest="160" VerticalOptions="Start"    Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-
-
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="Time15" HorizontalOptions="End" HeightRequest="60" WidthRequest="160" BackgroundColor="Transparent"  VerticalOptions="Center"   Clicked="Time15_Clicked"   Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="Time30" HorizontalOptions="Start" HeightRequest="60" WidthRequest="160" BackgroundColor="Transparent" VerticalOptions="Center"   Clicked="Time30_Clicked"   Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="Time45"  HorizontalOptions="End" Margin="0,10,0,0" HeightRequest="60" WidthRequest="160" BackgroundColor="Transparent" VerticalOptions="Start"   Clicked="Time45_Clicked"    Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="Time60"  HorizontalOptions="Start" Margin="0,10,0,0"  HeightRequest="60" WidthRequest="160" BackgroundColor="Transparent" VerticalOptions="Start"   Clicked="Time60_Clicked"    Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-
-        <Image x:Name="rapImage" Source="rap.jpg" HorizontalOptions="Center"  HeightRequest="100" WidthRequest="100"  VerticalOptions="Center"    Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Image  x:Name="AllSongsImage" HorizontalOptions="End" Source="rodzajeMuzyki.jpg" HeightRequest="100" WidthRequest="100"  VerticalOptions="Center"      Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Image  x:Name="FairyTaleSongsImage" HorizontalOptions="Center" Source="disney.jpg" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"      Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-        <Image  x:Name="RockSongsImage" HorizontalOptions="Start" Source="rock.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"      Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Image  x:Name="PopSongsImage" HorizontalOptions="Start" Source="pop.jpg" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"     Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="RapSongs" HorizontalOptions="Center" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100"  VerticalOptions="Center"   Clicked="RapSongs_Clicked"    Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="AllSongs" HorizontalOptions="End" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100"  VerticalOptions="Center"   Clicked="AllSongs_Clicked"    Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="FairyTaleSongs" HorizontalOptions="Center" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"   Clicked="FairyTaleSongs_Clicked"    Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="RockSongs" HorizontalOptions="Start" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"   Clicked="RockSongs_Clicked"   Grid.Column="0" Grid.Row="1" IsVisible="False"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="PopSongs" HorizontalOptions="Start" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"   Clicked="PopSongs_Clicked"   Grid.Column="1" Grid.Row="1" IsVisible="False"/>
-        
-        
-        <Image x:Name="BackButtonImage"  HorizontalOptions="End" VerticalOptions="Start" Source="back.jpg"  IsVisible="False" HeightRequest="50" WidthRequest="50"  Grid.Column="1" Grid.Row="1"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="BackButton"  Clicked="BackButton_Clicked" HorizontalOptions="End" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" BackgroundColor="Transparent"  IsVisible="False"  Grid.Column="1" Grid.Row="1"/>
-
-        <Image  x:Name="OnceAgainImage" Source="refresh.jpg"  VerticalOptions="End" HorizontalOptions="End" HeightRequest="50" WidthRequest="50" IsVisible="False"  Grid.Column="1" Grid.Row="1"/>
-        <Button BorderWidth="3" BorderColor="AliceBlue" x:Name="OnceAgain"  Clicked="NewGame_Clicked" VerticalOptions="End" HorizontalOptions="End" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"  IsVisible="False"  Grid.Column="1" Grid.Row="1"/>
-        <Label x:Name="SongTitle" Text="" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"   TextColor="White" IsVisible="False" FontSize="50" Grid.Column="0" Grid.Row="1"  />
-        <Image x:Name="TitleOfGame" Margin="0,-20,0,0" Source="Title.png"  Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Start"    IsVisible="True"  Grid.Column="0" Grid.Row="1"  />
-        <Image x:Name="AFTM" Source="AFTM.png"  Grid.ColumnSpan="2"  HeightRequest="30" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="End"    IsVisible="True"  Grid.Column="0" Grid.Row="1"  />
-
-        <Label x:Name="Rules1" Text="Jeżeli znasz piosenkę, kliknij tutaj" HorizontalOptions="Center" VerticalOptions="Start"   TextColor="White" IsVisible="False" IsEnabled="False" FontSize="20" Grid.Column="0" Grid.Row="1"  />
-        <Label x:Name="Rules2" Text="Jeżeli nie znasz piosenki, kliknij tutaj"  HorizontalOptions="Center" VerticalOptions="Start"   TextColor="White" IsVisible="False" IsEnabled="False" FontSize="20" Grid.Column="1" Grid.Row="1"  />
-        <Label x:Name="Rules3" Text="Przyłóż telefon do czoła" Grid.ColumnSpan="2"  HorizontalOptions="Center" VerticalOptions="End"   TextColor="White" IsVisible="False" IsEnabled="False" FontSize="30" Grid.Column="0" Grid.Row="1"  />
-
-
-        <Label x:Name="SongAuthor" HorizontalOptions="End" Margin="0,0,50,0" VerticalOptions="End" FontSize="30"  Text="" TextColor="White" IsVisible="False" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" />
-        <Label x:Name="Time" HorizontalOptions="End" Margin="0,0,50,0" Text="" FontSize="30" VerticalOptions="Start" TextColor="White" IsVisible="false" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" />
-        <Button x:Name="GoodAnswearButton"   Clicked="GoodAnswearButton_Clicked" BackgroundColor="Transparent" IsVisible="False" Grid.Column="0" Grid.Row="1"  />
-        <Button x:Name="WrongAnswearButton"   Clicked="WrongAnswearButton_Clicked" BackgroundColor="Transparent" IsVisible="False" Grid.Column="1" Grid.Row="1"    />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+             <Button Grid.Column="0" Grid.Row="0" Text="asdasdasd" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton"/>
+             <ImageButton Grid.Column="0" Grid.Row="1" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg"/>
+             <ImageButton Grid.Column="0" Grid.Row="2" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jpg"/>
+             <ImageButton Grid.Column="1" Grid.Row="0" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="disney.jpg"/>
+             <ImageButton Grid.Column="1" Grid.Row="1" Clicked="RapButton_Clicked" x:Name="RapButton" Source="rap.jpg"/>
+             <ImageButton Grid.Column="1" Grid.Row="2" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="pop.jpg"/>
 
     </Grid>
    

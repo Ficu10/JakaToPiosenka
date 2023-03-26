@@ -12,14 +12,23 @@ using Android.OS;
 
 namespace JakaToPiosenka.Droid
 {
-    [Activity(Label = "JakaToPiosenka", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation , ScreenOrientation = ScreenOrientation.Landscape)]
+    [Activity(Label = "JakaToPiosenka", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation , ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            
+
+            if (MainPage.orientationPortrait == true)
+            {
+                RequestedOrientation = ScreenOrientation.Portrait;
+            }
+            else
+            {
+                RequestedOrientation = ScreenOrientation.Landscape;
+            }
+
             base.OnCreate(savedInstanceState);
             
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
