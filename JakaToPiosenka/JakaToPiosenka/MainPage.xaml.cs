@@ -12,6 +12,8 @@ namespace JakaToPiosenka
 {
     public partial class MainPage : ContentPage
     {
+        public static bool orientationPortrait = true;
+
         int seconds = 35;
         int secondsValue = 32;
         bool newGame = false;
@@ -74,6 +76,42 @@ namespace JakaToPiosenka
             InitializeComponent();
           
         }
+        async void AllSongsButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeforeGamePage());
+
+        }
+
+        async void RockButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeforeGamePage());
+
+        }
+
+        async void PopButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeforeGamePage());
+
+        }
+
+        async void DisneyButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeforeGamePage());
+
+        }
+
+        async void UsersMusicButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeforeGamePage());
+
+        }
+
+        async void RapButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeforeGamePage());
+
+        }
+
         private void WTSGame()
         {
             //StreamReader srAllSongs = new StreamReader("AllSongs.txt");

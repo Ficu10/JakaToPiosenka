@@ -9,20 +9,7 @@ namespace JakaToPiosenka
     public partial class App : Application
     {
 
-        public static SQLiteHelper db;
-
-        public static SQLiteHelper MyDatabase
-        {
-
-            get
-            {
-                if (db == null)
-                {
-                    db = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyStore.db3"));
-                }
-                return db;
-            }
-        }
+      
         public App()
         {
             InitializeComponent();

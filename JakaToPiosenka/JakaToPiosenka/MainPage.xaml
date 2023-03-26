@@ -26,7 +26,7 @@
         
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!--<Button BorderWidth="7" BorderColor="LightSkyBlue" x:Name="Border" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HeightRequest="1200" WidthRequest="4000"  CornerRadius="15" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3"/>-->
+        <Button BorderWidth="7" BorderColor="LightSkyBlue" x:Name="Border" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HeightRequest="1200" WidthRequest="4000"  CornerRadius="15" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
         <Image  x:Name="NewGameImage" HorizontalOptions="Center" Source="play.jpg"  VerticalOptions="Center" HeightRequest="100" WidthRequest="100"    Grid.Column="0" Grid.Row="1"/>
         <Image  x:Name="SettingsImage" HorizontalOptions="Center" Source="settings.jpg"  VerticalOptions="Center" HeightRequest="100" WidthRequest="100"   Grid.Column="1" Grid.Row="1"/>
 
@@ -91,6 +91,14 @@
         <Label x:Name="Time" HorizontalOptions="End" Margin="0,0,50,0" Text="" FontSize="30" VerticalOptions="Start" TextColor="White" IsVisible="false" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" />
         <Button x:Name="GoodAnswearButton"   Clicked="GoodAnswearButton_Clicked" BackgroundColor="Transparent" IsVisible="False" Grid.Column="0" Grid.Row="1"  />
         <Button x:Name="WrongAnswearButton"   Clicked="WrongAnswearButton_Clicked" BackgroundColor="Transparent" IsVisible="False" Grid.Column="1" Grid.Row="1"    />
+
+        <Button Grid.Column="0" Grid.Row="0" Text="asdasdasd" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton"/>
+        <ImageButton Grid.Column="0" Grid.Row="1" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg"/>
+        <ImageButton Grid.Column="0" Grid.Row="2" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jpg"/>
+        <ImageButton Grid.Column="1" Grid.Row="0" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="disney.jpg"/>
+        <ImageButton Grid.Column="1" Grid.Row="1" Clicked="RapButton_Clicked" x:Name="RapButton" Source="rap.jpg"/>
+        <ImageButton Grid.Column="1" Grid.Row="2" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="pop.jpg"/>
+
 
     </Grid>
    
