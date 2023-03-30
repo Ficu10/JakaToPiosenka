@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JakaToPiosenka.AfterGame"
+             BackgroundColor="LightBlue"
+             NavigationPage.HasNavigationBar="false" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <!--<ListView x:Name="myListView" IsVisible="false" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                        <ListView x:Name="myListView">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding }" />
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        <ListView x:Name="myListView" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="RestartGame" Text="Jeszcze raz" Grid.Row="1" Grid.Column="1" Clicked="RestartGame_Clicked" />
+        <Button x:Name="ShowSongs" Text="Pokaż piosenki" Grid.Row="1" Grid.Column="2" Clicked="ShowSongs_Clicked"/>
+        <Button x:Name="Menu" Text="Menu głowne" Grid.Row="1" Grid.Column="3" Clicked="Menu_Clicked"/>
+
+    </Grid>
+   
+</ContentPage>

@@ -15,10 +15,7 @@ namespace JakaToPiosenka.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            var decorView = Window.DecorView;
-            var uiOptions = (int)decorView.SystemUiVisibility;
-            uiOptions |= (int)SystemUiFlags.HideNavigation;
-            decorView.SystemUiVisibility = (StatusBarVisibility)uiOptions;
+          
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             MessagingCenter.Subscribe<OrientationMessage>(this, "SetOrientation", (message) =>
@@ -38,10 +35,14 @@ namespace JakaToPiosenka.Droid
             Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
 
             base.OnCreate(savedInstanceState);
-            
+
+            // Enable the "Up" button in the ActionBar
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
+      
 
     }
     

@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:JakaToPiosenka"
              BackgroundColor="LightBlue"
-             x:Class="JakaToPiosenka.MainPage">
+             x:Class="JakaToPiosenka.MainPage"
+             
+             NavigationPage.HasNavigationBar="false" >
 
     
     <Grid>

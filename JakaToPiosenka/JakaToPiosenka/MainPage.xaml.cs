@@ -13,7 +13,7 @@ namespace JakaToPiosenka
     public partial class MainPage : ContentPage
     {
         public static bool orientationPortrait = true;
-
+        public static string gameMode = "allSongs";
      
 
         List<string> authorsTab = new List<string> { "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Sanah", "Sanah", "Sanah", "Sanah", "Sanah", "Sanah", "Myslovitz", "Myslovitz", "Myslovitz", "Happysad", "Republika", "Republika", "Wilki", "Wilki", "Kombi", "Urszula", "Urszula", "Luxtorpeda", "Maanam", "Maanam", "Czerwone Gitary", "Kobranocka", "Lady Pank", "Lady Pank", "Lady Pank", "Lady Pank", "Lady Pank", "Czesław Niemen", "Dżem", "Dżem", "Budka Suflera", "Budka Suflera", "Budka Suflera", "Perfect", "Perfect", "Perfect", "Perfect", "Perfect", "Perfect", "Black Eyed Peas", "Black Eyed Peas", "Black Eyed Peas", "Maroon 5", "Maroon 5", "Maroon 5", "Maroon 5", "Maroon 5", "Beyoncé", "Beyoncé", "Justin Timberlake", "Justin Timberlake", "Nelly Furtado", "Nelly Furtado", "Nelly Furtado", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Britney Spears", "Britney Spears", "Britney Spears", "Britney Spears", "Britney Spears", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Bob Dylan", "Rammstein", "Rammstein", "Rammstein", "Oasis", "Panic! at the Disco", "Panic! at the Disco", "Panic! at the Disco", "Pink Floyd", "Pink Floyd", "Red Hot Chili Peppers", "Bon Jovi", "The Cranberries", "Metallica", "Metallica", "Metallica", "Guns N' Roses", "Guns N' Roses", "The Doors", "System of a Down", "System of a Down", "System of a Down", "Green Day", "Green Day", "Green Day", "Green Day", "Linking Park", "Linking Park", "Linking Park", "Linking Park", "Linking Park", "Nirvana", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Enej", "Enej", "Enej", "Enej", "Dawid Podsiadło", "Dawid Podsiadło", "Dawid Podsiadło", "Dawid Podsiadło", "Carly Ray Japsen", "Avicii", "Avicii", "Avicii", "Kazik Staszewski", "Kazik Staszewski", "Kazik Staszewski", "Kazik Staszewski", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "AC/DC", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Shawn Mendes", "Kwiat Jabłoni", "Kwiat Jabłoni", "Kwiat Jabłoni", "Kwiat Jabłoni", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira" };
@@ -53,46 +53,46 @@ namespace JakaToPiosenka
 
         public MainPage()
         {
-            
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
+
             InitializeComponent();
 
         }
       
         async void AllSongsButton_Clicked(object sender, EventArgs e)
         {
+            gameMode = "allSongs";
             await Navigation.PushAsync(new BeforeGamePage());
-
-
         }
 
         async void RockButton_Clicked(object sender, EventArgs e)
         {
+            gameMode = "Rock";
             await Navigation.PushAsync(new BeforeGamePage());
-
         }
 
         async void PopButton_Clicked(object sender, EventArgs e)
         {
+            gameMode = "Pop";
             await Navigation.PushAsync(new BeforeGamePage());
-
         }
 
         async void DisneyButton_Clicked(object sender, EventArgs e)
         {
+            gameMode = "Disney";
             await Navigation.PushAsync(new BeforeGamePage());
-
         }
 
         async void UsersMusicButton_Clicked(object sender, EventArgs e)
         {
+            gameMode = "UsersMusic";
             await Navigation.PushAsync(new BeforeGamePage());
-
         }
 
         async void RapButton_Clicked(object sender, EventArgs e)
         {
+            gameMode = "Rap";
             await Navigation.PushAsync(new BeforeGamePage());
-
         }
 
      
