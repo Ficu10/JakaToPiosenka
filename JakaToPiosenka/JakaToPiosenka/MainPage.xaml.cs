@@ -95,7 +95,10 @@ namespace JakaToPiosenka
             await Navigation.PushAsync(new BeforeGamePage());
         }
 
-     
 
+        private void Settings_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

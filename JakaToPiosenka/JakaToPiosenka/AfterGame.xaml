@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JakaToPiosenka.AfterGame"
              BackgroundColor="LightBlue"
-             NavigationPage.HasNavigationBar="false" >
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="False">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -19,31 +22,37 @@
             <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
-        <!--<ListView x:Name="myListView" IsVisible="false" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    
-                        <ListView x:Name="myListView">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <TextCell Text="{Binding }" />
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
+      
+        <Image Source="Title.png" Grid.ColumnSpan="5" Scale="1.3" BackgroundColor="AliceBlue"/>
+        <Image Source="AFTM.png" Grid.ColumnSpan="5" VerticalOptions="End" Scale="0.5"/>
 
-        <ListView x:Name="myListView" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0">
+
+        <Label x:Name="Res"/>
+        <ListView x:Name="myListView" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" BackgroundColor="DeepSkyBlue" Margin="20,20,20,10" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}" />
+                    <ViewCell Height="1">
+                        
+                            <Grid>
+                                <Grid.RowDefinitions>
+
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+
+                                </Grid.ColumnDefinitions>
+                            <Label Text ="{Binding}" IsEnabled="False" TextColor="White" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="RestartGame" Text="Jeszcze raz" Grid.Row="1" Grid.Column="1" Clicked="RestartGame_Clicked" />
-        <Button x:Name="ShowSongs" Text="Pokaż piosenki" Grid.Row="1" Grid.Column="2" Clicked="ShowSongs_Clicked"/>
-        <Button x:Name="Menu" Text="Menu głowne" Grid.Row="1" Grid.Column="3" Clicked="Menu_Clicked"/>
+        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="DeepSkyBlue" x:Name="RestartGame" Grid.ColumnSpan="2" Text="Jeszcze raz" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="10" />
+        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="DeepSkyBlue" x:Name="Menu" Grid.ColumnSpan="2" Text="Menu głowne" Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="10"/>
 
     </Grid>
    

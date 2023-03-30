@@ -33,17 +33,7 @@ namespace JakaToPiosenka
             await Navigation.PushAsync(new RulesPage());
         }
 
-        private void ShowSongs_Clicked(object sender, EventArgs e)
-        {
-            myListView.IsVisible = true;
-            myList.Clear();
-            for (int i = 0; i < Game.songsFromGame.Count; i++)
-            {
-                myList.Add(Game.songsFromGame[i]);
-            }
-            myListView.ItemsSource = myList;
-        }
-
+       
         private async void Menu_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
