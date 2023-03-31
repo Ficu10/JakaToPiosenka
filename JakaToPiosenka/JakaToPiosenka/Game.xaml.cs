@@ -68,18 +68,9 @@ namespace JakaToPiosenka
         public static List<string> songsFromGame = new List<string>();   
         public Game()
         {
-          
             InitializeComponent();
-
-
-            // Subscribe to the ReadingChanged event to receive accelerometer data updates
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
             ShowGame();
-               
-            
-            
-
-
         }
 
         public void Dispose()
@@ -149,7 +140,7 @@ namespace JakaToPiosenka
             }
             else if (MainPage.gameMode == "UsersMusic")
             {
-                StartGame(authorsTabFairyTales, songsTabFairyTales, authorsTabFairyTalesRestart, songsTabFairyTalesRestart);
+                StartGame(authorsTabUsersMusic, songsTabUsersMusic, authorsTabUsersMusicRestart, songsTabUsersMusicRestart);
             }
             else if (MainPage.gameMode == "Rap")
             {
@@ -164,9 +155,6 @@ namespace JakaToPiosenka
             Task modifyTaskOne = Task.Run(() => GameType());
         }
 
-      
-
-
         private async void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
         {
             songsFromGame.Clear();
@@ -175,15 +163,15 @@ namespace JakaToPiosenka
 
             while(gameCounter > 0)
             {
-               
-                newGame = true;
-                songId = r.Next(authorsList.Count);
-
-                if (songId<1)
+                if (authorsList.Count < 1)
                 {
                     authorsList = authorsListReset;
                     songsList = songsListReset;
                 }
+                newGame = true;
+                songId = r.Next(authorsList.Count);
+
+               
                 seconds = BeforeGamePage.timeChanger + 1;
                 while (newGame == true)
                 {
@@ -251,9 +239,7 @@ namespace JakaToPiosenka
             SongAuthor.IsVisible = false;
             WrongAnswearButton.IsEnabled = false;
             GoodAnswearButton.IsEnabled = false;
-            endOfQuestion = true;
-           
-            
+            endOfQuestion = true;   
         }
 
         private void GoodAnswearButton_Clicked(object sender, EventArgs e)
@@ -265,9 +251,7 @@ namespace JakaToPiosenka
             WrongAnswearButton.IsEnabled = false;
             GoodAnswearButton.IsEnabled = false;
             endOfQuestion = true;
-            pointsCounter++;
             goodAnswer = true; 
-         
         }
        
     }

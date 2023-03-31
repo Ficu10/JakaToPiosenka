@@ -18,66 +18,80 @@ namespace JakaToPiosenka
             switch (MainPage.gameMode)
             {
                 case "allSongs":
-                    SongsCollection.ItemsSource = Game.songsTab;
+                    SongsCollection.ItemsSource = Game.songsTabRestart;
                     break;
                 case "Disney":
-                    SongsCollection.ItemsSource = Game.songsTabFairyTales;
+                    SongsCollection.ItemsSource = Game.songsTabFairyTalesRestart;
                     break;
                 case "Pop":
-                    SongsCollection.ItemsSource = Game.songsTabPop;
+                    SongsCollection.ItemsSource = Game.songsTabPopRestart;
                     break;
                 case "Rock":
-                    SongsCollection.ItemsSource = Game.songsTabRock;
+                    SongsCollection.ItemsSource = Game.songsTabRockRestart;
                     break;
                 case "UsersMusic":
-                    SongsCollection.ItemsSource = Game.songsTabUsersMusic;
+                    SongsCollection.ItemsSource = Game.songsTabUsersMusicRestart;
                     break;
                 case "Rap":
-                    SongsCollection.ItemsSource = Game.songsTabRap;
+                    SongsCollection.ItemsSource = Game.songsTabRapRestart;
                     break;
 
             }
         }
 
-        private async void addSong_Clicked(object sender, EventArgs e)
-        {
-
-                switch (MainPage.gameMode)
-                {
-                    case "allSongs":
-                        Game.songsTab.Add(NewSongName.Text);
-                        Game.authorsTab.Add(NewAuthorName.Text);
-                        break;
-                    case "Disney":
-                        Game.songsTabFairyTales.Add(NewSongName.Text);
-                        Game.authorsTabFairyTales.Add(NewAuthorName.Text);
-                        break;
-                    case "Pop":
-                        Game.songsTabPop.Add(NewSongName.Text);
-                        Game.authorsTabPop.Add(NewAuthorName.Text);
-                        break;
-                    case "Rock":
-                        Game.songsTabRock.Add(NewSongName.Text);
-                        Game.authorsTabRock.Add(NewAuthorName.Text);
-                        break;
-                    case "UsersMusic":
-                        Game.songsTabUsersMusic.Add(NewSongName.Text);
-                        Game.authorsTabUsersMusic.Add(NewAuthorName.Text);
-                        break;
-                    case "Rap":
-                        Game.songsTabRap.Add(NewSongName.Text);
-                        Game.authorsTabRap.Add(NewAuthorName.Text);
-                        break;
-
-                }
-            await Navigation.PushAsync(new BeforeGamePage());
-          
-
-        }
+       
 
         private async void BackButtonn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BeforeGamePage());
+        }
+
+        private async void addSongToList_Clicked(object sender, EventArgs e)
+        {
+            if (NewSongName.Text != "" && NewAuthorName.Text != "")
+            {
+                switch (MainPage.gameMode)
+                {
+                    case "allSongs":
+                        Game.songsTabRestart.Add(NewSongName.Text);
+                        Game.authorsTabRestart.Add(NewAuthorName.Text);
+                        break;
+                    case "Disney":
+                        Game.songsTabFairyTalesRestart.Add(NewSongName.Text);
+                        Game.authorsTabFairyTalesRestart.Add(NewAuthorName.Text);
+                        break;
+                    case "Pop":
+                        Game.songsTabPopRestart.Add(NewSongName.Text);
+                        Game.authorsTabPopRestart.Add(NewAuthorName.Text);
+                        break;
+                    case "Rock":
+                        Game.songsTabRockRestart.Add(NewSongName.Text);
+                        Game.authorsTabRockRestart.Add(NewAuthorName.Text);
+                        break;
+                    case "UsersMusic":
+                        Game.songsTabUsersMusicRestart.Add(NewSongName.Text);
+                        Game.authorsTabUsersMusicRestart.Add(NewAuthorName.Text);
+                        break;
+                    case "Rap":
+                        Game.songsTabRapRestart.Add(NewSongName.Text);
+                        Game.authorsTabRapRestart.Add(NewAuthorName.Text);
+                        break;
+
+                }
+                await Navigation.PushAsync(new AddingNewSongs());
+                NewSongName.Text = "";
+                NewAuthorName.Text = ""; 
+            }
+            else
+            {
+                await DisplayAlert("Blad", "Prosze podac autora oraz tytul piosenki", "OK");        
+            }
+           
+        }
+
+        private void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+            
         }
     }
 }
