@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JakaToPiosenka.AddingNewSongs"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="DeepSkyBlue">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3">
+                <Label/>
+                <Label Text="Autor:" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                <Entry x:Name="NewAuthorName" BackgroundColor="White"/>
+                <Label Text="Tytul:" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                <Entry x:Name="NewSongName" BackgroundColor="White"/>
+                <Button Clicked="addSong_Clicked" x:Name="addSong" CornerRadius="30" Margin="20,30,20,20" Scale="1.5" Text="Dodaj" TextColor="White" FontAttributes="Bold" BackgroundColor="SeaGreen" BorderColor="White" BorderWidth="3"/>
+            </StackLayout>
+
+
+            <CollectionView x:Name="SongsCollection" ItemsSource="{Binding Items}" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" BackgroundColor="SeaGreen" Margin="20,0,20,50" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding .}" TextColor="White" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Label/>
+                            <Label Text="{Binding .}" TextColor="White" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+                
+           
+    </ContentPage.Content>
+</ContentPage>

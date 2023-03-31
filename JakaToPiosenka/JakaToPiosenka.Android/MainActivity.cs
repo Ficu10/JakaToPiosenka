@@ -29,7 +29,9 @@ namespace JakaToPiosenka.Droid
                     RequestedOrientation = ScreenOrientation.Portrait;
                 }
             });
-            SupportActionBar.Hide();
+            RequestWindowFeature(WindowFeatures.NoTitle);
+            Window.AddFlags(WindowManagerFlags.Fullscreen);
+            //Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
             base.OnCreate(savedInstanceState);
 
 

@@ -42,7 +42,14 @@ namespace JakaToPiosenka
 
         public static List<string> authorsTabRapRestart = new List<string> { "Twenty one pilots", "Twenty one pilots", "White 2115", "White 2115", "White 2115", "Tymek", "Tymek", "Tymek", "Tymek", "Kizo feat. Malik Montana", "Malik Montana", "Malik Montana", "Żabson", "Żabson", "Żabson", "Żabson", "Kizo", "Kizo", "Kizo", "Kizo", "Kizo", "Kizo", "Sobel", "Sobel", "Sobel", "Sobel", "Sobel", "Mata", "Mata", "Mata", "Mata", "Mata", "Mata", "Mata", "Kuban", "Kuban", "Kuban", "Kuban", "Kuban", "PRO8L3M", "PRO8L3M", "PRO8L3M", "PRO8L3M", "PRO8L3M", "TACONAFIDE", "TACONAFIDE", "TACONAFIDE", "Taco Hemingway", "Taco Hemingway", "Taco Hemingway", "Taco Hemingway", "Taco Hemingway", "Wiz Khalifa", "Wiz Khalifa", "Wiz Khalifa", "Kendrick Lamar", "Kendrick Lamar", "Kendrick Lamar", "Macklemore", "Macklemore", "Eminem", "Eminem", "Eminem", "Eminem", "Eminem", "Eminem", "Eminem", "Eminem", "Eminem", "Eminem" };
         public static List<string> songsTabRapRestart = new List<string> { "Ride", "Stressed Out", "Morgan", "California", "Mogę dziś umierać", "Język ciała", "Anioły i Demony", "Rainman", "Poza kontrolą", "CZEMPION", "1szy Nos", "Naaajak", "Puerto Bounce", "Do Ziomów", "Księżniczki", "Sexoholik", "Miasto 24H", "Toskania", "Fitness", "Lucky Punch", "Disney", "Kizo", "Impreza", "Testarossa", "Bandyta", "Fiołkowe Pole", "Cześć, jak się masz?", "100 dni do matury", "Patointeligencja", "Mata Montana", "Schodki", "Kiss cam", "Papuga", "Patoreakcja", "Suki", "DOBzI LUDZIE", "Ta dama", "W taki dzień", "Chore jazdy", "Stówa", "TEB 200-1", "Flary", "Molly", "Skrable", "Kryptowaluty", "8 kobiet", "Tamagotchi", "Nostalgia", "Fiji", "Następna stacja", "6 zer", "Deszcz na betonie", "We Own It", "We Dem Boyz", "Black and Yellow", "Swimming Pools", "Alright", "HUMBLE", "Can't Hold Us", "Trift Shop", "Shake That", "Like Toy Soldiers", "Beautiful", "Just Lose It", "Not Afraid", "When I'm Gone", "Mockingbird", "Rap God", "The Real Slim Shady", "Without Me" };
- 
+
+        public static List<string> authorsTabUsersMusic = new List<string>();
+        public static List<string> songsTabUsersMusic = new List<string>();
+
+        public static List<string> authorsTabUsersMusicRestart = new List<string>();
+        public static List<string> songsTabUsersMusicRestart = new List<string>();
+
+
 
         public static List<string> authorsTabRestart = new List<string> { "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Sanah", "Sanah", "Sanah", "Sanah", "Sanah", "Sanah", "Myslovitz", "Myslovitz", "Myslovitz", "Happysad", "Republika", "Republika", "Wilki", "Wilki", "Kombi", "Urszula", "Urszula", "Luxtorpeda", "Maanam", "Maanam", "Czerwone Gitary", "Kobranocka", "Lady Pank", "Lady Pank", "Lady Pank", "Lady Pank", "Lady Pank", "Czesław Niemen", "Dżem", "Dżem", "Budka Suflera", "Budka Suflera", "Budka Suflera", "Perfect", "Perfect", "Perfect", "Perfect", "Perfect", "Perfect", "Black Eyed Peas", "Black Eyed Peas", "Black Eyed Peas", "Maroon 5", "Maroon 5", "Maroon 5", "Maroon 5", "Maroon 5", "Beyoncé", "Beyoncé", "Justin Timberlake", "Justin Timberlake", "Nelly Furtado", "Nelly Furtado", "Nelly Furtado", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Britney Spears", "Britney Spears", "Britney Spears", "Britney Spears", "Britney Spears", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Bob Dylan", "Rammstein", "Rammstein", "Rammstein", "Oasis", "Panic! at the Disco", "Panic! at the Disco", "Panic! at the Disco", "Pink Floyd", "Pink Floyd", "Red Hot Chili Peppers", "Bon Jovi", "The Cranberries", "Metallica", "Metallica", "Metallica", "Guns N' Roses", "Guns N' Roses", "The Doors", "System of a Down", "System of a Down", "System of a Down", "Green Day", "Green Day", "Green Day", "Green Day", "Linking Park", "Linking Park", "Linking Park", "Linking Park", "Linking Park", "Nirvana", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Enej", "Enej", "Enej", "Enej", "Dawid Podsiadło", "Dawid Podsiadło", "Dawid Podsiadło", "Dawid Podsiadło", "Carly Ray Japsen", "Avicii", "Avicii", "Avicii", "Kazik Staszewski", "Kazik Staszewski", "Kazik Staszewski", "Kazik Staszewski", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "AC/DC", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Shawn Mendes", "Kwiat Jabłoni", "Kwiat Jabłoni", "Kwiat Jabłoni", "Kwiat Jabłoni", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira" };
         public static List<string> songsTabRestart = new List<string> { "Bo jesteś Ty", "Chciałem być", "Za Tobą pójdę jak na bal", "Parostatek", "Zatańczysz ze mną jeszcze raz", "Ale jazz!", "Szampan", "No sory", "ten Stan", "Melodia", "2:00", "Długość dźwięku samotności", "Scenariusz dla moich sąsiadów", "Peggy Brown", "Zanim pójdę", "Mamona", "Telefony", "Nie Stało Się Nic", "Baśka", "Słodkiego miłego życia", "Koń na Biegunach", "Dmuchawce, latawce", "Autystyczny", "Cykady na Cykladach", "Kocham Cię, kochanie moje", "Ciągle pada", "Kocham Cię jak Irlandię", "Zawsze Tam Gdzie Ty", "Kryzysowa Narzeczona", "Tańcz głupia, tańcz", "Mniej niż Zero", "Stacja Warszawa", "Dziwny jest ten świat", "Wehikuł czasu", "Whisky", "Jolka, Jolka pamiętasz", "Takie Tango", "Bal wszystkich świętych", "Nie płacz Ewka", "Wszystko ma swój czas ", "Chcemy być sobą", "Autobiografia ", "Kołysanka dla nieznajomej", "Ale w koło jest wesoło", "GIRL LIKE ME", "Pump It", "I Gotta Feeling", "Payphone ", "Animals", "Sugar", "One More Night", "Moves Like Jagger", "Single Ladies", "Halo", "Mirrors", "Can't Stop The Feeling", "Say It Right", "Maneater ", "Promiscuous", "Umbrella", "Only Girl (In the World)", "Disturbia", "Don't Stop the Music", "Diamonds", "Love The Way You Lie", "Roar", "E.T.", "Last Friday Night (T.G.I.F.)", "I Kissed a Girl", "Hot n Cold", "California Gurls", "Dark Horse", "Firework", "Hit Me Baby One More Time", "Oops!...I Did It Again", "I Wanna Go", "Toxic", "Womanizer", "Bad Romance", "Poker Face", "Paparazzi", "Applause", "Alejandro", "Knockin' on heaven's door", "DEUTSCHLAND", "Du Hast", "Sonne", "Wonderwall ", "Girls / Girls / Boys", "High Hopes", "Let's Kill Tonight", "High Hopes", "Another brick in the wall part II", "Californication", "It's My Life", "Zombie", "Nothing Else Matters", "Enter Sandman", "Master of Puppets", "Sweet Child O' Mine", "Knockin' On Heaven's Door", "Riders On The Storm", "Chop Suey", "Aerials", "Lonely Day", "Boulevard of Broken Dreams", "Holiday", "Wake Me Up When September Ends", "American Idiot", "Numb", "What I've Done", "Castle of Glas", "In The End", "Somewhere I Belong", "Smells Like Teen Spirit", "Slipping Through My Fingers", "Lay All Your Love On Me", "Waterloo", "Mamma Mia", "Dancing Queen", "Gimmie! Gimmie! Gimmie!", "Money, Money, Money", "Billie Jean", "Beat It", "Smooth Criminal", "Thriller", "Black Or White", "They Don't Care About Us", "Good Old-Fashioned Lover Boy", "Killer Queen", "Love of My Life", "The Show Must Go On", "Radio Ga Ga", "I Want to Break Free", "Don't Stop Me Now", "Bohemian Rhapsody", "We Will Rock You", "Please Mr. Postman", "Twist and Shout", "I Want To Hold Your Hand", "Let It Be", "Hey Jude", "Yesterday", "Here Comes the Sun", "Skrzydlate ręce", "Tak smakuje życie", "Radio Hello", "Lili", "Małomiasteczkowy", "Nie Ma Fal", "Trójkąty i Kwadraty", "W dobrą stronę", "Call me mayby", "You Make Me", "Hey Brother", "Wake me up", "Arahja", "Baranek", "Gdy nie ma dzieci", "12 Groszy", "Fallen Leaves", "Red Flag", "Surrender", "Rusted from the Rain", "Devil in a Midnight Mass", "Devil on My Shoulder", "Highway To Hell", "Galway Girl", "I See Fire", "Bad Habits", "Shivers", "Perfect", "Shape Of You", "Stiches", "Idzie Zima", "Niemożliwe", "Dziś późno pójdę spać", "Wzięli zamknęli mi klub", "Loca", "Waka Waka", "Hips Don't Lie", "She Wolf", "Whenever, Wherever", "Rabiosa", "Can't remember to forget you" };
@@ -72,28 +79,7 @@ namespace JakaToPiosenka
 
         void GameType()
         {
-            //switch (MainPage.gameMode)
-            //{
-            //    case "allSongs":
-            //        StartGame(authorsTab, songsTab, authorsTabRestart, songsTabRestart);
-            //        break;
-            //    case "Disney":
-            //        StartGame(authorsTabFairyTales, songsTabFairyTales, authorsTabFairyTalesRestart, songsTabFairyTalesRestart);
-            //        break;
-            //    case "Pop":
-            //        StartGame(authorsTabPop, songsTabPop, authorsTabPopRestart, songsTabPopRestart);
-            //        break;
-            //    case "Rock":
-            //        StartGame(authorsTabRock, songsTabRock, authorsTabRockRestart, songsTabRockRestart);
-            //        break;
-            //    case "UsersMusic":
-            //        StartGame(authorsTabFairyTales, songsTabFairyTales, authorsTabFairyTalesRestart, songsTabFairyTalesRestart);
-            //        break;
-            //    case "Rap":
-            //        StartGame(authorsTabRap, songsTabRap, authorsTabRapRestart, songsTabRapRestart);
-            //        break;
-
-            //}
+            
             if (MainPage.gameMode == "allSongs")
             {
                 StartGame(authorsTab, songsTab, authorsTabRestart, songsTabRestart);
@@ -166,6 +152,7 @@ namespace JakaToPiosenka
                             {
                                 BackgroundImageSource = "red.jpg";
                                 SongTitle.Text = "Brak odpowiedzi";
+                                Thread.Sleep(3000);
                             }
                             isClicked = false;
                             SongAuthor.IsVisible = false;

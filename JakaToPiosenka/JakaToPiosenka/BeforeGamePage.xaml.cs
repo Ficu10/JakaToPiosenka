@@ -16,6 +16,34 @@ namespace JakaToPiosenka
         public BeforeGamePage()
         {
             InitializeComponent();
+            switch (MainPage.gameMode)
+            {
+                case "allSongs":
+                    Category.Text = "Wszystkie gatunki";
+                    PhotoCategory.Source = "music.jpg";
+                        break;
+                case "Disney":
+                    Category.Text = "Piosenki Disneya";
+                    PhotoCategory.Source = "disney.jpg";
+                    break;
+                case "Pop":
+                    Category.Text = "Pop";
+                    PhotoCategory.Source = "pop.jpg";
+                    break;
+                case "Rock":
+                    Category.Text = "Rock";
+                    PhotoCategory.Source = "rock.jpg";
+                    break;
+                case "UsersMusic":
+                    Category.Text = "Twoja muzyka";
+                    PhotoCategory.Source = "yourMusic.jpg";
+                    break;
+                case "Rap":
+                    Category.Text = "Rap";
+                    PhotoCategory.Source = "rap.jpg";
+                    break;
+
+            }
         }
         async void Time15_Clicked(object sender, EventArgs e)
         {
@@ -39,6 +67,11 @@ namespace JakaToPiosenka
         {
             timeChanger = 60;
             await Navigation.PushAsync(new RulesPage());
+        }
+
+        private async void AddNewSongs_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddingNewSongs());
         }
     }
 }
