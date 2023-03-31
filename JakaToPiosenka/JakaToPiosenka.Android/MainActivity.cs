@@ -32,13 +32,20 @@ namespace JakaToPiosenka.Droid
             RequestWindowFeature(WindowFeatures.NoTitle);
             Window.AddFlags(WindowManagerFlags.Fullscreen);
             //Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
+
+
+
             base.OnCreate(savedInstanceState);
 
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
-      
+        public override void OnBackPressed()
+        {
+            
+        }
+
 
     }
     

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JakaToPiosenka.AfterGame"
-             BackgroundColor="LightBlue"
+             BackgroundColor="DeepSkyBlue"
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False">
 
@@ -27,8 +27,7 @@
         <Image Source="AFTM.png" Grid.ColumnSpan="5" VerticalOptions="End" Scale="0.5"/>
 
 
-        <Label x:Name="Res"/>
-        <ListView x:Name="myListView" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" BackgroundColor="DeepSkyBlue" Margin="20,20,20,10" RowHeight="100">
+        <ListView x:Name="myListView" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" BackgroundColor="SeaGreen" Margin="20,20,20,10" RowHeight="100" SeparatorVisibility="Default" SeparatorColor="White" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="1">
@@ -51,9 +50,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="DeepSkyBlue" x:Name="RestartGame" Grid.ColumnSpan="2" Text="Jeszcze raz" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="10" />
-        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="DeepSkyBlue" x:Name="Menu" Grid.ColumnSpan="2" Text="Menu głowne" Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="10"/>
+        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="SeaGreen" x:Name="RestartGame" Grid.ColumnSpan="2" Text="Jeszcze raz" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="10" />
+        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="SeaGreen" x:Name="Menu" Grid.ColumnSpan="2" Text="Menu głowne" Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="10"/>
 
+        <Label x:Name="Resut" Text="Twoj wynik to 10/10" Grid.Row="1" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" FontAttributes="Bold"/>
     </Grid>
    
 </ContentPage>

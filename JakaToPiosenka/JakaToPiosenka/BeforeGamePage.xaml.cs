@@ -15,6 +15,8 @@ namespace JakaToPiosenka
         public static int timeChanger = 30;
         public BeforeGamePage()
         {
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
+
             InitializeComponent();
             switch (MainPage.gameMode)
             {
@@ -72,6 +74,11 @@ namespace JakaToPiosenka
         private async void AddNewSongs_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddingNewSongs());
+        }
+
+        private async void BackButtonn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }

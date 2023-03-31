@@ -18,6 +18,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <ImageButton x:Name="BackButtonn" Clicked="BackButtonn_Clicked" Source="arrow.png" BackgroundColor="Transparent" Margin="-100,-60,20,20" Scale="0.45"/>
             <Image x:Name="PhotoCategory" Source="disney.jpg" Grid.ColumnSpan="2" Margin="20"/>
             <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
                 <Label x:Name="Category" Text="Piosenki Disneya" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Start" FontSize="30" FontAttributes="Bold" TextColor="White" />

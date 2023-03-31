@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
@@ -18,11 +19,12 @@ namespace JakaToPiosenka
     {
 
         int songId;
-        int pointsCounter;
+        public static int pointsCounter;
         bool newGame = true;
         int seconds;
-        bool isClicked = false;
-
+        bool endOfQuestion = false;
+        bool goodAnswer = false;
+        bool answered = false;
 
 
         public static List<string> authorsTab = new List<string> { "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Krzysztof Krawczyk", "Sanah", "Sanah", "Sanah", "Sanah", "Sanah", "Sanah", "Myslovitz", "Myslovitz", "Myslovitz", "Happysad", "Republika", "Republika", "Wilki", "Wilki", "Kombi", "Urszula", "Urszula", "Luxtorpeda", "Maanam", "Maanam", "Czerwone Gitary", "Kobranocka", "Lady Pank", "Lady Pank", "Lady Pank", "Lady Pank", "Lady Pank", "Czesław Niemen", "Dżem", "Dżem", "Budka Suflera", "Budka Suflera", "Budka Suflera", "Perfect", "Perfect", "Perfect", "Perfect", "Perfect", "Perfect", "Black Eyed Peas", "Black Eyed Peas", "Black Eyed Peas", "Maroon 5", "Maroon 5", "Maroon 5", "Maroon 5", "Maroon 5", "Beyoncé", "Beyoncé", "Justin Timberlake", "Justin Timberlake", "Nelly Furtado", "Nelly Furtado", "Nelly Furtado", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Rihanna", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Katy Perry", "Britney Spears", "Britney Spears", "Britney Spears", "Britney Spears", "Britney Spears", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Lady Gaga", "Bob Dylan", "Rammstein", "Rammstein", "Rammstein", "Oasis", "Panic! at the Disco", "Panic! at the Disco", "Panic! at the Disco", "Pink Floyd", "Pink Floyd", "Red Hot Chili Peppers", "Bon Jovi", "The Cranberries", "Metallica", "Metallica", "Metallica", "Guns N' Roses", "Guns N' Roses", "The Doors", "System of a Down", "System of a Down", "System of a Down", "Green Day", "Green Day", "Green Day", "Green Day", "Linking Park", "Linking Park", "Linking Park", "Linking Park", "Linking Park", "Nirvana", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "ABBA", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Michael Jackson", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Queen", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Beatles", "Enej", "Enej", "Enej", "Enej", "Dawid Podsiadło", "Dawid Podsiadło", "Dawid Podsiadło", "Dawid Podsiadło", "Carly Ray Japsen", "Avicii", "Avicii", "Avicii", "Kazik Staszewski", "Kazik Staszewski", "Kazik Staszewski", "Kazik Staszewski", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "Billy Talent", "AC/DC", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Ed Sheeran", "Shawn Mendes", "Kwiat Jabłoni", "Kwiat Jabłoni", "Kwiat Jabłoni", "Kwiat Jabłoni", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira", "Shakira" };
@@ -69,6 +71,9 @@ namespace JakaToPiosenka
           
             InitializeComponent();
 
+
+            // Subscribe to the ReadingChanged event to receive accelerometer data updates
+            Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
             ShowGame();
                
             
@@ -77,6 +82,52 @@ namespace JakaToPiosenka
 
         }
 
+        public void Dispose()
+        {
+            Accelerometer.ReadingChanged -= Accelerometer_ReadingChanged;
+        }
+        private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+        {
+            var acceleration = e.Reading.Acceleration;
+            var x = acceleration.X;
+            var y = acceleration.Y;
+            var z = acceleration.Z;
+
+            // dobrze x < 0.6 z > 0.6    zle z<0.6  x<0.9
+
+            if (answered == false)
+            {
+                if (x <= 0.6 && y < 0.2 && z > 0.6)
+                {
+                    BackgroundImageSource = "green.jpg";
+                    SongTitle.Text = "Dobrze";
+                    Time.IsVisible = false;
+                    SongAuthor.IsVisible = false;
+                    WrongAnswearButton.IsEnabled = false;
+                    GoodAnswearButton.IsEnabled = false;
+                    endOfQuestion = true;
+                    goodAnswer = true;
+                    answered = true;
+                }
+                else if (z < -0.6 && x < 0.9)
+                {
+                    BackgroundImageSource = "red.jpg";
+                    SongTitle.Text = "Brak odpowiedzi";
+                    Time.IsVisible = false;
+                    SongAuthor.IsVisible = false;
+                    WrongAnswearButton.IsEnabled = false;
+                    GoodAnswearButton.IsEnabled = false;
+                    endOfQuestion = true;
+                    answered = true;
+                }
+               
+            }
+            if (x >= 1 && y < 0.2 && z < 0.2)
+            {
+                answered = false;
+            }
+
+        }
         void GameType()
         {
             
@@ -118,6 +169,7 @@ namespace JakaToPiosenka
 
         private async void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
         {
+            songsFromGame.Clear();
             int gameCounter = 10;
             Random r = new Random();
 
@@ -146,15 +198,12 @@ namespace JakaToPiosenka
                         SongTitle.Text = songsList[songId];
                         seconds--;
                         Time.Text = seconds.ToString();
-                        if (seconds < 1)
+                        if (seconds<1)
                         {
-                            if (!isClicked)
-                            {
-                                BackgroundImageSource = "red.jpg";
-                                SongTitle.Text = "Brak odpowiedzi";
-                                Thread.Sleep(3000);
-                            }
-                            isClicked = false;
+                            endOfQuestion = true;
+                        }
+                        if (endOfQuestion == true)
+                        {
                             SongAuthor.IsVisible = false;
                             Time.IsVisible = false;
                             newGame = false;
@@ -162,20 +211,32 @@ namespace JakaToPiosenka
                             gameCounter--;
                             authorsList.RemoveAt(songId);
                             songsList.RemoveAt(songId);
+                            if (goodAnswer == true)
+                            {
+                                endOfQuestion = false;
+                                pointsCounter++;
+                                goodAnswer = false;
+                                BackgroundImageSource = "green.jpg";
+                                SongTitle.Text = "Dobrze";
+                            }
+                            else
+                            {
+                                endOfQuestion = false;
+                                BackgroundImageSource = "red.jpg";
+                                SongTitle.Text = "Brak odpowiedzi";
+                            }
                             if (gameCounter == 0)
                             {
+                                Dispose();
+                                Accelerometer.Stop();
                                 await Navigation.PushAsync(new AfterGame());
                             }
                         }
+
                     });
-                    if (seconds< 1)
-                    {
-                        Thread.Sleep(3000);
-                    }
-                    else
-                    {
-                        Thread.Sleep(1000);
-                    }
+                    Thread.Sleep(1000);
+
+
                 }
             }
 
@@ -184,28 +245,29 @@ namespace JakaToPiosenka
         }
         private void WrongAnswearButton_Clicked(object sender, EventArgs e)
         {
-
             BackgroundImageSource = "red.jpg";
-            seconds = 1;
             SongTitle.Text = "Brak odpowiedzi";
             Time.IsVisible = false;
             SongAuthor.IsVisible = false;
             WrongAnswearButton.IsEnabled = false;
             GoodAnswearButton.IsEnabled = false;
-            isClicked = true;
+            endOfQuestion = true;
+           
+            
         }
 
         private void GoodAnswearButton_Clicked(object sender, EventArgs e)
         {
-            isClicked = true;
             BackgroundImageSource = "green.jpg";
-            seconds = 1;
             SongTitle.Text = "Dobrze";
             Time.IsVisible = false;
             SongAuthor.IsVisible = false;
             WrongAnswearButton.IsEnabled = false;
             GoodAnswearButton.IsEnabled = false;
+            endOfQuestion = true;
             pointsCounter++;
+            goodAnswer = true; 
+         
         }
        
     }

@@ -13,18 +13,12 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AfterGame : ContentPage
     {
-        List<string> myList = new List<string>() { "1", "1", "1", "1", "1", "1", "1", "1", "1", };
-
         public AfterGame()
         {
             InitializeComponent();
-
-            myList.Clear();
-            for (int i = 0; i < Game.songsFromGame.Count; i++)
-            {
-                myList.Add(Game.songsFromGame[i]);
-            }
-            myListView.ItemsSource = myList;
+            Resut.Text = "Twoj wynik to " + Game.pointsCounter.ToString() + "/10";
+            myListView.ItemsSource = Game.songsFromGame;
+            Game.pointsCounter = 0;
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
         }
 
