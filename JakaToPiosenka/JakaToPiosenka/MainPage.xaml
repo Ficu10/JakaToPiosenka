@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:JakaToPiosenka"
-             BackgroundColor="LightBlue"
+             BackgroundColor="DeepSkyBlue"
              x:Class="JakaToPiosenka.MainPage"
              
              NavigationPage.HasNavigationBar="false"
@@ -12,7 +12,7 @@
     <Grid>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.6*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -25,16 +25,14 @@
 
 
 
-        <Image Source="Title.png" Grid.ColumnSpan="2" Scale="1.3" BackgroundColor="AliceBlue"/>
+        <Image Source="Title.png" Grid.ColumnSpan="2" Scale="1.3" BackgroundColor="white"/>
         <Image Source="AFTM.png" Grid.ColumnSpan="2" VerticalOptions="End" Scale="0.5"/>
-        <ImageButton x:Name="Settings" Source="settingss.png" Scale="0.3" BackgroundColor="AliceBlue" VerticalOptions="Start" HorizontalOptions="Start" Margin="-100,-45,0,0" Clicked="Settings_Clicked"/>
-
-        <ImageButton VerticalOptions="End" BorderWidth="10" BorderColor="Gold" Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="rodzajeMuzyki.jpg" BackgroundColor="Transparent" Margin="20"/>
-        <ImageButton VerticalOptions="End" BorderWidth="10" BorderColor="Gold"  Grid.Column="0" Grid.Row="2" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg" BackgroundColor="Transparent" Margin="20"/>
-        <ImageButton VerticalOptions="End" BorderWidth="10" BorderColor="Gold" Grid.Column="0" Grid.Row="3" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jpg" BackgroundColor="Transparent" Margin="20"/>
-        <ImageButton VerticalOptions="End" BorderWidth="10" BorderColor="Gold" Grid.Column="1" Grid.Row="1" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="disney.jpg" BackgroundColor="Transparent" Margin="20"/>
-        <ImageButton VerticalOptions="End" BorderWidth="10" BorderColor="Gold" Grid.Column="1" Grid.Row="2" Clicked="RapButton_Clicked" x:Name="RapButton" Source="rap.jpg" BackgroundColor="Transparent" Margin="20"/>
-        <ImageButton VerticalOptions="End" BorderWidth="10" BorderColor="Gold" Grid.Column="1" Grid.Row="3" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="music.jpg" BackgroundColor="Transparent" Margin="20"/>
+        <ImageButton CornerRadius="5" Padding="1" Scale="1.1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="music.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+        <ImageButton CornerRadius="5" Padding="1" Scale="1.1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+        <ImageButton CornerRadius="5" Padding="1" Scale="1.1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+        <ImageButton CornerRadius="5" Padding="1" Scale="1.1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="disney.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+        <ImageButton CornerRadius="5" Padding="1" Scale="1.1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="RapButton_Clicked" x:Name="RapButton" Source="rap.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+        <ImageButton CornerRadius="5" Padding="1" Scale="1.1" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="3" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="yourMusic.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
 
     </Grid>

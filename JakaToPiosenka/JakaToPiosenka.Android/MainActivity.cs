@@ -29,15 +29,9 @@ namespace JakaToPiosenka.Droid
                     RequestedOrientation = ScreenOrientation.Portrait;
                 }
             });
-
-            RequestWindowFeature(WindowFeatures.NoTitle);
-            Window.AddFlags(WindowManagerFlags.Fullscreen);
-            Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
-
+            SupportActionBar.Hide();
             base.OnCreate(savedInstanceState);
 
-            // Enable the "Up" button in the ActionBar
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
