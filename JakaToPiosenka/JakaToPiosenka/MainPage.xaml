@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:JakaToPiosenka"
              BackgroundColor="DeepSkyBlue"
              x:Class="JakaToPiosenka.MainPage"
-             
+             Shell.NavBarIsVisible="False"  
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False">
 
@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition  Width="*"/>

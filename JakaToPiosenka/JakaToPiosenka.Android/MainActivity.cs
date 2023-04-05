@@ -30,10 +30,9 @@ namespace JakaToPiosenka.Droid
                 }
             });
             RequestWindowFeature(WindowFeatures.NoTitle);
+
             Window.AddFlags(WindowManagerFlags.Fullscreen);
-            //Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
-
-
+            Window.AddFlags(WindowManagerFlags.KeepScreenOn);
 
             base.OnCreate(savedInstanceState);
 

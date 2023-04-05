@@ -89,9 +89,21 @@ namespace JakaToPiosenka
            
         }
 
-        private void SwipeItem_Invoked(object sender, EventArgs e)
+        private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-            
+            //var item = sender as SwipeItem;
+            //var emp = item.CommandParameter as SongsAndAuthors;
+            //bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć bieg, który odbył się w {emp.Date}?", "tak", "nie");
+            //if (result)
+            //{
+
+
+            //    await App.MyDatabase.DeleteHistory(emp);
+            //    listViewHistory.ItemsSource = await App.MyDatabase.ReadHistory();
+
+
+            //}
+            await Navigation.PushAsync(new AddingNewSongs());
         }
     }
 }

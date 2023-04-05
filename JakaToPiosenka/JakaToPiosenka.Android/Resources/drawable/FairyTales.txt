@@ -1,0 +1,114 @@
+Kurczak Mały;Ten mały Błąd
+Smerfy;Intro
+Reksio;Intro
+Scooby Doo;Intro
+Nowe Przygody Kubusia Puchatka;Intro
+Gumisie;Intro
+Kacze Opowieści;Intro
+Chip i Dale;Intro
+Coco;La Llorona
+Coco;Corazón
+Coco;Pamiętaj Mnie
+Coco;Un Poco Loco
+Madagaskar;Wyginam śmiało ciało
+Pingwiny z Madagaskaru;Ja i mój JJ
+Toy Story;Ty Druha we mnie masz
+Planeta Skarbów;Jestem Kimś
+Dzwonnik z Notre Dame;Chcę być Tam
+Dzwonnik z Notre Dame;Jaskinia Cudów
+Dzwonnik z Notre Dame;Niezwykły Gość
+Dzwonnik z Notre Dame;Na Odwyrtkę
+Dzwonnik z Notre Dame;Z Dna Piekieł
+Dzwonnik z Notre Dame;Modlitwa Esmeraldy
+Dzwonnik z Notre Dame;Dźwięk Dzwonów Notre Dame
+Herkules;Aleja Gwiazd
+Herkules;Zaprawdę Wierzcie Mi
+Herkules;Droga Mi Nie Straszna
+Herkules;Straciłem Nadzieję
+Herkules;Zero To Hero
+Król Lew;Upendi
+Król Lew;Miłość Drogę Zna
+Król Lew;Jeden Głos
+Król Lew;Duch Żyje w Nas
+Król Lew;Hakuna Matata
+Król Lew;Miłość Rośnie wokół Nas
+Król Lew;Strasznie już być Tym Królem chcę
+Król Lew;Krąg życia
+Mulan;Taka jak inne pragnę być
+Mulan;O tym lekcja ta
+Mulan;Za którą walczyć chcesz
+Mulan;Zrobię Mężczyzn z Was
+Mulan;Lustro
+Mulan;Zaszczyt Nam przyniesie To
+Tarzan;W Mym Sercu Twój Dom
+Tarzan;Obcy tacy jak Ja
+Tarzan;Człowieka Syn
+Tarzan;Światy Dwa
+Piękna i Bestia;Gaston
+Piękna i Bestia;Gościem Bądź
+Mała Syrenka;Chciałabym być tam, gdzie ludzie są
+Mała Syrenka;Całuj Ją
+Mała Syrenka;Na Morza Dnie
+Mała Syrenka;Przez te chwilę czuję, że
+Mała Syrenka;Morze i stały Ląd
+Mała Syrenka;Tańcz Seniora
+Aladdyn;O Krok
+Aladdyn;Nie ma takich dwóch
+Aladdyn;Książe Ali
+Aladdyn;Wspaniały Świat
+Zaplątani;Cierpliwie Czekam
+Zaplątani;Marzenie Mam
+Zaplątani;Po raz pierwszy widzę Blask
+Zaplątani;Nowe Dni
+Księżniczka Łabędzi;Na dłużej niż na zawsze
+Mój Brat Niedźwiedź;Transformacja
+Mój Brat Niedźwiedź;Bratu Równy Brat
+Mój Brat Niedźwiedź;Już wyruszać Czas
+Mój Brat Niedźwiedź;I Ty możesz zostać z Nami
+Mój Brat Niedźwiedź;Już Nikt już Nic
+Mój Brat Niedźwiedź;To własnie Dom
+Księżniczka i Żaba;Na południu w Luizianie
+Księżniczka i Żaba;Przyjaciele z Zaświatów
+Księżniczka i Żaba;Prawie udało się
+Księżniczka i Żaba;Poszukaj Głębiej
+Księżniczka i Żaba;W Drodze Przez Bajoro
+Rogate Ranczo;Skrawek Nieba Mam
+Rogate Ranczo;Yodle-Adle-Eedle-Idle-Oo
+Książe Egiptu;To co ukochałem
+Książe Egiptu;Uwolnij Nas
+Książe Egiptu;Przez Nieba Wzrok
+Książe Egiptu;Nie z Patałachami grasz
+Książe Egiptu;Plagi
+Książe Egiptu;Cuda dzieją się
+Kraina Lodu;Ulepimy Dziś Bałwana
+Kraina Lodu;Miłość stanęła w drzwiach
+Kraina Lodu;Pierwszy raz jak sięga Pamięć
+Kraina Lodu;Lód w Lecie
+Kraina Lodu;Mam Tę Moc
+Kraina Lodu;Nie Ten Tego
+Kraina Lodu 2;Pokaż się
+Kraina Lodu 2;Chcę uwierzyć Snom
+Kraina Lodu 2;Którą wybrać Mam z Dróg
+Merida Waleczna;Chwytam Wiatr
+Barbie Księżniczka i Żebraczka;Chcę naprawdę wolną być
+Barbie Księżniczka i Żebraczka;Ja tak jak Ty
+Barbie Księżniczka i Żebraczka;Jesteś koto-psem
+Lilo i Stitch;He Mele No Lilo
+Lilo i Stitch;Hawaiian Roller Coaster
+Lilo i Stitch;Burning Love
+Zaczarowana;Długo i Szczęśliwie
+Zaczarowana;O Krok
+Zaczarowana;Skąd wiedzieć ma
+Zaczarowana;Pracować będzie lżej
+Zaczarowana;O miłosnym Pocałunku śnię
+Mustang z Dzikiej Doliny;Będę wracał
+Mustang z Dzikiej Doliny;Złaź ze Mnie no już
+Mustang z Dzikiej Doliny;Chcę Wolnym Być
+Mustang z Dzikiej Doliny;Oto Ja
+Vaiana;Pół Kroku Stąd
+Vaiana;Na Drodze Tej
+Vaiana;Drobnostka
+Vaiana;Błyszczeć
+Pocahontas;Kolorowy Wiatr
+Pocahontas;Ten za Łukiem Rzeki Świat
+Pocahontas;Dzicy Są!
