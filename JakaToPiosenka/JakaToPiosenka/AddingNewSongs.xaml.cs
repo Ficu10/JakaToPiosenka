@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,34 +14,42 @@ namespace JakaToPiosenka
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddingNewSongs : ContentPage
 	{
-		public AddingNewSongs ()
+        public AddingNewSongs ()
 		{
 			InitializeComponent ();
-            switch (MainPage.gameMode)
-            {
-                case "allSongs":
-                    SongsCollection.ItemsSource = Game.songsTabRestart;
-                    break;
-                case "Disney":
-                    SongsCollection.ItemsSource = Game.songsTabFairyTalesRestart;
-                    break;
-                case "Pop":
-                    SongsCollection.ItemsSource = Game.songsTabPopRestart;
-                    break;
-                case "Rock":
-                    SongsCollection.ItemsSource = Game.songsTabRockRestart;
-                    break;
-                case "UsersMusic":
-                    SongsCollection.ItemsSource = Game.songsTabUsersMusicRestart;
-                    break;
-                case "Rap":
-                    SongsCollection.ItemsSource = Game.songsTabRapRestart;
-                    break;
+            //switch (MainPage.gameMode)
+            //{
+            //    case "allSongs":
+            //        SongsCollection.ItemsSource = Game.songsTabRestart;
+            //        break;
+            //    case "Disney":
+            //        SongsCollection.ItemsSource = Game.songsTabFairyTalesRestart;
+            //        break;
+            //    case "Pop":
+            //        SongsCollection.ItemsSource = Game.songsTabPopRestart;
+            //        break;
+            //    case "Rock":
+            //        SongsCollection.ItemsSource = Game.songsTabRockRestart;
+            //        break;
+            //    case "UsersMusic":
+            //        SongsCollection.ItemsSource = Game.songsTabUsersMusicRestart;
+            //        break;
+            //    case "Rap":
+            //        SongsCollection.ItemsSource = Game.songsTabRapRestart;
+            //        break;
 
+            //}
+        }
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                SongsCollection.ItemsSource = await App.MyDatabase.ReadSongsAndAuthors();
             }
+            catch { }
         }
 
-       
 
         private async void BackButtonn_Clicked(object sender, EventArgs e)
         {
@@ -104,6 +114,32 @@ namespace JakaToPiosenka
 
             //}
             await Navigation.PushAsync(new AddingNewSongs());
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var searchTerm = e.NewTextValue;
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                searchTerm = string.Empty;
+            }
+
+            searchTerm = searchTerm.ToLowerInvariant();
+
+            var filteredItems = Game.authorsTab.Where(value => value.ToLowerInvariant().Contains(searchTerm)).ToList();
+
+            foreach (var value in Game.authorsTab)
+            {
+                if (!filteredItems.Contains(value))
+                {
+                    Game.authorsTab.Remove(value);
+                }
+                else if (!Game.authorsTab.Contains(value))
+                {
+                    Game.authorsTab.Add(value);
+                }
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms.Shapes;
 using SQLite;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace JakaToPiosenka
 {
@@ -31,18 +32,16 @@ namespace JakaToPiosenka
         private void LoadFieTxt()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-            GetSourceFromTxt(Game.authorsTabRestart, Game.songsTabRestart, assembly.GetManifestResourceStream("JakaToPiosenka.allSongs.txt"));
-            GetSourceFromTxt(Game.authorsTabRockRestart, Game.songsTabRockRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Rock.txt"));
-            GetSourceFromTxt(Game.authorsTabPopRestart, Game.songsTabPopRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Pop.txt"));
-            GetSourceFromTxt(Game.authorsTabFairyTalesRestart, Game.songsTabFairyTalesRestart, assembly.GetManifestResourceStream("JakaToPiosenka.FairyTales.txt"));
-            GetSourceFromTxt(Game.authorsTabRapRestart, Game.songsTabRapRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Rap.txt"));
+            GetSourceFromTxt(Game.authorsTabRestart, Game.songsTabRestart, assembly.GetManifestResourceStream("JakaToPiosenka.allSongs.txt"), "allSongs");
+            GetSourceFromTxt(Game.authorsTabRockRestart, Game.songsTabRockRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Rock.txt"), "Rock");
+            GetSourceFromTxt(Game.authorsTabPopRestart, Game.songsTabPopRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Pop.txt"), "Pop");
+            GetSourceFromTxt(Game.authorsTabFairyTalesRestart, Game.songsTabFairyTalesRestart, assembly.GetManifestResourceStream("JakaToPiosenka.FairyTales.txt"), "FairyTales");
+            GetSourceFromTxt(Game.authorsTabRapRestart, Game.songsTabRapRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Rap.txt"), "Rap");
         }
-        private void GetSourceFromTxt(List<string> authors, List<string> songs, System.IO.Stream filePath)
+        private async void GetSourceFromTxt(List<string> authors, List<string> songs, System.IO.Stream filePath, string category)
         {
             if (authors.Count == 0 && songs.Count == 0)
             {
-                var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-                //var filePath = assembly.GetManifestResourceStream("JakaToPiosenka.allSongs.txt");
                 using (var streamReader = new StreamReader(filePath))
                 {
                     int i = 0;
@@ -57,6 +56,13 @@ namespace JakaToPiosenka
                         };
                         authors.Add(employee.Author);
                         songs.Add(employee.Title);
+                        await App.MyDatabase.CreateHistory(new SongsAndAuthors
+                        {
+                            Title = employee.Title,
+                            Author = employee.Author,
+                            Category  = category
+
+                        });
                     }
 
 
