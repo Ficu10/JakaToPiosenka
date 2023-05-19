@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -119,32 +120,37 @@ namespace JakaToPiosenka
             }
 
         }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
         void GameType()
         {
-            
+           
             if (MainPage.gameMode == "allSongs")
             {
-                StartGame(authorsTab, songsTab, authorsTabRestart, songsTabRestart);
+                StartGame(AllSongs.allSongsList.Select(x => x.Author).ToList(), AllSongs.allSongsList.Select(x => x.Title).ToList(), AllSongs.allSongsListRestart.Select(x => x.Author).ToList(), AllSongs.allSongsListRestart.Select(x => x.Title).ToList(), AllSongs.dbAllSongs, AllSongs.dbAllSongsRestart);
             }
             else if (MainPage.gameMode == "Disney")
             {
-                StartGame(authorsTabFairyTales, songsTabFairyTales, authorsTabFairyTalesRestart, songsTabFairyTalesRestart);
+                StartGame(FairyTales.fairyTalesSongsList.Select(x => x.Author).ToList(), FairyTales.fairyTalesSongsList.Select(x => x.Title).ToList(), FairyTales.fairyTalesSongsListRestart.Select(x => x.Author).ToList(), FairyTales.fairyTalesSongsListRestart.Select(x => x.Title).ToList(), FairyTales.dbFairyTales, FairyTales.dbFairyTalesRestart);
             }
             else if (MainPage.gameMode == "Pop")
             {
-                StartGame(authorsTabPop, songsTabPop, authorsTabPopRestart, songsTabPopRestart);
+                StartGame(Pop.popSongsList.Select(x => x.Author).ToList(), Pop.popSongsList.Select(x => x.Title).ToList(), Pop.popSongsListRestart.Select(x => x.Author).ToList(), Pop.popSongsListRestart.Select(x => x.Title).ToList(), Pop.dbPop, Pop.dbPopRestart);
             }
             else if (MainPage.gameMode == "Rock")
             {
-                StartGame(authorsTabRock, songsTabRock, authorsTabRockRestart, songsTabRockRestart);
+                StartGame(Rock.rockSongsList.Select(x => x.Author).ToList(), Rock.rockSongsList.Select(x => x.Title).ToList(), Rock.rockSongsListRestart.Select(x => x.Author).ToList(), Rock.rockSongsListRestart.Select(x => x.Title).ToList(), Rock.dbRock, Rock.dbRockRestart);
+
             }
             else if (MainPage.gameMode == "UsersMusic")
             {
-                StartGame(authorsTabUsersMusic, songsTabUsersMusic, authorsTabUsersMusicRestart, songsTabUsersMusicRestart);
+                StartGame(UsersMusic.usersMusicSongsList.Select(x => x.Author).ToList(), UsersMusic.usersMusicSongsList.Select(x => x.Title).ToList(), UsersMusic.usersMusicSongsListRestart.Select(x => x.Author).ToList(), UsersMusic.usersMusicSongsListRestart.Select(x => x.Title).ToList(), UsersMusic.dbUsersMusic, UsersMusic.dbUsersMusicRestart);
             }
             else if (MainPage.gameMode == "Rap")
             {
-                StartGame(authorsTabRap, songsTabRap, authorsTabRapRestart, songsTabRapRestart);
+                StartGame(Rap.rapSongsList.Select(x => x.Author).ToList(), Rap.rapSongsList.Select(x => x.Title).ToList(), Rap.rapSongsListRestart.Select(x => x.Author).ToList(), Rap.rapSongsListRestart.Select(x => x.Title).ToList(), Rap.dbRap, Rap.dbRapRestart);
             }
         }
         public void ShowGame()
@@ -155,7 +161,7 @@ namespace JakaToPiosenka
             Task modifyTaskOne = Task.Run(() => GameType());
         }
 
-        private async void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
+        public async void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset, SQLiteConnection db, SQLiteConnection dbRestart)
         {
             songsFromGame.Clear();
             int gameCounter = 10;
@@ -167,9 +173,12 @@ namespace JakaToPiosenka
                 {
                     for (int i = 0; i < authorsListReset.Count; i++)
                     {
+                        db = dbRestart;
                         authorsList.Add(authorsListReset[i]);
                         songsList.Add(songsListReset[i]);
                     }
+                        
+                    
                 }
                 newGame = true;
                 songId = r.Next(authorsList.Count - 1);
@@ -202,6 +211,7 @@ namespace JakaToPiosenka
                             gameCounter--;
                             authorsList.RemoveAt(songId);
                             songsList.RemoveAt(songId);
+                            db.Delete(songId);
                             if (goodAnswer == true)
                             {
                                 endOfQuestion = false;
@@ -247,8 +257,8 @@ namespace JakaToPiosenka
 
         private void GoodAnswearButton_Clicked(object sender, EventArgs e)
         {
-            BackgroundImageSource = "green.jpg";
-            SongTitle.Text = "Dobrze";
+            BackgroundImageSource = "red.jpg";
+            SongTitle.Text = "Brak odpowiedzi";
             Time.IsVisible = false;
             SongAuthor.IsVisible = false;
             WrongAnswearButton.IsEnabled = false;

@@ -76,9 +76,15 @@ namespace JakaToPiosenka
             await Navigation.PushAsync(new AddingNewSongs());
         }
 
-        private async void BackButtonn_Clicked(object sender, EventArgs e)
+     
+        protected override bool OnBackButtonPressed()
         {
-            await Navigation.PushAsync(new MainPage());
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Navigation.PushAsync(new MainPage());
+            });
+
+            return true;
         }
     }
 }

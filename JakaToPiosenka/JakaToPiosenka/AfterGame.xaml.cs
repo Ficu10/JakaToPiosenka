@@ -32,5 +32,11 @@ namespace JakaToPiosenka
         {
             await Navigation.PushAsync(new MainPage());
         }
+        protected override bool OnBackButtonPressed()
+        {
+          
+
+            return true;
+        }
     }
 }

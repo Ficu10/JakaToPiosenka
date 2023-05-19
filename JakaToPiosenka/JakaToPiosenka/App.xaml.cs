@@ -10,18 +10,18 @@ namespace JakaToPiosenka
     {
         public static SQLiteHelper db;
 
-        public static SQLiteHelper MyDatabase
-        {
+        //public static SQLiteHelper MyDatabase
+        //{
 
-            get
-            {
-                if (db == null)
-                {
-                    db = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyStore.db3"));
-                }
-                return db;
-            }
-        }
+        //    get
+        //    {
+        //        if (db == null)
+        //        {
+        //            db = new SQLiteHelper(+);
+        //        }
+        //        return db;
+        //    }
+        //}
 
         public App()
         {

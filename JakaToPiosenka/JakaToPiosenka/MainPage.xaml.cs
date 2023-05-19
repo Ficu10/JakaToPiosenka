@@ -18,58 +18,27 @@ namespace JakaToPiosenka
     {
         public static bool orientationPortrait = true;
         public static string gameMode = "allSongs";
-     
-
         public MainPage()
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
 
             InitializeComponent();
-            LoadFieTxt();
-
-        }
-
-        private void LoadFieTxt()
-        {
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-            GetSourceFromTxt(Game.authorsTabRestart, Game.songsTabRestart, assembly.GetManifestResourceStream("JakaToPiosenka.allSongs.txt"), "allSongs");
-            GetSourceFromTxt(Game.authorsTabRockRestart, Game.songsTabRockRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Rock.txt"), "Rock");
-            GetSourceFromTxt(Game.authorsTabPopRestart, Game.songsTabPopRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Pop.txt"), "Pop");
-            GetSourceFromTxt(Game.authorsTabFairyTalesRestart, Game.songsTabFairyTalesRestart, assembly.GetManifestResourceStream("JakaToPiosenka.FairyTales.txt"), "FairyTales");
-            GetSourceFromTxt(Game.authorsTabRapRestart, Game.songsTabRapRestart, assembly.GetManifestResourceStream("JakaToPiosenka.Rap.txt"), "Rap");
-        }
-        private async void GetSourceFromTxt(List<string> authors, List<string> songs, System.IO.Stream filePath, string category)
-        {
-            if (authors.Count == 0 && songs.Count == 0)
+            var musicTypesSongs = new List<MusicTypes>()
             {
-                using (var streamReader = new StreamReader(filePath))
-                {
-                    int i = 0;
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-                        var fields = line.Split(';');
-                        var employee = new SongsAndAuthors
-                        {
-                            Title = fields[1],
-                            Author = fields[0]
-                        };
-                        authors.Add(employee.Author);
-                        songs.Add(employee.Title);
-                        await App.MyDatabase.CreateHistory(new SongsAndAuthors
-                        {
-                            Title = employee.Title,
-                            Author = employee.Author,
-                            Category  = category
-
-                        });
-                    }
-
-
-                }
+                new Pop(),
+                new Rock(),
+                new FairyTales(),
+                new AllSongs(),
+                new Rap(),
+                new UsersMusic()
+            };
+            foreach (var item in musicTypesSongs)
+            {
+                item.Load();
             }
-           
+
         }
+
       
         async void AllSongsButton_Clicked(object sender, EventArgs e)
         {
@@ -106,11 +75,10 @@ namespace JakaToPiosenka
             gameMode = "Rap";
             await Navigation.PushAsync(new BeforeGamePage());
         }
-
-
-        private void Settings_Clicked(object sender, EventArgs e)
+        protected override bool OnBackButtonPressed()
         {
-
+          
+            return true;
         }
     }
 }

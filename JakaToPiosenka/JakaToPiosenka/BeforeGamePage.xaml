@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JakaToPiosenka.BeforeGamePage"
-             BackgroundColor="DeepSkyBlue"
+             BackgroundColor="#77b3d1"
              NavigationPage.HasNavigationBar="false" >
     <ContentPage.Content >
         <Grid>
@@ -27,14 +27,12 @@
 
             </StackLayout>
 
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "15 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="Blue"  Grid.Column="0" Grid.Row="2"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "30 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="Blue"   Grid.Column="1" Grid.Row="2"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "45 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="Blue"    Grid.Column="0" Grid.Row="3"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "60 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="Blue"   Grid.Column="1" Grid.Row="3"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "15 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"  Grid.Column="0" Grid.Row="2"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "30 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"   Grid.Column="1" Grid.Row="2"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "45 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"    Grid.Column="0" Grid.Row="3"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "60 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"   Grid.Column="1" Grid.Row="3"/>
 
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj piosenki" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="RoyalBlue"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
-            <ImageButton x:Name="BackButtonn" Clicked="BackButtonn_Clicked" Source="arrow.png" BackgroundColor="Transparent" Margin="-100,-60,20,20" Scale="0.45"/>
-
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj piosenki" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="#0478b3"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
         </Grid>
 
     </ContentPage.Content>

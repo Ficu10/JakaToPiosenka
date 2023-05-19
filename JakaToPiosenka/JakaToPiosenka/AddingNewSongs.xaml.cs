@@ -17,43 +17,41 @@ namespace JakaToPiosenka
         public AddingNewSongs ()
 		{
 			InitializeComponent ();
-            //switch (MainPage.gameMode)
-            //{
-            //    case "allSongs":
-            //        SongsCollection.ItemsSource = Game.songsTabRestart;
-            //        break;
-            //    case "Disney":
-            //        SongsCollection.ItemsSource = Game.songsTabFairyTalesRestart;
-            //        break;
-            //    case "Pop":
-            //        SongsCollection.ItemsSource = Game.songsTabPopRestart;
-            //        break;
-            //    case "Rock":
-            //        SongsCollection.ItemsSource = Game.songsTabRockRestart;
-            //        break;
-            //    case "UsersMusic":
-            //        SongsCollection.ItemsSource = Game.songsTabUsersMusicRestart;
-            //        break;
-            //    case "Rap":
-            //        SongsCollection.ItemsSource = Game.songsTabRapRestart;
-            //        break;
-
-            //}
-        }
-        protected override async void OnAppearing()
-        {
-            try
+            SongsCollection.ItemsSource = AllSongs.allSongsList;
+            switch (MainPage.gameMode)
             {
-                base.OnAppearing();
-                SongsCollection.ItemsSource = await App.MyDatabase.ReadSongsAndAuthors();
+                case "allSongs":
+                    SongsCollection.ItemsSource = AllSongs.allSongsList;
+                    break;
+                case "Disney":
+                    SongsCollection.ItemsSource = FairyTales.fairyTalesSongsList;
+                    break;
+                case "Pop":
+                    SongsCollection.ItemsSource = Pop.popSongsList;
+                    break;
+                case "Rock":
+                    SongsCollection.ItemsSource = Rock.rockSongsList;
+                    break;
+                case "UsersMusic":
+                    SongsCollection.ItemsSource = AllSongs.allSongsList;
+                    break;
+                case "Rap":
+                    SongsCollection.ItemsSource = Rap.rapSongsList;
+                    break;
+
             }
-            catch { }
         }
+      
 
-
-        private async void BackButtonn_Clicked(object sender, EventArgs e)
+       
+        protected override bool OnBackButtonPressed()
         {
-            await Navigation.PushAsync(new BeforeGamePage());
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Navigation.PushAsync(new BeforeGamePage());
+            });
+
+            return true;
         }
 
         private async void addSongToList_Clicked(object sender, EventArgs e)
@@ -63,28 +61,52 @@ namespace JakaToPiosenka
                 switch (MainPage.gameMode)
                 {
                     case "allSongs":
-                        Game.songsTabRestart.Add(NewSongName.Text);
-                        Game.authorsTabRestart.Add(NewAuthorName.Text);
+                        var songsDataallSongs = new AllSongs
+                        {
+                            Title = NewSongName.Text,
+                            Author = NewAuthorName.Text
+                        };
+                        AllSongs.dbAllSongsRestart.Insert(songsDataallSongs);
                         break;
                     case "Disney":
-                        Game.songsTabFairyTalesRestart.Add(NewSongName.Text);
-                        Game.authorsTabFairyTalesRestart.Add(NewAuthorName.Text);
+                        var songsDataDisney = new FairyTales
+                        {
+                            Title = NewSongName.Text,
+                            Author = NewAuthorName.Text
+                        };
+                        FairyTales.dbFairyTalesRestart.Insert(songsDataDisney);
                         break;
                     case "Pop":
-                        Game.songsTabPopRestart.Add(NewSongName.Text);
-                        Game.authorsTabPopRestart.Add(NewAuthorName.Text);
+                        var songsDataPop = new Pop
+                        {
+                            Title = NewSongName.Text,
+                            Author = NewAuthorName.Text
+                        };
+                        Pop.dbPopRestart.Insert(songsDataPop);
                         break;
                     case "Rock":
-                        Game.songsTabRockRestart.Add(NewSongName.Text);
-                        Game.authorsTabRockRestart.Add(NewAuthorName.Text);
+                        var songsDataRock = new Rock
+                        {
+                            Title = NewSongName.Text,
+                            Author = NewAuthorName.Text
+                        };
+                        Rock.dbRockRestart.Insert(songsDataRock);
                         break;
                     case "UsersMusic":
-                        Game.songsTabUsersMusicRestart.Add(NewSongName.Text);
-                        Game.authorsTabUsersMusicRestart.Add(NewAuthorName.Text);
+                        var songsDataUsersMusic = new UsersMusic
+                        {
+                            Title = NewSongName.Text,
+                            Author = NewAuthorName.Text
+                        };
+                        UsersMusic.dbUsersMusicRestart.Insert(songsDataUsersMusic);
                         break;
                     case "Rap":
-                        Game.songsTabRapRestart.Add(NewSongName.Text);
-                        Game.authorsTabRapRestart.Add(NewAuthorName.Text);
+                        var songsDataRap = new Rap
+                        {
+                            Title = NewSongName.Text,
+                            Author = NewAuthorName.Text
+                        };
+                        Rap.dbRapRestart.Insert(songsDataRap);
                         break;
 
                 }
@@ -125,7 +147,7 @@ namespace JakaToPiosenka
                 searchTerm = string.Empty;
             }
 
-            searchTerm = searchTerm.ToLowerInvariant();
+            searchTerm = searchTerm.ToLowerInvariant(); ///
 
             var filteredItems = Game.authorsTab.Where(value => value.ToLowerInvariant().Contains(searchTerm)).ToList();
 
