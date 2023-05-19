@@ -9,41 +9,28 @@ namespace JakaToPiosenka
 {
     internal class Rap : MusicTypes
     {
-        public static List<Rap> rapSongsList;
-        public static List<Rap> rapSongsListRestart;
-
-        public static SQLiteConnection dbRap;
-        public static SQLiteConnection dbRapRestart;
-
         public override void Load()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-            dbRap = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RapDatabase.db3"));
-            dbRapRestart = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RapDatabaseRestart.db3"));
-            if (dbRapRestart != null)
+
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.Rap.txt")))
             {
-                using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.Rap.txt")))
+
+                string line;
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    dbRapRestart.CreateTable<Rap>();
-                    dbRap.CreateTable<Rap>();
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
+                    var fields = line.Split(';');
+                    var songsData = new Rap
                     {
-                        var fields = line.Split(';');
-                        var songsData = new Rap
-                        {
-                            Title = fields[1],
-                            Author = fields[0]
-                        };
-                        dbRapRestart.Insert(songsData);
-                        dbRap.Insert(songsData);
-                    }
-                    rapSongsList = dbRap.Table<Rap>().ToList();
-                    rapSongsListRestart = rapSongsList;
-
-
+                        Title = fields[1],
+                        Author = fields[0]
+                    };
+                    MainPage.connection.Insert(songsData);
+                    MainPage.connectionRestart.Insert(songsData);
                 }
+
             }
+
         }
     }
 }

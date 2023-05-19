@@ -18,10 +18,12 @@ namespace JakaToPiosenka
     {
         public static bool orientationPortrait = true;
         public static string gameMode = "allSongs";
+        public static SQLiteConnection connection = new SQLiteConnection(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Music.db3"));
+        public static SQLiteConnection connectionRestart = new SQLiteConnection(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MusicRestart.db3"));
+
         public MainPage()
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
-
             InitializeComponent();
             var musicTypesSongs = new List<MusicTypes>()
             {
@@ -32,10 +34,26 @@ namespace JakaToPiosenka
                 new Rap(),
                 new UsersMusic()
             };
-            foreach (var item in musicTypesSongs)
+            connection.CreateTable<Pop>();
+            connection.CreateTable<Rock>();
+            connection.CreateTable<Rap>();
+            connection.CreateTable<UsersMusic>();
+            connection.CreateTable<FairyTales>();
+            connection.CreateTable<AllSongs>();
+            connectionRestart.CreateTable<Pop>();
+            connectionRestart.CreateTable<Rock>();
+            connectionRestart.CreateTable<Rap>();
+            connectionRestart.CreateTable<UsersMusic>();
+            connectionRestart.CreateTable<FairyTales>();
+            connectionRestart.CreateTable<AllSongs>();
+            if (connection.Table<Pop>().ToList<Pop>().Count() == 0)
             {
-                item.Load();
+                foreach (var item in musicTypesSongs)
+                {
+                    item.Load();
+                }
             }
+           
 
         }
 

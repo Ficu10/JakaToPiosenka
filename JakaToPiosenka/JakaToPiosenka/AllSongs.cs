@@ -9,41 +9,28 @@ namespace JakaToPiosenka
 {
     internal class AllSongs : MusicTypes
     {
-        public static List<AllSongs> allSongsList;
-        public static List<AllSongs> allSongsListRestart;
-
-        public static SQLiteConnection dbAllSongs;
-        public static SQLiteConnection dbAllSongsRestart;
-
         public override void Load()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-            dbAllSongs = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AllSongsDatabase.db3"));
-            dbAllSongsRestart = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AllSongsDatabaseRestart.db3"));
-            if (dbAllSongsRestart != null)
+
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.AllSongs.txt")))
             {
-                using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.allSongs.txt")))
+
+                string line;
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    dbAllSongsRestart.CreateTable<AllSongs>();
-                    dbAllSongs.CreateTable<AllSongs>();
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
+                    var fields = line.Split(';');
+                    var songsData = new AllSongs
                     {
-                        var fields = line.Split(';');
-                        var songsData = new AllSongs
-                        {
-                            Title = fields[1],
-                            Author = fields[0]
-                        };
-                        dbAllSongsRestart.Insert(songsData);
-                        dbAllSongs.Insert(songsData);
-                    }
-                    allSongsList = dbAllSongs.Table<AllSongs>().ToList();
-                    allSongsListRestart = allSongsList;
-
-
+                        Title = fields[1],
+                        Author = fields[0]
+                    };
+                    MainPage.connection.Insert(songsData);
+                    MainPage.connectionRestart.Insert(songsData);
                 }
+
             }
+
         }
 
 

@@ -16,10 +16,12 @@ namespace JakaToPiosenka
         public AfterGame()
         {
             InitializeComponent();
-            Resut.Text = "Twoj wynik to " + Game.pointsCounter.ToString() + "/10";
+            Resut.Text = "Twój wynik to " + Game.pointsCounter.ToString() + "/10";
             myListView.ItemsSource = Game.songsFromGame;
             Game.pointsCounter = 0;
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
+         
+
         }
 
         private async void RestartGame_Clicked(object sender, EventArgs e)

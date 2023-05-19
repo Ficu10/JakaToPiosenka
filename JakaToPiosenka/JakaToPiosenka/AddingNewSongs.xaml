@@ -29,7 +29,7 @@
                 <Label Text="Tytul:" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
                 <Entry x:Name="NewSongName" BackgroundColor="White" Text=""/>
             </StackLayout>
-            <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Margin="40,30,40,60" CornerRadius="30" Grid.ColumnSpan="5" Grid.Row="2" Text="Dodaj" TextColor="White" FontAttributes="Bold" BackgroundColor="SeaGreen" BorderColor="White" BorderWidth="3"/>
+            <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Margin="40,30,40,60" CornerRadius="30" Grid.ColumnSpan="5" Grid.Row="2" Text="Dodaj" TextColor="White" FontAttributes="Bold" BackgroundColor="#0d5b82" BorderColor="White" BorderWidth="3"/>
 
 
 
@@ -44,7 +44,7 @@
                             <SwipeView.RightItems>
                                 <SwipeItem Text="Usun" BackgroundColor="Red" Invoked="SwipeItem_Invoked" />
                             </SwipeView.RightItems>
-                            <StackLayout BackgroundColor="SeaGreen">
+                            <StackLayout BackgroundColor="#0d5b82">
                                 <Grid HeightRequest="100">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>

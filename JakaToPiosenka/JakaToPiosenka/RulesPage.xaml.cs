@@ -49,11 +49,9 @@ namespace JakaToPiosenka
         {
             Accelerometer.ReadingChanged -= Accelerometer_ReadingChanged;
         }
-
-        private async void Button_Clicked(object sender, EventArgs e)
+        protected override bool OnBackButtonPressed()
         {
-            await Navigation.PushAsync(new Game());
-
+            return true;
         }
     }
 

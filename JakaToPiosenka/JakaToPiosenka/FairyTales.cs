@@ -9,40 +9,28 @@ namespace JakaToPiosenka
 {
     internal class FairyTales : MusicTypes
     {
-        public static List<FairyTales> fairyTalesSongsList;
-        public static List<FairyTales> fairyTalesSongsListRestart;
-
-        public static SQLiteConnection dbFairyTales;
-        public static SQLiteConnection dbFairyTalesRestart;
         public override void Load()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-            dbFairyTales = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FairyTalesDatabase.db3"));
-            dbFairyTalesRestart = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FairyTalesDatabaseRestart.db3"));
-            if (dbFairyTalesRestart != null)
+
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.FairyTales.txt")))
             {
-                using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.FairyTales.txt")))
+
+                string line;
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    dbFairyTalesRestart.CreateTable<FairyTales>();
-                    dbFairyTales.CreateTable<FairyTales>();
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
+                    var fields = line.Split(';');
+                    var songsData = new FairyTales
                     {
-                        var fields = line.Split(';');
-                        var songsData = new FairyTales
-                        {
-                            Title = fields[1],
-                            Author = fields[0]
-                        };
-                        dbFairyTalesRestart.Insert(songsData);
-                        dbFairyTales.Insert(songsData);
-                    }
-                    fairyTalesSongsList = dbFairyTales.Table<FairyTales>().ToList();
-                    fairyTalesSongsListRestart = fairyTalesSongsList;
-
-
+                        Title = fields[1],
+                        Author = fields[0]
+                    };
+                    MainPage.connection.Insert(songsData);
+                    MainPage.connectionRestart.Insert(songsData);
                 }
+
             }
+
         }
     }
 }
