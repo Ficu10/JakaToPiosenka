@@ -17,26 +17,26 @@ namespace JakaToPiosenka
         public AddingNewSongs ()
 		{
 			InitializeComponent ();
-            SongsCollection.ItemsSource = MainPage.connection.Table<FairyTales>().ToList<FairyTales>();
+            SongsCollection.ItemsSource = MusicTypes.connection.Table<Pop>().ToList<Pop>();
             switch (MainPage.gameMode)
             {
                 case "allSongs":
-                    SongsCollection.ItemsSource = MainPage.connection.Table<AllSongs>().ToList<AllSongs>();
+                    SongsCollection.ItemsSource = MusicTypes.connection.Table<AllSongs>().ToList<AllSongs>();
                     break;
                 case "Disney":
-                    SongsCollection.ItemsSource = MainPage.connection.Table<FairyTales>().ToList<FairyTales>();
+                    SongsCollection.ItemsSource = MusicTypes.connection.Table<FairyTales>().ToList<FairyTales>();
                     break;
                 case "Pop":
-                    SongsCollection.ItemsSource = MainPage.connection.Table<Pop>().ToList<Pop>();
+                    SongsCollection.ItemsSource = MusicTypes.connection.Table<Pop>().ToList<Pop>();
                     break;
                 case "Rock":
-                    SongsCollection.ItemsSource = MainPage.connection.Table<Rock>().ToList<Rock>();
+                    SongsCollection.ItemsSource = MusicTypes.connection.Table<Rock>().ToList<Rock>();
                     break;
                 case "UsersMusic":
-                    SongsCollection.ItemsSource = MainPage.connection.Table<UsersMusic>().ToList<UsersMusic>();
-                    break;
+                    SongsCollection.ItemsSource = MusicTypes.connection.Table<UsersMusic>().ToList<UsersMusic>();
+                    break;  
                 case "Rap":
-                    SongsCollection.ItemsSource = MainPage.connection.Table<Rap>().ToList<Rap>();
+                    SongsCollection.ItemsSource = MusicTypes.connection.Table<Rap>().ToList<Rap>();
                     break;
 
             }
@@ -66,8 +66,8 @@ namespace JakaToPiosenka
                             Title = NewSongName.Text,
                             Author = NewAuthorName.Text
                         };
-                        MainPage.connection.Insert(songsDataallSongs);
-                        MainPage.connectionRestart.Insert(songsDataallSongs);
+                        MusicTypes.connection.Insert(songsDataallSongs);
+                        MusicTypes.connectionRestart.Insert(songsDataallSongs);
                         break;
                     case "Disney":
                         var songsDataDisney = new FairyTales
@@ -75,8 +75,8 @@ namespace JakaToPiosenka
                             Title = NewSongName.Text,
                             Author = NewAuthorName.Text
                         };
-                        MainPage.connection.Insert(songsDataDisney);
-                        MainPage.connectionRestart.Insert(songsDataDisney);
+                        MusicTypes.connection.Insert(songsDataDisney);
+                        MusicTypes.connectionRestart.Insert(songsDataDisney);
                         break;
                     case "Pop":
                         var songsDataPop = new Pop
@@ -84,8 +84,8 @@ namespace JakaToPiosenka
                             Title = NewSongName.Text,
                             Author = NewAuthorName.Text
                         };
-                        MainPage.connection.Insert(songsDataPop);
-                        MainPage.connectionRestart.Insert(songsDataPop);
+                        MusicTypes.connection.Insert(songsDataPop);
+                        MusicTypes.connectionRestart.Insert(songsDataPop);
                         break;
                     case "Rock":
                         var songsDataRock = new Rock
@@ -93,8 +93,8 @@ namespace JakaToPiosenka
                             Title = NewSongName.Text,
                             Author = NewAuthorName.Text
                         };
-                        MainPage.connection.Insert(songsDataRock);
-                        MainPage.connectionRestart.Insert(songsDataRock);
+                        MusicTypes.connection.Insert(songsDataRock);
+                        MusicTypes.connectionRestart.Insert(songsDataRock);
                         break;
                     case "UsersMusic":
                         var songsDataUsersMusic = new UsersMusic
@@ -102,8 +102,8 @@ namespace JakaToPiosenka
                             Title = NewSongName.Text,
                             Author = NewAuthorName.Text
                         };
-                        MainPage.connection.Insert(songsDataUsersMusic);
-                        MainPage.connectionRestart.Insert(songsDataUsersMusic);
+                        MusicTypes.connection.Insert(songsDataUsersMusic);
+                        MusicTypes.connectionRestart.Insert(songsDataUsersMusic);
                         break;
                     case "Rap":
                         var songsDataRap = new Rap
@@ -111,8 +111,8 @@ namespace JakaToPiosenka
                             Title = NewSongName.Text,
                             Author = NewAuthorName.Text
                         };
-                        MainPage.connection.Insert(songsDataRap);
-                        MainPage.connectionRestart.Insert(songsDataRap);
+                        MusicTypes.connection.Insert(songsDataRap);
+                        MusicTypes.connectionRestart.Insert(songsDataRap);
                         break;
 
                 }

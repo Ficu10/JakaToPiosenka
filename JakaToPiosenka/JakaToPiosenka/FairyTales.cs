@@ -15,7 +15,8 @@ namespace JakaToPiosenka
 
             using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.FairyTales.txt")))
             {
-
+                connection.CreateTable<FairyTales>();
+                connectionRestart.CreateTable<FairyTales>();
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
                 {
@@ -25,8 +26,8 @@ namespace JakaToPiosenka
                         Title = fields[1],
                         Author = fields[0]
                     };
-                    MainPage.connection.Insert(songsData);
-                    MainPage.connectionRestart.Insert(songsData);
+                    connection.Insert(songsData);
+                    connectionRestart.Insert(songsData);
                 }
 
             }

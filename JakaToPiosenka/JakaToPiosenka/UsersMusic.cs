@@ -11,7 +11,8 @@ namespace JakaToPiosenka
     {
         public override void Load()
         {
-           
+            connection.CreateTable<UsersMusic>();
+            connectionRestart.CreateTable<UsersMusic>();
 
         }
     }

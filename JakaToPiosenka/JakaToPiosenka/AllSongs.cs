@@ -13,9 +13,10 @@ namespace JakaToPiosenka
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
 
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.AllSongs.txt")))
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.allSongs.txt")))
             {
-
+                connection.CreateTable<AllSongs>();
+                connectionRestart.CreateTable<AllSongs>();
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
                 {
@@ -25,8 +26,8 @@ namespace JakaToPiosenka
                         Title = fields[1],
                         Author = fields[0]
                     };
-                    MainPage.connection.Insert(songsData);
-                    MainPage.connectionRestart.Insert(songsData);
+                    connection.Insert(songsData);
+                    connectionRestart.Insert(songsData);
                 }
 
             }

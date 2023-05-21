@@ -18,8 +18,7 @@ namespace JakaToPiosenka
     {
         public static bool orientationPortrait = true;
         public static string gameMode = "allSongs";
-        public static SQLiteConnection connection = new SQLiteConnection(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Music.db3"));
-        public static SQLiteConnection connectionRestart = new SQLiteConnection(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MusicRestart.db3"));
+       
 
         public MainPage()
         {
@@ -34,19 +33,8 @@ namespace JakaToPiosenka
                 new Rap(),
                 new UsersMusic()
             };
-            connection.CreateTable<Pop>();
-            connection.CreateTable<Rock>();
-            connection.CreateTable<Rap>();
-            connection.CreateTable<UsersMusic>();
-            connection.CreateTable<FairyTales>();
-            connection.CreateTable<AllSongs>();
-            connectionRestart.CreateTable<Pop>();
-            connectionRestart.CreateTable<Rock>();
-            connectionRestart.CreateTable<Rap>();
-            connectionRestart.CreateTable<UsersMusic>();
-            connectionRestart.CreateTable<FairyTales>();
-            connectionRestart.CreateTable<AllSongs>();
-            if (connection.Table<Pop>().ToList<Pop>().Count() == 0)
+            bool isTableCreated = MusicTypes.connection.GetTableInfo("Pop").Any();
+            if (!isTableCreated)
             {
                 foreach (var item in musicTypesSongs)
                 {
