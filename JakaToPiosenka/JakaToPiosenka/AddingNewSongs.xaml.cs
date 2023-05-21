@@ -20,29 +20,29 @@ namespace JakaToPiosenka
             SongsCollection.ItemsSource = MusicTypes.connection.Table<Pop>().ToList<Pop>();
             switch (MainPage.gameMode)
             {
-                case "allSongs":
-                    SongsCollection.ItemsSource = MusicTypes.connection.Table<AllSongs>().ToList<AllSongs>();
+                case "AllSongs":
+                    SongsCollection.ItemsSource = MusicTypes.connectionRestart.Table<AllSongs>().ToList<AllSongs>();
                     break;
-                case "Disney":
-                    SongsCollection.ItemsSource = MusicTypes.connection.Table<FairyTales>().ToList<FairyTales>();
+                case "FairyTales":
+                    SongsCollection.ItemsSource = MusicTypes.connectionRestart.Table<FairyTales>().ToList<FairyTales>();
                     break;
                 case "Pop":
-                    SongsCollection.ItemsSource = MusicTypes.connection.Table<Pop>().ToList<Pop>();
+                    SongsCollection.ItemsSource = MusicTypes.connectionRestart.Table<Pop>().ToList<Pop>();
                     break;
                 case "Rock":
-                    SongsCollection.ItemsSource = MusicTypes.connection.Table<Rock>().ToList<Rock>();
+                    SongsCollection.ItemsSource = MusicTypes.connectionRestart.Table<Rock>().ToList<Rock>();
                     break;
                 case "UsersMusic":
-                    SongsCollection.ItemsSource = MusicTypes.connection.Table<UsersMusic>().ToList<UsersMusic>();
+                    SongsCollection.ItemsSource = MusicTypes.connectionRestart.Table<UsersMusic>().ToList<UsersMusic>();
                     break;  
                 case "Rap":
-                    SongsCollection.ItemsSource = MusicTypes.connection.Table<Rap>().ToList<Rap>();
+                    SongsCollection.ItemsSource = MusicTypes.connectionRestart.Table<Rap>().ToList<Rap>();
                     break;
 
             }
         }
       
-
+        
        
         protected override bool OnBackButtonPressed()
         {
@@ -56,11 +56,11 @@ namespace JakaToPiosenka
 
         private async void addSongToList_Clicked(object sender, EventArgs e)
         {
-            if (NewSongName.Text != "" && NewAuthorName.Text != "")
-            {
+            //if (NewSongName.Text != "" && NewAuthorName.Text != "")
+            //{
                 switch (MainPage.gameMode)
                 {
-                    case "allSongs":
+                    case "AllSongs":
                         var songsDataallSongs = new AllSongs
                         {
                             Title = NewSongName.Text,
@@ -69,7 +69,7 @@ namespace JakaToPiosenka
                         MusicTypes.connection.Insert(songsDataallSongs);
                         MusicTypes.connectionRestart.Insert(songsDataallSongs);
                         break;
-                    case "Disney":
+                    case "FairyTales":
                         var songsDataDisney = new FairyTales
                         {
                             Title = NewSongName.Text,
@@ -118,29 +118,18 @@ namespace JakaToPiosenka
                 }
                 await Navigation.PushAsync(new AddingNewSongs());
                 NewSongName.Text = "";
-                NewAuthorName.Text = ""; 
-            }
-            else
-            {
-                await DisplayAlert("Blad", "Prosze podac autora oraz tytul piosenki", "OK");        
-            }
-           
+                NewAuthorName.Text = "";
+            //}
+            //else
+            //{
+            //    await DisplayAlert("Blad", "Prosze podac autora oraz tytul piosenki", "OK");
+            //}
+
         }
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-            //var item = sender as SwipeItem;
-            //var emp = item.CommandParameter as SongsAndAuthors;
-            //bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć bieg, który odbył się w {emp.Date}?", "tak", "nie");
-            //if (result)
-            //{
-
-
-            //    await App.MyDatabase.DeleteHistory(emp);
-            //    listViewHistory.ItemsSource = await App.MyDatabase.ReadHistory();
-
-
-            //}
+           
             await Navigation.PushAsync(new AddingNewSongs());
         }
 

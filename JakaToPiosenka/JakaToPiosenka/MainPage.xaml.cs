@@ -48,7 +48,7 @@ namespace JakaToPiosenka
       
         async void AllSongsButton_Clicked(object sender, EventArgs e)
         {
-            gameMode = "allSongs";
+            gameMode = "AllSongs";
             await Navigation.PushAsync(new BeforeGamePage());
         }
 
@@ -66,7 +66,7 @@ namespace JakaToPiosenka
 
         async void DisneyButton_Clicked(object sender, EventArgs e)
         {
-            gameMode = "Disney";
+            gameMode = "FairyTales";
             await Navigation.PushAsync(new BeforeGamePage());
         }
 

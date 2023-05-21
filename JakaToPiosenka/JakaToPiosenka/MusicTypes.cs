@@ -8,6 +8,7 @@ namespace JakaToPiosenka
 {
     abstract class MusicTypes
     {
+        [PrimaryKey, AutoIncrement] public int Id { get; set; }
         public static SQLiteConnection connection = new SQLiteConnection(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Music.db3"));
         public static SQLiteConnection connectionRestart = new SQLiteConnection(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MusicRestart.db3"));
         public virtual string Title { get; set; }

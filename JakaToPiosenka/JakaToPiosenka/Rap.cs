@@ -9,6 +9,7 @@ namespace JakaToPiosenka
 {
     internal class Rap : MusicTypes
     {
+        [PrimaryKey, AutoIncrement] public int Id { get; set; }
         public override void Load()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;

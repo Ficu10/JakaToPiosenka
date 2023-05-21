@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -125,30 +126,30 @@ namespace JakaToPiosenka
         void GameType()
         {
            
-            if (MainPage.gameMode == "allSongs")
+            if (MainPage.gameMode == "AllSongs")
             {
-                StartGame(MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
+                StartGame(MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
             }
-            else if (MainPage.gameMode == "Disney")
+            else if (MainPage.gameMode == "FairyTales")
             {
-                StartGame(MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
+                StartGame(MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
             }   
             else if (MainPage.gameMode == "Pop")
             {
-                StartGame(MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Title).ToList());
+                StartGame(MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rock")
             {
-                StartGame(MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Title).ToList());
+                StartGame(MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
 
             }
             else if (MainPage.gameMode == "UsersMusic")
             {       
-                StartGame(MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
+                StartGame(MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rap")
             {
-                StartGame(MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Title).ToList());
+                StartGame(MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
             }
         }
         public void ShowGame()
@@ -159,11 +160,11 @@ namespace JakaToPiosenka
             Task modifyTaskOne = Task.Run(() => GameType());
         }
 
-        public async void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
+        public void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
         {
             songsFromGame.Clear();
             int gameCounter = 10;
-            Random r = new Random(0);
+            Random r = new Random();
 
             while(gameCounter > 0)
             {
@@ -205,9 +206,15 @@ namespace JakaToPiosenka
                             newGame = false;
                             songsFromGame.Add(songsList[songId]);
                             gameCounter--;
+                            string titleToRemove = songsList[songId];
+                            string authorToRemove = authorsList[songId];
+
+                            string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Author = ?";
+                            MusicTypes.connection.Execute(deleteQuery, titleToRemove, authorToRemove);
+
                             authorsList.RemoveAt(songId);
                             songsList.RemoveAt(songId);
-                            //db.Delete(songId);
+                            
                             if (goodAnswer == true)
                             {
                                 endOfQuestion = false;
