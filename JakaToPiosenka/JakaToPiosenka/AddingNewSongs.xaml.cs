@@ -129,8 +129,44 @@ namespace JakaToPiosenka
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-           
-            await Navigation.PushAsync(new AddingNewSongs());
+            var item = sender as SwipeItem;
+            var emp = item.CommandParameter as MusicTypes;
+            switch (MainPage.gameMode)
+            {
+                case "AllSongs":
+                    emp = item.CommandParameter as AllSongs;
+                    break;
+                case "FairyTales":
+                    emp = item.CommandParameter as FairyTales;
+                    break;
+                case "Pop":
+                    emp = item.CommandParameter as Pop;
+                    break;
+                case "Rock":
+                    emp = item.CommandParameter as Rock;
+                    break;
+                case "UsersMusic":
+                    emp = item.CommandParameter as UsersMusic;
+                    break;
+                case "Rap":
+                    emp = item.CommandParameter as Rap;
+                    break;
+
+            }
+            bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć piosenkę: {emp.Title}?", "tak", "nie");
+            if (result)
+            {
+                string titleToRemove = emp.Title;
+                string authorToRemove = emp.Author;
+
+                string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Author = ?";
+                MusicTypes.connection.Execute(deleteQuery, titleToRemove, authorToRemove);
+                MusicTypes.connectionRestart.Execute(deleteQuery, titleToRemove, authorToRemove);
+                await Navigation.PushAsync(new AddingNewSongs());
+
+
+
+            }
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)

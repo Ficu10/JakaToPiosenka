@@ -42,7 +42,7 @@
                     <DataTemplate>
                         <SwipeView>
                             <SwipeView.RightItems>
-                                <SwipeItem Text="Usun" BackgroundColor="Red" Invoked="SwipeItem_Invoked" />
+                                <SwipeItem Text="Usuń" BackgroundColor="Red" Invoked="SwipeItem_Invoked" CommandParameter="{Binding .}"/>
                             </SwipeView.RightItems>
                             <StackLayout BackgroundColor="#0d5b82">
                                 <Grid HeightRequest="100">
@@ -62,9 +62,9 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <BoxView Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="5" Color="White" HeightRequest="5" VerticalOptions="End" Margin="20,0,20,45" />
-            <BoxView Grid.Row="3" Grid.RowSpan="3" Grid.Column="4" Color="White" WidthRequest="5" HorizontalOptions="Start" Margin="49,0,5,46" />
+            <BoxView Grid.Row="3" Grid.RowSpan="3" Grid.Column="4" Color="White" WidthRequest="5" HorizontalOptions="Start" Margin="46,0,5,46" />
             <BoxView Grid.Row="3" Grid.RowSpan="3" Color="White" WidthRequest="5" HorizontalOptions="Start" Margin="20,0,5,46" />
-            <SearchBar  TextChanged="SearchBar_TextChanged" Grid.Row="2" BackgroundColor="White"   Grid.Column="0" Grid.ColumnSpan="5" Margin="20,130,20,-10" />
+            <SearchBar  TextChanged="SearchBar_TextChanged" Grid.Row="2" BackgroundColor="White"   Grid.Column="0" Grid.ColumnSpan="5" Margin="20,130,16,-10" />
 
         </Grid>
                 

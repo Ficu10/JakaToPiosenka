@@ -211,10 +211,6 @@ namespace JakaToPiosenka
 
                             string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Author = ?";
                             MusicTypes.connection.Execute(deleteQuery, titleToRemove, authorToRemove);
-
-                            authorsList.RemoveAt(songId);
-                            songsList.RemoveAt(songId);
-                            
                             if (goodAnswer == true)
                             {
                                 endOfQuestion = false;
