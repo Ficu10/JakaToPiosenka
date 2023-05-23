@@ -15,6 +15,8 @@ namespace JakaToPiosenka
         public virtual string Author { get; set; }
         public virtual void Load() { }
 
+        public async virtual void Import(string text) { }
+
         public virtual void Delete() { }
 
         public virtual void StartGame() { }

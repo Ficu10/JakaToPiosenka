@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static SQLite.SQLite3;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace JakaToPiosenka
 {
@@ -169,30 +172,110 @@ namespace JakaToPiosenka
             }
         }
 
-        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+     
+
+        private async void Import_Clicked(object sender, EventArgs e)
         {
-            var searchTerm = e.NewTextValue;
+            PickFileAsync();
+            await Navigation.PushAsync(new AddingNewSongs());
+        }
 
-            if (string.IsNullOrWhiteSpace(searchTerm))
+        private void Eksport_Clicked(object sender, EventArgs e)
+        {
+          
+            if (MainPage.gameMode == "AllSongs")
             {
-                searchTerm = string.Empty;
+                ExportMethod(MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
             }
-
-            searchTerm = searchTerm.ToLowerInvariant(); ///
-
-            var filteredItems = Game.authorsTab.Where(value => value.ToLowerInvariant().Contains(searchTerm)).ToList();
-
-            foreach (var value in Game.authorsTab)
+            else if (MainPage.gameMode == "FairyTales")
             {
-                if (!filteredItems.Contains(value))
-                {
-                    Game.authorsTab.Remove(value);
-                }
-                else if (!Game.authorsTab.Contains(value))
-                {
-                    Game.authorsTab.Add(value);
-                }
+                ExportMethod(MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Pop")
+            {
+                ExportMethod(MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Rock")
+            {
+                ExportMethod(MusicTypes.connectionRestart.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
+
+            }
+            else if (MainPage.gameMode == "UsersMusic")
+            {
+                ExportMethod(MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Rap")
+            {
+                ExportMethod(MusicTypes.connectionRestart.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
             }
         }
+        private async void ExportMethod(List<string> authorsList, List<string> songsList)
+        {
+            string result = await DisplayPromptAsync("Eksport", "Wpisz nazwę pliku:", "OK", "Anuluj", placeholder: "Wprowadź tekst");
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                string fileName = result + "JakaToPiosenka.txt";
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fileName);
+
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    for (int i = 0; i < authorsList.Count(); i++)
+                    {
+                        writer.WriteLine(authorsList[i] + ";" + songsList[i]);
+                    }
+                }
+                await Share.RequestAsync(new ShareFileRequest
+                {
+                    Title = "Eksportuj",
+                    File = new ShareFile(filePath)
+                });
+            }
+           
+        }
+
+       
+        private async void PickFileAsync()
+        {
+            string result = await DisplayPromptAsync("Import", "Wpisz nazwę pliku:", "OK", "Anuluj", placeholder: "Wprowadź tekst");
+
+            var musicTypesSongs = new List<MusicTypes>()
+            {
+                new Pop(),
+                new Rock(),
+                new FairyTales(),
+                new AllSongs(),
+                new Rap(),
+                new UsersMusic()
+            };
+            if (MainPage.gameMode == "AllSongs")
+            {
+                musicTypesSongs[3].Import(result);
+            }
+            else if (MainPage.gameMode == "FairyTales")
+            {
+                musicTypesSongs[2].Import(result);
+            }
+            else if (MainPage.gameMode == "Pop")
+            {
+                musicTypesSongs[0].Import(result);
+
+            }
+            else if (MainPage.gameMode == "Rock")
+            {
+                musicTypesSongs[1].Import(result);
+
+            }
+            else if (MainPage.gameMode == "UsersMusic")
+            {
+                musicTypesSongs[5].Import(result);
+            }
+            else if (MainPage.gameMode == "Rap")
+            {
+                musicTypesSongs[4].Import(result);
+            }
+
+        }
+       
     }
 }
