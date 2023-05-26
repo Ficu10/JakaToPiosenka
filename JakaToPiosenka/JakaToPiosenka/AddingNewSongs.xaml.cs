@@ -200,7 +200,7 @@ namespace JakaToPiosenka
 
             typeName = char.ToUpper(typeName[0]) + typeName.Substring(1);
             typeName += gameMode.EndsWith("English") ? "English" : "Polish";
-            typeName = "Namespace." + typeName; // Replace "Namespace" with the actual namespace of your MusicTypes classes
+            typeName = "JakaToPiosenka." + typeName;
 
             Type type = Type.GetType(typeName);
             return type;

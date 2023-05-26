@@ -27,7 +27,6 @@ namespace JakaToPiosenka
         int seconds;
         bool endOfQuestion = false;
         bool goodAnswer = false;
-        bool answered = true;
         Sounds sounds = new Sounds();
         public static SongsAndAuthors endList = new SongsAndAuthors();
 
@@ -169,9 +168,7 @@ namespace JakaToPiosenka
         public void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
         {
             sounds.CountdownSound();
-            answered = true;
             Thread.Sleep(3000);
-            answered = false;
             songsFromGame.Clear();
             int gameCounter = 10;
             Random r = new Random();
