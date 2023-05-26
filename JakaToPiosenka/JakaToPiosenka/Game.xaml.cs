@@ -51,8 +51,6 @@ namespace JakaToPiosenka
 
             // dobrze x < 0.6 z > 0.6    zle z<0.6  x<0.9
 
-            if (answered == false)
-            {
                 if (x <= 0.6 && y < 0.2 && z > 0.6)
                 {
                     sounds.WinningSound();
@@ -63,7 +61,6 @@ namespace JakaToPiosenka
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
                     goodAnswer = true;
-                    answered = true;
                 }
                 else if (z < -0.6 && x < 0.9)
                 {
@@ -74,13 +71,11 @@ namespace JakaToPiosenka
                     SongAuthor.IsVisible = false;
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
-                    answered = true;
                 }
-               
-            }
+              
             if (x >= 1 && y < 0.2 && z < 0.2)
             {
-                answered = false;
+                endOfQuestion = false;
             }
 
         }
@@ -260,8 +255,7 @@ namespace JakaToPiosenka
         }
         private void WrongAnswearButton_Clicked(object sender, EventArgs e)
         {
-            if (answered == false)
-            {
+            
                 sounds.LosingSound();
                 BackgroundImageSource = "red.jpg";
                 SongTitle.Text = "Brak odpowiedzi";
@@ -269,7 +263,6 @@ namespace JakaToPiosenka
                 SongAuthor.IsVisible = false;
                 WrongAnswearButton.IsEnabled = false;
                 endOfQuestion = true;
-            }
           
         }
      
