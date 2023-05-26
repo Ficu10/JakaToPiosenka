@@ -7,24 +7,24 @@ using System.Reflection;
 using System.Text;
 using Xamarin.Essentials;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.MusicClasses
 {
-    internal class Rap : MusicTypes
+    internal class PopPolish : MusicTypes
     {
         [PrimaryKey, AutoIncrement] public int Id { get; set; }
         public override void Load()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
 
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.Rap.txt")))
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.TxtFiles.PopPolski.txt")))
             {
-                connection.CreateTable<Rap>();
-                connectionRestart.CreateTable<Rap>();
+                connection.CreateTable<PopPolish>();
+                connectionRestart.CreateTable<PopPolish>();
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
                 {
                     var fields = line.Split(';');
-                    var songsData = new Rap
+                    var songsData = new PopPolish
                     {
                         Title = fields[1],
                         Author = fields[0]
@@ -49,13 +49,13 @@ namespace JakaToPiosenka
             {
                 using (var streamReader = new StreamReader(filePath))
                 {
-                    connection.DeleteAll<Rap>();
-                    connectionRestart.DeleteAll<Rap>();
+                    connection.DeleteAll<PopPolish>();
+                    connectionRestart.DeleteAll<PopPolish>();
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
                         var fields = line.Split(';');
-                        var songsData = new Rap
+                        var songsData = new PopPolish
                         {
                             Title = fields[1],
                             Author = fields[0]
@@ -66,7 +66,7 @@ namespace JakaToPiosenka
 
                 }
             }
-          
+
 
         }
     }

@@ -5,38 +5,17 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Shapes;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.MusicClasses
 {
-    internal class Pop : MusicTypes
+    internal class UsersMusic : MusicTypes
     {
         [PrimaryKey, AutoIncrement] public int Id { get; set; }
         public override void Load()
         {
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-          
-                using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.Pop.txt")))
-                {
-                connection.CreateTable<Pop>();
-                connectionRestart.CreateTable<Pop>();
-                string line;
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-                        var fields = line.Split(';');
-                        var songsData = new Pop
-                        {
-                            Title = fields[1],
-                            Author = fields[0]
-                        };
-                        connection.Insert(songsData);
-                        connectionRestart.Insert(songsData);
-                }
-                   
-                }
+            connection.CreateTable<UsersMusic>();
+            connectionRestart.CreateTable<UsersMusic>();
 
         }
 
@@ -52,13 +31,13 @@ namespace JakaToPiosenka
             {
                 using (var streamReader = new StreamReader(filePath))
                 {
-                    connection.DeleteAll<Pop>();
-                    connectionRestart.DeleteAll<Pop>();
+                    connection.DeleteAll<UsersMusic>();
+                    connectionRestart.DeleteAll<UsersMusic>();
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
                         var fields = line.Split(';');
-                        var songsData = new Pop
+                        var songsData = new UsersMusic
                         {
                             Title = fields[1],
                             Author = fields[0]
@@ -69,11 +48,8 @@ namespace JakaToPiosenka
 
                 }
             }
-          
+
 
         }
-       
-
-
     }
 }

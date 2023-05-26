@@ -13,9 +13,22 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AfterGame : ContentPage
     {
+        Sounds sounds = new Sounds();
         public AfterGame()
         {
             InitializeComponent();
+            if (Game.pointsCounter <= 3)
+            {
+                sounds.BadScoreSound();
+            }
+            else if (Game.pointsCounter >= 4 && Game.pointsCounter <= 6)
+            {
+                sounds.MediumScoreSound();
+            }
+            else
+            {
+                sounds.GoodScoreSound();
+            }
             Resut.Text = "Twój wynik to " + Game.pointsCounter.ToString() + "/10";
             myListView.ItemsSource = Game.songsFromGame;
             Game.pointsCounter = 0;

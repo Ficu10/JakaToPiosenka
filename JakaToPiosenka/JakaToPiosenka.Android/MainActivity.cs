@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace JakaToPiosenka.Droid
 {
@@ -33,7 +34,12 @@ namespace JakaToPiosenka.Droid
 
             Window.AddFlags(WindowManagerFlags.Fullscreen);
             Window.AddFlags(WindowManagerFlags.KeepScreenOn);
-
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+            {
+                Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
+                Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+                Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
+            }
 
 
 
@@ -43,7 +49,7 @@ namespace JakaToPiosenka.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
-        
+       
 
 
     }

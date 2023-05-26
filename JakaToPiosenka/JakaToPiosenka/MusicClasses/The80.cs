@@ -7,24 +7,24 @@ using System.Reflection;
 using System.Text;
 using Xamarin.Essentials;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.MusicClasses
 {
-    internal class Rock : MusicTypes
+    internal class The80 : MusicTypes
     {
         [PrimaryKey, AutoIncrement] public int Id { get; set; }
         public override void Load()
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
 
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.Rock.txt")))
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.TxtFiles.Lata80calosc.txt")))
             {
-                connection.CreateTable<Rock>();
-                connectionRestart.CreateTable<Rock>();
+                connection.CreateTable<The80>();
+                connectionRestart.CreateTable<The80>();
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
                 {
                     var fields = line.Split(';');
-                    var songsData = new Rock
+                    var songsData = new The80
                     {
                         Title = fields[1],
                         Author = fields[0]
@@ -49,13 +49,13 @@ namespace JakaToPiosenka
             {
                 using (var streamReader = new StreamReader(filePath))
                 {
-                    connection.DeleteAll<Rock>();
-                    connectionRestart.DeleteAll<Rock>();
+                    connection.DeleteAll<The80>();
+                    connectionRestart.DeleteAll<The80>();
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
                         var fields = line.Split(';');
-                        var songsData = new Rock
+                        var songsData = new Rap
                         {
                             Title = fields[1],
                             Author = fields[0]
@@ -66,7 +66,7 @@ namespace JakaToPiosenka
 
                 }
             }
-          
+
 
         }
     }

@@ -15,18 +15,65 @@
     <None Remove="Pop.txt" />
     <None Remove="Rap.txt" />
     <None Remove="Rock.txt" />
+    <None Remove="Sounds\badScoreSound.wav" />
+    <None Remove="Sounds\clickSound.wav" />
+    <None Remove="Sounds\countdownSound.wav" />
+    <None Remove="Sounds\deleteSound.wav" />
+    <None Remove="Sounds\goodScoreSound.wav" />
+    <None Remove="Sounds\loseSound.wav" />
+    <None Remove="Sounds\mediumScoreSound.wav" />
+    <None Remove="Sounds\winSound.wav" />
+    <None Remove="TxtFiles\Lata80calosc.txt" />
+    <None Remove="TxtFiles\Lata80Polska.txt" />
+    <None Remove="TxtFiles\lata80Polski.txt" />
+    <None Remove="TxtFiles\Lata80Zzagranica.txt" />
+    <None Remove="TxtFiles\PolskiPop.txt" />
+    <None Remove="TxtFiles\PopCalosc.txt" />
+    <None Remove="TxtFiles\PopPolski.txt" />
+    <None Remove="TxtFiles\PopZagraniczny.txt" />
+    <None Remove="TxtFiles\RapCalosc.txt" />
+    <None Remove="TxtFiles\RapZagranczny.txt" />
+    <None Remove="TxtFiles\RapZPolski.txt" />
+    <None Remove="TxtFiles\RockCaly.txt" />
+    <None Remove="TxtFiles\RockZPolski.txt" />
+    <None Remove="TxtFiles\RockZzagranicy.txt" />
+    <None Remove="TxtFiles\Youtube.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="allSongs.txt" />
-    <EmbeddedResource Include="FairyTales.txt" />
-    <EmbeddedResource Include="Pop.txt" />
-    <EmbeddedResource Include="Rap.txt" />
-    <EmbeddedResource Include="Rock.txt" />
+    <EmbeddedResource Include="Sounds\goodScoreSound.wav" />
+    <EmbeddedResource Include="Sounds\mediumScoreSound.wav" />
+    <EmbeddedResource Include="Sounds\clickSound.wav" />
+    <EmbeddedResource Include="Sounds\countdownSound.wav" />
+    <EmbeddedResource Include="Sounds\deleteSound.wav" />
+    <EmbeddedResource Include="Sounds\loseSound.wav" />
+    <EmbeddedResource Include="Sounds\badScoreSound.wav" />
+    <EmbeddedResource Include="Sounds\winSound.wav" />
+    <EmbeddedResource Include="TxtFiles\AllSongs.txt" />
+    <EmbeddedResource Include="TxtFiles\FairyTales.txt" />
+    <EmbeddedResource Include="TxtFiles\Lata80calosc.txt" />
+    <EmbeddedResource Include="TxtFiles\Lata80Polska.txt" />
+    <EmbeddedResource Include="TxtFiles\lata80Polski.txt" />
+    <EmbeddedResource Include="TxtFiles\Lata80Zzagranica.txt" />
+    <EmbeddedResource Include="TxtFiles\PolskiPop.txt" />
+    <EmbeddedResource Include="TxtFiles\Pop.txt" />
+    <EmbeddedResource Include="TxtFiles\PopCalosc.txt" />
+    <EmbeddedResource Include="TxtFiles\PopPolski.txt" />
+    <EmbeddedResource Include="TxtFiles\PopZagraniczny.txt" />
+    <EmbeddedResource Include="TxtFiles\Rap.txt" />
+    <EmbeddedResource Include="TxtFiles\RapCalosc.txt" />
+    <EmbeddedResource Include="TxtFiles\RapZagranczny.txt" />
+    <EmbeddedResource Include="TxtFiles\RapZPolski.txt" />
+    <EmbeddedResource Include="TxtFiles\Rock.txt" />
+    <EmbeddedResource Include="TxtFiles\RockCaly.txt" />
+    <EmbeddedResource Include="TxtFiles\RockZPolski.txt" />
+    <EmbeddedResource Include="TxtFiles\RockZzagranicy.txt" />
+    <EmbeddedResource Include="TxtFiles\Youtube.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.6.0" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
   </ItemGroup>

@@ -27,7 +27,7 @@
         <Image Source="AFTM.png" Grid.ColumnSpan="5" VerticalOptions="End" Scale="0.5"/>
 
 
-        <ListView x:Name="myListView" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" BackgroundColor="#0d5b82" Margin="20,20,20,10" RowHeight="100" SeparatorVisibility="Default" SeparatorColor="White">
+        <ListView x:Name="myListView" Grid.Column="0" VerticalScrollBarVisibility="Never" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" BackgroundColor="#0d5b82" Margin="20,20,20,10" RowHeight="100" SeparatorVisibility="Default" SeparatorColor="White">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="1">
@@ -35,7 +35,7 @@
                             <Grid>
                                 <Grid.RowDefinitions>
 
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
 
@@ -44,7 +44,7 @@
                                     <ColumnDefinition Width="*"/>
 
                                 </Grid.ColumnDefinitions>
-                            <Label Text ="{Binding}" IsEnabled="False" TextColor="White" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Text ="{Binding}" IsEnabled="False" TextColor="White" HorizontalTextAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
