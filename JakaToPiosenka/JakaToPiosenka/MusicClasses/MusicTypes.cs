@@ -15,7 +15,7 @@ namespace JakaToPiosenka.MusicClasses
         public virtual string Author { get; set; }
         public virtual void Load() { }
 
-        public async virtual void Import(string text) { }
+        public async virtual void Import() { }
 
         public virtual void Delete() { }
 

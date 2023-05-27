@@ -40,35 +40,14 @@ namespace JakaToPiosenka.MusicClasses
 
         }
 
-        public async override void Import(string text)
+        public async override void Import()
         {
 
-            List<string> filePaths = new List<string>();
-            var allFiles = Directory.GetFiles(FileSystem.AppDataDirectory, text + "JakaToPiosenka.txt", SearchOption.AllDirectories);
+           
+                        connection.DeleteAll<Pop>();
+                        connectionRestart.DeleteAll<Pop>();
+                       
 
-            filePaths = allFiles.ToList();
-            string filePath = allFiles.ToList()[0];
-            if (filePath != null)
-            {
-                using (var streamReader = new StreamReader(filePath))
-                {
-                    connection.DeleteAll<Pop>();
-                    connectionRestart.DeleteAll<Pop>();
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-                        var fields = line.Split(';');
-                        var songsData = new Pop
-                        {
-                            Title = fields[1],
-                            Author = fields[0]
-                        };
-                        connection.Insert(songsData);
-                        connectionRestart.Insert(songsData);
-                    }
-
-                }
-            }
 
 
         }

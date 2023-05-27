@@ -27,6 +27,7 @@
     <None Remove="TxtFiles\Lata80Polska.txt" />
     <None Remove="TxtFiles\lata80Polski.txt" />
     <None Remove="TxtFiles\Lata80Zzagranica.txt" />
+    <None Remove="TxtFiles\nowy_plik.txt" />
     <None Remove="TxtFiles\PolskiPop.txt" />
     <None Remove="TxtFiles\PopCalosc.txt" />
     <None Remove="TxtFiles\PopPolski.txt" />
@@ -38,6 +39,7 @@
     <None Remove="TxtFiles\RockZPolski.txt" />
     <None Remove="TxtFiles\RockZzagranicy.txt" />
     <None Remove="TxtFiles\Youtube.txt" />
+    <None Remove="TxtFiles\Youtube1.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +57,7 @@
     <EmbeddedResource Include="TxtFiles\Lata80Polska.txt" />
     <EmbeddedResource Include="TxtFiles\lata80Polski.txt" />
     <EmbeddedResource Include="TxtFiles\Lata80Zzagranica.txt" />
+    <EmbeddedResource Include="TxtFiles\nowy_plik.txt" />
     <EmbeddedResource Include="TxtFiles\PolskiPop.txt" />
     <EmbeddedResource Include="TxtFiles\Pop.txt" />
     <EmbeddedResource Include="TxtFiles\PopCalosc.txt" />
@@ -69,6 +72,7 @@
     <EmbeddedResource Include="TxtFiles\RockZPolski.txt" />
     <EmbeddedResource Include="TxtFiles\RockZzagranicy.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube.txt" />
+    <EmbeddedResource Include="TxtFiles\Youtube1.txt" />
   </ItemGroup>
 
   <ItemGroup>

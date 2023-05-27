@@ -1,89 +1,89 @@
-Budka Suflera; Światła mijają
-Budka Suflera; Bal wszystkich świętych
-Budka Suflera; Cień wielkiej góry
-Budka Suflera; Czas czekania, czas olśnienia
-Budka Suflera; Jest taki samotny dom
-Budka Suflera; Jolka, Jolka pamiętasz
-Budka Suflera; Martwe morze
-Budka Suflera; Mokre oczy
-Budka Suflera; Ratujmy co się da
-Budka Suflera; Za ostatni grosz
-Budka Suflera; Zawsze czegoś brakuje
-Budka Suflera; Zostać mistrzem
-Dżem; Czerwony jak cegła
-Dżem; List do M
-Dżem; Mała aleja róż
-Dżem; Moja wiosna, moja miłość
-Dżem; Naiwne pytania
-Dżem; Paw
-Dżem; Sen o Victorii
-Dżem; Wehikuł czasu
-Dżem; Wehikuł czasu II
-Dżem; Whisky
-Dżem; Wokół sami lunatycy
-Kazik; 12 groszy
-Kult; 45-89
-Kult; Arahja
-Kult; Baranek
-Kult; Bezsenność
-Kult; Do Ani
-Kult; Dziewczyna bez zęba na przedzie
-Kult; Gdy nie ma dzieci
-Kult; Królowa życia
-Kult; Marysia
-Kult; Polska
-Kult; Prosto
-Kult; Rak
-Kult; Słoneczniki
-Lady P; Chłopak z sąsiedztwa
-Lady P; Kryzysowa narzeczona
-Lady P; Na dnie
-Lady P; Naga
-Lady P; Nocny patrol
-Lady P; Ohyda
-Lady P; Sztuka latania
-Lady P; Tam, gdzie rosną dzikie róże
-Lady P; Zawsze tam, gdzie ty
-Maanam; Cykady na cykladach
-Maanam; Kocham cię, kochanie moje
-Maanam; Krakowski spleen
-Maanam; Sie ściemnia
-Maanam; To tylko moment
-Maanam; Wyjątkowo zimny maj
-Maanam; Wyjątkowy dzień
-Myslovitz; Acidland
-Myslovitz; Chłopcy
-Myslovitz; Długość dźwięku samotności
-Myslovitz; Kilka prostych prawd
-Myslovitz; Miłość w czasach popkultury
-Myslovitz; Nocnym pociągiem
-Myslovitz; Scenariusz dla moich sąsiadów
-Myslovitz; Sprzedawcy marzeń
-Myslovitz; Z twarzą Marilyn Monroe
-Perfect; Ale wkoło jest wesoło
-Perfect; Autobiografia
-Perfect; Chcemy być sobą
-Perfect; Kołysanka dla nieznajomej
-Perfect; Kolejny raz
-Perfect; Lokomotywa z ogłoszenia
-Perfect; Mój przyjacielu
-Perfect; Nie płacz Ewka
-Perfect; Nie powiem jak
-Perfect; Niepokonani
-Perfect; Odlotowe agentki
-Perfect; Raz po raz
-Perfect; Wszystko ma swój czas
-Perfect; Wyspa, drzewo, zamek
-T.Love; Ajrisz
-T.Love; King
-T.Love; Nie, nie, nie
-T.Love; Przyjazny duszek
-T.Love; Warszawa
-TSA; 51
-TSA; Heavy metal świat
-TSA; Live
-TSA; Manekin disco
-TSA; Mass Media
-TSA; Proceder
-TSA; Spowiedź
-TSA; Trzy zapałki
+Budka Suflera;Światła mijają
+Budka Suflera;Bal wszystkich świętych
+Budka Suflera;Cień wielkiej góry
+Budka Suflera;Czas czekania, czas olśnienia
+Budka Suflera;Jest taki samotny dom
+Budka Suflera;Jolka, Jolka pamiętasz
+Budka Suflera;Martwe morze
+Budka Suflera;Mokre oczy
+Budka Suflera;Ratujmy co się da
+Budka Suflera;Za ostatni grosz
+Budka Suflera;Zawsze czegoś brakuje
+Budka Suflera;Zostać mistrzem
+Dżem;Czerwony jak cegła
+Dżem;List do M
+Dżem;Mała aleja róż
+Dżem;Moja wiosna, moja miłość
+Dżem;Naiwne pytania
+Dżem;Paw
+Dżem;Sen o Victorii
+Dżem;Wehikuł czasu
+Dżem;Wehikuł czasu II
+Dżem;Whisky
+Dżem;Wokół sami lunatycy
+Kazik;12 groszy
+Kult;45-89
+Kult;Arahja
+Kult;Baranek
+Kult;Bezsenność
+Kult;Do Ani
+Kult;Dziewczyna bez zęba na przedzie
+Kult;Gdy nie ma dzieci
+Kult;Królowa życia
+Kult;Marysia
+Kult;Polska
+Kult;Prosto
+Kult;Rak
+Kult;Słoneczniki
+Lady P;Chłopak z sąsiedztwa
+Lady P;Kryzysowa narzeczona
+Lady P;Na dnie
+Lady P;Naga
+Lady P;Nocny patrol
+Lady P;Ohyda
+Lady P;Sztuka latania
+Lady P;Tam, gdzie rosną dzikie róże
+Lady P;Zawsze tam, gdzie ty
+Maanam;Cykady na cykladach
+Maanam;Kocham cię, kochanie moje
+Maanam;Krakowski spleen
+Maanam;Sie ściemnia
+Maanam;To tylko moment
+Maanam;Wyjątkowo zimny maj
+Maanam;Wyjątkowy dzień
+Myslovitz;Acidland
+Myslovitz;Chłopcy
+Myslovitz;Długość dźwięku samotności
+Myslovitz;Kilka prostych prawd
+Myslovitz;Miłość w czasach popkultury
+Myslovitz;Nocnym pociągiem
+Myslovitz;Scenariusz dla moich sąsiadów
+Myslovitz;Sprzedawcy marzeń
+Myslovitz;Z twarzą Marilyn Monroe
+Perfect;Ale wkoło jest wesoło
+Perfect;Autobiografia
+Perfect;Chcemy być sobą
+Perfect;Kołysanka dla nieznajomej
+Perfect;Kolejny raz
+Perfect;Lokomotywa z ogłoszenia
+Perfect;Mój przyjacielu
+Perfect;Nie płacz Ewka
+Perfect;Nie powiem jak
+Perfect;Niepokonani
+Perfect;Odlotowe agentki
+Perfect;Raz po raz
+Perfect;Wszystko ma swój czas
+Perfect;Wyspa, drzewo, zamek
+T.Love;Ajrisz
+T.Love;King
+T.Love;Nie, nie, nie
+T.Love;Przyjazny duszek
+T.Love;Warszawa
+TSA;51
+TSA;Heavy metal świat
+TSA;Live
+TSA;Manekin disco
+TSA;Mass Media
+TSA;Proceder
+TSA;Spowiedź
+TSA;Trzy zapałki

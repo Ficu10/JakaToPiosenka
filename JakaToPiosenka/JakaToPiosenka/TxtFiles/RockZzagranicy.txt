@@ -1,152 +1,152 @@
-AC/DC; Back in Black
-AC/DC; Dirty Deeds Done Dirt Cheap
-AC/DC; Highway to Hell
-AC/DC; Rock and Roll Ain't Noise Pollution
-AC/DC; Shoot to Thrill
-AC/DC; Thunderstruck
-AC/DC; You Shook Me All Night Long
-Aerosmith; Amazing
-Aerosmith; Crazy
-Aerosmith; Dream On
-Aerosmith; I Don't Want to Miss a Thing
-Aerosmith; Love in an Elevator
-Aerosmith; Sweet Emotion
-Aerosmith; Walk This Way
-Black Sabbath; Children of the Grave
-Black Sabbath; Heaven and Hell
-Black Sabbath; Iron Man
-Black Sabbath; N.I.B.
-Black Sabbath; Paranoid
-Black Sabbath; Sabbath Bloody Sabbath
-Black Sabbath; War Pigs
-Bon Jovi; Always
-Bon Jovi; Bed of Roses
-Bon Jovi; It's My Life
-Bon Jovi; Livin' on a Prayer
-Bon Jovi; Runaway
-Bon Jovi; Wanted Dead or Alive
-Bon Jovi; You Give Love a Bad Name
-Deep Purple; Burn
-Deep Purple; Highway Star
-Deep Purple; Hush
-Deep Purple; Perfect Strangers
-Deep Purple; Smoke on the Water
-Deep Purple; Soldier of Fortune
-Deep Purple; Space Truckin'
-Foo Fighters; Best of You
-Foo Fighters; Everlong
-Foo Fighters; Learn to Fly
-Foo Fighters; My Hero
-Foo Fighters; The Pretender
-Foo Fighters; Times Like These
-Foo Fighters; Walk
-Green Day; American Idiot
-Green Day; Basket Case
-Green Day; Boulevard of Broken Dreams
-Green Day; Good Riddance (Time of Your Life)
-Green Day; Holiday
-Green Day; Wake Me Up When September Ends
-Green Day; When I Come Around
-Guns N' Roses; Don't Cry
-Guns N' Roses; Knockin' on Heaven's Door
-Guns N' Roses; November Rain
-Guns N' Roses; Paradise City
-Guns N' Roses; Patience
-Guns N' Roses; Sweet Child o' Mine
-Guns N' Roses; Welcome to the Jungle
-Led Zeppelin; Black Dog
-Led Zeppelin; Good Times Bad Times
-Led Zeppelin; Immigrant Song
-Led Zeppelin; Kashmir
-Led Zeppelin; Rock and Roll
-Led Zeppelin; Stairway to Heaven
-Led Zeppelin; Whole Lotta Love
-Linkin Park; Breaking the Habit
-Linkin Park; Crawling
-Linkin Park; Faint
-Linkin Park; In the End
-Linkin Park; Numb
-Linkin Park; Somewhere I Belong
-Linkin Park; What I've Done
-Metallica; Enter Sandman
-Metallica; Fuel
-Metallica; Master of Puppets
-Metallica; Nothing Else Matters
-Metallica; One
-Metallica; Sad But True
-Metallica; The Unforgiven
-Nirvana; All Apologies
-Nirvana; Come as You Are
-Nirvana; Heart-Shaped Box
-Nirvana; Lithium
-Nirvana; Rape Me
-Nirvana; Smells Like Teen Spirit
-Nirvana; The Man Who Sold the World
-Pink Floyd; Another Brick in the Wall
-Pink Floyd; Comfortably Numb
-Pink Floyd; Hey You
-Pink Floyd; Money
-Pink Floyd; Shine On You Crazy Diamond
-Pink Floyd; Time
-Pink Floyd; Wish You Were Here
-Queen; Bohemian Rhapsody
-Queen; Don't Stop Me Now
-Queen; Killer Queen
-Queen; Radio Ga Ga
-Queen; Somebody to Love
-Queen; We Are the Champions
-Queen; We Will Rock You
-R.E.M.; Everybody Hurts
-R.E.M.; Losing My Religion
-R.E.M.; Man on the Moon
-R.E.M.; Nightswimming
-R.E.M.; Orange Crush
-R.E.M.; Shiny Happy People
-R.E.M.; The One I Love
-Red Hot Chili Peppers; By the Way
-Red Hot Chili Peppers; Californication
-Red Hot Chili Peppers; Can't Stop
-Red Hot Chili Peppers; Dani California
-Red Hot Chili Peppers; Otherside
-Red Hot Chili Peppers; Scar Tissue
-Red Hot Chili Peppers; Under the Bridge
-The Beatles; All You Need Is Love
-The Beatles; Blackbird
-The Beatles; Eleanor Rigby
-The Beatles; Help!
-The Beatles; Hey Jude
-The Beatles; Let It Be
-The Beatles; Yesterday
-The Eagles; Desperado
-The Eagles; Hotel California
-The Eagles; New Kid in Town
-The Eagles; Peaceful Easy Feeling
-The Eagles; Take It Easy
-The Eagles; Tequila Sunrise
-The Eagles; Witchy Woman
-The Jimi Hendrix Experience; All Along the Watchtower
-The Jimi Hendrix Experience; Foxy Lady
-The Jimi Hendrix Experience; Hey Joe
-The Jimi Hendrix Experience; Little Wing
-The Jimi Hendrix Experience; Purple Haze
-The Jimi Hendrix Experience; Voodoo Child (Slight Return)
-The Rolling Stones; (I Can't Get No) Satisfaction
-The Rolling Stones; Angie
-The Rolling Stones; Brown Sugar
-The Rolling Stones; Jumpin' Jack Flash
-The Rolling Stones; Paint It Black
-The Rolling Stones; Sympathy for the Devil
-The Rolling Stones; Wild Horses
-The Who; Baba O'Riley
-The Who; Behind Blue Eyes
-The Who; Love, Reign o'er Me
-The Who; My Generation
-The Who; Pinball Wizard
-The Who; Squeeze Box
-U2; Beautiful Day
-U2; One
-U2; Pride (In the Name of Love)
-U2; Sunday Bloody Sunday
-U2; Vertigo
-U2; Where the Streets Have No Name
-U2; With or Without You
+AC/DC;Back in Black
+AC/DC;Dirty Deeds Done Dirt Cheap
+AC/DC;Highway to Hell
+AC/DC;Rock and Roll Ain't Noise Pollution
+AC/DC;Shoot to Thrill
+AC/DC;Thunderstruck
+AC/DC;You Shook Me All Night Long
+Aerosmith;Amazing
+Aerosmith;Crazy
+Aerosmith;Dream On
+Aerosmith;I Don't Want to Miss a Thing
+Aerosmith;Love in an Elevator
+Aerosmith;Sweet Emotion
+Aerosmith;Walk This Way
+Black Sabbath;Children of the Grave
+Black Sabbath;Heaven and Hell
+Black Sabbath;Iron Man
+Black Sabbath;N.I.B.
+Black Sabbath;Paranoid
+Black Sabbath;Sabbath Bloody Sabbath
+Black Sabbath;War Pigs
+Bon Jovi;Always
+Bon Jovi;Bed of Roses
+Bon Jovi;It's My Life
+Bon Jovi;Livin' on a Prayer
+Bon Jovi;Runaway
+Bon Jovi;Wanted Dead or Alive
+Bon Jovi;You Give Love a Bad Name
+Deep Purple;Burn
+Deep Purple;Highway Star
+Deep Purple;Hush
+Deep Purple;Perfect Strangers
+Deep Purple;Smoke on the Water
+Deep Purple;Soldier of Fortune
+Deep Purple;Space Truckin'
+Foo Fighters;Best of You
+Foo Fighters;Everlong
+Foo Fighters;Learn to Fly
+Foo Fighters;My Hero
+Foo Fighters;The Pretender
+Foo Fighters;Times Like These
+Foo Fighters;Walk
+Green Day;American Idiot
+Green Day;Basket Case
+Green Day;Boulevard of Broken Dreams
+Green Day;Good Riddance (Time of Your Life)
+Green Day;Holiday
+Green Day;Wake Me Up When September Ends
+Green Day;When I Come Around
+Guns N' Roses;Don't Cry
+Guns N' Roses;Knockin' on Heaven's Door
+Guns N' Roses;November Rain
+Guns N' Roses;Paradise City
+Guns N' Roses;Patience
+Guns N' Roses;Sweet Child o' Mine
+Guns N' Roses;Welcome to the Jungle
+Led Zeppelin;Black Dog
+Led Zeppelin;Good Times Bad Times
+Led Zeppelin;Immigrant Song
+Led Zeppelin;Kashmir
+Led Zeppelin;Rock and Roll
+Led Zeppelin;Stairway to Heaven
+Led Zeppelin;Whole Lotta Love
+Linkin Park;Breaking the Habit
+Linkin Park;Crawling
+Linkin Park;Faint
+Linkin Park;In the End
+Linkin Park;Numb
+Linkin Park;Somewhere I Belong
+Linkin Park;What I've Done
+Metallica;Enter Sandman
+Metallica;Fuel
+Metallica;Master of Puppets
+Metallica;Nothing Else Matters
+Metallica;One
+Metallica;Sad But True
+Metallica;The Unforgiven
+Nirvana;All Apologies
+Nirvana;Come as You Are
+Nirvana;Heart-Shaped Box
+Nirvana;Lithium
+Nirvana;Rape Me
+Nirvana;Smells Like Teen Spirit
+Nirvana;The Man Who Sold the World
+Pink Floyd;Another Brick in the Wall
+Pink Floyd;Comfortably Numb
+Pink Floyd;Hey You
+Pink Floyd;Money
+Pink Floyd;Shine On You Crazy Diamond
+Pink Floyd;Time
+Pink Floyd;Wish You Were Here
+Queen;Bohemian Rhapsody
+Queen;Don't Stop Me Now
+Queen;Killer Queen
+Queen;Radio Ga Ga
+Queen;Somebody to Love
+Queen;We Are the Champions
+Queen;We Will Rock You
+R.E.M.;Everybody Hurts
+R.E.M.;Losing My Religion
+R.E.M.;Man on the Moon
+R.E.M.;Nightswimming
+R.E.M.;Orange Crush
+R.E.M.;Shiny Happy People
+R.E.M.;The One I Love
+Red Hot Chili Peppers;By the Way
+Red Hot Chili Peppers;Californication
+Red Hot Chili Peppers;Can't Stop
+Red Hot Chili Peppers;Dani California
+Red Hot Chili Peppers;Otherside
+Red Hot Chili Peppers;Scar Tissue
+Red Hot Chili Peppers;Under the Bridge
+The Beatles;All You Need Is Love
+The Beatles;Blackbird
+The Beatles;Eleanor Rigby
+The Beatles;Help!
+The Beatles;Hey Jude
+The Beatles;Let It Be
+The Beatles;Yesterday
+The Eagles;Desperado
+The Eagles;Hotel California
+The Eagles;New Kid in Town
+The Eagles;Peaceful Easy Feeling
+The Eagles;Take It Easy
+The Eagles;Tequila Sunrise
+The Eagles;Witchy Woman
+The Jimi Hendrix Experience;All Along the Watchtower
+The Jimi Hendrix Experience;Foxy Lady
+The Jimi Hendrix Experience;Hey Joe
+The Jimi Hendrix Experience;Little Wing
+The Jimi Hendrix Experience;Purple Haze
+The Jimi Hendrix Experience;Voodoo Child (Slight Return)
+The Rolling Stones;(I Can't Get No) Satisfaction
+The Rolling Stones;Angie
+The Rolling Stones;Brown Sugar
+The Rolling Stones;Jumpin' Jack Flash
+The Rolling Stones;Paint It Black
+The Rolling Stones;Sympathy for the Devil
+The Rolling Stones;Wild Horses
+The Who;Baba O'Riley
+The Who;Behind Blue Eyes
+The Who;Love, Reign o'er Me
+The Who;My Generation
+The Who;Pinball Wizard
+The Who;Squeeze Box
+U2;Beautiful Day
+U2;One
+U2;Pride (In the Name of Love)
+U2;Sunday Bloody Sunday
+U2;Vertigo
+U2;Where the Streets Have No Name
+U2;With or Without You

@@ -1,143 +1,143 @@
-Maanam; Kocham Cię, Kochanie Moje
-Perfect; Autobiografia
-Lady Pank; Zawsze tam, gdzie ty
-Republika; Biała flaga
-T.Love; Ajrisz
-Kombi; Słodkiego, miłego życia
-Marek Grechuta; Dni, których nie znamy
-Kult; Arahja
-Budka Suflera; Takie tango
-Kult; Polska
-Marek Grechuta; Ocalić od zapomnienia
-Perfect; Nie płacz Ewka
-Lady Pank; Mniej niż zero
-Maanam; Cykady na Cykladach
-Budka Suflera; Jest taki samotny dom
-T.Love; Warszawa
-Republika; Kombinat
-Perfect; Chcemy być sobą
-Lady Pank; Kryzysowa narzeczona
-Maanam; Szare miraże
-Kombi; Pokolenie
-Budka Suflera; Za ostatni grosz
-Republika; Moja krew
-Kult; Gdy nie ma dzieci
-T.Love; King
-Lady Pank; Zabij to!
-Maanam; To tylko tango
-Perfect; Lokomotywa z ogłoszenia
-Kombi; Nasze rendez-vous
-Republika; Odchodząc
-Budka Suflera; Jolka, Jolka pamiętasz
-Lady Pank; Stacja Warszawa
-T.Love; Na bruku
-Kult; Do Ani
-Maanam; O! Nie rób tyle hałasu
-Perfect; Niepokonani
-Republika; Obcy astronom
-Budka Suflera; Cisza jak ta
-Lady Pank; Mamy tylko siebie
-T.Love; I Love You
-Kombi; Ślad
-Maanam; Bliźniak
-Perfect; Niewiele ci mogę dać
-Republika; Śmierć w bikini
-Budka Suflera; Ratujmy co się da
-Lady Pank; Tacy sami
-T.Love; Nie, nie, nie
-Kult; Marysia
-Maanam; Krakowski spleen
-Perfect; Kołysanka dla nieznajomej
-Republika; Mamona
-Kombi; Królowie życia
-Budka Suflera; Zawsze czegoś brak
-Lady Pank; Minus zero
-T.Love; Dziewczyny
-Kult; Arahja
-Maanam; Lipstick on the Glass
-Perfect; Zamykam oczy
-Republika; Wielki las
-Budka Suflera; Bal wszystkich świętych
-Lady Pank; Młode gołębie
-T.Love; Jest super
-Kombi; Święty spokój
-Maanam; Lucciola
-Perfect; Niepokonani
-Republika; Nieustanne tango
-Budka Suflera; Wyspa złoczyńców
-Lady Pank; Spacer po linie
-T.Love; Ajrisz
-Kult; Marysia
-Maanam; Wyjątkowo zimny maj
-Perfect; Chcemy być sobą
-Republika; Kombinat
-Budka Suflera; Jest taki samotny dom
-Lady Pank; Kryzysowa narzeczona
-T.Love; Warszawa
-Kombi; Słodkiego, miłego życia
-Maanam; Cykady na Cykladach
-Budka Suflera; Za ostatni grosz
-Republika; Moja krew
-Lady Pank; Mniej niż zero
-T.Love; King
-Kult; Gdy nie ma dzieci
-Perfect; Nie płacz Ewka
-Maanam; To tylko tango
-Lady Pank; Zabij to!
-Kombi; Pokolenie
-Budka Suflera; Jolka, Jolka pamiętasz
-Republika; Odchodząc
-T.Love; Na bruku
-Kult; Do Ani
-Maanam; O! Nie rób tyle hałasu
-Perfect; Lokomotywa z ogłoszenia
-Lady Pank; Stacja Warszawa
-Budka Suflera; Cisza jak ta
-Republika; Obcy astronom
-T.Love; I Love You
-Kombi; Ślad
-Maanam; Bliźniak
-Perfect; Niewiele ci mogę dać
-Lady Pank; Mamy tylko siebie
-Budka Suflera; Ratujmy co się da
-Republika; Śmierć w bikini
-T.Love; Nie, nie, nie
-Kult; Marysia
-Maanam; Krakowski spleen
-Perfect; Kołysanka dla nieznajomej
-Lady Pank; Minus zero
-Budka Suflera; Zawsze czegoś brak
-Republika; Mamona
-T.Love; Dziewczyny
-Kult; Arahja
-Maanam; Lipstick on the Glass
-Perfect; Zamykam oczy
-Lady Pank; Młode gołębie
-Republika; Nieustanne tango
-Budka Suflera; Wyspa złoczyńców
-T.Love; Ajrisz
-Kult; Marysia
-Maanam; Wyjątkowo zimny maj
-Perfect; Chcemy być sobą
-Lady Pank; Kryzysowa narzeczona
-Republika; Kombinat
-Budka Suflera; Jest taki samotny dom
-T.Love; Warszawa
-Kombi; Słodkiego, miłego życia
-Maanam; Cykady na Cykladach
-Budka Suflera; Za ostatni grosz
-Republika; Moja krew
-Lady Pank; Mniej niż zero
-T.Love; King
-Kult; Gdy nie ma dzieci
-Perfect; Nie płacz Ewka
-Maanam; To tylko tango
-Lady Pank; Zabij to!
-Kombi; Pokolenie
-Budka Suflera; Jolka, Jolka pamiętasz
-Republika; Odchodząc
-T.Love; Na bruku
-Kult; Do Ani
-Maanam; O! Nie rób tyle hałasu
-Perfect; Lokomotywa z ogłoszenia
-Lady Pank; Stacja Warszawa
+Maanam;Kocham Cię, Kochanie Moje
+Perfect;Autobiografia
+Lady Pank;Zawsze tam, gdzie ty
+Republika;Biała flaga
+T.Love;Ajrisz
+Kombi;Słodkiego, miłego życia
+Marek Grechuta;Dni, których nie znamy
+Kult;Arahja
+Budka Suflera;Takie tango
+Kult;Polska
+Marek Grechuta;Ocalić od zapomnienia
+Perfect;Nie płacz Ewka
+Lady Pank;Mniej niż zero
+Maanam;Cykady na Cykladach
+Budka Suflera;Jest taki samotny dom
+T.Love;Warszawa
+Republika;Kombinat
+Perfect;Chcemy być sobą
+Lady Pank;Kryzysowa narzeczona
+Maanam;Szare miraże
+Kombi;Pokolenie
+Budka Suflera;Za ostatni grosz
+Republika;Moja krew
+Kult;Gdy nie ma dzieci
+T.Love;King
+Lady Pank;Zabij to!
+Maanam;To tylko tango
+Perfect;Lokomotywa z ogłoszenia
+Kombi;Nasze rendez-vous
+Republika;Odchodząc
+Budka Suflera;Jolka, Jolka pamiętasz
+Lady Pank;Stacja Warszawa
+T.Love;Na bruku
+Kult;Do Ani
+Maanam;O! Nie rób tyle hałasu
+Perfect;Niepokonani
+Republika;Obcy astronom
+Budka Suflera;Cisza jak ta
+Lady Pank;Mamy tylko siebie
+T.Love;I Love You
+Kombi;Ślad
+Maanam;Bliźniak
+Perfect;Niewiele ci mogę dać
+Republika;Śmierć w bikini
+Budka Suflera;Ratujmy co się da
+Lady Pank;Tacy sami
+T.Love;Nie, nie, nie
+Kult;Marysia
+Maanam;Krakowski spleen
+Perfect;Kołysanka dla nieznajomej
+Republika;Mamona
+Kombi;Królowie życia
+Budka Suflera;Zawsze czegoś brak
+Lady Pank;Minus zero
+T.Love;Dziewczyny
+Kult;Arahja
+Maanam;Lipstick on the Glass
+Perfect;Zamykam oczy
+Republika;Wielki las
+Budka Suflera;Bal wszystkich świętych
+Lady Pank;Młode gołębie
+T.Love;Jest super
+Kombi;Święty spokój
+Maanam;Lucciola
+Perfect;Niepokonani
+Republika;Nieustanne tango
+Budka Suflera;Wyspa złoczyńców
+Lady Pank;Spacer po linie
+T.Love;Ajrisz
+Kult;Marysia
+Maanam;Wyjątkowo zimny maj
+Perfect;Chcemy być sobą
+Republika;Kombinat
+Budka Suflera;Jest taki samotny dom
+Lady Pank;Kryzysowa narzeczona
+T.Love;Warszawa
+Kombi;Słodkiego, miłego życia
+Maanam;Cykady na Cykladach
+Budka Suflera;Za ostatni grosz
+Republika;Moja krew
+Lady Pank;Mniej niż zero
+T.Love;King
+Kult;Gdy nie ma dzieci
+Perfect;Nie płacz Ewka
+Maanam;To tylko tango
+Lady Pank;Zabij to!
+Kombi;Pokolenie
+Budka Suflera;Jolka, Jolka pamiętasz
+Republika;Odchodząc
+T.Love;Na bruku
+Kult;Do Ani
+Maanam;O! Nie rób tyle hałasu
+Perfect;Lokomotywa z ogłoszenia
+Lady Pank;Stacja Warszawa
+Budka Suflera;Cisza jak ta
+Republika;Obcy astronom
+T.Love;I Love You
+Kombi;Ślad
+Maanam;Bliźniak
+Perfect;Niewiele ci mogę dać
+Lady Pank;Mamy tylko siebie
+Budka Suflera;Ratujmy co się da
+Republika;Śmierć w bikini
+T.Love;Nie, nie, nie
+Kult;Marysia
+Maanam;Krakowski spleen
+Perfect;Kołysanka dla nieznajomej
+Lady Pank;Minus zero
+Budka Suflera;Zawsze czegoś brak
+Republika;Mamona
+T.Love;Dziewczyny
+Kult;Arahja
+Maanam;Lipstick on the Glass
+Perfect;Zamykam oczy
+Lady Pank;Młode gołębie
+Republika;Nieustanne tango
+Budka Suflera;Wyspa złoczyńców
+T.Love;Ajrisz
+Kult;Marysia
+Maanam;Wyjątkowo zimny maj
+Perfect;Chcemy być sobą
+Lady Pank;Kryzysowa narzeczona
+Republika;Kombinat
+Budka Suflera;Jest taki samotny dom
+T.Love;Warszawa
+Kombi;Słodkiego, miłego życia
+Maanam;Cykady na Cykladach
+Budka Suflera;Za ostatni grosz
+Republika;Moja krew
+Lady Pank;Mniej niż zero
+T.Love;King
+Kult;Gdy nie ma dzieci
+Perfect;Nie płacz Ewka
+Maanam;To tylko tango
+Lady Pank;Zabij to!
+Kombi;Pokolenie
+Budka Suflera;Jolka, Jolka pamiętasz
+Republika;Odchodząc
+T.Love;Na bruku
+Kult;Do Ani
+Maanam;O! Nie rób tyle hałasu
+Perfect;Lokomotywa z ogłoszenia
+Lady Pank;Stacja Warszawa

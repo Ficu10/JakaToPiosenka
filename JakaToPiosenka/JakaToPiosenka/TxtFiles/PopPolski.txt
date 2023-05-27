@@ -1,31 +1,31 @@
-Andrzej Piaseczny; Jest gejem
-Ania Dąbrowska; Charlie, Charlie
-Ania Wyszkoni; Wiem, że jesteś tam
-Ania Wyszkoni; Zapytaj mnie o to kochany
-Blue Cafe; Buena
-Blue Cafe; You May Be In Love
-Doda; Katharsis
-Edyta Górniak; To nie ja
-Ewa Bem; Tylko z tobą chcę być sobą
-Ewa Farna; Ewakuacja
-Feel; Jak anioła głos
-Irena Jarocka; Gondolierzy znad Wisły
-Izabela Trojanowska; Jestem twoim grzechem
-Justyna Steczkowska; Daj mi chwilę
-Justyna Steczkowska; Dziewczyna szamana
-Kasia Cerekwicka; S.O.S
-Kasia Kowalska; Coś optymistycznego
-Kasia Stankiewicz; Ruchome piaski
-Kayah; Supermenka
-Kayah; Testosteron
-Kombii; Awinion
-Kombii; Jak pierwszy raz
-Kombii; Pokolenie
-Krzysztof Krawczyk; Parostatek
-Marta Mirska; Naucz mnie
-Maryla Rodowicz; Małgośka
-Myslovitz; Długość dźwięku samotności
-Renata Dąbkowska; Samotność
-Renata Przemyk; Kasia Nosowska; Obława
-Sylwia Grzeszczak; Małe rzeczy
-Sylwia Grzeszczak; Tamta dziewczyna
+Andrzej Piaseczny;Jest gejem
+Ania Dąbrowska;Charlie, Charlie
+Ania Wyszkoni;Wiem, że jesteś tam
+Ania Wyszkoni;Zapytaj mnie o to kochany
+Blue Cafe;Buena
+Blue Cafe;You May Be In Love
+Doda;Katharsis
+Edyta Górniak;To nie ja
+Ewa Bem;Tylko z tobą chcę być sobą
+Ewa Farna;Ewakuacja
+Feel;Jak anioła głos
+Irena Jarocka;Gondolierzy znad Wisły
+Izabela Trojanowska;Jestem twoim grzechem
+Justyna Steczkowska;Daj mi chwilę
+Justyna Steczkowska;Dziewczyna szamana
+Kasia Cerekwicka;S.O.S
+Kasia Kowalska;Coś optymistycznego
+Kasia Stankiewicz;Ruchome piaski
+Kayah;Supermenka
+Kayah;Testosteron
+Kombii;Awinion
+Kombii;Jak pierwszy raz
+Kombii;Pokolenie
+Krzysztof Krawczyk;Parostatek
+Marta Mirska;Naucz mnie
+Maryla Rodowicz;Małgośka
+Myslovitz;Długość dźwięku samotności
+Renata Dąbkowska;Samotność
+Renata Przemyk;Kasia Nosowska;Obława
+Sylwia Grzeszczak;Małe rzeczy
+Sylwia Grzeszczak;Tamta dziewczyna

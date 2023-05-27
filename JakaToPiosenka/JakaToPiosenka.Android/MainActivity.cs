@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Xamarin.Essentials;
 
 namespace JakaToPiosenka.Droid
 {
@@ -45,12 +46,12 @@ namespace JakaToPiosenka.Droid
 
             base.OnCreate(savedInstanceState);
 
-
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
-       
 
+      
 
     }
     

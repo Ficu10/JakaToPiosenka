@@ -36,7 +36,7 @@
 
 
 
-            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="20,120,20,-10" BackgroundColor="White" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="OnSearchTextChanged" />
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="20,120,20,-10" BackgroundColor="White" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
             <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="20,0,20,50">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
