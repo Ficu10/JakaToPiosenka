@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -378,292 +379,290 @@ namespace JakaToPiosenka
         }
         private async void ImportMethod()
         {
-
             var file = await FilePicker.PickAsync();
+            string fileName = file.FileName;
+
 
             if (file != null)
             {
-                if (MainPage.gameMode == "AllSongs")
+                if (fileName.EndsWith(".txt"))
                 {
-                    MusicTypes.connection.DeleteAll<AllSongs>();
-                    MusicTypes.connectionRestart.DeleteAll<AllSongs>();
-                }
-                else if (MainPage.gameMode == "FairyTales")
-                {
-                    MusicTypes.connection.DeleteAll<FairyTales>();
-                    MusicTypes.connectionRestart.DeleteAll<FairyTales>();
-                }
-                else if (MainPage.gameMode == "Pop")
-                {
-                    MusicTypes.connection.DeleteAll<Pop>();
-                    MusicTypes.connectionRestart.DeleteAll<Pop>();
-                }
-                else if (MainPage.gameMode == "Rock")
-                {
-                    MusicTypes.connection.DeleteAll<Rock>();
-                    MusicTypes.connectionRestart.DeleteAll<Rock>();
-                }
-                else if (MainPage.gameMode == "UsersMusic")
-                {
-                    MusicTypes.connection.DeleteAll<UsersMusic>();
-                    MusicTypes.connectionRestart.DeleteAll<UsersMusic>();
-                }
-                else if (MainPage.gameMode == "Rap")
-                {
-                    MusicTypes.connection.DeleteAll<Rap>();
-                    MusicTypes.connectionRestart.DeleteAll<Rap>();
-                }
-                else if (MainPage.gameMode == "RapPolish")
-                {
-                    MusicTypes.connection.DeleteAll<RapPolish>();
-                    MusicTypes.connectionRestart.DeleteAll<RapPolish>();
-                }
-                else if (MainPage.gameMode == "RapEnglish")
-                {
-                    MusicTypes.connection.DeleteAll<RapEnglish>();
-                    MusicTypes.connectionRestart.DeleteAll<RapEnglish>();
-                }
-                else if (MainPage.gameMode == "PopPolish")
-                {
-                    MusicTypes.connection.DeleteAll<PopPolish>();
-                    MusicTypes.connectionRestart.DeleteAll<PopPolish>();
-                }
-                else if (MainPage.gameMode == "PopEnglish")
-                {
-                    MusicTypes.connection.DeleteAll<PopEnglish>();
-                    MusicTypes.connectionRestart.DeleteAll<PopEnglish>();
-                }
-                else if (MainPage.gameMode == "The80")
-                {
-                    MusicTypes.connection.DeleteAll<The80>();
-                    MusicTypes.connectionRestart.DeleteAll<The80>();
-                }
-                else if (MainPage.gameMode == "The80English")
-                {
-                    MusicTypes.connection.DeleteAll<The80English>();
-                    MusicTypes.connectionRestart.DeleteAll<The80English>();
-                }
-                else if (MainPage.gameMode == "The80Polish")
-                {
-                    MusicTypes.connection.DeleteAll<The80Polish>();
-                    MusicTypes.connectionRestart.DeleteAll<The80Polish>();
-                }
-                else if (MainPage.gameMode == "RockEnglish")
-                {
-                    MusicTypes.connection.DeleteAll<RockEnglish>();
-                    MusicTypes.connectionRestart.DeleteAll<RockEnglish>();
-                }
-                else if (MainPage.gameMode == "RockPolish")
-                {
-                    MusicTypes.connection.DeleteAll<RockPolish>();
-                    MusicTypes.connectionRestart.DeleteAll<RockPolish>();
-                }
-                else if (MainPage.gameMode == "Youtube")
-                {
-                    MusicTypes.connection.DeleteAll<Youtube>();
-                    MusicTypes.connectionRestart.DeleteAll<Youtube>();
-                }
-               
-                using (Stream stream = await file.OpenReadAsync())
-                {
-                    using (StreamReader reader2 = new StreamReader(stream))
+                    if (MainPage.gameMode == "AllSongs")
                     {
+                        MusicTypes.connection.DeleteAll<AllSongs>();
+                        MusicTypes.connectionRestart.DeleteAll<AllSongs>();
+                    }
+                    else if (MainPage.gameMode == "FairyTales")
+                    {
+                        MusicTypes.connection.DeleteAll<FairyTales>();
+                        MusicTypes.connectionRestart.DeleteAll<FairyTales>();
+                    }
+                    else if (MainPage.gameMode == "Pop")
+                    {
+                        MusicTypes.connection.DeleteAll<Pop>();
+                        MusicTypes.connectionRestart.DeleteAll<Pop>();
+                    }
+                    else if (MainPage.gameMode == "Rock")
+                    {
+                        MusicTypes.connection.DeleteAll<Rock>();
+                        MusicTypes.connectionRestart.DeleteAll<Rock>();
+                    }
+                    else if (MainPage.gameMode == "UsersMusic")
+                    {
+                        MusicTypes.connection.DeleteAll<UsersMusic>();
+                        MusicTypes.connectionRestart.DeleteAll<UsersMusic>();
+                    }
+                    else if (MainPage.gameMode == "Rap")
+                    {
+                        MusicTypes.connection.DeleteAll<Rap>();
+                        MusicTypes.connectionRestart.DeleteAll<Rap>();
+                    }
+                    else if (MainPage.gameMode == "RapPolish")
+                    {
+                        MusicTypes.connection.DeleteAll<RapPolish>();
+                        MusicTypes.connectionRestart.DeleteAll<RapPolish>();
+                    }
+                    else if (MainPage.gameMode == "RapEnglish")
+                    {
+                        MusicTypes.connection.DeleteAll<RapEnglish>();
+                        MusicTypes.connectionRestart.DeleteAll<RapEnglish>();
+                    }
+                    else if (MainPage.gameMode == "PopPolish")
+                    {
+                        MusicTypes.connection.DeleteAll<PopPolish>();
+                        MusicTypes.connectionRestart.DeleteAll<PopPolish>();
+                    }
+                    else if (MainPage.gameMode == "PopEnglish")
+                    {
+                        MusicTypes.connection.DeleteAll<PopEnglish>();
+                        MusicTypes.connectionRestart.DeleteAll<PopEnglish>();
+                    }
+                    else if (MainPage.gameMode == "The80")
+                    {
+                        MusicTypes.connection.DeleteAll<The80>();
+                        MusicTypes.connectionRestart.DeleteAll<The80>();
+                    }
+                    else if (MainPage.gameMode == "The80English")
+                    {
+                        MusicTypes.connection.DeleteAll<The80English>();
+                        MusicTypes.connectionRestart.DeleteAll<The80English>();
+                    }
+                    else if (MainPage.gameMode == "The80Polish")
+                    {
+                        MusicTypes.connection.DeleteAll<The80Polish>();
+                        MusicTypes.connectionRestart.DeleteAll<The80Polish>();
+                    }
+                    else if (MainPage.gameMode == "RockEnglish")
+                    {
+                        MusicTypes.connection.DeleteAll<RockEnglish>();
+                        MusicTypes.connectionRestart.DeleteAll<RockEnglish>();
+                    }
+                    else if (MainPage.gameMode == "RockPolish")
+                    {
+                        MusicTypes.connection.DeleteAll<RockPolish>();
+                        MusicTypes.connectionRestart.DeleteAll<RockPolish>();
+                    }
+                    else if (MainPage.gameMode == "Youtube")
+                    {
+                        MusicTypes.connection.DeleteAll<Youtube>();
+                        MusicTypes.connectionRestart.DeleteAll<Youtube>();
+                    }
 
-                        string line;
-
-
-                        while ((line = reader2.ReadLine()) != null)
+                    using (Stream stream = await file.OpenReadAsync())
+                    {
+                        using (StreamReader reader2 = new StreamReader(stream))
                         {
-                            string[] fields = line.Split(';');
-                            if (fields.Length == 2)
+
+                            string line;
+
+
+                            while ((line = reader2.ReadLine()) != null)
                             {
-                                if (MainPage.gameMode == "AllSongs")
+                                string[] fields = line.Split(';');
+                                if (fields.Length == 2)
                                 {
-                                    var songsData = new AllSongs
+                                    if (MainPage.gameMode == "AllSongs")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "FairyTales")
-                                {
-                                    var songsData = new FairyTales
+                                        var songsData = new AllSongs
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "FairyTales")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "Pop")
-                                {
-                                    var songsData = new Pop
+                                        var songsData = new FairyTales
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "Pop")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "Rock")
-                                {
-                                    var songsData = new Rock
+                                        var songsData = new Pop
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "Rock")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "UsersMusic")
-                                {
-                                    var songsData = new UsersMusic
+                                        var songsData = new Rock
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "UsersMusic")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "Rap")
-                                {
-                                    var songsData = new Rap
+                                        var songsData = new UsersMusic
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "Rap")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "RapPolish")
-                                {
-                                    var songsData = new RapPolish
+                                        var songsData = new Rap
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "RapPolish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "RapEnglish")
-                                {
-                                    var songsData = new RapEnglish
+                                        var songsData = new RapPolish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "RapEnglish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "PopPolish")
-                                {
-                                    var songsData = new PopPolish
+                                        var songsData = new RapEnglish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "PopPolish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "PopEnglish")
-                                {
-                                    var songsData = new PopEnglish
+                                        var songsData = new PopPolish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "PopEnglish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "The80")
-                                {
-                                    var songsData = new The80
+                                        var songsData = new PopEnglish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "The80")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "The80English")
-                                {
-                                    var songsData = new The80English
+                                        var songsData = new The80
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "The80English")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "The80Polish")
-                                {
-                                    var songsData = new The80Polish
+                                        var songsData = new The80English
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "The80Polish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "RockEnglish")
-                                {
-                                    var songsData = new RockEnglish
+                                        var songsData = new The80Polish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "RockEnglish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "RockPolish")
-                                {
-                                    var songsData = new RockPolish
+                                        var songsData = new RockEnglish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "RockPolish")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
-                                else if (MainPage.gameMode == "Youtube")
-                                {
-                                    var songsData = new Youtube
+                                        var songsData = new RockPolish
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
+                                    else if (MainPage.gameMode == "Youtube")
                                     {
-                                        Title = fields[1],
-                                        Author = fields[0]
-                                    };
-                                    MusicTypes.connection.Insert(songsData);
-                                    MusicTypes.connectionRestart.Insert(songsData);
-                                }
+                                        var songsData = new Youtube
+                                        {
+                                            Title = fields[1],
+                                            Author = fields[0]
+                                        };
+                                        MusicTypes.connection.Insert(songsData);
+                                        MusicTypes.connectionRestart.Insert(songsData);
+                                    }
 
 
 
-                                else
-                                {
-                                    await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                                    else
+                                    {
+                                        await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                                        break;
+                                    }
                                 }
                             }
+
+                            await Navigation.PushAsync(new AddingNewSongs());
+
                         }
-
-
-                        await Navigation.PushAsync(new AddingNewSongs());
-
-
                     }
                 }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                }
+
             }
-
-
-
-
-
-
-
-
-
-
 
         }
 
@@ -674,7 +673,6 @@ namespace JakaToPiosenka
 
             if (string.IsNullOrEmpty(searchText))
             {
-                // Show all items when search text is empty
                 switch (MainPage.gameMode)
                 {
                     case "AllSongs":

@@ -27,10 +27,11 @@ namespace JakaToPiosenka
         int seconds;
         bool endOfQuestion = false;
         bool goodAnswer = false;
+        bool answered = true;
         Sounds sounds = new Sounds();
         public static SongsAndAuthors endList = new SongsAndAuthors();
 
-        public static List<string> songsFromGame = new List<string>();   
+        public static List<string> songsFromGame = new List<string>();
         public Game()
         {
             InitializeComponent();
@@ -51,6 +52,8 @@ namespace JakaToPiosenka
 
             // dobrze x < 0.6 z > 0.6    zle z<0.6  x<0.9
 
+            if (answered == false)
+            {
                 if (x <= 0.6 && y < 0.2 && z > 0.6)
                 {
                     sounds.WinningSound();
@@ -61,6 +64,7 @@ namespace JakaToPiosenka
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
                     goodAnswer = true;
+                    answered = true;
                 }
                 else if (z < -0.6 && x < 0.9)
                 {
@@ -71,11 +75,13 @@ namespace JakaToPiosenka
                     SongAuthor.IsVisible = false;
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
+                    answered = true;
                 }
-              
+
+            }
             if (x >= 1 && y < 0.2 && z < 0.2)
             {
-                endOfQuestion = false;
+                answered = false;
             }
 
         }
@@ -85,7 +91,7 @@ namespace JakaToPiosenka
         }
         void GameType()
         {
-           
+
             if (MainPage.gameMode == "AllSongs")
             {
                 StartGame(MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
@@ -93,7 +99,7 @@ namespace JakaToPiosenka
             else if (MainPage.gameMode == "FairyTales")
             {
                 StartGame(MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
-            }   
+            }
             else if (MainPage.gameMode == "Pop")
             {
                 StartGame(MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
@@ -104,7 +110,7 @@ namespace JakaToPiosenka
 
             }
             else if (MainPage.gameMode == "UsersMusic")
-            {       
+            {
                 StartGame(MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rap")
@@ -163,12 +169,14 @@ namespace JakaToPiosenka
         public void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
         {
             sounds.CountdownSound();
+            answered = true;
             Thread.Sleep(3000);
+            answered = false;
             songsFromGame.Clear();
             int gameCounter = 10;
             Random r = new Random();
 
-            while(gameCounter > 0)
+            while (gameCounter > 0)
             {
                 if (authorsList.Count < 1)
                 {
@@ -177,17 +185,17 @@ namespace JakaToPiosenka
                         authorsList.Add(authorsListReset[i]);
                         songsList.Add(songsListReset[i]);
                     }
-                        
-                    
+
+
                 }
                 newGame = true;
                 songId = r.Next(authorsList.Count);
 
-               
+
                 seconds = BeforeGamePage.timeChanger + 1;
                 while (newGame == true)
                 {
-                    Device.BeginInvokeOnMainThread(async() =>
+                    Device.BeginInvokeOnMainThread(async () =>
                     {
                         WrongAnswearButton.IsEnabled = true;
                         SongAuthor.IsVisible = true;
@@ -197,8 +205,9 @@ namespace JakaToPiosenka
                         SongTitle.Text = songsList[songId];
                         seconds--;
                         Time.Text = seconds.ToString();
-                        if (seconds<1)
+                        if (seconds < 1)
                         {
+                            sounds.LosingSound();
                             endOfQuestion = true;
                         }
                         if (endOfQuestion == true)
@@ -255,7 +264,8 @@ namespace JakaToPiosenka
         }
         private void WrongAnswearButton_Clicked(object sender, EventArgs e)
         {
-            
+            if (answered == false)
+            {
                 sounds.LosingSound();
                 BackgroundImageSource = "red.jpg";
                 SongTitle.Text = "Brak odpowiedzi";
@@ -263,8 +273,9 @@ namespace JakaToPiosenka
                 SongAuthor.IsVisible = false;
                 WrongAnswearButton.IsEnabled = false;
                 endOfQuestion = true;
-          
+            }
+
         }
-     
+
     }
 }
