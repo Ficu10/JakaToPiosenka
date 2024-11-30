@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,45 +8,107 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AfterGame : ContentPage
     {
-        Sounds sounds = new Sounds();
+        private readonly Sounds _sounds = new Sounds();
+
         public AfterGame()
         {
             InitializeComponent();
+
+            // Ustawienie dźwięku w zależności od wyniku
+            PlayScoreSound();
+
+            // Wyświetlenie wyniku
+            Resut.Text = $"Twój wynik to {Game.pointsCounter}/10";
+
+            // Przygotowanie danych dla ListView z kolorami komórek
+            var songsWithColors = PrepareSongsWithColors();
+
+            // Przypisanie danych do ListView
+            myListView.ItemsSource = songsWithColors;
+
+            // Resetowanie licznika punktów
+            ResetGameState();
+        }
+
+        /// <summary>
+        /// Odtwarza dźwięk w zależności od wyniku gracza.
+        /// </summary>
+        private void PlayScoreSound()
+        {
             if (Game.pointsCounter <= 3)
             {
-                sounds.BadScoreSound();
+                _sounds.BadScoreSound();
             }
-            else if (Game.pointsCounter >= 4 && Game.pointsCounter <= 6)
+            else if (Game.pointsCounter <= 6) // 4-6
             {
-                sounds.MediumScoreSound();
+                _sounds.MediumScoreSound();
             }
             else
             {
-                sounds.GoodScoreSound();
+                _sounds.GoodScoreSound();
             }
-            Resut.Text = "Twój wynik to " + Game.pointsCounter.ToString() + "/10";
-            myListView.ItemsSource = Game.songsFromGame;
-            Game.pointsCounter = 0;
-            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
-         
-
         }
 
+        /// <summary>
+        /// Przygotowuje dane do ListView z odpowiednimi kolorami komórek.
+        /// </summary>
+        /// <returns>Lista obiektów SongItem z tytułami i kolorami.</returns>
+        private List<SongItem> PrepareSongsWithColors()
+        {
+            var songsWithColors = new List<SongItem>();
+
+            for (int i = 0; i < Game.songsFromGame.Count; i++)
+            {
+                songsWithColors.Add(new SongItem
+                {
+                    Title = Game.songsFromGame[i], // Zakładam, że `songsFromGame` to lista stringów
+                    CellColor = Game.goodBadSongs[i] == 1 ? Color.FromHex("#7cba61") : Color.FromHex("#ab524f")
+                });
+            }
+
+            return songsWithColors;
+        }
+
+        /// <summary>
+        /// Resetuje stan gry po zakończeniu rundy.
+        /// </summary>
+        private void ResetGameState()
+        {
+            Game.pointsCounter = 0;
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
+        }
+
+        /// <summary>
+        /// Obsługa przycisku "Restart Gry".
+        /// </summary>
         private async void RestartGame_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RulesPage());
         }
 
-       
+        /// <summary>
+        /// Obsługa przycisku "Menu".
+        /// </summary>
         private async void Menu_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
         }
+
+        /// <summary>
+        /// Zablokowanie przycisku "Wstecz".
+        /// </summary>
         protected override bool OnBackButtonPressed()
         {
-          
-
-            return true;
+            return true; // Zablokowanie przycisku
         }
+    }
+
+    /// <summary>
+    /// Klasa reprezentująca dane dla ListView.
+    /// </summary>
+    public class SongItem
+    {
+        public string Title { get; set; } // Tytuł piosenki
+        public Color CellColor { get; set; } // Kolor komórki
     }
 }

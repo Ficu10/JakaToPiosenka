@@ -27,29 +27,46 @@
         <ImageButton IsEnabled="False" Source="Logo.png" Scale="1.3" Grid.ColumnSpan="5" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
 
 
-        <ListView x:Name="myListView" Grid.Column="0" VerticalScrollBarVisibility="Never" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" BackgroundColor="#0d5b82" Margin="20,20,20,10" RowHeight="100" SeparatorVisibility="Default" SeparatorColor="White">
+        <ListView x:Name="myListView" 
+          Grid.Column="0" 
+          VerticalScrollBarVisibility="Never" 
+          Grid.ColumnSpan="5" 
+          Grid.Row="2" 
+          Grid.RowSpan="2" 
+          BackgroundColor="#0d5b82" 
+          Margin="20,20,20,10" 
+          RowHeight="100" 
+          SeparatorVisibility="Default" 
+          SeparatorColor="White">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell Height="1">
-                        
-                            <Grid>
-                                <Grid.RowDefinitions>
-
-                                <RowDefinition Height="2*"/>
+                    <ViewCell>
+                        <Grid BackgroundColor="{Binding CellColor}">
+                            <!-- Dynamiczne tło -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
                             </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-
-                                </Grid.ColumnDefinitions>
-                            <Label Text ="{Binding}" IsEnabled="False" TextColor="White" HorizontalTextAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Title}" 
+                           IsEnabled="False" 
+                           TextColor="White" 
+                           HorizontalTextAlignment="Center" 
+                           Grid.Column="0" 
+                           Grid.ColumnSpan="3" 
+                           Grid.Row="0" 
+                           FontSize="25" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
         <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="#0d5b82" x:Name="RestartGame" Grid.ColumnSpan="2" Text="Jeszcze raz" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="10" />
         <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="#0d5b82" x:Name="Menu" Grid.ColumnSpan="2" Text="Menu głowne" Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="10"/>
 

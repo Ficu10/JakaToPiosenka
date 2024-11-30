@@ -30,6 +30,8 @@ namespace JakaToPiosenka
         bool answered = true;
         Sounds sounds = new Sounds();
         public static SongsAndAuthors endList = new SongsAndAuthors();
+        int goodBadCounter = 0;
+        public static int[] goodBadSongs = new int[10];
 
         public static List<string> songsFromGame = new List<string>();
         public Game()
@@ -212,6 +214,7 @@ namespace JakaToPiosenka
                         }
                         if (endOfQuestion == true)
                         {
+
                             SongAuthor.IsVisible = false;
                             Time.IsVisible = false;
                             newGame = false;
@@ -237,13 +240,16 @@ namespace JakaToPiosenka
                                 goodAnswer = false;
                                 BackgroundImageSource = "green.jpg";
                                 SongTitle.Text = "Dobrze";
+                                goodBadSongs[goodBadCounter] = 1; 
                             }
                             else
                             {
                                 endOfQuestion = false;
                                 BackgroundImageSource = "red.jpg";
                                 SongTitle.Text = "Brak odpowiedzi";
+                                goodBadSongs[goodBadCounter] = 0;
                             }
+                            goodBadCounter++;
                             if (gameCounter == 0)
                             {
                                 Dispose();
