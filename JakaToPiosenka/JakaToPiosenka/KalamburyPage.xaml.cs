@@ -15,7 +15,7 @@ using JakaToPiosenka.MusicClasses;
 
 namespace JakaToPiosenka
 {
-    public partial class MainPage : ContentPage
+    public partial class KalamburyPage : ContentPage
     {
         public static bool orientationPortrait = true;
         public static string gameMode = "allSongs";
@@ -24,11 +24,12 @@ namespace JakaToPiosenka
         private double maxScrollPosition = 950; // Maximum scroll position
 
         Sounds sound = new Sounds();
-        public MainPage()
+        public KalamburyPage()
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
             var musicTypesSongs = new List<MUSICTYPES>()
+
             {
                 new Pop(),
                 new Rock(),
@@ -77,7 +78,7 @@ namespace JakaToPiosenka
             MenuView.IsVisible = true;
             LeftMenu.IsVisible = false;
             await MenuView.TranslateTo(0, 0, 500, Easing.CubicOut);
-           
+
         }
 
         private async void OnCloseMenuClicked(object sender, EventArgs e)
@@ -130,7 +131,7 @@ namespace JakaToPiosenka
         }
         protected override bool OnBackButtonPressed()
         {
-          
+
             return true;
         }
 

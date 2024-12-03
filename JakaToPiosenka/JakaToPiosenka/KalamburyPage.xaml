@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:JakaToPiosenka"
-             x:Class="JakaToPiosenka.MainPage"
+             x:Class="JakaToPiosenka.KalamburyPage"
              Shell.NavBarIsVisible="False"  
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False">
@@ -10,23 +10,23 @@
     <ContentPage.Background>
         <LinearGradientBrush>
             <!-- Dodaj kolory gradientu -->
-            <GradientStop Color="#87b3d1" Offset="0.0" />
+            <GradientStop Color="#ffb64f" Offset="0.0" />
             <!-- Górny kolor -->
-            <GradientStop Color="#83de87" Offset="1.0" />
+            <GradientStop Color="#ff754f" Offset="1.0" />
             <!-- Dolny kolor -->
         </LinearGradientBrush>
     </ContentPage.Background>
 
 
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.3"/>
-        </Grid.RowDefinitions> 
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition  Width="*"/>
@@ -36,16 +36,16 @@
 
 
 
-        <ImageButton IsEnabled="False" Source="Logo.png" Scale="1.3" Grid.ColumnSpan="2" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
+        <ImageButton IsEnabled="False" Source="Logo.png" Scale="1.3" Grid.ColumnSpan="2" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#ff754f" BorderWidth="5" BorderColor="#26414a"/>
 
 
-        <ScrollView x:Name="Scroll" Grid.Row="1" Grid.RowSpan="3" VerticalScrollBarVisibility="Never"  Grid.ColumnSpan="2" Padding="5" Margin="0,0,20,0" Scrolled="Scroll_Scrolled">
+        <ScrollView x:Name="Scroll" Grid.Row="1" Grid.RowSpan="3" VerticalScrollBarVisibility="Never" Grid.ColumnSpan="2" Padding="5" Margin="0,0,20,0" Scrolled="Scroll_Scrolled">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="NUTKI.png" Grid.ColumnSpan="2" Scale="2.7" Opacity="0.3" Margin="0,0,0,1000" Rotation="-5"/>
+                <Image Source="NUTKI.png" Grid.ColumnSpan="2" Scale="2.8" Opacity="0.3" Margin="20,0,0,1000"/>
 
                 <StackLayout Grid.Column="0">
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="WszystkiePiosenki.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
@@ -89,13 +89,13 @@
           HeightRequest="9"/>
 
         <ContentView x:Name="MenuView" 
-              BackgroundColor="#adc2ff" 
-              IsVisible="False" 
-              HorizontalOptions="FillAndExpand" 
-              VerticalOptions="End"
-              TranslationX="-200"
-              HeightRequest="1000"
-              Grid.RowSpan="3">
+        BackgroundColor="#adc2ff" 
+        IsVisible="False" 
+        HorizontalOptions="FillAndExpand" 
+        VerticalOptions="End"
+        TranslationX="-200"
+        HeightRequest="1000"
+        Grid.RowSpan="3">
             <StackLayout Grid.RowSpan="2">
                 <Button Text="X" FontSize="20" TextColor="White" Clicked="OnCloseMenuClicked" Margin="150,0,0,0" BackgroundColor="Transparent" />
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>
@@ -111,7 +111,7 @@
 
 
     </Grid>
-   
+
 
 
 

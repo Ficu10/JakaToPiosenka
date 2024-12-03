@@ -9,42 +9,8 @@ using Xamarin.Essentials;
 
 namespace JakaToPiosenka.MusicClasses
 {
-    internal class The80Polish : MusicTypes
+    internal class The80Polish : MUSICTYPES
     {
-        [PrimaryKey, AutoIncrement] public int Id { get; set; }
-        public override void Load()
-        {
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.TxtFiles.Lata80Polska.txt")))
-            {
-                connection.CreateTable<The80Polish>();
-                connectionRestart.CreateTable<The80Polish>();
-                string line;
-                while ((line = streamReader.ReadLine()) != null)
-                {
-                    var fields = line.Split(';');
-                    var songsData = new The80Polish
-                    {
-                        Title = fields[1],
-                        Author = fields[0]
-                    };
-                    connection.Insert(songsData);
-                    connectionRestart.Insert(songsData);
-                }
-
-            }
-
-        }
-
-        public async override void Import()
-        {
-
-          
-                    connection.DeleteAll<The80Polish>();
-                    connectionRestart.DeleteAll<The80Polish>();
-                 
-
-        }
+        public override string FileName => "The80Polish";
     }
 }

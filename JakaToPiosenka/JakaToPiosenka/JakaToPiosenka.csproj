@@ -23,21 +23,21 @@
     <None Remove="Sounds\loseSound.wav" />
     <None Remove="Sounds\mediumScoreSound.wav" />
     <None Remove="Sounds\winSound.wav" />
-    <None Remove="TxtFiles\Lata80calosc.txt" />
-    <None Remove="TxtFiles\Lata80Polska.txt" />
-    <None Remove="TxtFiles\lata80Polski.txt" />
     <None Remove="TxtFiles\Lata80Zzagranica.txt" />
     <None Remove="TxtFiles\nowy_plik.txt" />
-    <None Remove="TxtFiles\PolskiPop.txt" />
-    <None Remove="TxtFiles\PopCalosc.txt" />
+    <None Remove="TxtFiles\Pop.txt" />
+    <None Remove="TxtFiles\PopEnglish.txt" />
+    <None Remove="TxtFiles\PopPolish.txt" />
     <None Remove="TxtFiles\PopPolski.txt" />
-    <None Remove="TxtFiles\PopZagraniczny.txt" />
     <None Remove="TxtFiles\RapCalosc.txt" />
-    <None Remove="TxtFiles\RapZagranczny.txt" />
-    <None Remove="TxtFiles\RapZPolski.txt" />
+    <None Remove="TxtFiles\RapEnglish.txt" />
+    <None Remove="TxtFiles\RapPolish.txt" />
     <None Remove="TxtFiles\RockCaly.txt" />
-    <None Remove="TxtFiles\RockZPolski.txt" />
-    <None Remove="TxtFiles\RockZzagranicy.txt" />
+    <None Remove="TxtFiles\RockEnglish.txt" />
+    <None Remove="TxtFiles\RockPolish.txt" />
+    <None Remove="TxtFiles\The80.txt" />
+    <None Remove="TxtFiles\The80English.txt" />
+    <None Remove="TxtFiles\The80Polish.txt" />
     <None Remove="TxtFiles\Youtube.txt" />
     <None Remove="TxtFiles\Youtube1.txt" />
   </ItemGroup>
@@ -53,24 +53,23 @@
     <EmbeddedResource Include="Sounds\winSound.wav" />
     <EmbeddedResource Include="TxtFiles\AllSongs.txt" />
     <EmbeddedResource Include="TxtFiles\FairyTales.txt" />
-    <EmbeddedResource Include="TxtFiles\Lata80calosc.txt" />
-    <EmbeddedResource Include="TxtFiles\Lata80Polska.txt" />
-    <EmbeddedResource Include="TxtFiles\lata80Polski.txt" />
+    <EmbeddedResource Include="TxtFiles\The80.txt" />
+    <EmbeddedResource Include="TxtFiles\The80English.txt" />
+    <EmbeddedResource Include="TxtFiles\The80Polish.txt" />
     <EmbeddedResource Include="TxtFiles\Lata80Zzagranica.txt" />
     <EmbeddedResource Include="TxtFiles\nowy_plik.txt" />
-    <EmbeddedResource Include="TxtFiles\PolskiPop.txt" />
+    <EmbeddedResource Include="TxtFiles\PopPolish.txt" />
     <EmbeddedResource Include="TxtFiles\Pop.txt" />
-    <EmbeddedResource Include="TxtFiles\PopCalosc.txt" />
     <EmbeddedResource Include="TxtFiles\PopPolski.txt" />
-    <EmbeddedResource Include="TxtFiles\PopZagraniczny.txt" />
+    <EmbeddedResource Include="TxtFiles\PopEnglish.txt" />
     <EmbeddedResource Include="TxtFiles\Rap.txt" />
     <EmbeddedResource Include="TxtFiles\RapCalosc.txt" />
-    <EmbeddedResource Include="TxtFiles\RapZagranczny.txt" />
-    <EmbeddedResource Include="TxtFiles\RapZPolski.txt" />
+    <EmbeddedResource Include="TxtFiles\RapEnglish.txt" />
+    <EmbeddedResource Include="TxtFiles\RapPolish.txt" />
     <EmbeddedResource Include="TxtFiles\Rock.txt" />
     <EmbeddedResource Include="TxtFiles\RockCaly.txt" />
-    <EmbeddedResource Include="TxtFiles\RockZPolski.txt" />
-    <EmbeddedResource Include="TxtFiles\RockZzagranicy.txt" />
+    <EmbeddedResource Include="TxtFiles\RockPolish.txt" />
+    <EmbeddedResource Include="TxtFiles\RockEnglish.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube1.txt" />
   </ItemGroup>
@@ -107,6 +106,9 @@
     <EmbeddedResource Update="Game.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="KalamburyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MultiplayerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -116,5 +118,9 @@
     <EmbeddedResource Update="SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="KalamburyClasses\" />
   </ItemGroup>
 </Project>

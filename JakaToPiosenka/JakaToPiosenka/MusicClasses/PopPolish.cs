@@ -9,44 +9,8 @@ using Xamarin.Essentials;
 
 namespace JakaToPiosenka.MusicClasses
 {
-    internal class PopPolish : MusicTypes
+    internal class PopPolish : MUSICTYPES
     {
-        [PrimaryKey, AutoIncrement] public int Id { get; set; }
-        public override void Load()
-        {
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.TxtFiles.PopPolski.txt")))
-            {
-                connection.CreateTable<PopPolish>();
-                connectionRestart.CreateTable<PopPolish>();
-                string line;
-                while ((line = streamReader.ReadLine()) != null)
-                {
-                    var fields = line.Split(';');
-                    var songsData = new PopPolish
-                    {
-                        Title = fields[1],
-                        Author = fields[0]
-                    };
-                    connection.Insert(songsData);
-                    connectionRestart.Insert(songsData);
-                }
-
-            }
-
-        }
-
-        public async override void Import()
-        {
-
-          
-                        connection.DeleteAll<PopPolish>();
-                        connectionRestart.DeleteAll<PopPolish>();
-                      
-
-
-
-        }
+        public override string FileName => "PopPolish";
     }
 }

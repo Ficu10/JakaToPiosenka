@@ -9,44 +9,8 @@ using Xamarin.Essentials;
 
 namespace JakaToPiosenka.MusicClasses
 {
-    internal class RapEnglish : MusicTypes
+    internal class RapEnglish : MUSICTYPES
     {
-        [PrimaryKey, AutoIncrement] public int Id { get; set; }
-        public override void Load()
-        {
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.TxtFiles.RapZagranczny.txt")))
-            {
-                connection.CreateTable<RapEnglish>();
-                connectionRestart.CreateTable<RapEnglish>();
-                string line;
-                while ((line = streamReader.ReadLine()) != null)
-                {
-                    var fields = line.Split(';');
-                    var songsData = new RapEnglish
-                    {
-                        Title = fields[1],
-                        Author = fields[0]
-                    };
-                    connection.Insert(songsData);
-                    connectionRestart.Insert(songsData);
-                }
-
-            }
-
-        }
-
-        public async override void Import()
-        {
-
-          
-                        connection.DeleteAll<RapEnglish>();
-                        connectionRestart.DeleteAll<RapEnglish>();
-                       
-
-
-
-        }
+        public override string FileName => "RapEnglish";
     }
 }

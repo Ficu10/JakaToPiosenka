@@ -96,68 +96,68 @@ namespace JakaToPiosenka
 
             if (MainPage.gameMode == "AllSongs")
             {
-                StartGame(MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "FairyTales")
             {
-                StartGame(MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Pop")
             {
-                StartGame(MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Pop>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rock")
             {
-                StartGame(MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Rock>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<Rock>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Rock>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
 
             }
             else if (MainPage.gameMode == "UsersMusic")
             {
-                StartGame(MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rap")
             {
-                StartGame(MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Rap>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<Rap>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Rap>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RapPolish")
             {
-                StartGame(MusicTypes.connection.Table<RapPolish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<RapPolish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<RapPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RapPolish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RapEnglish")
             {
-                StartGame(MusicTypes.connection.Table<RapEnglish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<RapEnglish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<RapEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RapEnglish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "PopPolish")
             {
-                StartGame(MusicTypes.connection.Table<PopPolish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<PopPolish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<PopPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<PopPolish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "PopEnglish")
             {
-                StartGame(MusicTypes.connection.Table<PopEnglish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<PopEnglish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<PopEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<PopEnglish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "The80")
             {
-                StartGame(MusicTypes.connection.Table<The80>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<The80>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<The80>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<The80>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<The80>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<The80>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<The80>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<The80>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "The80English")
             {
-                StartGame(MusicTypes.connection.Table<The80English>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<The80English>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<The80English>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<The80English>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<The80English>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<The80English>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<The80English>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<The80English>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "The80Polish")
             {
-                StartGame(MusicTypes.connection.Table<The80Polish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<The80Polish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<The80Polish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<The80Polish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RockEnglish")
             {
-                StartGame(MusicTypes.connection.Table<RockEnglish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<RockEnglish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<RockEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RockEnglish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RockPolish")
             {
-                StartGame(MusicTypes.connection.Table<RockPolish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<RockPolish>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<RockPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RockPolish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Youtube")
             {
-                StartGame(MusicTypes.connection.Table<Youtube>().ToList().Select(x => x.Author).ToList(), MusicTypes.connection.Table<Youtube>().ToList().Select(x => x.Title).ToList(), MusicTypes.connectionRestart.Table<Youtube>().ToList().Select(x => x.Author).ToList(), MusicTypes.connectionRestart.Table<Youtube>().ToList().Select(x => x.Title).ToList());
+                StartGame(MUSICTYPES.connection.Table<Youtube>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Youtube>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Youtube>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Youtube>().ToList().Select(x => x.Title).ToList());
             }
         }
         public void ShowGame()
@@ -230,7 +230,7 @@ namespace JakaToPiosenka
 
 
                             string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Author = ?";
-                            MusicTypes.connection.Execute(deleteQuery, titleToRemove, authorToRemove);
+                            MUSICTYPES.connection.Execute(deleteQuery, titleToRemove, authorToRemove);
                             authorsList.RemoveAt(songId);
                             songsList.RemoveAt(songId);
                             if (goodAnswer == true)

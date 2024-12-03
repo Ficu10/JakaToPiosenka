@@ -9,42 +9,8 @@ using Xamarin.Essentials;
 
 namespace JakaToPiosenka.MusicClasses
 {
-    class Youtube : MusicTypes
+    class Youtube : MUSICTYPES
     {
-        [PrimaryKey, AutoIncrement] public int Id { get; set; }
-        public override void Load()
-        {
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream("JakaToPiosenka.TxtFiles.Youtube.txt")))
-            {
-                connection.CreateTable<Youtube>();
-                connectionRestart.CreateTable<Youtube>();
-                string line;
-                while ((line = streamReader.ReadLine()) != null)
-                {
-                    var fields = line.Split(';');
-                    var songsData = new Youtube
-                    {
-                        Title = fields[1],
-                        Author = fields[0]
-                    };
-                    connection.Insert(songsData);
-                    connectionRestart.Insert(songsData);
-                }
-
-            }
-
-        }
-
-        public async override void Import()
-        {
-
-           
-                    connection.DeleteAll<Youtube>();
-                    connectionRestart.DeleteAll<Youtube>();
-                    
-
-        }
+        public override string FileName => "Youtube";
     }
 }

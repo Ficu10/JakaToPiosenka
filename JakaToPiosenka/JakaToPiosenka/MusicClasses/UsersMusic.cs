@@ -1,31 +1,34 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Xamarin.Essentials;
 
 namespace JakaToPiosenka.MusicClasses
 {
-    internal class UsersMusic : MusicTypes
+    internal class UsersMusic : MUSICTYPES
     {
-        [PrimaryKey, AutoIncrement] public int Id { get; set; }
+        // Właściwość FileName zwraca pustą wartość, ponieważ UsersMusic nie korzysta z pliku.
+        public override string FileName => null;
+
         public override void Load()
         {
+            // Tworzenie tabeli tylko dla UsersMusic
             connection.CreateTable<UsersMusic>();
             connectionRestart.CreateTable<UsersMusic>();
-
         }
 
-        public async override void Import()
+        public override void Import()
         {
+            // Usuwanie wszystkich danych z tabeli UsersMusic
+            var tableMapping = connection.GetMapping<UsersMusic>();
+            connection.Execute($"DELETE FROM {tableMapping.TableName}");
 
-          
-                    connection.DeleteAll<UsersMusic>();
-                    connectionRestart.DeleteAll<UsersMusic>();
-                  
+            var tableMappingRestart = connectionRestart.GetMapping<UsersMusic>();
+            connectionRestart.Execute($"DELETE FROM {tableMappingRestart.TableName}");
+        }
+
+        public override void Delete()
+        {
+            // Możesz użyć Import() jako bazowego sposobu na usunięcie wszystkich rekordów
+            Import();
         }
     }
 }
