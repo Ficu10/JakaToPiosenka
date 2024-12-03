@@ -61,17 +61,15 @@ namespace JakaToPiosenka
 
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
-            MenuView.IsVisible = true;
-            LeftMenu.IsVisible = false;
-            await MenuView.TranslateTo(0, 0, 500, Easing.CubicOut);
+            await Navigation.PushAsync(new MultiplayerPage());
+
 
         }
 
         private async void Settings_Click(object sender, EventArgs e)
         {
-            MenuView.IsVisible = true;
-            LeftMenu.IsVisible = false;
-            await MenuView.TranslateTo(0, 0, 500, Easing.CubicOut);
+            await Navigation.PushAsync(new SettingsPage());
+
 
         }
         private async void OnMenuButtonClicked(object sender, EventArgs e)

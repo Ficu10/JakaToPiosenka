@@ -17459,73 +17459,76 @@ namespace JakaToPiosenka.Droid
 			public const int notify_panel_notification_icon_bg = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int PiosenkiZBajek = 2131165542;
+			public const int NUTKI = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int PolskieLata80 = 2131165543;
+			public const int PiosenkiZBajek = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int pop = 2131165544;
+			public const int PolskieLata80 = 2131165544;
 			
 			// aapt resource value: 0x7F070169
-			public const int PopPolski = 2131165545;
+			public const int pop = 2131165545;
 			
 			// aapt resource value: 0x7F07016A
-			public const int PopZagraniczny = 2131165546;
+			public const int PopPolski = 2131165546;
 			
 			// aapt resource value: 0x7F07016B
-			public const int preference_list_divider_material = 2131165547;
+			public const int PopZagraniczny = 2131165547;
 			
 			// aapt resource value: 0x7F07016C
-			public const int pSekund = 2131165548;
+			public const int preference_list_divider_material = 2131165548;
 			
 			// aapt resource value: 0x7F07016D
-			public const int rap = 2131165549;
+			public const int pSekund = 2131165549;
 			
 			// aapt resource value: 0x7F07016E
-			public const int RapPolski = 2131165550;
+			public const int rap = 2131165550;
 			
 			// aapt resource value: 0x7F07016F
-			public const int RapZagraniczny = 2131165551;
+			public const int RapPolski = 2131165551;
 			
 			// aapt resource value: 0x7F070170
-			public const int red = 2131165552;
+			public const int RapZagraniczny = 2131165552;
 			
 			// aapt resource value: 0x7F070171
-			public const int rock = 2131165553;
+			public const int red = 2131165553;
 			
 			// aapt resource value: 0x7F070172
-			public const int RockPolski = 2131165554;
+			public const int rock = 2131165554;
 			
 			// aapt resource value: 0x7F070173
-			public const int RockZagraniczny = 2131165555;
+			public const int RockPolski = 2131165555;
 			
 			// aapt resource value: 0x7F070174
-			public const int settingss = 2131165556;
+			public const int RockZagraniczny = 2131165556;
 			
 			// aapt resource value: 0x7F070175
-			public const int test_custom_background = 2131165557;
+			public const int settingss = 2131165557;
 			
 			// aapt resource value: 0x7F070176
-			public const int Title = 2131165558;
+			public const int test_custom_background = 2131165558;
 			
 			// aapt resource value: 0x7F070177
-			public const int tooltip_frame_dark = 2131165559;
+			public const int Title = 2131165559;
 			
 			// aapt resource value: 0x7F070178
-			public const int tooltip_frame_light = 2131165560;
+			public const int tooltip_frame_dark = 2131165560;
 			
 			// aapt resource value: 0x7F070179
-			public const int WszystkiePiosenki = 2131165561;
+			public const int tooltip_frame_light = 2131165561;
 			
 			// aapt resource value: 0x7F07017A
-			public const int yourMusic = 2131165562;
+			public const int WszystkiePiosenki = 2131165562;
 			
 			// aapt resource value: 0x7F07017B
-			public const int yt = 2131165563;
+			public const int yourMusic = 2131165563;
 			
 			// aapt resource value: 0x7F07017C
-			public const int ZagraniczneLata80 = 2131165564;
+			public const int yt = 2131165564;
+			
+			// aapt resource value: 0x7F07017D
+			public const int ZagraniczneLata80 = 2131165565;
 			
 			static Drawable()
 			{

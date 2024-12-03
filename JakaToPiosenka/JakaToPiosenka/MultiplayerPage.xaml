@@ -1,12 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JakaToPiosenka.MultiplayerPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="JakaToPiosenka.MultiplayerPage"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#7af0bf">
+    <StackLayout Padding="20" Spacing="10">
+        <!-- Pole do wpisania imienia -->
+        <Entry x:Name="PlayerNameEntry"
+               Placeholder="Wprowadź imię gracza"
+               FontSize="18" 
+               HorizontalOptions="Center"
+               Scale="1.3"
+               VerticalTextAlignment="Center"
+               Margin="0,30,0,0"/>
+
+        <!-- Przycisk do dodania gracza -->
+        <Button Text="Dodaj Gracza"
+                Clicked="OnAddPlayerClicked"
+                FontSize="18"
+                BackgroundColor="#28b87c"
+                CornerRadius="20"
+                TextColor="#c6f5e1"/>
+
+        <Label Text="Liczba Graczy" FontSize="30" HorizontalOptions="Center"/>
+        <Label x:Name="NumberOfPlayer" Text="0" FontSize="30"  HorizontalOptions="Center"/>
+
+        <!-- Lista graczy -->
+        <CollectionView x:Name="PlayersList"
+                        ItemsSource="{Binding Players}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
+                        <Button  Text="Usuń" BackgroundColor="#bf454f"
+                                Clicked="OnRemovePlayerClicked"
+                                HorizontalOptions="EndAndExpand"
+                                FontSize="16"
+                                 TextColor="#ffbac0"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+            <Label Text="Multiplayer" VerticalOptions="Center" FontSize="28" />
+            <Switch x:Name="MultiplayerSwitch"
+                    Toggled="OnMultiplayerSwitchToggled"
+                    HorizontalOptions="EndAndExpand"
+                    Scale="2"
+                    OnColor="#6bf28f"
+                    ThumbColor="#00f541"/>
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

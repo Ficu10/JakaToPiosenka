@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JakaToPiosenka.SettingsPage">
+             x:Class="JakaToPiosenka.SettingsPage"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#7af0bf"> 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Ustawienia"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

@@ -54,18 +54,4 @@ namespace JakaToPiosenka
             return true;
         }
     }
-
-
-
-
-
-
-
-
-
-            // Convert the orientation angles to
-
-            
-
-    
 }

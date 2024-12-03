@@ -26,8 +26,8 @@
            
             <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3">
                 <Label/>
-                <Entry x:Name="NewAuthorName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="White" Text=""/>
-                <Entry x:Name="NewSongName" Placeholder="Tytuł"  HorizontalTextAlignment="Center" BackgroundColor="White" Text=""/>
+                <Entry x:Name="NewAuthorName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
+                <Entry x:Name="NewSongName" Placeholder="Tytuł"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
             </StackLayout>
             <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="30"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,160" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="#0d5b82" BorderColor="White" BorderWidth="3"/>
 
@@ -36,7 +36,7 @@
 
 
 
-            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="20,120,20,-10"  HorizontalTextAlignment="Center" BackgroundColor="White" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="20,120,20,-10"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
             <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="20,0,20,50">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
