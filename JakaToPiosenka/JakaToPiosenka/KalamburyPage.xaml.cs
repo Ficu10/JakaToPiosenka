@@ -21,7 +21,7 @@ namespace JakaToPiosenka
         public static string gameMode = "allSongs";
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 950; // Maximum scroll position
+        private double maxScrollPosition = 550; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public KalamburyPage()
@@ -88,115 +88,14 @@ namespace JakaToPiosenka
             LeftMenu.IsVisible = true;
 
         }
-        async void AllSongsButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "AllSongs";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        async void RockButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "Rock";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        async void PopButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "Pop";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        async void DisneyButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "FairyTales";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        async void UsersMusicButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "UsersMusic";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        async void RapButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "Rap";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
+        
         protected override bool OnBackButtonPressed()
         {
 
             return true;
         }
 
-        private async void The80Button_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "The80";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void The80PolishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "The80Polish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void RockPolishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "RockPolish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void RockEnglishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "RockEnglish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void RapPolishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "RapPolish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void RapEnglishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "RapEnglish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void PopPolishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "PopPolish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void PopEnglishButton_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "PopEnglish";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
-        private async void The80English_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "The80English";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
+       
 
         private void Scroll_Scrolled(object sender, ScrolledEventArgs e)
         {
@@ -219,13 +118,7 @@ namespace JakaToPiosenka
             }
         }
 
-        private async void Youtube_Clicked(object sender, EventArgs e)
-        {
-            sound.ClickSound();
-            gameMode = "Youtube";
-            await Navigation.PushAsync(new BeforeGamePage());
-        }
-
+       
         private async void NoteButton_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
@@ -236,6 +129,56 @@ namespace JakaToPiosenka
         {
             sound.ClickSound();
             await Navigation.PushAsync(new KalamburyPage());
+        }
+
+        private void zwierzetaButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void przyslowiaButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panstwaButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void netflixButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bajkiButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filmyButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emocjeButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dladzieciButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postaciehistoryczne_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void zawodyButton_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -238,5 +238,40 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\NUTKI.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\kalambury.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\nuta.png" />
+    <AndroidResource Include="Resources\drawable\kalambur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\dladzieci.jpg" />
+    <AndroidResource Include="Resources\drawable\kalamburyLogo.png" />
+    <AndroidResource Include="Resources\drawable\zgdulaLogo.png" />
+    <AndroidResource Include="Resources\drawable\rapzag.jpg" />
+    <AndroidResource Include="Resources\drawable\roczek.jpg" />
+    <AndroidResource Include="Resources\drawable\musica.jpg" />
+    <AndroidResource Include="Resources\drawable\filmy.jpg" />
+    <AndroidResource Include="Resources\drawable\przyslowia.jpg" />
+    <AndroidResource Include="Resources\drawable\emocje.jpg" />
+    <AndroidResource Include="Resources\drawable\popjak.jpg" />
+    <AndroidResource Include="Resources\drawable\rappol.jpg" />
+    <AndroidResource Include="Resources\drawable\postacfikcyjna.jpg" />
+    <AndroidResource Include="Resources\drawable\mini4.jpg" />
+    <AndroidResource Include="Resources\drawable\netflix.png" />
+    <AndroidResource Include="Resources\drawable\zgadulaLogo.png" />
+    <AndroidResource Include="Resources\drawable\kalLogo.png" />
+    <AndroidResource Include="Resources\drawable\bajki.jpg" />
+    <AndroidResource Include="Resources\drawable\zwierzeta.jpg" />
+    <AndroidResource Include="Resources\drawable\dladzieci1.jpg" />
+    <AndroidResource Include="Resources\drawable\gornik.jpg" />
+    <Content Include="Resources\drawable\jedzenie.jpg" />
+    <AndroidResource Include="Resources\drawable\panstwa.jpg" />
+    <AndroidResource Include="Resources\drawable\disney1.jpg" />
+    <AndroidResource Include="Resources\drawable\rockpol.jpg" />
+    <AndroidResource Include="Resources\drawable\poppol.jpg" />
+    <Content Include="Resources\drawable\Pop_logo_2021.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
