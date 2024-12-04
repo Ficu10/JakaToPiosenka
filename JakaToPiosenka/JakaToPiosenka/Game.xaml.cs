@@ -1,4 +1,5 @@
-﻿using JakaToPiosenka.MusicClasses;
+﻿using JakaToPiosenka;
+using JakaToPiosenka;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace JakaToPiosenka
         bool goodAnswer = false;
         bool answered = true;
         Sounds sounds = new Sounds();
-        public static SongsAndAuthors endList = new SongsAndAuthors();
+        public static AllData endList = new AllData();
         int goodBadCounter = 0;
         public static int[] goodBadSongs = new int[10];
 
@@ -62,7 +63,7 @@ namespace JakaToPiosenka
                     BackgroundImageSource = "green.jpg";
                     SongTitle.Text = "Dobrze";
                     Time.IsVisible = false;
-                    SongAuthor.IsVisible = false;
+                    TitlePrompt.IsVisible = false;
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
                     goodAnswer = true;
@@ -74,7 +75,7 @@ namespace JakaToPiosenka
                     BackgroundImageSource = "red.jpg";
                     SongTitle.Text = "Brak odpowiedzi";
                     Time.IsVisible = false;
-                    SongAuthor.IsVisible = false;
+                    TitlePrompt.IsVisible = false;
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
                     answered = true;
@@ -96,79 +97,121 @@ namespace JakaToPiosenka
 
             if (MainPage.gameMode == "AllSongs")
             {
-                StartGame(MUSICTYPES.connection.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<AllSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "FairyTales")
             {
-                StartGame(MUSICTYPES.connection.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<FairyTales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Pop")
             {
-                StartGame(MUSICTYPES.connection.Table<Pop>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Pop>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<Pop>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Pop>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rock")
             {
-                StartGame(MUSICTYPES.connection.Table<Rock>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Rock>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<Rock>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Rock>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
 
             }
             else if (MainPage.gameMode == "UsersMusic")
             {
-                StartGame(MUSICTYPES.connection.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<UsersMusic>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Rap")
             {
-                StartGame(MUSICTYPES.connection.Table<Rap>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Rap>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<Rap>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Rap>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RapPolish")
             {
-                StartGame(MUSICTYPES.connection.Table<RapPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RapPolish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<RapPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RapPolish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RapEnglish")
             {
-                StartGame(MUSICTYPES.connection.Table<RapEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RapEnglish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<RapEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RapEnglish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "PopPolish")
             {
-                StartGame(MUSICTYPES.connection.Table<PopPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<PopPolish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<PopPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<PopPolish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "PopEnglish")
             {
-                StartGame(MUSICTYPES.connection.Table<PopEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<PopEnglish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<PopEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<PopEnglish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "The80")
             {
-                StartGame(MUSICTYPES.connection.Table<The80>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<The80>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<The80>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<The80>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<The80>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<The80>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<The80>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "The80English")
             {
-                StartGame(MUSICTYPES.connection.Table<The80English>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<The80English>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<The80English>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<The80English>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<The80English>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<The80English>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<The80English>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80English>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "The80Polish")
             {
-                StartGame(MUSICTYPES.connection.Table<The80Polish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<The80Polish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<The80Polish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<The80Polish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RockEnglish")
             {
-                StartGame(MUSICTYPES.connection.Table<RockEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RockEnglish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<RockEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RockEnglish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "RockPolish")
             {
-                StartGame(MUSICTYPES.connection.Table<RockPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<RockPolish>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<RockPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RockPolish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Title).ToList());
             }
             else if (MainPage.gameMode == "Youtube")
             {
-                StartGame(MUSICTYPES.connection.Table<Youtube>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connection.Table<Youtube>().ToList().Select(x => x.Title).ToList(), MUSICTYPES.connectionRestart.Table<Youtube>().ToList().Select(x => x.Author).ToList(), MUSICTYPES.connectionRestart.Table<Youtube>().ToList().Select(x => x.Title).ToList());
+                StartGame(AllPasswords.connection.Table<Youtube>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Youtube>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Youtube>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Youtube>().ToList().Select(x => x.Title).ToList());
             }
+            else if (MainPage.gameMode == "Children")
+            {
+                StartGame(AllPasswords.connection.Table<Children>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Children>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Children>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Children>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Countries")
+            {
+                StartGame(AllPasswords.connection.Table<Countries>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Countries>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Countries>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Countries>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Emotions")
+            {
+                StartGame(AllPasswords.connection.Table<Emotions>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Emotions>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Emotions>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Emotions>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "FictionalCharacter")
+            {
+                StartGame(AllPasswords.connection.Table<FictionalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<FictionalCharacter>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<FictionalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<FictionalCharacter>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "HistoricalCharacter")
+            {
+                StartGame(AllPasswords.connection.Table<HistoricalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<HistoricalCharacter>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<HistoricalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<HistoricalCharacter>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Jobs")
+            {
+                StartGame(AllPasswords.connection.Table<Jobs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Jobs>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Jobs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Jobs>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Movies")
+            {
+                StartGame(AllPasswords.connection.Table<Movies>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Movies>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Movies>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Movies>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Series")
+            {
+                StartGame(AllPasswords.connection.Table<Series>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Series>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Series>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Series>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Tales")
+            {
+                StartGame(AllPasswords.connection.Table<Tales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Tales>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Tales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Tales>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Words")
+            {
+                StartGame(AllPasswords.connection.Table<Words>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Words>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Words>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Words>().ToList().Select(x => x.Title).ToList());
+            }
+
         }
         public void ShowGame()
         {
-            SongAuthor.IsVisible = true;
+
+            TitlePrompt.IsVisible = true;
             Time.IsVisible = true;
             SongTitle.IsVisible = true;
             Task modifyTaskOne = Task.Run(() => GameType());
         }
 
-        public void StartGame(List<string> authorsList, List<string> songsList, List<string> authorsListReset, List<string> songsListReset)
+        public void StartGame(List<string> PromptsList, List<string> songsList, List<string> PromptsListReset, List<string> songsListReset)
         {
             sounds.CountdownSound();
             answered = true;
@@ -180,18 +223,18 @@ namespace JakaToPiosenka
 
             while (gameCounter > 0)
             {
-                if (authorsList.Count < 1)
+                if (PromptsList.Count < 1)
                 {
-                    for (int i = 0; i < authorsListReset.Count; i++)
+                    for (int i = 0; i < PromptsListReset.Count; i++)
                     {
-                        authorsList.Add(authorsListReset[i]);
+                        PromptsList.Add(PromptsListReset[i]);
                         songsList.Add(songsListReset[i]);
                     }
 
 
                 }
                 newGame = true;
-                songId = r.Next(authorsList.Count);
+                songId = r.Next(PromptsList.Count);
 
 
                 seconds = BeforeGamePage.timeChanger + 1;
@@ -200,10 +243,10 @@ namespace JakaToPiosenka
                     Device.BeginInvokeOnMainThread(async () =>
                     {
                         WrongAnswearButton.IsEnabled = true;
-                        SongAuthor.IsVisible = true;
+                        TitlePrompt.IsVisible = true;
                         Time.IsVisible = true;
                         BackgroundImageSource = "blue.jpg";
-                        SongAuthor.Text = authorsList[songId];
+                        TitlePrompt.Text = PromptsList[songId];
                         SongTitle.Text = songsList[songId];
                         seconds--;
                         Time.Text = seconds.ToString();
@@ -215,23 +258,23 @@ namespace JakaToPiosenka
                         if (endOfQuestion == true)
                         {
 
-                            SongAuthor.IsVisible = false;
+                            TitlePrompt.IsVisible = false;
                             Time.IsVisible = false;
                             newGame = false;
                             songsFromGame.Add(songsList[songId]);
-                            endList = new SongsAndAuthors
+                            endList = new AllData
                             {
                                 Title = songsList[songId],
-                                Author = authorsList[songId]
+                                Prompt = PromptsList[songId]
                             };
                             gameCounter--;
                             string titleToRemove = songsList[songId];
-                            string authorToRemove = authorsList[songId];
+                            string PromptToRemove = PromptsList[songId];
 
 
-                            string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Author = ?";
-                            MUSICTYPES.connection.Execute(deleteQuery, titleToRemove, authorToRemove);
-                            authorsList.RemoveAt(songId);
+                            string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
+                            AllPasswords.connection.Execute(deleteQuery, titleToRemove, PromptToRemove);
+                            PromptsList.RemoveAt(songId);
                             songsList.RemoveAt(songId);
                             if (goodAnswer == true)
                             {
@@ -276,7 +319,7 @@ namespace JakaToPiosenka
                 BackgroundImageSource = "red.jpg";
                 SongTitle.Text = "Brak odpowiedzi";
                 Time.IsVisible = false;
-                SongAuthor.IsVisible = false;
+                TitlePrompt.IsVisible = false;
                 WrongAnswearButton.IsEnabled = false;
                 endOfQuestion = true;
             }

@@ -74,7 +74,7 @@
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="przyslowiaButton_Clicked"  x:Name="przyslowiaButton" Source="przyslowia.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Postacie fikcyjne" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="zwierzetaButton_Clicked"  x:Name="zwierzetaButton" Source="zwierzeta.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="fictionButton_Clicked"  x:Name="fictionButton" Source="zwierzeta.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Postacie historczne" Margin="0,0,0,-20" HorizontalTextAlignment="Center" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="postaciehistoryczne_Clicked"  x:Name="postaciehistoryczne" Source="mini4.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 

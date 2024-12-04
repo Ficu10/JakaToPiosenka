@@ -7,9 +7,9 @@ using System.Reflection;
 using System.Text;
 using Xamarin.Essentials;
 
-namespace JakaToPiosenka.MusicClasses
+namespace JakaToPiosenka
 {
-    internal class RapPolish : MUSICTYPES
+    internal class RapPolish : AllPasswords
     {
         public override string FileName => "RapPolish";
     }

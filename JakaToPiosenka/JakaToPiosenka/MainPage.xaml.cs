@@ -11,7 +11,7 @@ using Xamarin.Forms.Shapes;
 using SQLite;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using JakaToPiosenka.MusicClasses;
+using JakaToPiosenka;
 
 namespace JakaToPiosenka
 {
@@ -19,6 +19,7 @@ namespace JakaToPiosenka
     {
         public static bool orientationPortrait = true;
         public static string gameMode = "allSongs";
+        public static bool isMainPage = true;
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
         private double maxScrollPosition = 1250; // Maximum scroll position
@@ -28,7 +29,7 @@ namespace JakaToPiosenka
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
-            var musicTypesSongs = new List<MUSICTYPES>()
+            var AllPasswordsSongs = new List<AllPasswords>()
             {
                 new Pop(),
                 new Rock(),
@@ -45,22 +46,36 @@ namespace JakaToPiosenka
                 new PopPolish(),
                 new RockEnglish(),
                 new RockPolish(),
-                new Youtube()
+                new Youtube(),
+                new Children(),
+                new Countries(),
+                new Emotions(),
+                new FictionalCharacter(),
+                new HistoricalCharacter(),
+                new Jobs(),
+                new Movies(),
+                new Series(),
+                new Tales(),
+                new Words()
 
             };
-            bool isTableCreated = MUSICTYPES.connection.GetTableInfo("Pop").Any();
+
+            bool isTableCreated = AllPasswords.connection.GetTableInfo("Pop").Any();
             if (!isTableCreated)
             {
-                foreach (var item in musicTypesSongs)
+                foreach (var item in AllPasswordsSongs)
                 {
                     item.Load();
                 }
             }
+            isMainPage = true;
 
         }
 
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
+            sound.ClickSound();
+
             await Navigation.PushAsync(new MultiplayerPage());
 
 
@@ -68,6 +83,8 @@ namespace JakaToPiosenka
 
         private async void Settings_Click(object sender, EventArgs e)
         {
+            sound.ClickSound();
+
             await Navigation.PushAsync(new SettingsPage());
 
 

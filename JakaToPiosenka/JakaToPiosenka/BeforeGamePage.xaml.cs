@@ -21,6 +21,29 @@ namespace JakaToPiosenka
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
 
             InitializeComponent();
+
+            if (MainPage.isMainPage)
+            {
+                BackgroundColor = Color.FromHex("#87b3d1");
+                Time15.BackgroundColor = Color.FromHex("#1a7cad");
+                Time30.BackgroundColor = Color.FromHex("#1a7cad");
+                Time45.BackgroundColor = Color.FromHex("#1a7cad");
+                Time60.BackgroundColor = Color.FromHex("#1a7cad");
+                AddNewSongs.BackgroundColor = Color.FromHex("#0478b3");
+                AddNewSongs.Text = "Dodaj piosenki";
+            }
+            else
+            {
+                BackgroundColor = Color.FromHex("#dba348");
+                Time15.BackgroundColor = Color.FromHex("#e08c04");
+                Time30.BackgroundColor = Color.FromHex("#e08c04");
+                Time45.BackgroundColor = Color.FromHex("#e08c04");
+                Time60.BackgroundColor = Color.FromHex("#e08c04");
+                AddNewSongs.BackgroundColor = Color.FromHex("#fc9d03");
+                AddNewSongs.Text = "Dodaj hasłą";
+
+            }
+
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
             {
                 { "AllSongs", ("Wszystkie gatunki", "WszystkiePiosenki.jpg") },
@@ -38,12 +61,22 @@ namespace JakaToPiosenka
                 { "The80English", ("Zagraniczne lata 80'", "ZagraniczneLata80.jpg") },
                 { "RockPolish", ("Rock Polski", "RockPolski.jpg") },
                 { "RockEnglish", ("Rock Zagraniczny", "RockZagraniczny.jpg") },
-                { "Youtube", ("Hity Youtube", "yt.png") }
+                { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
+                { "Countries", ("Państwa", "panstwa.jpg") },
+                { "Emotions", ("Emocje", "emocje.jpg") },
+                { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
+                { "HistoricalCharcter", ("Postacie Historycze", "mini4.jpg") },
+                { "Jobs", ("Zawody", "gornik.jpg") },
+                { "Movies", ("Filmy", "filmy.jpg") },
+                { "Series", ("Seriale", "netflix.png") },
+                { "Tales", ("Bajki", "bajki.jpg") },
+                { "Words", ("Przysłowia", "przyslowia.jpg") },
             };
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
             {
                 Category.Text = mappings.Item1;
+                
                 PhotoCategory.Source = mappings.Item2;
             }
         }
@@ -84,10 +117,21 @@ namespace JakaToPiosenka
      
         protected override bool OnBackButtonPressed()
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            if (MainPage.isMainPage)
             {
-                await Navigation.PushAsync(new MainPage());
-            });
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PushAsync(new MainPage());
+                });
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PushAsync(new KalamburyPage());
+                });
+            }
+          
 
             return true;
         }

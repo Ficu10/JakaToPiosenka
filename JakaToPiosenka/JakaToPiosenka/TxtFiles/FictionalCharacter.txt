@@ -1,0 +1,73 @@
+Breaking Bad;Walter White
+Breaking Bad;Jesse Pinkman
+Gra o Tron;Jon Snow
+Gra o Tron;Daenerys Targaryen
+Harry Potter;Harry Potter
+Harry Potter;Hermiona Granger
+Harry Potter;Ron Weasley
+Władca Pierścieni;Frodo Baggins
+Władca Pierścieni;Gandalf
+Star Wars;Luke Skywalker
+Star Wars;Darth Vader
+Star Wars;Leia Organa
+Marvel;Iron Man
+Marvel;Captain America
+Marvel;Thor
+Marvel;Black Widow
+DC;Batman
+DC;Superman
+DC;Wonder Woman
+Sherlock Holmes;Sherlock Holmes
+Sherlock Holmes;Dr. Watson
+Simpsonowie;Homer Simpson
+Simpsonowie;Bart Simpson
+Simpsonowie;Marge Simpson
+Rick and Morty;Rick Sanchez
+Rick and Morty;Morty Smith
+South Park;Eric Cartman
+South Park;Stan Marsh
+Friends;Rachel Green
+Friends;Monica Geller
+Friends;Joey Tribbiani
+Friends;Chandler Bing
+The Office;Michael Scott
+The Office;Dwight Schrute
+The Witcher;Geralt z Rivii
+The Witcher;Yennefer z Vengerbergu
+The Witcher;Ciri
+Stranger Things;Eleven
+Stranger Things;Jim Hopper
+Stranger Things;Dustin Henderson
+The Boys;Homelander
+The Boys;Billy Butcher
+Narcos;Pablo Escobar
+Narcos;Javier Peña
+Peaky Blinders;Tommy Shelby
+Peaky Blinders;Arthur Shelby
+Money Heist;Profesor
+Money Heist;Tokio
+Dark;Jonas Kahnwald
+Dark;Martha Nielsen
+House of Cards;Frank Underwood
+House of Cards;Claire Underwood
+Euforia;Rue Bennett
+Euforia;Jules Vaughn
+Czarnobyl;Valery Legasov
+Czarnobyl;Boris Shcherbina
+Dexter;Dexter Morgan
+Dexter;Debra Morgan
+Mad Men;Don Draper
+Mad Men;Peggy Olson
+Suits;Harvey Specter
+Suits;Mike Ross
+Game of Thrones;Arya Stark
+Game of Thrones;Tyrion Lannister
+Avengers;Hulk
+Avengers;Black Panther
+Shrek;Shrek
+Shrek;Osioł
+Shrek;Fiona
+Toy Story;Buzz Astral
+Toy Story;Chudy
+Frozen;Elsa
+Frozen;Anna

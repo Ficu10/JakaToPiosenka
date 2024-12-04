@@ -1,0 +1,71 @@
+Starożytność;Juliusz Cezar
+Starożytność;Kleopatra
+Starożytność;Aleksander Wielki
+Starożytność;Sokrates
+Starożytność;Platon
+Starożytność;Arystoteles
+Starożytność;Hammurabi
+Starożytność;Tutanchamon
+Starożytność;Hannibal
+Średniowiecze;Karol Wielki
+Średniowiecze;Joanna d’Arc
+Średniowiecze;Richard Lwie Serce
+Średniowiecze;Mikołaj Kopernik
+Średniowiecze;Leonardo da Vinci
+Średniowiecze;Dante Alighieri
+Renesans;Galileusz
+Renesans;Michelangelo
+Renesans;Machiavelli
+Renesans;William Szekspir
+Renesans;Krzysztof Kolumb
+Renesans;Ferdynand Magellan
+Oświecenie;Isaac Newton
+Oświecenie;Voltaire
+Oświecenie;Jean-Jacques Rousseau
+Oświecenie;Benjamin Franklin
+Rewolucja Francuska;Napoleon Bonaparte
+Rewolucja Francuska;Maria Antonina
+XIX wiek;Abraham Lincoln
+XIX wiek;Karol Marks
+XIX wiek;Charles Darwin
+XIX wiek;Florence Nightingale
+XIX wiek;Ludwig van Beethoven
+XIX wiek;Winston Churchill
+XX wiek;Albert Einstein
+XX wiek;Mahatma Gandhi
+XX wiek;Władimir Lenin
+XX wiek;Adolf Hitler
+XX wiek;Franklin D. Roosevelt
+XX wiek;Joseph Stalin
+XX wiek;John F. Kennedy
+XX wiek;Martin Luther King Jr.
+XX wiek;Nelson Mandela
+XX wiek;Margaret Thatcher
+XX wiek;Matka Teresa
+XX wiek;Lech Wałęsa
+XX wiek;Papież Jan Paweł II
+XX wiek;Elvis Presley
+XX wiek;Marilyn Monroe
+XX wiek;Steve Jobs
+XX wiek;Barack Obama
+XX wiek;Mao Zedong
+XX wiek;Nikola Tesla
+XX wiek;Marie Curie
+XX wiek;Frida Kahlo
+XX wiek;Pablo Picasso
+XX wiek;Ernest Hemingway
+XX wiek;Che Guevara
+XX wiek;Yuri Gagarin
+XX wiek;Neil Armstrong
+XX wiek;Malcolm X
+XXI wiek;Angela Merkel
+XXI wiek;Elon Musk
+XXI wiek;Greta Thunberg
+XXI wiek;Donald Trump
+XXI wiek;Vladimir Putin
+XXI wiek;Xi Jinping
+XXI wiek;Jacinda Ardern
+XXI wiek;Joe Biden
+XXI wiek;Kamala Harris
+XXI wiek;Volodymyr Zelensky
+XXI wiek;Emmanuel Macron

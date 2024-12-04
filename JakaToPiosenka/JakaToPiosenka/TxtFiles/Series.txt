@@ -1,0 +1,73 @@
+seriale;Gra o tron
+seriale;Breaking Bad
+seriale;Stranger Things
+seriale;House of the Dragon
+seriale;The Crown
+seriale;Przyjaciele
+seriale;The Office
+seriale;Chirurdzy
+seriale;Czarnobyl
+seriale;The Mandalorian
+seriale;Sherlock
+seriale;Wikingowie
+seriale;Westworld
+seriale;Better Call Saul
+seriale;Dark
+seriale;Lucyfer
+seriale;Dexter
+seriale;Rodzina Soprano
+seriale;Orange is the New Black
+seriale;Ozark
+seriale;Narcos
+seriale;Mindhunter
+seriale;Pamiętniki Wampirów
+seriale;The Walking Dead
+seriale;Homeland
+seriale;How I Met Your Mother
+seriale;Lost
+seriale;Supernatural
+seriale;Doctor Who
+seriale;The Boys
+seriale;Peaky Blinders
+seriale;The Handmaid's Tale
+seriale;Brooklyn Nine-Nine
+seriale;Big Bang Theory
+seriale;Sukcesja
+seriale;Euforia
+seriale;Rick and Morty
+seriale;Simpsonowie
+seriale;Fargo
+seriale;Castle Rock
+seriale;Hannibal
+seriale;American Horror Story
+seriale;The Umbrella Academy
+seriale;Arcane
+seriale;BoJack Horseman
+seriale;Stranger Things
+seriale;The Punisher
+seriale;Jessica Jones
+seriale;Luke Cage
+seriale;Defenders
+seriale;Wiedźmin
+seriale;Glow
+seriale;Cobra Kai
+seriale;Daredevil
+seriale;Shadow and Bone
+seriale;Outlander
+seriale;Riverdale
+seriale;Sex Education
+seriale;Skins
+seriale;Downton Abbey
+seriale;The Witcher
+seriale;Glee
+seriale;Shameless
+seriale;House M.D.
+seriale;Good Doctor
+seriale;Mad Men
+seriale;Six Feet Under
+seriale;The Americans
+seriale;Blacklist
+seriale;White Collar
+seriale;Suits
+seriale;Arrow
+seriale;Flash

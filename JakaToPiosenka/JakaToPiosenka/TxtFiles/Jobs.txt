@@ -1,0 +1,70 @@
+zawód;stolarz
+zawód;nauczyciel
+zawód;lekarz
+zawód;informatyk
+zawód;piekarz
+zawód;mechanik
+zawód;kierowca
+zawód;elektryk
+zawód;budowlaniec
+zawód;hydraulik
+zawód;sprzedawca
+zawód;kucharz
+zawód;pielęgniarka
+zawód;programista
+zawód;rolnik
+zawód;policjant
+zawód;strażak
+zawód;księgowy
+zawód;fryzjer
+zawód;weterynarz
+zawód;prawnik
+zawód;architekt
+zawód;projektant
+zawód;logistyk
+zawód;psycholog
+zawód;aktor
+zawód;muzyk
+zawód;dziennikarz
+zawód;fotograf
+zawód;pilot
+zawód;stewardessa
+zawód;inżynier
+zawód;geodeta
+zawód;kosmetyczka
+zawód;biolog
+zawód;chemik
+zawód;fizyk
+zawód;socjolog
+zawód;analityk
+zawód;tłumacz
+zawód;copywriter
+zawód;marketingowiec
+zawód;przedsiębiorca
+zawód;aptekarz
+zawód;statystyk
+zawód;operator maszyn
+zawód;spawacz
+zawód;górnik
+zawód;rolnik ekologiczny
+zawód;naukowiec
+zawód;projektant wnętrz
+zawód;przewodnik turystyczny
+zawód;sędzia
+zawód;prokurator
+zawód;notariusz
+zawód;kurator
+zawód;terapeuta
+zawód;trener personalny
+zawód;dietetyk
+zawód;grafik
+zawód;drukarz
+zawód;ratownik medyczny
+zawód;ratownik wodny
+zawód;aktor głosowy
+zawód;projektant gier
+zawód;tester oprogramowania
+zawód;administrator sieci
+zawód;specjalista IT
+zawód;doradca finansowy
+zawód;przedstawiciel handlowy

@@ -7,9 +7,9 @@ using System.Reflection;
 using System.Text;
 using Xamarin.Essentials;
 
-namespace JakaToPiosenka.MusicClasses
+namespace JakaToPiosenka
 {
-    class Youtube : MUSICTYPES
+    class Youtube : AllPasswords
     {
         public override string FileName => "Youtube";
     }

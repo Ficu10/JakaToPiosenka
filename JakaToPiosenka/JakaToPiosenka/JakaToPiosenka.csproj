@@ -23,7 +23,14 @@
     <None Remove="Sounds\loseSound.wav" />
     <None Remove="Sounds\mediumScoreSound.wav" />
     <None Remove="Sounds\winSound.wav" />
+    <None Remove="TxtFiles\Children.txt" />
+    <None Remove="TxtFiles\Countries.txt" />
+    <None Remove="TxtFiles\Emotions.txt" />
+    <None Remove="TxtFiles\FictionalCharacter.txt" />
+    <None Remove="TxtFiles\HistoricalCharacter.txt" />
+    <None Remove="TxtFiles\Jobs.txt" />
     <None Remove="TxtFiles\Lata80Zzagranica.txt" />
+    <None Remove="TxtFiles\Movies.txt" />
     <None Remove="TxtFiles\nowy_plik.txt" />
     <None Remove="TxtFiles\Pop.txt" />
     <None Remove="TxtFiles\PopEnglish.txt" />
@@ -35,9 +42,12 @@
     <None Remove="TxtFiles\RockCaly.txt" />
     <None Remove="TxtFiles\RockEnglish.txt" />
     <None Remove="TxtFiles\RockPolish.txt" />
+    <None Remove="TxtFiles\Series.txt" />
+    <None Remove="TxtFiles\Tales.txt" />
     <None Remove="TxtFiles\The80.txt" />
     <None Remove="TxtFiles\The80English.txt" />
     <None Remove="TxtFiles\The80Polish.txt" />
+    <None Remove="TxtFiles\Words.txt" />
     <None Remove="TxtFiles\Youtube.txt" />
     <None Remove="TxtFiles\Youtube1.txt" />
   </ItemGroup>
@@ -52,7 +62,16 @@
     <EmbeddedResource Include="Sounds\badScoreSound.wav" />
     <EmbeddedResource Include="Sounds\winSound.wav" />
     <EmbeddedResource Include="TxtFiles\AllSongs.txt" />
+    <EmbeddedResource Include="TxtFiles\Children.txt" />
+    <EmbeddedResource Include="TxtFiles\Countries.txt" />
+    <EmbeddedResource Include="TxtFiles\Emotions.txt" />
     <EmbeddedResource Include="TxtFiles\FairyTales.txt" />
+    <EmbeddedResource Include="TxtFiles\FictionalCharacter.txt" />
+    <EmbeddedResource Include="TxtFiles\HistoricalCharacter.txt" />
+    <EmbeddedResource Include="TxtFiles\Jobs.txt" />
+    <EmbeddedResource Include="TxtFiles\Movies.txt" />
+    <EmbeddedResource Include="TxtFiles\Series.txt" />
+    <EmbeddedResource Include="TxtFiles\Tales.txt" />
     <EmbeddedResource Include="TxtFiles\The80.txt" />
     <EmbeddedResource Include="TxtFiles\The80English.txt" />
     <EmbeddedResource Include="TxtFiles\The80Polish.txt" />
@@ -70,6 +89,7 @@
     <EmbeddedResource Include="TxtFiles\RockCaly.txt" />
     <EmbeddedResource Include="TxtFiles\RockPolish.txt" />
     <EmbeddedResource Include="TxtFiles\RockEnglish.txt" />
+    <EmbeddedResource Include="TxtFiles\Words.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube1.txt" />
   </ItemGroup>
@@ -118,9 +138,5 @@
     <EmbeddedResource Update="SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="KalamburyClasses\" />
   </ItemGroup>
 </Project>

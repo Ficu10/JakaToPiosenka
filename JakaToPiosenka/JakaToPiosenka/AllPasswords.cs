@@ -3,18 +3,18 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace JakaToPiosenka.MusicClasses
+namespace JakaToPiosenka
 {
-    abstract class MUSICTYPES
+    abstract class AllPasswords
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public virtual string Title { get; set; }
-        public virtual string Author { get; set; }
+        public virtual string Prompt { get; set; }
 
         // Bazy danych dla głównej i restartowanej gry
-        public static SQLiteConnection connection = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Music.db3"));
-        public static SQLiteConnection connectionRestart = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MusicRestart.db3"));
+        public static SQLiteConnection connection = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Zgadula.db3"));
+        public static SQLiteConnection connectionRestart = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ZgadulaRestart.db3"));
 
         // Nazwa pliku, którą definiują klasy pochodne
         public abstract string FileName { get; }
@@ -22,7 +22,7 @@ namespace JakaToPiosenka.MusicClasses
         // Ładowanie danych z pliku do bazy danych
         public virtual void Load()
         {
-            var assembly = typeof(MUSICTYPES).GetTypeInfo().Assembly;
+            var assembly = typeof(AllPasswords).GetTypeInfo().Assembly;
 
             // Użycie strumienia do odczytu pliku
             using (var streamReader = new StreamReader(assembly.GetManifestResourceStream($"JakaToPiosenka.TxtFiles.{FileName}.txt")))
@@ -34,13 +34,13 @@ namespace JakaToPiosenka.MusicClasses
                 while ((line = streamReader.ReadLine()) != null)
                 {
                     var fields = line.Split(';');
-                    var songData = Activator.CreateInstance(this.GetType()) as MUSICTYPES;
-                    if (songData != null)
+                    var data = Activator.CreateInstance(this.GetType()) as AllPasswords;
+                    if (data != null)
                     {
-                        songData.Title = fields[1];
-                        songData.Author = fields[0];
-                        connection.Insert(songData);
-                        connectionRestart.Insert(songData);
+                        data.Title = fields[1];
+                        data.Prompt = fields[0];
+                        connection.Insert(data);
+                        connectionRestart.Insert(data);
                     }
                 }
             }

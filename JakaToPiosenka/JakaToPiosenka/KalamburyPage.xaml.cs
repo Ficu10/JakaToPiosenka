@@ -11,7 +11,7 @@ using Xamarin.Forms.Shapes;
 using SQLite;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using JakaToPiosenka.MusicClasses;
+using JakaToPiosenka;
 
 namespace JakaToPiosenka
 {
@@ -28,40 +28,13 @@ namespace JakaToPiosenka
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
-            var musicTypesSongs = new List<MUSICTYPES>()
-
-            {
-                new Pop(),
-                new Rock(),
-                new FairyTales(),
-                new AllSongs(),
-                new Rap(),
-                new UsersMusic(),
-                new The80(),
-                new The80English(),
-                new The80Polish(),
-                new RapEnglish(),
-                new RapPolish(),
-                new PopEnglish(),
-                new PopPolish(),
-                new RockEnglish(),
-                new RockPolish(),
-                new Youtube()
-
-            };
-            bool isTableCreated = MUSICTYPES.connection.GetTableInfo("Pop").Any();
-            if (!isTableCreated)
-            {
-                foreach (var item in musicTypesSongs)
-                {
-                    item.Load();
-                }
-            }
+          
 
         }
 
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
+            sound.ClickSound();
             await Navigation.PushAsync(new MultiplayerPage());
 
 
@@ -69,6 +42,7 @@ namespace JakaToPiosenka
 
         private async void Settings_Click(object sender, EventArgs e)
         {
+            sound.ClickSound();
             await Navigation.PushAsync(new SettingsPage());
 
 
@@ -130,55 +104,84 @@ namespace JakaToPiosenka
             sound.ClickSound();
             await Navigation.PushAsync(new KalamburyPage());
         }
-
-        private void zwierzetaButton_Clicked(object sender, EventArgs e)
+        private async void przyslowiaButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Words";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void przyslowiaButton_Clicked(object sender, EventArgs e)
+        private async void panstwaButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Countries";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void panstwaButton_Clicked(object sender, EventArgs e)
+        private async void netflixButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Series";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void netflixButton_Clicked(object sender, EventArgs e)
+        private async void bajkiButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Tales";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void bajkiButton_Clicked(object sender, EventArgs e)
+        private async void filmyButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Movies";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void filmyButton_Clicked(object sender, EventArgs e)
+        private async void emocjeButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Emotions";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void emocjeButton_Clicked(object sender, EventArgs e)
+        private async void dladzieciButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Children";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void dladzieciButton_Clicked(object sender, EventArgs e)
+        private async void postaciehistoryczne_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "HistoricalCharaacter";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void postaciehistoryczne_Clicked(object sender, EventArgs e)
+        private async void zawodyButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "Jobs";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
 
-        private void zawodyButton_Clicked(object sender, EventArgs e)
+        private async void fictionButton_Clicked(object sender, EventArgs e)
         {
-
+            sound.ClickSound();
+            MainPage.gameMode = "FictionalCharacter";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGamePage());
         }
     }
 }

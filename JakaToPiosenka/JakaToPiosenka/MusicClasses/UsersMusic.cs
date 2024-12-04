@@ -1,9 +1,9 @@
 ﻿using SQLite;
 using System.IO;
 
-namespace JakaToPiosenka.MusicClasses
+namespace JakaToPiosenka
 {
-    internal class UsersMusic : MUSICTYPES
+    internal class UsersMusic : AllPasswords
     {
         // Właściwość FileName zwraca pustą wartość, ponieważ UsersMusic nie korzysta z pliku.
         public override string FileName => null;

@@ -13,23 +13,25 @@ namespace JakaToPiosenka
         public SQLiteHelper(string dbPath)
         {
             db = new SQLiteAsyncConnection(dbPath);
-            db.CreateTableAsync<SongsAndAuthors>();
+            db.CreateTableAsync<AllData>();
+
         }
 
-        public Task<int> CreateHistory(SongsAndAuthors songsAndAuthors)
+        public Task<int> CreateHistory(AllData titlesAndPrompts)
         {
-            return db.InsertAsync(songsAndAuthors);
+            return db.InsertAsync(titlesAndPrompts);
         }
-        public Task<List<SongsAndAuthors>> ReadSongsAndAuthors()
+        public Task<List<AllData>> ReadSongsAndAuthors()
         {
-            return db.Table<SongsAndAuthors>().ToListAsync();
-        }
-
-        public Task<int> DeleteSongsAndAuthors(SongsAndAuthors songsAndAuthors)
-        {
-            return db.DeleteAsync(songsAndAuthors);
+            return db.Table<AllData>().ToListAsync();
         }
 
+        public Task<int> DeleteSongsAndAuthors(AllData titlesAndPrompts)
+        {
+            return db.DeleteAsync(titlesAndPrompts);
+        }
+
+    
 
     }
 }

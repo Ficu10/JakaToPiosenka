@@ -26,8 +26,8 @@
            
             <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3">
                 <Label/>
-                <Entry x:Name="NewAuthorName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
-                <Entry x:Name="NewSongName" Placeholder="Tytuł"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
+                <Entry x:Name="NewPromptName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
+                <Entry x:Name="NewTitleName" Placeholder="Tytuł"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
             </StackLayout>
             <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="30"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,160" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="#0d5b82" BorderColor="White" BorderWidth="3"/>
 
@@ -52,7 +52,7 @@
                                         <RowDefinition Height="0.1*"/>
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding Title}" HorizontalTextAlignment="Center" TextColor="White" Grid.Row="0"  FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />
-                                    <Label Text="{Binding Author}" TextColor="White" Grid.Row="1"  FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Prompt}" TextColor="White" Grid.Row="1"  FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" />
                                     <BoxView Color="White" HeightRequest="1" HorizontalOptions="FillAndExpand" Grid.Row="2"/>
                                 </Grid>
                             </StackLayout>

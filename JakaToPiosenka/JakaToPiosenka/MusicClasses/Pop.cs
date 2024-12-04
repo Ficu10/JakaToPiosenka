@@ -10,9 +10,9 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 
-namespace JakaToPiosenka.MusicClasses
+namespace JakaToPiosenka
 {
-    internal class Pop : MUSICTYPES
+    internal class Pop : AllPasswords
     {
         public override string FileName => "Pop";
     }

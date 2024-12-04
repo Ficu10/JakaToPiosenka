@@ -18,7 +18,7 @@
             </Grid.ColumnDefinitions>
             <Label x:Name="SongTitle" HorizontalTextAlignment="Center" Text="Przygotuj się" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"   TextColor="White"  FontSize="50" Grid.Column="0" Grid.Row="1" IsVisible="false"  />
 
-            <Label x:Name="SongAuthor" HorizontalTextAlignment="Center" HorizontalOptions="End" Margin="0,0,50,0" VerticalOptions="End" FontSize="30"  Text="" TextColor="White" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" IsVisible="false" />
+            <Label x:Name="TitlePrompt" HorizontalTextAlignment="Center" HorizontalOptions="End" Margin="0,0,50,0" VerticalOptions="End" FontSize="30"  Text="" TextColor="White" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" IsVisible="false" />
             <Label x:Name="Time" HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="0,0,30,0" Text="" FontSize="30" VerticalOptions="Start" TextColor="White" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" IsVisible="false" />
             <Button x:Name="WrongAnswearButton"   Clicked="WrongAnswearButton_Clicked" BackgroundColor="Transparent" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="3"   />
         </Grid>

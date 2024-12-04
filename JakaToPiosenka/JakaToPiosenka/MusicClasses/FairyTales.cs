@@ -1,4 +1,4 @@
-﻿using JakaToPiosenka.MusicClasses;
+﻿using JakaToPiosenka;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using Xamarin.Essentials;
 
 namespace JakaToPiosenka
 {
-    internal class FairyTales : MUSICTYPES
+    internal class FairyTales : AllPasswords
     {
         public override string FileName => "FairyTales";
     }
