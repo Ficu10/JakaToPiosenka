@@ -149,7 +149,7 @@
     <AndroidResource Include="Resources\drawable\Title.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AFTM.png" />
+    <AndroidResource Include="Resources\drawable\aftm.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\pSekund.jpg" />
@@ -266,6 +266,7 @@
     <AndroidResource Include="Resources\drawable\zwierzeta.jpg" />
     <AndroidResource Include="Resources\drawable\dladzieci1.jpg" />
     <AndroidResource Include="Resources\drawable\gornik.jpg" />
+    <AndroidResource Include="Resources\drawable\dobreLogo.png" />
     <Content Include="Resources\drawable\jedzenie.jpg" />
     <AndroidResource Include="Resources\drawable\panstwa.jpg" />
     <AndroidResource Include="Resources\drawable\disney1.jpg" />
@@ -273,6 +274,7 @@
     <AndroidResource Include="Resources\drawable\poppol.jpg" />
     <Content Include="Resources\drawable\Pop_logo_2021.png" />
     <Content Include="Resources\drawable\splash_screen.xml" />
+    <Content Include="Resources\layout\splash_screen.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
