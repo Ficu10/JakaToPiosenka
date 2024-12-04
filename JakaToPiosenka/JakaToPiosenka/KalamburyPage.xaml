@@ -128,8 +128,8 @@ Margin="0,0,0,0">
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#114bf7" CornerRadius="10" Clicked="Multiplayer_Click" />
-                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#114bf7" CornerRadius="10" Clicked="Settings_Click" />
+                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#58ad8a" CornerRadius="10" Clicked="Multiplayer_Click" />
+                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#58ad8a" CornerRadius="10" Clicked="Settings_Click" />
                 <Image Source="AFTM.png" />
                 <ImageButton IsEnabled="False" Margin="0,-50,0,0" Source="zgadulaLogo.png" Scale="0.4" Grid.ColumnSpan="2" VerticalOptions="Start" 
                  CornerRadius="100" HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>

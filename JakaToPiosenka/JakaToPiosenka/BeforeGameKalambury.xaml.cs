@@ -14,13 +14,17 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BeforeGameKalambury : ContentPage
     {
-        public static int timeChanger = 30;
+        public static int timeChanger;
         Sounds sound = new Sounds();
         public BeforeGameKalambury()
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
 
             InitializeComponent();
+            Time15.Text = SettingsPage.Time1.ToString();
+            Time30.Text = SettingsPage.Time2.ToString();
+            Time45.Text = SettingsPage.Time3.ToString();
+            Time60.Text = SettingsPage.Time4.ToString();
 
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
             {
@@ -61,28 +65,28 @@ namespace JakaToPiosenka
         async void Time15_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 15;
+            timeChanger = SettingsPage.Time1;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time30_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 30;
+            timeChanger = SettingsPage.Time2;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time45_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 45;
+            timeChanger = SettingsPage.Time3;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time60_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 60;
+            timeChanger = SettingsPage.Time4;
             await Navigation.PushAsync(new RulesPage());
         }
 

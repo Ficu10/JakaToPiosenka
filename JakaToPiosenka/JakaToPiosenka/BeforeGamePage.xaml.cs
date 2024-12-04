@@ -14,7 +14,7 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BeforeGamePage : ContentPage
     {
-        public static int timeChanger = 30;
+        public static int timeChanger;
         Sounds sound = new Sounds();    
         public BeforeGamePage()
         {
@@ -22,27 +22,10 @@ namespace JakaToPiosenka
 
             InitializeComponent();
 
-            if (MainPage.isMainPage)
-            {
-                BackgroundColor = Color.FromHex("#87b3d1");
-                Time15.BackgroundColor = Color.FromHex("#1a7cad");
-                Time30.BackgroundColor = Color.FromHex("#1a7cad");
-                Time45.BackgroundColor = Color.FromHex("#1a7cad");
-                Time60.BackgroundColor = Color.FromHex("#1a7cad");
-                AddNewSongs.BackgroundColor = Color.FromHex("#0478b3");
-                AddNewSongs.Text = "Dodaj piosenki";
-            }
-            else
-            {
-                BackgroundColor = Color.FromHex("#dba348");
-                Time15.BackgroundColor = Color.FromHex("#e08c04");
-                Time30.BackgroundColor = Color.FromHex("#e08c04");
-                Time45.BackgroundColor = Color.FromHex("#e08c04");
-                Time60.BackgroundColor = Color.FromHex("#e08c04");
-                AddNewSongs.BackgroundColor = Color.FromHex("#fc9d03");
-                AddNewSongs.Text = "Dodaj hasłą";
-
-            }
+          Time15.Text = SettingsPage.Time1.ToString();
+          Time30.Text = SettingsPage.Time2.ToString();
+          Time45.Text = SettingsPage.Time3.ToString();
+          Time60.Text = SettingsPage.Time4.ToString();
 
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
             {
@@ -83,31 +66,30 @@ namespace JakaToPiosenka
         async void Time15_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 15;
+            timeChanger = SettingsPage.Time1;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time30_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 30;
+            timeChanger = SettingsPage.Time2;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time45_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 45;
+            timeChanger = SettingsPage.Time3;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time60_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = 60;
+            timeChanger = SettingsPage.Time4;
             await Navigation.PushAsync(new RulesPage());
         }
-
         private async void AddNewSongs_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();

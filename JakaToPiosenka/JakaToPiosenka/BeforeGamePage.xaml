@@ -23,14 +23,14 @@
                 <Label x:Name="Category" Text="Piosenki Disneya" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Start" FontSize="30" FontAttributes="Bold" TextColor="White" />
                 <Label  Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Start" FontSize="30" TextColor="White"/>
 
-                <Label Text="Wybierz czas" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" TextColor="White"/>
+                <Label Text="Wybierz czas [sekundy]" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" TextColor="White"/>
 
             </StackLayout>
 
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "15 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"  Grid.Column="0" Grid.Row="2"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "30 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"   Grid.Column="1" Grid.Row="2"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "45 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"    Grid.Column="0" Grid.Row="3"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "60 Sekund" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"   Grid.Column="1" Grid.Row="3"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "15" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"  Grid.Column="0" Grid.Row="2"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "30" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"   Grid.Column="1" Grid.Row="2"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "45" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"    Grid.Column="0" Grid.Row="3"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "60" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#1a7cad"   Grid.Column="1" Grid.Row="3"/>
 
             <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj piosenki" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="#0478b3"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
         </Grid>
