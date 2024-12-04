@@ -297,7 +297,14 @@ namespace JakaToPiosenka
                             {
                                 Dispose();
                                 Accelerometer.Stop();
-                                await Navigation.PushAsync(new AfterGame());
+                                if (MainPage.isMainPage)
+                                {
+                                    await Navigation.PushAsync(new AfterGame());
+                                }
+                                else
+                                {
+                                    await Navigation.PushAsync(new AfterGameKalambury());
+                                }
                             }
                         }
 

@@ -109,7 +109,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Words";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void panstwaButton_Clicked(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Countries";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void netflixButton_Clicked(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Series";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void bajkiButton_Clicked(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Tales";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void filmyButton_Clicked(object sender, EventArgs e)
@@ -141,7 +141,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Movies";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void emocjeButton_Clicked(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Emotions";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void dladzieciButton_Clicked(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Children";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void postaciehistoryczne_Clicked(object sender, EventArgs e)
@@ -165,7 +165,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "HistoricalCharaacter";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void zawodyButton_Clicked(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "Jobs";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
 
         private async void fictionButton_Clicked(object sender, EventArgs e)
@@ -181,7 +181,7 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MainPage.gameMode = "FictionalCharacter";
             MainPage.isMainPage = false;
-            await Navigation.PushAsync(new BeforeGamePage());
+            await Navigation.PushAsync(new BeforeGameKalambury());
         }
     }
 }

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JakaToPiosenka.AddingNewWords"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#d19d49">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+
+            <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3">
+                <Label/>
+                <Entry x:Name="NewPromptName" Placeholder="Hasło" HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
+                <Entry x:Name="NewTitleName" Placeholder="Kategoria"  HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
+            </StackLayout>
+            <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="30"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,160" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="#cc820a" BorderColor="White" BorderWidth="3"/>
+
+
+
+
+
+
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="20,120,20,-10"  HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
+            <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="20,0,20,50">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItem Text="Usuń" BackgroundColor="Red" Invoked="SwipeItem_Invoked" CommandParameter="{Binding .}"/>
+                            </SwipeView.RightItems>
+                            <StackLayout BackgroundColor="#ad6d05">
+                                <Grid HeightRequest="100">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Title}" HorizontalTextAlignment="Center" TextColor="White" Grid.Row="0"  FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Prompt}" TextColor="White" Grid.Row="1"  FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <BoxView Color="White" HeightRequest="1" HorizontalOptions="FillAndExpand" Grid.Row="2"/>
+                                </Grid>
+                            </StackLayout>
+                        </SwipeView>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button  x:Name="Import" Clicked="Import_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Import" Grid.Row="5" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="Start" VerticalOptions="End"/>
+            <Button x:Name="Eksport" Clicked="Eksport_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Eksport" Grid.Row="5" Grid.Column="2" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="End" VerticalOptions="End"/>
+
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>
