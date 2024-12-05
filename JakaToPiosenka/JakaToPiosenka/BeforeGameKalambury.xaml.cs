@@ -14,7 +14,6 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BeforeGameKalambury : ContentPage
     {
-        public static int timeChanger;
         Sounds sound = new Sounds();
         public BeforeGameKalambury()
         {
@@ -65,28 +64,28 @@ namespace JakaToPiosenka
         async void Time15_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = SettingsPage.Time1;
+            BeforeGamePage.timeChanger = SettingsPage.Time1;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time30_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = SettingsPage.Time2;
+            BeforeGamePage.timeChanger = SettingsPage.Time2;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time45_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = SettingsPage.Time3;
+            BeforeGamePage.timeChanger = SettingsPage.Time3;
             await Navigation.PushAsync(new RulesPage());
         }
 
         async void Time60_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            timeChanger = SettingsPage.Time4;
+            BeforeGamePage.timeChanger = SettingsPage.Time4;
             await Navigation.PushAsync(new RulesPage());
         }
 

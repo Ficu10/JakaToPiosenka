@@ -69,9 +69,8 @@ namespace JakaToPiosenka
                 }
             }
             isMainPage = true;
-
         }
-
+      
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
             sound.ClickSound();

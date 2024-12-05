@@ -163,7 +163,7 @@ namespace JakaToPiosenka
         private async void postaciehistoryczne_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            MainPage.gameMode = "HistoricalCharaacter";
+            MainPage.gameMode = "HistoricalCharacter";
             MainPage.isMainPage = false;
             await Navigation.PushAsync(new BeforeGameKalambury());
         }

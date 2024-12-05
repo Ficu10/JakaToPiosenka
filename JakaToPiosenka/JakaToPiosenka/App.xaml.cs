@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,25 +11,16 @@ namespace JakaToPiosenka
     {
         public static SQLiteHelper db;
 
-        //public static SQLiteHelper MyDatabase
-        //{
-
-        //    get
-        //    {
-        //        if (db == null)
-        //        {
-        //            db = new SQLiteHelper(+);
-        //        }
-        //        return db;
-        //    }
-        //}
 
         public App()
         {
             InitializeComponent();
-           
-            MainPage = new NavigationPage(new MainPage());
+            // Ustaw SplashPage jako stronę startową
+            MainPage = new NavigationPage(new SplashPage());
+
         }
+
+       
         protected override void OnStart()
         {
             // Handle when your app starts

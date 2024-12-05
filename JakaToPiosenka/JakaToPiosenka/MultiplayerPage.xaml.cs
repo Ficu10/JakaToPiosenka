@@ -91,10 +91,21 @@ namespace JakaToPiosenka
 
         protected override bool OnBackButtonPressed()
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            if (MainPage.isMainPage)
             {
-                await Navigation.PushAsync(new MainPage());
-            });
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PushAsync(new MainPage());
+                });
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PushAsync(new KalamburyPage());
+                });
+            }
+
 
             return true;
         }

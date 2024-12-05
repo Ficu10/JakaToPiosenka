@@ -6,6 +6,8 @@
              Shell.NavBarIsVisible="False"  
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False">
+    
+    
 
     <ContentPage.Background>
         <LinearGradientBrush>
@@ -33,7 +35,7 @@
         </Grid.ColumnDefinitions>
         <!-- Menu -->
 
-
+      
 
 
         <ImageButton IsEnabled="False" Source="Logo.png" Scale="1.3" Grid.ColumnSpan="2" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
@@ -96,7 +98,7 @@
                     <Label Text="Pop Zagraniczny" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="PopEnglishButton_Clicked" x:Name="PopEnglishButton" Source="PopZagraniczny.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Zagraiczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <Label Text="Zagraniczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="ZagraniczneLata80.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
@@ -162,7 +164,6 @@
 
 
     </Grid>
-   
 
 
 

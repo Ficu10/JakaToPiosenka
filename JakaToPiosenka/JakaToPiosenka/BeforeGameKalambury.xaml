@@ -32,7 +32,7 @@
             <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "45" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"    Grid.Column="0" Grid.Row="3"/>
             <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "60" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"   Grid.Column="1" Grid.Row="3"/>
 
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj piosenki" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="#d98702"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
+            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj hasła" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="#d98702"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
         </Grid>
 
     </ContentPage.Content>
