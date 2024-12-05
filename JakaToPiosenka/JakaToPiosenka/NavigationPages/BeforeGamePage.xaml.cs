@@ -67,6 +67,7 @@ namespace JakaToPiosenka
             if (MultiplayerPage.isMultiplayerEnabled)
             {
                 MultiplayerButton.IsVisible = true;
+                PlayerName.IsVisible = true;
 
                 // Załaduj i wyświetl graczy
                 LoadAndDisplayPlayers(BeforeGameKalambury.SortedPlayers, PlayerName);
@@ -74,6 +75,7 @@ namespace JakaToPiosenka
             else
             {
                 MultiplayerButton.IsVisible = false;
+                PlayerName.IsVisible = false;
             }
         }
 

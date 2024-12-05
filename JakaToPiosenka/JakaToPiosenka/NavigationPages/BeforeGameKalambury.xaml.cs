@@ -30,26 +30,12 @@ namespace JakaToPiosenka
 
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
     {
-        { "AllSongs", ("Wszystkie gatunki", "WszystkiePiosenki.jpg") },
-        { "FairyTales", ("Piosenki z bajek", "PiosenkiZBajek.jpg") },
-        { "Pop", ("Pop", "pop.jpg") },
-        { "Rock", ("Rock", "rock.jpg") },
-        { "UsersMusic", ("Twoja muzyka", "yourMusic.jpg") },
-        { "Rap", ("Rap", "rap.jpg") },
-        { "RapPolish", ("Rap Polski", "RapPolski.jpg") },
-        { "RapEnglish", ("Rap Zagraniczny", "RapZagraniczny.jpg") },
-        { "PopPolish", ("Pop Polski", "PopPolski.jpg") },
-        { "PopEnglish", ("Pop Zagraniczny", "PopZagraniczny.jpg") },
-        { "The80", ("Lata 80'", "Lata80.jpg") },
-        { "The80Polish", ("Polskie lata 80'", "PolskieLata80.jpg") },
-        { "The80English", ("Zagraniczne lata 80'", "ZagraniczneLata80.jpg") },
-        { "RockPolish", ("Rock Polski", "RockPolski.jpg") },
-        { "RockEnglish", ("Rock Zagraniczny", "RockZagraniczny.jpg") },
+       
         { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
         { "Countries", ("Państwa", "panstwa.jpg") },
         { "Emotions", ("Emocje", "emocje.jpg") },
         { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
-        { "HistoricalCharcter", ("Postacie Historycze", "mini4.jpg") },
+        { "HistoricalCharacter", ("Postacie Historycze", "mini4.jpg") },
         { "Jobs", ("Zawody", "gornik.jpg") },
         { "Movies", ("Filmy", "filmy.jpg") },
         { "Series", ("Seriale", "netflix.png") },
@@ -66,13 +52,15 @@ namespace JakaToPiosenka
             if (MultiplayerPage.isMultiplayerEnabled)
             {
                 MultiplayerButton.IsVisible = true;
+                PlayerName.IsVisible = true;
 
                 // Załaduj i wyświetl graczy
-                LoadAndDisplayPlayers(SortedPlayers, PlayerName);
+                LoadAndDisplayPlayers(BeforeGameKalambury.SortedPlayers, PlayerName);
             }
             else
             {
                 MultiplayerButton.IsVisible = false;
+                PlayerName.IsVisible = false;
             }
         }
 

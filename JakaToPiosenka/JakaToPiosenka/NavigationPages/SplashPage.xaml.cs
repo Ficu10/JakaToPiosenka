@@ -16,16 +16,17 @@ namespace JakaToPiosenka
         private async void AnimateSplash()
         {
             // Logo: Pojawienie i powiększenie
-            await Logo.FadeTo(1, 2000); // Stopniowe pojawienie
-            await ZgadujZgadula.TranslateTo(0, 400, 2000, Easing.BounceOut); // Przesunięcie w dół
-            await Logo.ScaleTo(1.2, 1000); // Powiększenie
-            await Logo.ScaleTo(1, 500); // Powrót do normalnej wielkości
+            await Logo.FadeTo(1, 1000); // Stopniowe pojawienie
+            await Task.WhenAll(
+             ZgadujZgadula.TranslateTo(0, 400, 2000, Easing.CubicOut), // Przesunięcie w dół
+             Logo.ScaleTo(1.20, 2000) // Powiększenie
+             );
 
             // Tekst powitalny: Stopniowe pojawienie
-            await WelcomeText.FadeTo(1, 2000);
+            await WelcomeText.FadeTo(1, 1000);
 
             // Przejście do głównej strony
-            await Task.Delay(1000); // Pauza na wyświetlenie animacji
+            await Task.Delay(2000); // Pauza na wyświetlenie animacji
             Application.Current.MainPage = new NavigationPage(new MainPage()); // Główna strona aplikacji
         }
     }
