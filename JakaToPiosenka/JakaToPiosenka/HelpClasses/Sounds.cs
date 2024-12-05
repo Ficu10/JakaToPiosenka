@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.HelpClasses
 {
     internal class Sounds
     {

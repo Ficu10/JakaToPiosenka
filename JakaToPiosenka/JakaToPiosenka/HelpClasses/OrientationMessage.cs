@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.HelpClasses
 {
     public class OrientationMessage
     {

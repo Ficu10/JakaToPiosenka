@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.HelpClasses
 {
     public class SQLiteHelper
     {
@@ -31,7 +31,7 @@ namespace JakaToPiosenka
             return db.DeleteAsync(titlesAndPrompts);
         }
 
-    
+
 
     }
 }

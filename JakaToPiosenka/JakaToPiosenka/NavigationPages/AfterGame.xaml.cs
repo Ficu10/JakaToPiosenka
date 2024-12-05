@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using JakaToPiosenka.HelpClasses;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

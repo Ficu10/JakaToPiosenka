@@ -1,5 +1,4 @@
-﻿using JakaToPiosenka;
-using JakaToPiosenka;
+﻿using JakaToPiosenka.HelpClasses;
 using SQLite;
 using System;
 using System.Collections;

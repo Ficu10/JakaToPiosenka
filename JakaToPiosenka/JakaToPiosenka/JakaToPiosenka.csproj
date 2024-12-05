@@ -102,22 +102,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AddingNewSongs.xaml">
+    <EmbeddedResource Update="NavigationPages\AddingNewSongs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AddingNewWords.xaml">
+    <EmbeddedResource Update="NavigationPages\AddingNewWords.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AfterGame.xaml">
+    <EmbeddedResource Update="NavigationPages\AfterGame.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AfterGameKalambury.xaml">
+    <EmbeddedResource Update="NavigationPages\AfterGameKalambury.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BeforeGameKalambury.xaml">
+    <EmbeddedResource Update="NavigationPages\BeforeGameKalambury.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BeforeGamePage.xaml">
+    <EmbeddedResource Update="NavigationPages\BeforeGamePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="FlyoutPage.xaml">
@@ -132,25 +132,25 @@
     <EmbeddedResource Update="FlyoutPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Game.xaml">
+    <EmbeddedResource Update="NavigationPages\Game.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="KalamburyPage.xaml">
+    <EmbeddedResource Update="NavigationPages\KalamburyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MultiplayerPage.xaml">
+    <EmbeddedResource Update="NavigationPages\MultiplayerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RankingPage.xaml">
+    <EmbeddedResource Update="NavigationPages\RankingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RulesPage.xaml">
+    <EmbeddedResource Update="NavigationPages\RulesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SettingsPage.xaml">
+    <EmbeddedResource Update="NavigationPages\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SplashPage.xaml">
+    <EmbeddedResource Update="NavigationPages\SplashPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

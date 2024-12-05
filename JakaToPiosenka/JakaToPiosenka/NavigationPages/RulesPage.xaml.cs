@@ -19,7 +19,7 @@ namespace JakaToPiosenka
         public RulesPage()
         {
             InitializeComponent();
-            MessagingCenter.Send(new OrientationMessage { IsLandscape = true }, "SetOrientation");
+            MessagingCenter.Send(new HelpClasses.OrientationMessage { IsLandscape = true }, "SetOrientation");
             // Start receiving accelerometer data updates
             Accelerometer.Start(SensorSpeed.UI);
 

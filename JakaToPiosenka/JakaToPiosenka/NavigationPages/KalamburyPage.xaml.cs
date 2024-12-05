@@ -11,7 +11,7 @@ using Xamarin.Forms.Shapes;
 using SQLite;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using JakaToPiosenka;
+using JakaToPiosenka.HelpClasses;
 
 namespace JakaToPiosenka
 {
