@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,12 +15,23 @@ namespace JakaToPiosenka
         public AfterGame()
         {
             InitializeComponent();
+            if (MultiplayerPage.isMultiplayerEnabled)
+            {
+                MultiplayerButton.IsVisible = true;
+                NextPlayer.IsVisible = true;
+                AddGamesAndPoints(BeforeGameKalambury.SortedPlayers);
+            }
+            else
+            {
+                MultiplayerButton.IsVisible = false;
+                NextPlayer.IsVisible = false;
+                Resut.Text = $"Twój wynik to {Game.pointsCounter}/10";
+            }
 
             // Ustawienie dźwięku w zależności od wyniku
             PlayScoreSound();
 
             // Wyświetlenie wyniku
-            Resut.Text = $"Twój wynik to {Game.pointsCounter}/10";
 
             // Przygotowanie danych dla ListView z kolorami komórek
             var songsWithColors = PrepareSongsWithColors();
@@ -29,6 +42,42 @@ namespace JakaToPiosenka
             // Resetowanie licznika punktów
             ResetGameState();
         }
+
+        public void AddGamesAndPoints(ObservableCollection<Multiplayer> sortedPlayers)
+        {
+            // Pobierz i posortuj graczy
+            var players = Multiplayer.GetAllPlayers()
+                .OrderBy(p => p.GamesNumber) // Najpierw według liczby gier (malejąco)
+                .ThenBy(p => p.Name) // Potem alfabetycznie
+                .ToList();
+
+            // Wyczyść istniejącą kolekcję (jeśli istnieje)
+            sortedPlayers.Clear();
+
+            // Wczytaj graczy do ObservableCollection
+            foreach (var player in players)
+            {
+                sortedPlayers.Add(player);
+            }
+
+            // Jeśli lista graczy nie jest pusta, aktualizuj dane pierwszego gracza
+            if (players.Any())
+            {
+                var firstPlayer = players.First();
+
+                // Zwiększ liczbę gier i punkty
+                firstPlayer.GamesNumber = firstPlayer.GamesNumber + 1;
+                firstPlayer.Points += Game.pointsCounter;
+                Resut.Text = "Wynik gracza " + firstPlayer.Name + ": " + Game.pointsCounter + "/10";
+
+                var secondplayer = players[1]; // Drugi gracz w kolejności
+                NextPlayer.Text += "Następny gracz: " + secondplayer.Name;
+
+                // Zapisz zmiany w bazie danych
+                Multiplayer.UpdatePlayer(firstPlayer);
+            }
+        }
+
 
         /// <summary>
         /// Odtwarza dźwięk w zależności od wyniku gracza.
@@ -100,6 +149,11 @@ namespace JakaToPiosenka
         protected override bool OnBackButtonPressed()
         {
             return true; // Zablokowanie przycisku
+        }
+
+        private async void Multiplayer_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RankingPage());
         }
     }
 

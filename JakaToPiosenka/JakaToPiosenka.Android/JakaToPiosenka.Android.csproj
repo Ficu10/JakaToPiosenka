@@ -267,6 +267,8 @@
     <AndroidResource Include="Resources\drawable\dladzieci1.jpg" />
     <AndroidResource Include="Resources\drawable\gornik.jpg" />
     <AndroidResource Include="Resources\drawable\dobreLogo.png" />
+    <AndroidResource Include="Resources\drawable\MultiKalambury.png" />
+    <AndroidResource Include="Resources\drawable\MultiMain.png" />
     <Content Include="Resources\drawable\jedzenie.jpg" />
     <AndroidResource Include="Resources\drawable\panstwa.jpg" />
     <AndroidResource Include="Resources\drawable\disney1.jpg" />

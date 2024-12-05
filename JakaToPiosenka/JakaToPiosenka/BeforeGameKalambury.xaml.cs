@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace JakaToPiosenka
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BeforeGameKalambury : ContentPage
     {
+        public static ObservableCollection<Multiplayer> SortedPlayers { get; set; } = new ObservableCollection<Multiplayer>();
+
         Sounds sound = new Sounds();
         public BeforeGameKalambury()
         {
@@ -26,41 +29,90 @@ namespace JakaToPiosenka
             Time60.Text = SettingsPage.Time4.ToString();
 
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
-            {
-                { "AllSongs", ("Wszystkie gatunki", "WszystkiePiosenki.jpg") },
-                { "FairyTales", ("Piosenki z bajek", "PiosenkiZBajek.jpg") },
-                { "Pop", ("Pop", "pop.jpg") },
-                { "Rock", ("Rock", "rock.jpg") },
-                { "UsersMusic", ("Twoja muzyka", "yourMusic.jpg") },
-                { "Rap", ("Rap", "rap.jpg") },
-                { "RapPolish", ("Rap Polski", "RapPolski.jpg") },
-                { "RapEnglish", ("Rap Zagraniczny", "RapZagraniczny.jpg") },
-                { "PopPolish", ("Pop Polski", "PopPolski.jpg") },
-                { "PopEnglish", ("Pop Zagraniczny", "PopZagraniczny.jpg") },
-                { "The80", ("Lata 80'", "Lata80.jpg") },
-                { "The80Polish", ("Polskie lata 80'", "PolskieLata80.jpg") },
-                { "The80English", ("Zagraniczne lata 80'", "ZagraniczneLata80.jpg") },
-                { "RockPolish", ("Rock Polski", "RockPolski.jpg") },
-                { "RockEnglish", ("Rock Zagraniczny", "RockZagraniczny.jpg") },
-                { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
-                { "Countries", ("Państwa", "panstwa.jpg") },
-                { "Emotions", ("Emocje", "emocje.jpg") },
-                { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
-                { "HistoricalCharcter", ("Postacie Historycze", "mini4.jpg") },
-                { "Jobs", ("Zawody", "gornik.jpg") },
-                { "Movies", ("Filmy", "filmy.jpg") },
-                { "Series", ("Seriale", "netflix.png") },
-                { "Tales", ("Bajki", "bajki.jpg") },
-                { "Words", ("Przysłowia", "przyslowia.jpg") },
-            };
+    {
+        { "AllSongs", ("Wszystkie gatunki", "WszystkiePiosenki.jpg") },
+        { "FairyTales", ("Piosenki z bajek", "PiosenkiZBajek.jpg") },
+        { "Pop", ("Pop", "pop.jpg") },
+        { "Rock", ("Rock", "rock.jpg") },
+        { "UsersMusic", ("Twoja muzyka", "yourMusic.jpg") },
+        { "Rap", ("Rap", "rap.jpg") },
+        { "RapPolish", ("Rap Polski", "RapPolski.jpg") },
+        { "RapEnglish", ("Rap Zagraniczny", "RapZagraniczny.jpg") },
+        { "PopPolish", ("Pop Polski", "PopPolski.jpg") },
+        { "PopEnglish", ("Pop Zagraniczny", "PopZagraniczny.jpg") },
+        { "The80", ("Lata 80'", "Lata80.jpg") },
+        { "The80Polish", ("Polskie lata 80'", "PolskieLata80.jpg") },
+        { "The80English", ("Zagraniczne lata 80'", "ZagraniczneLata80.jpg") },
+        { "RockPolish", ("Rock Polski", "RockPolski.jpg") },
+        { "RockEnglish", ("Rock Zagraniczny", "RockZagraniczny.jpg") },
+        { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
+        { "Countries", ("Państwa", "panstwa.jpg") },
+        { "Emotions", ("Emocje", "emocje.jpg") },
+        { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
+        { "HistoricalCharcter", ("Postacie Historycze", "mini4.jpg") },
+        { "Jobs", ("Zawody", "gornik.jpg") },
+        { "Movies", ("Filmy", "filmy.jpg") },
+        { "Series", ("Seriale", "netflix.png") },
+        { "Tales", ("Bajki", "bajki.jpg") },
+        { "Words", ("Przysłowia", "przyslowia.jpg") },
+    };
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
             {
                 Category.Text = mappings.Item1;
-
                 PhotoCategory.Source = mappings.Item2;
             }
+
+            if (MultiplayerPage.isMultiplayerEnabled)
+            {
+                MultiplayerButton.IsVisible = true;
+
+                // Załaduj i wyświetl graczy
+                LoadAndDisplayPlayers(SortedPlayers, PlayerName);
+            }
+            else
+            {
+                MultiplayerButton.IsVisible = false;
+            }
         }
+
+
+        public void LoadAndDisplayPlayers(ObservableCollection<Multiplayer> sortedPlayers, Label playerNameLabel, SelectionChangedEventArgs e = null)
+        {
+            // Pobierz i posortuj graczy
+            var players = Multiplayer.GetAllPlayers()
+                .OrderBy(p => p.GamesNumber) // Najpierw według liczby gier (malejąco)
+                .ThenBy(p => p.Name) // Potem alfabetycznie
+                .ToList();
+
+            // Wyczyść istniejącą kolekcję (jeśli istnieje)
+            sortedPlayers.Clear();
+
+            // Wczytaj graczy do ObservableCollection
+            foreach (var player in players)
+            {
+                sortedPlayers.Add(player);
+            }
+
+            // Jeśli lista graczy nie jest pusta, ustaw pierwszy element jako domyślny
+            if (players.Any())
+            {
+                var firstPlayer = players.First();
+                playerNameLabel.Text = $"Gracz: {firstPlayer.Name}";
+            }
+            else
+            {
+                playerNameLabel.Text = "Brak graczy do wyświetlenia.";
+            }
+
+            // Obsłuż wybór gracza, jeśli istnieje zdarzenie SelectionChanged
+            if (e?.CurrentSelection.FirstOrDefault() is Multiplayer selectedPlayer)
+            {
+                playerNameLabel.Text = $"Gracz: {selectedPlayer.Name}";
+            }
+        }
+
+
         async void Time15_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
@@ -115,6 +167,11 @@ namespace JakaToPiosenka
 
 
             return true;
+        }
+
+        private async void Multiplayer_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RankingPage());
         }
     }
 }

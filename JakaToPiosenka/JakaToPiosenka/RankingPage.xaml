@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JakaToPiosenka.RankingPage"
+             BackgroundColor="#f0f8ff"
+             NavigationPage.HasNavigationBar="false">
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Nagłówek -->
+        <Label Text="Ranking Graczy" 
+               FontSize="36" 
+               TextColor="#1e90ff"
+               HorizontalOptions="Center"
+               Margin="0,20,0,10" />
+
+        <!-- Lista rankingowa -->
+        <CollectionView x:Name="RankingList" 
+                        ItemsSource="{Binding PlayersRanked}" 
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <!-- Miejsce w rankingu -->
+                        <Frame BackgroundColor="#1e90ff" 
+                               CornerRadius="10" 
+                               Padding="10" 
+                               WidthRequest="60"
+                               HorizontalOptions="Start">
+                            <Label Text="{Binding Place}" 
+                                   FontSize="20" 
+                                   TextColor="White" 
+                                   HorizontalTextAlignment="Center" />
+                        </Frame>
+
+                        <!-- Nazwa gracza -->
+                        <Label Text="{Binding Name}" 
+                               FontSize="20" 
+                               VerticalOptions="Center" 
+                               TextColor="#333" 
+                               HorizontalOptions="StartAndExpand" />
+
+                        <Label Text="{Binding GamesNumber}" 
+                         FontSize="20" 
+                         VerticalOptions="Center" 
+                         TextColor="Black" 
+                         HorizontalOptions="End" />     
+
+                        <!-- Punkty gracza -->
+                        <Label Text="{Binding Points}" 
+                               FontSize="20" 
+                               VerticalOptions="Center" 
+                               TextColor="Black" 
+                               HorizontalOptions="End" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

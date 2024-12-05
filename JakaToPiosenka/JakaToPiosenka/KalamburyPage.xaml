@@ -136,6 +136,7 @@ Margin="0,0,0,0">
             </StackLayout>
         </ContentView>
         <ImageButton x:Name="LeftMenu" Source="menu.png" Grid.Row="0" Clicked="OnMenuButtonClicked"  BackgroundColor="Transparent" Scale="0.3" Margin="-70,-10,50,50" />
+        <ImageButton x:Name="Multiplayer" Source="MultiKalambury.png" Grid.Row="0" Clicked="Multiplayer_Clicked"  Grid.Column="1" HorizontalOptions="End" Scale="0.6" BackgroundColor="Transparent" />
 
 
     </Grid>

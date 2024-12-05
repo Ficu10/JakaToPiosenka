@@ -28,8 +28,15 @@ namespace JakaToPiosenka
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
-          
 
+            if (MultiplayerPage.isMultiplayerEnabled)
+            {
+                Multiplayer.IsVisible = true;
+            }
+            else
+            {
+                Multiplayer.IsVisible = false;
+            }
         }
 
         private async void Multiplayer_Click(object sender, EventArgs e)
@@ -182,6 +189,11 @@ namespace JakaToPiosenka
             MainPage.gameMode = "FictionalCharacter";
             MainPage.isMainPage = false;
             await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void Multiplayer_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RankingPage());
         }
     }
 }

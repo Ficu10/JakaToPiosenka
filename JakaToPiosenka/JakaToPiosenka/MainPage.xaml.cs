@@ -69,6 +69,14 @@ namespace JakaToPiosenka
                 }
             }
             isMainPage = true;
+            if (MultiplayerPage.isMultiplayerEnabled)
+            {
+                Multiplayer.IsVisible = true;
+            }
+            else
+            {
+                Multiplayer.IsVisible = false;
+            }
         }
       
         private async void Multiplayer_Click(object sender, EventArgs e)
@@ -251,6 +259,11 @@ namespace JakaToPiosenka
         {
             sound.ClickSound();
             await Navigation.PushAsync(new KalamburyPage());
+        }
+
+        private async void Multiplayer_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RankingPage());
         }
     }
 }
