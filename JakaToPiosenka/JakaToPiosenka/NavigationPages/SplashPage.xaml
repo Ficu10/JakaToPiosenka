@@ -4,7 +4,7 @@
              x:Class="JakaToPiosenka.SplashPage"
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False"
-             BackgroundColor="#929292">
+             BackgroundColor="#a8a8a8">
     <AbsoluteLayout>
         <!-- Logo aplikacji -->
         <Image x:Name="Logo"

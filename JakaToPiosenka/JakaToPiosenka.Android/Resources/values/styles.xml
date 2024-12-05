@@ -15,7 +15,7 @@
     <!-- Główny kolor -->
     <item name="colorPrimaryDark">#1976D2</item>
     <!-- Kolor status bara -->
-    <item name="colorAccent">#979998</item>
+    <item name="colorAccent">#a8a8a8</item>
     <!-- Akcent (np. dla interaktywnych elementów) -->
 
     <!-- Nakładka na ActionMode -->
@@ -37,6 +37,6 @@
   </style>
 
   <!-- Definicje kolorów -->
-  <color name="gray_background">#929292</color>
+  <color name="gray_background">#a8a8a8</color>
   <!-- Szary kolor tła -->
 </resources>

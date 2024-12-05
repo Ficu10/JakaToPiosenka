@@ -26,7 +26,7 @@ namespace JakaToPiosenka
             await WelcomeText.FadeTo(1, 1000);
 
             // Przejście do głównej strony
-            await Task.Delay(2000); // Pauza na wyświetlenie animacji
+            await Task.Delay(1000); // Pauza na wyświetlenie animacji
             Application.Current.MainPage = new NavigationPage(new MainPage()); // Główna strona aplikacji
         }
     }
