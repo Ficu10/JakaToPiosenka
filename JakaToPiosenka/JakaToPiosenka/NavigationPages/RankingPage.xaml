@@ -2,57 +2,112 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JakaToPiosenka.RankingPage"
-             BackgroundColor="#f0f8ff"
+             BackgroundColor="#333333"
              NavigationPage.HasNavigationBar="false">
-    <StackLayout Padding="20" Spacing="15">
-        <!-- Nagłówek -->
-        <Label Text="Ranking Graczy" 
+
+
+   
+    <Frame BorderColor="#696968" BackgroundColor="#696968" Padding="5" Margin="15" CornerRadius="20">
+
+        <StackLayout Padding="5" Spacing="15">
+
+            <Image Source="zgdulalogo.png" HeightRequest="120" VerticalOptions="End"/>
+            <!-- Nagłówek -->
+            <Label Text="Ranking Graczy" 
                FontSize="36" 
-               TextColor="#1e90ff"
+               TextColor="#e0e0e0"
                HorizontalOptions="Center"
-               Margin="0,20,0,10" />
+               Margin="0,-20,0,10" />
 
-        <!-- Lista rankingowa -->
-        <CollectionView x:Name="RankingList" 
-                        ItemsSource="{Binding PlayersRanked}" 
-                        SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Orientation="Horizontal" Padding="10">
-                        <!-- Miejsce w rankingu -->
-                        <Frame BackgroundColor="#1e90ff" 
-                               CornerRadius="10" 
-                               Padding="10" 
-                               WidthRequest="60"
-                               HorizontalOptions="Start">
-                            <Label Text="{Binding Place}" 
-                                   FontSize="20" 
-                                   TextColor="White" 
-                                   HorizontalTextAlignment="Center" />
-                        </Frame>
+            <BoxView Color="#d1d1cf" HeightRequest="1" HorizontalOptions="FillAndExpand" Scale="3" Grid.ColumnSpan="4" Grid.Row="1" Margin="0,-15,0,0"/>
+            <Grid Padding="10" ColumnSpacing="10" BackgroundColor="#adadac">
+                <!-- Definicje kolumn -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.65*" />
+                    <!-- Miejsce -->
+                    <ColumnDefinition Width="1.2*" />
+                    <!-- Nazwa -->
+                    <ColumnDefinition Width="1.3*" />
+                    <!-- Liczba gier -->
+                    <ColumnDefinition Width="*" />
+                    <!-- Punkty -->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label FontAttributes="Bold" Text="Nr" FontSize="20" TextColor="White" Grid.Column="0" HeightRequest="40" HorizontalOptions="Center"/>
+                <Label FontAttributes="Bold" Text="Nazwa" FontSize="20" TextColor="White" Grid.Column="1"/>
+                <Label FontAttributes="Bold" Text="Gry" FontSize="20" TextColor="White" Grid.Column="2" HorizontalOptions="Center"/>
+                <Label FontAttributes="Bold" Text="Punkty" FontSize="20" TextColor="White" Grid.Column="3"/>
 
-                        <!-- Nazwa gracza -->
-                        <Label Text="{Binding Name}" 
-                               FontSize="20" 
-                               VerticalOptions="Center" 
-                               TextColor="#333" 
-                               HorizontalOptions="StartAndExpand" />
+            </Grid>
 
-                        <Label Text="{Binding GamesNumber}" 
-                         FontSize="20" 
-                         VerticalOptions="Center" 
-                         TextColor="Black" 
-                         HorizontalOptions="End" />     
 
-                        <!-- Punkty gracza -->
-                        <Label Text="{Binding Points}" 
-                               FontSize="20" 
-                               VerticalOptions="Center" 
-                               TextColor="Black" 
-                               HorizontalOptions="End" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+            <CollectionView x:Name="RankingList" 
+                ItemsSource="{Binding PlayersRanked}" 
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5" ColumnSpacing="15" BackgroundColor="#adadac">
+                            <!-- Definicje kolumn -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="0.1*" />
+                            </Grid.RowDefinitions>
+
+                            <!-- Miejsce w rankingu -->
+                            <Frame Grid.Column="0"
+                       CornerRadius="10" 
+                       Padding="7" 
+                       WidthRequest="35"
+                       BackgroundColor="{Binding BackgroundColor}"
+                       HorizontalOptions="Center">
+                                <Label Text="{Binding Place}" 
+                           FontSize="25" 
+                           TextColor="White" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+                            </Frame>
+
+                            <!-- Nazwa gracza -->
+                            <Label Grid.Column="1"
+                       Text="{Binding Name}" 
+                       FontSize="20" 
+                       VerticalOptions="Center" 
+                       TextColor="#333" 
+                       HorizontalOptions="StartAndExpand"
+                       FontAttributes="Bold"/>
+
+                            <!-- Liczba gier -->
+                            <Label Grid.Column="2"
+                       Text="{Binding GamesNumber}" 
+                       FontSize="25" 
+                       VerticalOptions="Center" 
+                       TextColor="#1e90ff" 
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+
+                            <!-- Punkty -->
+                            <Label Grid.Column="3"
+                       Text="{Binding Points}" 
+                       FontSize="25" 
+                       VerticalOptions="Center" 
+                       TextColor="#ff4500" 
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                       <BoxView Color="#d1d1cf" HeightRequest="1" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="4" Grid.Row="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </Frame>
 </ContentPage>
