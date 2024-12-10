@@ -1,31 +1,202 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using SQLite;
+using System.IO;
 
 namespace JakaToPiosenka
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        public static int Time1 = 15;
-        public static int Time2 = 30;
-        public static int Time3 = 45;
-        public static int Time4 = 60;
+        // Statyczne pola
+        public static int Time1;
+        public static int Time2;
+        public static int Time3;
+        public static int Time4;
+        public static int WordsNumber;
+
+        private static readonly SQLiteConnection dbConnection;
+
+        static SettingsPage()
+        {
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Settings.db3");
+            dbConnection = new SQLiteConnection(dbPath);
+            dbConnection.CreateTable<Setting>();
+
+            // Inicjalizacja wartości statycznych
+            InitializeSettings();
+        }
+
         public SettingsPage()
         {
             InitializeComponent();
+
+            // Ustawienie wartości w polach
             Time1Entry.Text = Time1.ToString();
             Time2Entry.Text = Time2.ToString();
             Time3Entry.Text = Time3.ToString();
             Time4Entry.Text = Time4.ToString();
+            WordsEntry.Text = WordsNumber.ToString();
+        }
+
+        private static void InitializeSettings()
+        {
+            Time1 = GetSetting("Time1", 15);
+            Time2 = GetSetting("Time2", 30);
+            Time3 = GetSetting("Time3", 45);
+            Time4 = GetSetting("Time4", 60);
+            WordsNumber = GetSetting("WordsNumber", 10);
+        }
+
+        private static int GetSetting(string key, int defaultValue)
+        {
+            var setting = dbConnection.Find<Setting>(key);
+            return setting != null ? int.Parse(setting.Value) : defaultValue;
+        }
+
+        private static void SaveSetting(string key, int value)
+        {
+            var existingSetting = dbConnection.Find<Setting>(key);
+            if (existingSetting != null)
+            {
+                existingSetting.Value = value.ToString();
+                dbConnection.Update(existingSetting);
+            }
+            else
+            {
+                dbConnection.Insert(new Setting { Key = key, Value = value.ToString() });
+            }
+        }
+
+        // Timer 1 Handlers
+        private void OnIncreaseTime1(object sender, EventArgs e)
+        {
+            Time1++;
+            Time1Entry.Text = Time1.ToString();
+            SaveSetting("Time1", Time1);
+        }
+
+        private void OnDecreaseTime1(object sender, EventArgs e)
+        {
+            if (Time1 > 1)
+            {
+                Time1--;
+                Time1Entry.Text = Time1.ToString();
+                SaveSetting("Time1", Time1);
+            }
+        }
+
+        // Timer 2 Handlers
+        private void OnIncreaseTime2(object sender, EventArgs e)
+        {
+            Time2++;
+            Time2Entry.Text = Time2.ToString();
+            SaveSetting("Time2", Time2);
+        }
+
+        private void OnDecreaseTime2(object sender, EventArgs e)
+        {
+            if (Time2 > 1)
+            {
+                Time2--;
+                Time2Entry.Text = Time2.ToString();
+                SaveSetting("Time2", Time2);
+            }
+        }
+
+        // Timer 3 Handlers
+        private void OnIncreaseTime3(object sender, EventArgs e)
+        {
+            Time3++;
+            Time3Entry.Text = Time3.ToString();
+            SaveSetting("Time3", Time3);
+        }
+
+        private void OnDecreaseTime3(object sender, EventArgs e)
+        {
+            if (Time3 > 1)
+            {
+                Time3--;
+                Time3Entry.Text = Time3.ToString();
+                SaveSetting("Time3", Time3);
+            }
+        }
+
+        // Timer 4 Handlers
+        private void OnIncreaseTime4(object sender, EventArgs e)
+        {
+            Time4++;
+            Time4Entry.Text = Time4.ToString();
+            SaveSetting("Time4", Time4);
+        }
+
+        private void OnDecreaseTime4(object sender, EventArgs e)
+        {
+            if (Time4 > 1)
+            {
+                Time4--;
+                Time4Entry.Text = Time4.ToString();
+                SaveSetting("Time4", Time4);
+            }
+        }
+
+        // Words Number Handlers
+        private void WordsIncrease_Clicked(object sender, EventArgs e)
+        {
+            WordsNumber++;
+            WordsEntry.Text = WordsNumber.ToString();
+            SaveSetting("WordsNumber", WordsNumber);
+        }
+
+        private void WordsDecrease_Clicked(object sender, EventArgs e)
+        {
+            if (WordsNumber > 1)
+            {
+                WordsNumber--;
+                WordsEntry.Text = WordsNumber.ToString();
+                SaveSetting("WordsNumber", WordsNumber);
+            }
+        }
+
+        private void WordsEntry_Completed(object sender, EventArgs e)
+        {
+            ValidateWordsNumber();
+        }
+
+        private void ValidateWordsNumber()
+        {
+            if (int.TryParse(WordsEntry.Text, out int words) && words > 0)
+            {
+                WordsNumber = words;
+                SaveSetting("WordsNumber", WordsNumber);
+            }
+            else
+            {
+                DisplayAlert("Błąd", "Ilość haseł musi być liczbą większą od 0.", "OK");
+                WordsEntry.Text = WordsNumber.ToString();
+            }
+        }
+
+        private void OnTimeCompleted1(object sender, EventArgs e) => ValidateTime(Time1Entry, "Time1", ref Time1);
+        private void OnTimeCompleted2(object sender, EventArgs e) => ValidateTime(Time2Entry, "Time2", ref Time2);
+        private void OnTimeCompleted3(object sender, EventArgs e) => ValidateTime(Time3Entry, "Time3", ref Time3);
+        private void OnTimeCompleted4(object sender, EventArgs e) => ValidateTime(Time4Entry, "Time4", ref Time4);
+
+        private void ValidateTime(Entry entry, string key, ref int timeValue)
+        {
+            if (int.TryParse(entry.Text, out int time) && time > 0)
+            {
+                timeValue = time;
+                SaveSetting(key, timeValue);
+            }
+            else
+            {
+                DisplayAlert("Błąd", "Czas musi być liczbą większą od 0.", "OK");
+                entry.Text = timeValue.ToString();
+            }
         }
         protected override bool OnBackButtonPressed()
         {
+            InitializeSettings();
             if (MainPage.isMainPage)
             {
                 Device.BeginInvokeOnMainThread(async () =>
@@ -40,133 +211,17 @@ namespace JakaToPiosenka
                     await Navigation.PushAsync(new KalamburyPage());
                 });
             }
-           
+
 
             return true;
         }
-        // Timer 1 Handlers
-        private void OnIncreaseTime1(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time1Entry.Text, out int time))
-            {
-                time++;
-                Time1Entry.Text = time.ToString();
-                Time1 = int.Parse(Time1Entry.Text);
 
-            }
-        }
+    }
 
-        private void OnDecreaseTime1(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time1Entry.Text, out int time) && time > 1)
-            {
-                time--;
-                Time1Entry.Text = time.ToString();
-                Time1 = int.Parse(Time1Entry.Text);
-            }
-        }
-
-        
-
-        // Timer 2 Handlers
-        private void OnIncreaseTime2(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time2Entry.Text, out int time))
-            {
-                time++;
-                Time2Entry.Text = time.ToString();
-                Time2 = int.Parse(Time2Entry.Text);
-            }
-        }
-
-        private void OnDecreaseTime2(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time2Entry.Text, out int time) && time > 1)
-            {
-                time--;
-                Time2Entry.Text = time.ToString();
-                Time2 = int.Parse(Time2Entry.Text);
-            }
-        }
-
-     
-
-        // Timer 3 Handlers
-        private void OnIncreaseTime3(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time3Entry.Text, out int time))
-            {
-                time++;
-                Time3Entry.Text = time.ToString();
-                Time3 = int.Parse(Time3Entry.Text);
-            }
-        }
-
-        private void OnDecreaseTime3(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time3Entry.Text, out int time) && time > 1)
-            {
-                time--;
-                Time3Entry.Text = time.ToString();
-                Time3 = int.Parse(Time3Entry.Text);
-            }
-        }
-
-       
-
-        // Timer 4 Handlers
-        private void OnIncreaseTime4(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time4Entry.Text, out int time))
-            {
-                time++;
-                Time4Entry.Text = time.ToString();
-                Time4 = int.Parse(Time4Entry.Text);
-            }
-        }
-
-        private void OnDecreaseTime4(object sender, EventArgs e)
-        {
-            if (int.TryParse(Time4Entry.Text, out int time) && time > 1)
-            {
-                time--;
-                Time4Entry.Text = time.ToString();
-                Time4 = int.Parse(Time4Entry.Text);
-            }
-        }
-
-        private void OnTimeCompleted1(object sender, EventArgs e)
-        {
-            ValidateTime(Time1Entry);
-        }
-
-        private void OnTimeCompleted2(object sender, EventArgs e)
-        {
-            ValidateTime(Time2Entry);
-        }
-
-        private void OnTimeCompleted3(object sender, EventArgs e)
-        {
-            ValidateTime(Time3Entry);
-        }
-
-        private void OnTimeCompleted4(object sender, EventArgs e)
-        {
-            ValidateTime(Time4Entry);
-        }
-
-        private void ValidateTime(Entry entry)
-        {
-            if (!int.TryParse(entry.Text, out int time) || time < 1)
-            {
-                DisplayAlert("Błąd", "Czas musi być większy niż 1 sekundy i liczbą całkowitą.", "OK");            }
-            else 
-            { 
-                Time1 = int.Parse(Time1Entry.Text);
-                Time2 = int.Parse(Time2Entry.Text);
-                Time3 = int.Parse(Time3Entry.Text);
-                Time4 = int.Parse(Time4Entry.Text);
-            }
-        }
+    public class Setting
+    {
+        [PrimaryKey]
+        public string Key { get; set; }
+        public string Value { get; set; }
     }
 }

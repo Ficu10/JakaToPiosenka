@@ -29,7 +29,7 @@
                 <Entry x:Name="NewPromptName" Placeholder="Hasło" HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
                 <Entry x:Name="NewTitleName" Placeholder="Kategoria"  HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
             </StackLayout>
-            <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="30"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,160" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="#cc820a" BorderColor="White" BorderWidth="3"/>
+            <Button x:Name="addSongToList" Clicked="AddSongToList_Clicked" Grid.RowSpan="2" FontSize="30"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,160" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="#cc820a" BorderColor="White" BorderWidth="3"/>
 
 
 
@@ -61,8 +61,8 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button  x:Name="Import" Clicked="Import_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Import" Grid.Row="5" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="Start" VerticalOptions="End"/>
-            <Button x:Name="Eksport" Clicked="Eksport_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Eksport" Grid.Row="5" Grid.Column="2" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="End" VerticalOptions="End"/>
+            <!--<Button  x:Name="Import" Clicked="Import_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Import" Grid.Row="5" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="Start" VerticalOptions="End"/>
+            <Button x:Name="Eksport" Clicked="Eksport_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Eksport" Grid.Row="5" Grid.Column="2" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="End" VerticalOptions="End"/>-->
 
         </Grid>
 

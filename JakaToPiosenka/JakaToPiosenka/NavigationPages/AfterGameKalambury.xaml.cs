@@ -27,7 +27,7 @@ namespace JakaToPiosenka
             {
                 MultiplayerButton.IsVisible = false;
                 NextPlayer.IsVisible = false;
-                Resut.Text = $"Twój wynik to {Game.pointsCounter}/10";
+                Resut.Text = $"Twój wynik to {Game.pointsCounter}/{SettingsPage.WordsNumber}";
             }
 
             // Ustawienie dźwięku w zależności od wyniku
@@ -72,7 +72,7 @@ namespace JakaToPiosenka
                 // Zwiększ liczbę gier i punkty
                 firstPlayer.GamesNumber = firstPlayer.GamesNumber + 1;
                 firstPlayer.Points += Game.pointsCounter;
-                Resut.Text = "Wynik gracza " + firstPlayer.Name + ": " + Game.pointsCounter + "/10";
+                Resut.Text = "Wynik gracza " + firstPlayer.Name + ": " + Game.pointsCounter + "/" + SettingsPage.WordsNumber;
 
                 var secondplayer = players[1]; // Drugi gracz w kolejności
                 NextPlayer.Text += "Następny gracz: " + secondplayer.Name;
@@ -87,11 +87,12 @@ namespace JakaToPiosenka
         /// </summary>
         private void PlayScoreSound()
         {
-            if (Game.pointsCounter <= 3)
+            double score = (Convert.ToDouble(Game.pointsCounter) / Convert.ToDouble(SettingsPage.WordsNumber));
+            if (score <= 0.3)
             {
                 _sounds.BadScoreSound();
             }
-            else if (Game.pointsCounter <= 6) // 4-6
+            else if (score <= 0.7) // 4-6
             {
                 _sounds.MediumScoreSound();
             }

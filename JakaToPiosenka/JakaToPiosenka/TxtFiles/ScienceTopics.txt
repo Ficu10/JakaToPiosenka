@@ -1,0 +1,88 @@
+fizyka;mechanika kwantowa
+fizyka;teoria względności
+fizyka;termodynamika
+chemia;wiązania chemiczne
+chemia;reakcje chemiczne
+chemia;tablica Mendelejewa
+biologia;genetyka
+biologia;ewolucja
+biologia;komórki macierzyste
+astronomia;czarne dziury
+astronomia;planety Układu Słonecznego
+astronomia;eksploracja kosmosu
+matematyka;algebra
+matematyka;geometria
+matematyka;rachunek różniczkowy
+informatyka;sztuczna inteligencja
+informatyka;algorytmy
+informatyka;programowanie
+geografia;zmiany klimatyczne
+geografia;procesy tektoniczne
+geografia;hydrologia
+psychologia;mechanizmy poznawcze
+psychologia;emocje
+psychologia;teoria osobowości
+socjologia;struktura społeczna
+socjologia;globalizacja
+socjologia;media społecznościowe
+ekonomia;teoria podaży i popytu
+ekonomia;inflacja
+ekonomia;rynki finansowe
+medycyna;choroby zakaźne
+medycyna;neurobiologia
+medycyna;medycyna regeneracyjna
+fizyka;optyka
+chemia;kinetyka chemiczna
+biologia;biotechnologia
+astronomia;supernowe
+matematyka;statystyka
+informatyka;cyberbezpieczeństwo
+geografia;wulkanologia
+psychologia;psychoterapia
+socjologia;teoria konfliktu
+ekonomia;makroekonomia
+medycyna;onkologia
+fizyka;elektromagnetyzm
+chemia;chemia organiczna
+biologia;mikrobiologia
+astronomia;eksoplanety
+matematyka;teoria liczb
+informatyka;sieci neuronowe
+geografia;kartografia
+psychologia;rozwój dziecka
+socjologia;analiza danych społecznych
+ekonomia;ekonomia behawioralna
+medycyna;chirurgia robotyczna
+fizyka;fizyka cząstek elementarnych
+chemia;spektroskopia
+biologia;ekologia
+astronomia;kosmologia
+matematyka;topologia
+informatyka;przetwarzanie danych
+geografia;geologia
+psychologia;psychologia sportu
+socjologia;zachowania społeczne
+ekonomia;gospodarka globalna
+medycyna;immunologia
+fizyka;akustyka
+chemia;elektrochemia
+biologia;neurobiologia
+astronomia;meteoryty
+matematyka;analiza numeryczna
+informatyka;internet rzeczy
+geografia;erozja gleby
+psychologia;terapia poznawczo-behawioralna
+socjologia;rola kultury
+ekonomia;rynki kapitałowe
+medycyna;medycyna sportowa
+fizyka;fizyka jądrowa
+chemia;polimery
+biologia;genomika
+astronomia;misje kosmiczne
+matematyka;kombinatoryka
+informatyka;grafika komputerowa
+geografia;geomorfologia
+psychologia;psychologia kliniczna
+socjologia;badania nad migracjami
+ekonomia;teoria decyzji
+medycyna;psychiatria

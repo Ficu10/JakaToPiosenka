@@ -1,0 +1,97 @@
+sport;piłka nożna
+sport;koszykówka
+sport;siatkówka
+sport;tenis
+sport;tenis stołowy
+sport;badminton
+sport;piłka ręczna
+sport;lekkoatletyka
+sport;pływanie
+sport;gimnastyka
+sport;podnoszenie ciężarów
+sport;biegi narciarskie
+sport;skoki narciarskie
+sport;narciarstwo alpejskie
+sport;łyżwiarstwo figurowe
+sport;łyżwiarstwo szybkie
+sport;boks
+sport;judo
+sport;karate
+sport;zapasy
+sport;szermierka
+sport;wioślarstwo
+sport;kajakarstwo
+sport;żeglarstwo
+sport;golf
+sport;kolarstwo
+sport;triathlon
+sport;maraton
+sport;łucznictwo
+sport;strzelectwo
+sport;hokej na lodzie
+sport;hokej na trawie
+sport;rugby
+sport;futbol amerykański
+sport;skateboarding
+sport;snowboarding
+sport;surfing
+sport;wspinaczka sportowa
+sport;szachy
+sport;e-sport
+sport;bilard
+sport;krykiet
+sport;baseball
+sport;formuła 1
+sport;motocross
+sport;speedway
+sport;łowiectwo podwodne
+sport;wędkarstwo sportowe
+sport;jeździectwo
+sport;polo
+sport;windsurfing
+sport;kitesurfing
+sport;freerunning
+sport;parkour
+sport;taekwondo
+sport;muay thai
+sport;mma
+sport;bouldering
+sport;rafting
+sport;paintball
+sport;snooker
+sport;crosstraining
+sport;zumba
+sport;jazda na rolkach
+sport;hiking
+sport;nordic walking
+sport;biegi górskie
+sport;curling
+sport;petanque
+sport;airsoft
+sport;wędrówki górskie
+sport;darts
+sport;kickboxing
+sport;unihokej
+sport;siatkówka plażowa
+sport;quady
+sport;paralotniarstwo
+sport;baloniarstwo
+sport;szybownictwo
+sport;skoki spadochronowe
+sport;wioślarstwo górskie
+sport;piłka wodna
+sport;trójbój siłowy
+sport;zawody strongman
+sport;frisbee
+sport;ultimate frisbee
+sport;rodeo
+sport;ping pong
+sport;cheerleading
+sport;balet sportowy
+sport;karate tradycyjne
+sport;sambo
+sport;aikido
+sport;grappling
+sport;hurling
+sport;lacrosse
+sport;futsal

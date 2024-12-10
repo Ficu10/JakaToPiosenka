@@ -1,0 +1,99 @@
+aktor;Leonardo DiCaprio
+aktor;Angelina Jolie
+piosenkarz;Beyoncé
+piosenkarz;Justin Bieber
+reżyser;Steven Spielberg
+sportowiec;Cristiano Ronaldo
+sportowiec;Serena Williams
+modelka;Gigi Hadid
+modelka;Bella Hadid
+influencer;Kim Kardashian
+influencer;Kylie Jenner
+aktor;Brad Pitt
+aktor;Scarlett Johansson
+piosenkarz;Taylor Swift
+piosenkarz;Ed Sheeran
+reżyser;Christopher Nolan
+sportowiec;Lionel Messi
+sportowiec;Michael Jordan
+modelka;Kate Moss
+modelka;Naomi Campbell
+influencer;Charli D'Amelio
+influencer;Addison Rae
+aktor;Tom Cruise
+aktor;Jennifer Lawrence
+piosenkarz;Lady Gaga
+piosenkarz;Adele
+reżyser;Quentin Tarantino
+sportowiec;Usain Bolt
+sportowiec;Roger Federer
+modelka;Cindy Crawford
+modelka;Kendall Jenner
+influencer;PewDiePie
+influencer;Emma Chamberlain
+aktor;Keanu Reeves
+aktor;Emma Watson
+piosenkarz;Billie Eilish
+piosenkarz;Rihanna
+reżyser;James Cameron
+sportowiec;LeBron James
+sportowiec;Tom Brady
+modelka;Adriana Lima
+modelka;Miranda Kerr
+influencer;Logan Paul
+influencer;MrBeast
+aktor;Robert Downey Jr.
+aktor;Margot Robbie
+piosenkarz;Harry Styles
+piosenkarz;Shawn Mendes
+reżyser;Guillermo del Toro
+sportowiec;Novak Djokovic
+sportowiec;Rafael Nadal
+modelka;Karlie Kloss
+modelka;Heidi Klum
+influencer;David Dobrik
+influencer;Lilly Singh
+aktor;Chris Hemsworth
+aktor;Anne Hathaway
+piosenkarz;Dua Lipa
+piosenkarz;Post Malone
+reżyser;Wes Anderson
+sportowiec;Simone Biles
+sportowiec;Tiger Woods
+modelka;Bar Refaeli
+modelka;Emily Ratajkowski
+influencer;Nikkie de Jager
+influencer;James Charles
+aktor;Ryan Reynolds
+aktor;Natalie Portman
+piosenkarz;The Weeknd
+piosenkarz;Bruno Mars
+reżyser;Tim Burton
+sportowiec;Conor McGregor
+sportowiec;David Beckham
+modelka;Tyra Banks
+modelka;Alessandra Ambrosio
+influencer;Zoella
+influencer;Huda Kattan
+aktor;Tom Hanks
+aktor;Zendaya
+piosenkarz;Selena Gomez
+piosenkarz;Camila Cabello
+reżyser;Martin Scorsese
+sportowiec;Kobe Bryant
+sportowiec;Lewis Hamilton
+modelka;Claudia Schiffer
+modelka;Gisele Bündchen
+influencer;Shane Dawson
+influencer;Tana Mongeau
+aktor;Hugh Jackman
+aktor;Meryl Streep
+piosenkarz;Ariana Grande
+piosenkarz;Zayn Malik
+reżyser;Peter Jackson
+sportowiec;Sergei Bubka
+sportowiec;Marta Vieira da Silva
+modelka;Karolina Kurkova
+modelka;Irina Shayk
+influencer;Casey Neistat
+influencer;Marques Brownlee
