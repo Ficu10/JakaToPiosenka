@@ -28,7 +28,7 @@ namespace JakaToPiosenka
         {
             InitializeComponent();
            
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new SplashPage());
         }
         protected override void OnStart()
         {

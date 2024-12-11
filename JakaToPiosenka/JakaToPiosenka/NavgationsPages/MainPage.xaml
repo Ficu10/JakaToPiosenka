@@ -12,9 +12,9 @@
     <ContentPage.Background>
         <LinearGradientBrush>
             <!-- Dodaj kolory gradientu -->
-            <GradientStop Color="#506cbf" Offset="0.0" />
+            <GradientStop Color="#517bcf" Offset="0.0" />
             <!-- Górny kolor -->
-            <GradientStop Color="#2e3f73" Offset="1.0" />
+            <GradientStop Color="#304e8a" Offset="1.0" />
             <!-- Dolny kolor -->
         </LinearGradientBrush>
     </ContentPage.Background>
@@ -34,7 +34,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <!-- Menu -->
-        <Button IsEnabled="False" Grid.ColumnSpan="2" BackgroundColor="#5c7bd6" Margin="-6"/>
+        <Button IsEnabled="False" Grid.ColumnSpan="2" BackgroundColor="#6196ff" Margin="-6"/>
 
 
 

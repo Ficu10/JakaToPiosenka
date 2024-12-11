@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JakaToPiosenka.SplashPage"
+             NavigationPage.HasNavigationBar="false"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="#8c8c8c">
+    <AbsoluteLayout>
+        <!-- Logo aplikacji -->
+        <Image x:Name="Logo"
+               Source="zgdulalogo.png"
+               Scale="0.8"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5, 200, 200"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Opacity="0" />
+        <!-- Tekst powitalny -->
+        <Image x:Name="WelcomeText"
+               Source="aftm.png"
+               AbsoluteLayout.LayoutBounds="0.5, 0.8, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Opacity="0" />
+        <Label x:Name="ZgadujZgadula"
+               Text="Zgaduj Zgadula..."
+               FontSize="35"
+               TextColor="White"
+               AbsoluteLayout.LayoutBounds="0.5, -0.2, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Opacity="1" />
+    </AbsoluteLayout>
+</ContentPage>
