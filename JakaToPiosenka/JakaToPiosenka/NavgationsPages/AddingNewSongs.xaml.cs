@@ -340,7 +340,17 @@ namespace JakaToPiosenka
                     { "Movies", typeof(Movies) },
                     { "Series", typeof(Series) },
                     { "Tales", typeof(Tales) },
-                    { "Words", typeof(Words) }
+                    { "Words", typeof(Words) },
+                    { "Carols", typeof(Carols) },
+                    { "ChristmasSongs", typeof(ChristmasSongs) },
+                    { "Animals", typeof(Animals) },
+                    { "AdultMixed", typeof(AdultMixed) },
+                    { "Celebrities", typeof(Celebrities) },
+                    { "DailyLife", typeof(DailyLife) },
+                    { "Poland", typeof(Poland) },
+                    { "Rhymes", typeof(Rhymes) },
+                    { "ScienceTopics", typeof(ScienceTopics) },
+                    { "Sports", typeof(Sports) }
                 };
 
                 if (tableTypeMap.ContainsKey(MainPage.gameMode))
@@ -958,6 +968,19 @@ namespace JakaToPiosenka
                             .ThenBy(song => song.Title)
                             .ToList();
                         break;
+                    case "Carols":
+                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
+                            .OrderBy(song => song.Prompt)
+                            .ThenBy(song => song.Title)
+                            .ToList();
+                        break;
+
+                    case "ChristmasSongs":
+                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
+                            .OrderBy(song => song.Prompt)
+                            .ThenBy(song => song.Title)
+                            .ToList();
+                        break;
                 }
             }
             else
@@ -1041,6 +1064,17 @@ namespace JakaToPiosenka
                         break;
                     case "Youtube":
                         SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Youtube>()
+                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
+                            .ToList();
+                        break;
+                    case "Carols":
+                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
+                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
+                            .ToList();
+                        break;
+
+                    case "ChristmasSongs":
+                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
                             .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
                             .ToList();
                         break;

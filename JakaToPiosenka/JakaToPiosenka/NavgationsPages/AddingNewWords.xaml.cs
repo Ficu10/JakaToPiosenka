@@ -183,14 +183,21 @@ namespace JakaToPiosenka
                     var list = ((IEnumerable<object>)query).ToList();
 
                     // Filter and sort dynamically
-                    var filteredList = string.IsNullOrWhiteSpace(searchText)
-                         ? list
-                         : list.Where(song =>
-                             (tableType.GetProperty("Prompt")?.GetValue(song)?.ToString()?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) ?? -1) >= 0 ||
-                             (tableType.GetProperty("Title")?.GetValue(song)?.ToString()?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) ?? -1) >= 0)
-                           .OrderBy(song => tableType.GetProperty("Prompt")?.GetValue(song)?.ToString())
-                           .ThenBy(song => tableType.GetProperty("Title")?.GetValue(song)?.ToString())
-                           .ToList();
+                    var filteredList = list;
+
+                    if (!string.IsNullOrWhiteSpace(searchText))
+                    {
+                        filteredList = list.Where(song =>
+                            (tableType.GetProperty("Prompt")?.GetValue(song)?.ToString()?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) ?? -1) >= 0 ||
+                            (tableType.GetProperty("Title")?.GetValue(song)?.ToString()?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) ?? -1) >= 0)
+                        .ToList();
+                    }
+
+                    filteredList = filteredList
+                        .OrderBy(song => tableType.GetProperty("Prompt")?.GetValue(song)?.ToString())
+                        .ThenBy(song => tableType.GetProperty("Title")?.GetValue(song)?.ToString())
+                        .ToList();
+
 
                     // Assign the filtered list to the CollectionView
                     SongsCollection.ItemsSource = filteredList;
