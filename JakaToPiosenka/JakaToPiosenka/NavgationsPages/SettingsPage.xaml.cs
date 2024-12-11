@@ -28,7 +28,7 @@ namespace JakaToPiosenka
             WordsEntry.Text = WordsNumber.ToString();
         }
 
-        private void InitializeSettings()
+        public void InitializeSettings()
         {
             Time1 = SettingsHelper.GetValue("Time1", 15);
             Time2 = SettingsHelper.GetValue("Time2", 30);

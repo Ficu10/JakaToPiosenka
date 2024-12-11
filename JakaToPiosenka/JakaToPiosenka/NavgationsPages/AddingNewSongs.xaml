@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JakaToPiosenka.AddingNewSongs"
              NavigationPage.HasNavigationBar="false"
@@ -23,7 +22,7 @@
 
             </Grid.ColumnDefinitions>
 
-           
+
             <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3">
                 <Label/>
                 <Entry x:Name="NewPromptName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
@@ -33,11 +32,11 @@
 
 
 
+            <Button Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#021252" Margin="30,110,30,40" CornerRadius="10" />
 
 
-
-            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="20,120,20,-10"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
-            <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="20,0,20,50">
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
+            <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="40,0,40,50">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <SwipeView>
@@ -65,7 +64,7 @@
             <Button x:Name="Eksport" Clicked="Eksport_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Eksport" Grid.Row="5" Grid.Column="2" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="End" VerticalOptions="End"/>
 
         </Grid>
-                
-           
+
+
     </ContentPage.Content>
 </ContentPage>

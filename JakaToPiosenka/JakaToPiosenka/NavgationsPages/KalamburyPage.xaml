@@ -10,9 +10,9 @@
     <ContentPage.Background>
         <LinearGradientBrush>
             <!-- Dodaj kolory gradientu -->
-            <GradientStop Color="#b8ac46" Offset="0.0" />
+            <GradientStop Color="#a68044" Offset="0.0" />
             <!-- Górny kolor -->
-            <GradientStop Color="#f75225" Offset="1.0" />
+            <GradientStop Color="#705831" Offset="1.0" />
             <!-- Dolny kolor -->
         </LinearGradientBrush>
     </ContentPage.Background>
@@ -32,6 +32,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <!-- Menu -->
+        <Button IsEnabled="False" Grid.ColumnSpan="2" BackgroundColor="#c49751" Margin="-6"/>
 
 
 
@@ -45,28 +46,27 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="kalambury.png" Grid.ColumnSpan="2" Scale="3.6" Opacity="0.2" Margin="0,0,20,1500" Rotation="-5"/>
 
                 <StackLayout Grid.Column="0">
                     <Label Text="Dla dzieci" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Padding="5"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="dladzieciButton_Clicked"  x:Name="dladzieciButton" Source="dladzieci1.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="dladzieciButton_Clicked"  x:Name="dladzieciButton" Source="CKal.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Emocje" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="emocjeButton_Clicked" x:Name="emocjeButton" Source="emocje.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="emocjeButton_Clicked" x:Name="emocjeButton" Source="Emotes.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Filmy" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="filmyButton_Clicked"  x:Name="filmyButton" Source="filmy.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="filmyButton_Clicked"  x:Name="filmyButton" Source="Movies.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Bajki" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="bajkiButton_Clicked"  x:Name="bajkiButton" Source="bajki.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="bajkiButton_Clicked"  x:Name="bajkiButton" Source="Fairy.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Zawody"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,30,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="zawodyButton_Clicked"  x:Name="zawodyButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="zawodyButton_Clicked"  x:Name="zawodyButton" Source="Jobs.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
                     <Label Text="Zwierzęta"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="AnimalsButton_Clicked"  x:Name="AnimalsButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="AnimalsButton_Clicked"  x:Name="AnimalsButton" Source="animals.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
                     <Label Text="+18"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="AdultMixed_Clicked"  x:Name="AdultMixed" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="AdultMixed_Clicked"  x:Name="AdultMixed" Source="Art18.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
                     <Label Text="Polska"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="PolandButton_Clicked"  x:Name="PolandButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="PolandButton_Clicked"  x:Name="PolandButton" Source="Poland.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
 
                     <Label Text="Nauka"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="ScienceTopicsButton_Clicked"  x:Name="ScienceTopicsButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="ScienceTopicsButton_Clicked"  x:Name="ScienceTopicsButton" Source="Science.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
 
 
 
@@ -74,31 +74,31 @@
                 <StackLayout Grid.Column="1">
                     <Label Text="Seriale" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Padding="5"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="netflixButton_Clicked"  x:Name="netflixButton" Source="netflix.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="netflixButton_Clicked"  x:Name="netflixButton" Source="Series.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Państwa" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="panstwaButton_Clicked" x:Name="panstwaButton" Source="panstwa.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="panstwaButton_Clicked" x:Name="panstwaButton" Source="World.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Przysłowia" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="przyslowiaButton_Clicked"  x:Name="przyslowiaButton" Source="przyslowia.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="przyslowiaButton_Clicked"  x:Name="przyslowiaButton" Source="Proverb.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Postacie fikcyjne" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="fictionButton_Clicked"  x:Name="fictionButton" Source="zwierzeta.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="fictionButton_Clicked"  x:Name="fictionButton" Source="Fiction.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
                     <Label Text="Postacie historczne" Margin="0,0,0,-20" HorizontalTextAlignment="Center" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="postaciehistoryczne_Clicked"  x:Name="postaciehistoryczne" Source="mini4.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="postaciehistoryczne_Clicked"  x:Name="postaciehistoryczne" Source="History.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
                     <Label Text="Celebryci"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="CelebritiesButton_Clicked"  x:Name="CelebritiesButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="CelebritiesButton_Clicked"  x:Name="CelebritiesButton" Source="Celebs.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
 
                     <Label Text="Życie Codzienne"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="DailyLifeButton_Clicked"  x:Name="DailyLifeButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="DailyLifeButton_Clicked"  x:Name="DailyLifeButton" Source="daily.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
 
                     <Label Text="Rymy"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="RhymesButton_Clicked"  x:Name="RhymesButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="RhymesButton_Clicked"  x:Name="RhymesButton" Source="Mickiew.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
 
 
                     <Label Text="Sport"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Margin="0,10,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="SportsButton_Clicked"  x:Name="SportsButton" Source="gornik.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="SportsButton_Clicked"  x:Name="SportsButton" Source="Sports.jpg" BackgroundColor="Transparent" Margin="20,25,20,20"/>
 
                 </StackLayout>
 
@@ -114,11 +114,11 @@
           Grid.ColumnSpan="2"
           VerticalOptions="Start"
           HorizontalOptions="Fill"
-          BackgroundColor="#f7a539"
+          BackgroundColor="White"
           HeightRequest="9"/>
 
         <ContentView x:Name="MenuView" 
-BackgroundColor="#adc2ff" 
+BackgroundColor="#919191" 
 IsVisible="False" 
 HorizontalOptions="StartAndExpand" 
 VerticalOptions="StartAndExpand"
@@ -130,7 +130,7 @@ Margin="0,0,0,0">
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>
 
                 <!-- Przyciski z obrazkami po prawej -->
-                <Grid Margin="5" BackgroundColor="#69cfbe" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#506cbf" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Nucenie" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
                WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="nuta.png" VerticalOptions="Center" Scale="1.4" HorizontalOptions="End" 
@@ -140,7 +140,7 @@ Margin="0,0,0,0">
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Grid Margin="5" BackgroundColor="#f7a539" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#a68044" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Kalambury" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
                WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="kalambur.png" Scale="1.4" VerticalOptions="Center" HorizontalOptions="End" 
@@ -158,7 +158,7 @@ Margin="0,0,0,0">
             </StackLayout>
         </ContentView>
         <ImageButton x:Name="LeftMenu" Source="menu.png" Grid.Row="0" Clicked="OnMenuButtonClicked"  BackgroundColor="Transparent" Scale="0.3" Margin="-70,-10,50,50" />
-        <ImageButton x:Name="Multiplayer" Source="MultiKalambury.png" Grid.Row="0" Clicked="Multiplayer_Clicked"  Grid.Column="1" HorizontalOptions="End" Scale="0.6" BackgroundColor="Transparent" />
+        <ImageButton x:Name="MultiplayerButton" Source="multim.png" Grid.Row="0" Clicked="Multiplayer_Clicked"  Grid.Column="1" HorizontalOptions="End" Scale="0.6" BackgroundColor="Transparent" />
 
 
     </Grid>

@@ -26,9 +26,17 @@ namespace JakaToPiosenka
         Sounds sound = new Sounds();
         public KalamburyPage()
         {
+            MainPage.isMainPage = false;
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
-          
+            if (MultiplayerPage.isMultiplayerEnabled)
+            {
+                MultiplayerButton.IsVisible = true;
+            }
+            else
+            {
+                MultiplayerButton.IsVisible = false;
+            }
 
         }
 
@@ -163,7 +171,7 @@ namespace JakaToPiosenka
         private async void postaciehistoryczne_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            MainPage.gameMode = "HistoricalCharaacter";
+            MainPage.gameMode = "HistoricalCharacter";
             MainPage.isMainPage = false;
             await Navigation.PushAsync(new BeforeGameKalambury());
         }

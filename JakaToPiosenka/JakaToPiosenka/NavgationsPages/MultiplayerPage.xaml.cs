@@ -99,5 +99,24 @@ namespace JakaToPiosenka
                 isMultiplayerEnabled = false;
             }
         }
+        protected override bool OnBackButtonPressed()
+        {
+            if (MainPage.isMainPage)
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PushAsync(new MainPage());
+                });
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PushAsync(new KalamburyPage());
+                });
+            }
+
+            return true;
+        }
     }
 }

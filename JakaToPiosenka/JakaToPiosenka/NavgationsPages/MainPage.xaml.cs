@@ -29,8 +29,19 @@ namespace JakaToPiosenka
         Sounds sound = new Sounds();
         public MainPage()
         {
+            isMainPage = true;
+           
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
+
+            if (MultiplayerPage.isMultiplayerEnabled)
+            {
+                MultiplayerButton.IsVisible = true;
+            }
+            else
+            {
+                MultiplayerButton.IsVisible = false;
+            }
             var AllPasswordsSongs = new List<AllPasswords>()
             {
                 new Pop(),

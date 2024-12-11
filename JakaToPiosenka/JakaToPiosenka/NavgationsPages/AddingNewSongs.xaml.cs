@@ -29,8 +29,9 @@ namespace JakaToPiosenka
         public AddingNewSongs()
         {
             InitializeComponent();
-         
-                SongsCollection.ItemsSource = AllPasswords.connection.Table<Pop>().ToList<Pop>();
+           
+
+            SongsCollection.ItemsSource = AllPasswords.connection.Table<Pop>().ToList<Pop>();
             if (MainPage.isMainPage)
             {
                 BackgroundColor = Color.FromHex("#77b3d1");
@@ -38,7 +39,7 @@ namespace JakaToPiosenka
                 addSongToList.BackgroundColor = Color.FromHex("#0d5b82");
                 NewPromptName.BackgroundColor = Color.FromHex("#a8d6ed");
                 NewTitleName.BackgroundColor = Color.FromHex("#a8d6ed");
-               
+
             }
             else
             {
@@ -47,7 +48,7 @@ namespace JakaToPiosenka
                 addSongToList.BackgroundColor = Color.FromHex("#fc9d03");
                 NewPromptName.BackgroundColor = Color.FromHex("#e6c38c");
                 NewTitleName.BackgroundColor = Color.FromHex("#e6c38c");
-               
+
             }
             switch (MainPage.gameMode)
             {
@@ -215,60 +216,70 @@ namespace JakaToPiosenka
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "Carols":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "ChristmasSongs":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "Animals":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Animals>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "AdultMixed":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<AdultMixed>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "Celebrities":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Celebrities>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "DailyLife":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<DailyLife>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "Poland":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Poland>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "Rhymes":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rhymes>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "ScienceTopics":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ScienceTopics>()
                         .OrderBy(song => song.Prompt)
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+
                 case "Sports":
                     SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Sports>()
                         .OrderBy(song => song.Prompt)
@@ -336,15 +347,15 @@ namespace JakaToPiosenka
                 {
                     var tableType = tableTypeMap[MainPage.gameMode];
                     var songsData = Activator.CreateInstance(tableType);
-                  
-                        tableType.GetProperty("Title").SetValue(songsData, NewTitleName.Text);
-                        tableType.GetProperty("Prompt").SetValue(songsData, NewPromptName.Text);
 
-                        AllPasswords.connection.Insert(songsData);
-                        AllPasswords.connectionRestart.Insert(songsData);
+                    tableType.GetProperty("Title").SetValue(songsData, NewTitleName.Text);
+                    tableType.GetProperty("Prompt").SetValue(songsData, NewPromptName.Text);
 
-                 
-                  
+                    AllPasswords.connection.Insert(songsData);
+                    AllPasswords.connectionRestart.Insert(songsData);
+
+
+
 
                 }
 
@@ -369,32 +380,32 @@ namespace JakaToPiosenka
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-           
-                var item = sender as SwipeItem;
-                var emp = item.CommandParameter as AllPasswords;
 
-                Type musicType = GetMusicTypeByGameMode(MainPage.gameMode);
-                if (musicType != null)
-                {
-                    emp = item.CommandParameter as AllPasswords;
-                    emp = Convert.ChangeType(emp, musicType) as AllPasswords;
-                }
+            var item = sender as SwipeItem;
+            var emp = item.CommandParameter as AllPasswords;
 
-                bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć: {emp.Title}?", "tak", "nie");
-                if (result)
-                {
-                    sound.DeleteSound();
-                    string titleToRemove = emp.Title;
-                    string promptToRemove = emp.Prompt;
+            Type musicType = GetMusicTypeByGameMode(MainPage.gameMode);
+            if (musicType != null)
+            {
+                emp = item.CommandParameter as AllPasswords;
+                emp = Convert.ChangeType(emp, musicType) as AllPasswords;
+            }
 
-                    string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
-                    AllPasswords.connection.Execute(deleteQuery, titleToRemove, promptToRemove);
-                    AllPasswords.connectionRestart.Execute(deleteQuery, titleToRemove, promptToRemove);
-                    await Navigation.PushAsync(new AddingNewSongs());
-                }
-            
-          
-            
+            bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć: {emp.Title}?", "tak", "nie");
+            if (result)
+            {
+                sound.DeleteSound();
+                string titleToRemove = emp.Title;
+                string promptToRemove = emp.Prompt;
+
+                string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
+                AllPasswords.connection.Execute(deleteQuery, titleToRemove, promptToRemove);
+                AllPasswords.connectionRestart.Execute(deleteQuery, titleToRemove, promptToRemove);
+                await Navigation.PushAsync(new AddingNewSongs());
+            }
+
+
+
         }
 
         private Type GetMusicTypeByGameMode(string gameMode)
@@ -551,7 +562,7 @@ namespace JakaToPiosenka
             {
                 await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź w zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
             }
-           
+
         }
         private async void ImportMethod()
         {
