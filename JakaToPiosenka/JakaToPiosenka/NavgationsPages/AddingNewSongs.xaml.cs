@@ -1,5 +1,6 @@
-﻿using JakaToPiosenka;
-using JakaToPiosenka;
+﻿using JakaToPiosenka.HelpClasses;
+using JakaToPiosenka.KalamburyClasses;
+using JakaToPiosenka.MusicClasses;
 using SQLite;
 using System;
 using System.Collections;
@@ -214,6 +215,67 @@ namespace JakaToPiosenka
                         .ThenBy(song => song.Title)
                         .ToList();
                     break;
+                case "Carols":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "ChristmasSongs":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "Animals":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Animals>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "AdultMixed":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<AdultMixed>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "Celebrities":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Celebrities>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "DailyLife":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<DailyLife>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "Poland":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Poland>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "Rhymes":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rhymes>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "ScienceTopics":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ScienceTopics>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+                case "Sports":
+                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Sports>()
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                    break;
+
             }
 
 

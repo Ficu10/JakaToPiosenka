@@ -23,8 +23,14 @@
     <None Remove="Sounds\loseSound.wav" />
     <None Remove="Sounds\mediumScoreSound.wav" />
     <None Remove="Sounds\winSound.wav" />
+    <None Remove="TxtFiles\AdultMixed.txt" />
+    <None Remove="TxtFiles\Animals.txt" />
+    <None Remove="TxtFiles\Carols.txt" />
+    <None Remove="TxtFiles\Celebrities.txt" />
     <None Remove="TxtFiles\Children.txt" />
+    <None Remove="TxtFiles\ChristmasSongs.txt" />
     <None Remove="TxtFiles\Countries.txt" />
+    <None Remove="TxtFiles\DailyLife.txt" />
     <None Remove="TxtFiles\Emotions.txt" />
     <None Remove="TxtFiles\FictionalCharacter.txt" />
     <None Remove="TxtFiles\HistoricalCharacter.txt" />
@@ -32,6 +38,7 @@
     <None Remove="TxtFiles\Lata80Zzagranica.txt" />
     <None Remove="TxtFiles\Movies.txt" />
     <None Remove="TxtFiles\nowy_plik.txt" />
+    <None Remove="TxtFiles\Poland.txt" />
     <None Remove="TxtFiles\Pop.txt" />
     <None Remove="TxtFiles\PopEnglish.txt" />
     <None Remove="TxtFiles\PopPolish.txt" />
@@ -39,10 +46,13 @@
     <None Remove="TxtFiles\RapCalosc.txt" />
     <None Remove="TxtFiles\RapEnglish.txt" />
     <None Remove="TxtFiles\RapPolish.txt" />
+    <None Remove="TxtFiles\Rhymes.txt" />
     <None Remove="TxtFiles\RockCaly.txt" />
     <None Remove="TxtFiles\RockEnglish.txt" />
     <None Remove="TxtFiles\RockPolish.txt" />
+    <None Remove="TxtFiles\ScienceTopics.txt" />
     <None Remove="TxtFiles\Series.txt" />
+    <None Remove="TxtFiles\Sports.txt" />
     <None Remove="TxtFiles\Tales.txt" />
     <None Remove="TxtFiles\The80.txt" />
     <None Remove="TxtFiles\The80English.txt" />
@@ -61,16 +71,26 @@
     <EmbeddedResource Include="Sounds\loseSound.wav" />
     <EmbeddedResource Include="Sounds\badScoreSound.wav" />
     <EmbeddedResource Include="Sounds\winSound.wav" />
+    <EmbeddedResource Include="TxtFiles\AdultMixed.txt" />
     <EmbeddedResource Include="TxtFiles\AllSongs.txt" />
+    <EmbeddedResource Include="TxtFiles\Animals.txt" />
+    <EmbeddedResource Include="TxtFiles\Carols.txt" />
+    <EmbeddedResource Include="TxtFiles\Celebrities.txt" />
     <EmbeddedResource Include="TxtFiles\Children.txt" />
+    <EmbeddedResource Include="TxtFiles\ChristmasSongs.txt" />
     <EmbeddedResource Include="TxtFiles\Countries.txt" />
+    <EmbeddedResource Include="TxtFiles\DailyLife.txt" />
     <EmbeddedResource Include="TxtFiles\Emotions.txt" />
     <EmbeddedResource Include="TxtFiles\FairyTales.txt" />
     <EmbeddedResource Include="TxtFiles\FictionalCharacter.txt" />
     <EmbeddedResource Include="TxtFiles\HistoricalCharacter.txt" />
     <EmbeddedResource Include="TxtFiles\Jobs.txt" />
     <EmbeddedResource Include="TxtFiles\Movies.txt" />
+    <EmbeddedResource Include="TxtFiles\Poland.txt" />
+    <EmbeddedResource Include="TxtFiles\Rhymes.txt" />
+    <EmbeddedResource Include="TxtFiles\ScienceTopics.txt" />
     <EmbeddedResource Include="TxtFiles\Series.txt" />
+    <EmbeddedResource Include="TxtFiles\Sports.txt" />
     <EmbeddedResource Include="TxtFiles\Tales.txt" />
     <EmbeddedResource Include="TxtFiles\The80.txt" />
     <EmbeddedResource Include="TxtFiles\The80English.txt" />
@@ -102,22 +122,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AddingNewSongs.xaml">
+    <EmbeddedResource Update="NavgationsPages\AddingNewSongs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AddingNewWords.xaml">
+    <EmbeddedResource Update="NavgationsPages\AddingNewWords.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AfterGame.xaml">
+    <EmbeddedResource Update="NavgationsPages\AfterGame.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AfterGameKalambury.xaml">
+    <EmbeddedResource Update="NavgationsPages\AfterGameKalambury.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BeforeGameKalambury.xaml">
+    <EmbeddedResource Update="NavgationsPages\BeforeGameKalambury.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BeforeGamePage.xaml">
+    <EmbeddedResource Update="NavgationsPages\BeforeGamePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="FlyoutPage.xaml">
@@ -132,19 +152,22 @@
     <EmbeddedResource Update="FlyoutPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Game.xaml">
+    <EmbeddedResource Update="NavgationsPages\Game.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="KalamburyPage.xaml">
+    <EmbeddedResource Update="NavgationsPages\KalamburyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MultiplayerPage.xaml">
+    <EmbeddedResource Update="NavgationsPages\MultiplayerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RulesPage.xaml">
+    <EmbeddedResource Update="NavgationsPages\RankingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="NavgationsPages\RulesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SettingsPage.xaml">
+    <EmbeddedResource Update="NavgationsPages\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

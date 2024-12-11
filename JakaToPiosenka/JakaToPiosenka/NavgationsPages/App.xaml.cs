@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using JakaToPiosenka.HelpClasses;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

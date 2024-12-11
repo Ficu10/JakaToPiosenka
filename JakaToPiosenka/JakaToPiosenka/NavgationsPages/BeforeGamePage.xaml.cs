@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using JakaToPiosenka.HelpClasses;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using static System.Net.Mime.MediaTypeNames;
@@ -12,15 +12,37 @@ using static System.Net.Mime.MediaTypeNames;
 namespace JakaToPiosenka
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BeforeGameKalambury : ContentPage
+    public partial class BeforeGamePage : ContentPage
     {
         public static int timeChanger = 30;
-        Sounds sound = new Sounds();
-        public BeforeGameKalambury()
+        Sounds sound = new Sounds();    
+        public BeforeGamePage()
         {
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
 
             InitializeComponent();
+
+            if (MainPage.isMainPage)
+            {
+                BackgroundColor = Color.FromHex("#87b3d1");
+                Time15.BackgroundColor = Color.FromHex("#1a7cad");
+                Time30.BackgroundColor = Color.FromHex("#1a7cad");
+                Time45.BackgroundColor = Color.FromHex("#1a7cad");
+                Time60.BackgroundColor = Color.FromHex("#1a7cad");
+                AddNewSongs.BackgroundColor = Color.FromHex("#0478b3");
+                AddNewSongs.Text = "Dodaj piosenki";
+            }
+            else
+            {
+                BackgroundColor = Color.FromHex("#dba348");
+                Time15.BackgroundColor = Color.FromHex("#e08c04");
+                Time30.BackgroundColor = Color.FromHex("#e08c04");
+                Time45.BackgroundColor = Color.FromHex("#e08c04");
+                Time60.BackgroundColor = Color.FromHex("#e08c04");
+                AddNewSongs.BackgroundColor = Color.FromHex("#fc9d03");
+                AddNewSongs.Text = "Dodaj hasłą";
+
+            }
 
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
             {
@@ -49,12 +71,14 @@ namespace JakaToPiosenka
                 { "Series", ("Seriale", "netflix.png") },
                 { "Tales", ("Bajki", "bajki.jpg") },
                 { "Words", ("Przysłowia", "przyslowia.jpg") },
+                { "Carols", ("Kolędy", "RockZagraniczny.jpg") },
+                { "ChristmasSongs", ("Świąteczne Piosenki", "RockZagraniczny.jpg") }
             };
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
             {
                 Category.Text = mappings.Item1;
-
+                
                 PhotoCategory.Source = mappings.Item2;
             }
         }
@@ -89,10 +113,10 @@ namespace JakaToPiosenka
         private async void AddNewSongs_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            await Navigation.PushAsync(new AddingNewWords());
+            await Navigation.PushAsync(new AddingNewSongs());
         }
 
-
+     
         protected override bool OnBackButtonPressed()
         {
             if (MainPage.isMainPage)
@@ -109,7 +133,7 @@ namespace JakaToPiosenka
                     await Navigation.PushAsync(new KalamburyPage());
                 });
             }
-
+          
 
             return true;
         }

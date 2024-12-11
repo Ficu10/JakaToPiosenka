@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using JakaToPiosenka.HelpClasses;
+using SQLite;
 using System.IO;
 
 namespace JakaToPiosenka

@@ -7,6 +7,8 @@
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False">
 
+
+
     <ContentPage.Background>
         <LinearGradientBrush>
             <!-- Dodaj kolory gradientu -->
@@ -19,14 +21,14 @@
 
 
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.3"/>
-        </Grid.RowDefinitions> 
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition  Width="*"/>
@@ -72,6 +74,9 @@
 
                     <ImageButton Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Youtube_Clicked" x:Name="Youtube" Source="yt.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
+                    <Label Text="Kolędy" TextColor="white" Margin="0,60,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+
+                    <ImageButton Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Koledy_Clicked" x:Name="Koledy" Source="yt.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
 
                 </StackLayout>
@@ -96,9 +101,14 @@
                     <Label Text="Pop Zagraniczny" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="PopEnglishButton_Clicked" x:Name="PopEnglishButton" Source="PopZagraniczny.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Zagraiczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <Label Text="Zagraniczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="ZagraniczneLata80.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+
+                    <Label Text="Świąteczne Piosenki" TextColor="white" Margin="0,30,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" HorizontalTextAlignment="Center"/>
+
+                    <ImageButton Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Christmas_Songs_Clicked" x:Name="Christmas_Songs" Source="yt.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+
 
                 </StackLayout>
 
@@ -150,8 +160,8 @@
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#114bf7" CornerRadius="10" Clicked="Multiplayer_Click" />
-                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#114bf7" CornerRadius="10" Clicked="Settings_Click" />
+                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#58ad8a" CornerRadius="10" Clicked="Multiplayer_Click" />
+                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#58ad8a" CornerRadius="10" Clicked="Settings_Click" />
                 <Image Source="AFTM.png" />
                 <ImageButton IsEnabled="False" Margin="0,-50,0,0" Source="zgadulaLogo.png" Scale="0.4" Grid.ColumnSpan="2" VerticalOptions="Start" 
                      CornerRadius="100" HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
@@ -159,10 +169,10 @@
         </ContentView>
 
         <ImageButton x:Name="LeftMenu" Source="menu.png" Grid.Row="0" Clicked="OnMenuButtonClicked"  BackgroundColor="Transparent" Scale="0.3" Margin="-70,-10,50,50" />
+        <ImageButton x:Name="Multiplayer" Source="MultiMain.png" Grid.Row="0" Clicked="Multiplayer_Clicked"  Grid.Column="1" HorizontalOptions="End" Scale="0.6" BackgroundColor="Transparent" />
 
 
     </Grid>
-   
 
 
 

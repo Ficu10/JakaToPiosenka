@@ -1,5 +1,6 @@
-﻿using JakaToPiosenka;
-using JakaToPiosenka;
+﻿using JakaToPiosenka.HelpClasses;
+using JakaToPiosenka.KalamburyClasses;
+using JakaToPiosenka.MusicClasses;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -200,6 +201,47 @@ namespace JakaToPiosenka
             {
                 StartGame(AllPasswords.connection.Table<Words>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Words>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Words>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Words>().ToList().Select(x => x.Title).ToList());
             }
+            else if (MainPage.gameMode == "Carols")
+            {
+                StartGame(AllPasswords.connection.Table<Carols>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Carols>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Carols>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Carols>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "ChristmasSongs")
+            {
+                StartGame(AllPasswords.connection.Table<ChristmasSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<ChristmasSongs>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<ChristmasSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<ChristmasSongs>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Animals")
+            {
+                StartGame(AllPasswords.connection.Table<Animals>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Animals>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Animals>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Animals>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "AdultMixed")
+            {
+                StartGame(AllPasswords.connection.Table<AdultMixed>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<AdultMixed>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<AdultMixed>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<AdultMixed>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Celebrities")
+            {
+                StartGame(AllPasswords.connection.Table<Celebrities>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Celebrities>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Celebrities>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Celebrities>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "DailyLife")
+            {
+                StartGame(AllPasswords.connection.Table<DailyLife>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<DailyLife>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<DailyLife>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<DailyLife>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Poland")
+            {
+                StartGame(AllPasswords.connection.Table<Poland>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Poland>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Poland>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Poland>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Rhymes")
+            {
+                StartGame(AllPasswords.connection.Table<Rhymes>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Rhymes>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Rhymes>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rhymes>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "ScienceTopics")
+            {
+                StartGame(AllPasswords.connection.Table<ScienceTopics>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<ScienceTopics>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<ScienceTopics>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<ScienceTopics>().ToList().Select(x => x.Title).ToList());
+            }
+            else if (MainPage.gameMode == "Sports")
+            {
+                StartGame(AllPasswords.connection.Table<Sports>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Sports>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Sports>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Sports>().ToList().Select(x => x.Title).ToList());
+            }
+
 
         }
         public void ShowGame()

@@ -11,7 +11,7 @@ using Xamarin.Forms.Shapes;
 using SQLite;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using JakaToPiosenka;
+using JakaToPiosenka.HelpClasses;
 
 namespace JakaToPiosenka
 {
@@ -21,7 +21,7 @@ namespace JakaToPiosenka
         public static string gameMode = "allSongs";
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 550; // Maximum scroll position
+        private double maxScrollPosition = 1550; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public KalamburyPage()
@@ -182,6 +182,73 @@ namespace JakaToPiosenka
             MainPage.gameMode = "FictionalCharacter";
             MainPage.isMainPage = false;
             await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+        private async void AnimalsButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "Animals";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void AdultMixed_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "AdultMixed";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void CelebritiesButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "Celebrities";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void DailyLifeButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "DailyLife";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void PolandButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "Poland";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void RhymesButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "Rhymes";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void SportsButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "Sports";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+
+        private async void ScienceTopicsButton_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            MainPage.gameMode = "ScienceTopics";
+            MainPage.isMainPage = false;
+            await Navigation.PushAsync(new BeforeGameKalambury());
+        }
+        private async void Multiplayer_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RankingPage());
         }
     }
 }

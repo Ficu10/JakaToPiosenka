@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace JakaToPiosenka
+namespace JakaToPiosenka.HelpClasses
 {
     abstract class AllPasswords
     {
@@ -27,14 +27,22 @@ namespace JakaToPiosenka
             // Użycie strumienia do odczytu pliku
             using (var streamReader = new StreamReader(assembly.GetManifestResourceStream($"JakaToPiosenka.TxtFiles.{FileName}.txt")))
             {
-                connection.CreateTable(this.GetType());
-                connectionRestart.CreateTable(this.GetType());
+                connection.CreateTable(GetType());
+                connectionRestart.CreateTable(GetType());
                 string line;
 
                 while ((line = streamReader.ReadLine()) != null)
                 {
                     var fields = line.Split(';');
-                    var data = Activator.CreateInstance(this.GetType()) as AllPasswords;
+
+                    // Sprawdzenie, czy linia ma wystarczającą liczbę elementów
+                    if (fields.Length < 2)
+                    {
+                        Console.WriteLine($"Nieprawidłowa linia: {line}");
+                        continue; // Pomijamy linie z błędami
+                    }
+
+                    var data = Activator.CreateInstance(GetType()) as AllPasswords;
                     if (data != null)
                     {
                         data.Title = fields[1];
@@ -49,27 +57,27 @@ namespace JakaToPiosenka
         // Import danych do bazy danych (usuwanie wszystkich istniejących rekordów)
         public virtual void Import()
         {
-            var tableMapping = connection.GetMapping(this.GetType());
+            var tableMapping = connection.GetMapping(GetType());
             connection.Execute($"DELETE FROM {tableMapping.TableName}");
 
-            var tableMappingRestart = connectionRestart.GetMapping(this.GetType());
+            var tableMappingRestart = connectionRestart.GetMapping(GetType());
             connectionRestart.Execute($"DELETE FROM {tableMappingRestart.TableName}");
         }
 
         // Usuwanie danych (może być nadpisane w klasach pochodnych)
         public virtual void Delete()
         {
-            var tableMapping = connection.GetMapping(this.GetType());
+            var tableMapping = connection.GetMapping(GetType());
             connection.Execute($"DELETE FROM {tableMapping.TableName}");
 
-            var tableMappingRestart = connectionRestart.GetMapping(this.GetType());
+            var tableMappingRestart = connectionRestart.GetMapping(GetType());
             connectionRestart.Execute($"DELETE FROM {tableMappingRestart.TableName}");
         }
 
         // Metoda, która może być używana do rozpoczęcia gry (do zaimplementowania w klasach pochodnych)
         public virtual void StartGame()
         {
-            Console.WriteLine($"Starting game for {this.GetType().Name}");
+            Console.WriteLine($"Starting game for {GetType().Name}");
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using JakaToPiosenka.HelpClasses;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace JakaToPiosenka
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AfterGame : ContentPage
+    public partial class AfterGameKalambury : ContentPage
     {
         private readonly Sounds _sounds = new Sounds();
 
-        public AfterGame()
+        public AfterGameKalambury()
         {
             InitializeComponent();
 
@@ -91,7 +92,14 @@ namespace JakaToPiosenka
         /// </summary>
         private async void Menu_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            if (MainPage.isMainPage)
+            {
+                await Navigation.PushAsync(new MainPage());
+            }
+            else
+            {
+                await Navigation.PushAsync(new KalamburyPage());
+            }
         }
 
         /// <summary>
@@ -103,12 +111,5 @@ namespace JakaToPiosenka
         }
     }
 
-    /// <summary>
-    /// Klasa reprezentująca dane dla ListView.
-    /// </summary>
-    public class SongItem
-    {
-        public string Title { get; set; } // Tytuł piosenki
-        public Color CellColor { get; set; } // Kolor komórki
-    }
+    
 }

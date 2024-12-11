@@ -9,6 +9,7 @@ using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Essentials;
+using JakaToPiosenka.HelpClasses;
 
 namespace JakaToPiosenka.Droid
 {
