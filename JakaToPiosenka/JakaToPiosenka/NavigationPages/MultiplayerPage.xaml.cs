@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using Xamarin.Forms;
+using JakaToPiosenka.HelpClasses;
 
 namespace JakaToPiosenka
 {
@@ -9,12 +10,13 @@ namespace JakaToPiosenka
     {
         public ObservableCollection<Multiplayer> Players { get; set; } = new ObservableCollection<Multiplayer>();
         int numPlayers = 0;
-        public static bool isMultiplayerEnabled = Settings.Get("MultiplayerEnabled", "false") == "true";
-
+        public static bool isMultiplayerEnabled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
 
         public MultiplayerPage()
         {
             InitializeComponent();
+
+            // Upewnij się, że baza danych jest zainicjalizowana
             Multiplayer.InitializeDatabase();
 
             // Pobierz graczy z bazy danych
@@ -26,8 +28,7 @@ namespace JakaToPiosenka
             numPlayers = Players.Count;
 
             // Ustaw przełącznik na podstawie wartości w bazie danych
-            var multiplayerEnabled = Settings.Get("MultiplayerEnabled", "false") == "true";
-            MultiplayerSwitch.IsToggled = multiplayerEnabled;
+            MultiplayerSwitch.IsToggled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
 
             BindingContext = this;
             NumberOfPlayer.Text = numPlayers.ToString();
@@ -79,7 +80,7 @@ namespace JakaToPiosenka
             }
         }
 
-        private  void OnMultiplayerSwitchToggled(object sender, ToggledEventArgs e)
+        private void OnMultiplayerSwitchToggled(object sender, ToggledEventArgs e)
         {
             if (e.Value) // Włączony tryb multiplayer
             {
@@ -89,34 +90,14 @@ namespace JakaToPiosenka
                     return;
                 }
 
-                Settings.Set("MultiplayerEnabled", "true");
+                SettingsHelper.Set("MultiplayerEnabled", "true");
                 isMultiplayerEnabled = true;
             }
             else // Wyłączony tryb multiplayer
             {
-                Settings.Set("MultiplayerEnabled", "false");
+                SettingsHelper.Set("MultiplayerEnabled", "false");
                 isMultiplayerEnabled = false;
             }
-        }
-        protected override bool OnBackButtonPressed()
-        {
-            if (MainPage.isMainPage)
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    await Navigation.PushAsync(new MainPage());
-                });
-            }
-            else
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    await Navigation.PushAsync(new KalamburyPage());
-                });
-            }
-
-
-            return true;
         }
     }
 }

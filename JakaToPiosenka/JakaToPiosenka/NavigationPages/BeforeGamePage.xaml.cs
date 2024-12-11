@@ -44,17 +44,9 @@ namespace JakaToPiosenka
                 { "The80Polish", ("Polskie lata 80'", "PolskieLata80.jpg") },
                 { "The80English", ("Zagraniczne lata 80'", "ZagraniczneLata80.jpg") },
                 { "RockPolish", ("Rock Polski", "RockPolski.jpg") },
-                { "RockEnglish", ("Rock Zagraniczny", "RockZagraniczny.jpg") },
-                { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
-                { "Countries", ("Państwa", "panstwa.jpg") },
-                { "Emotions", ("Emocje", "emocje.jpg") },
-                { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
-                { "HistoricalCharcter", ("Postacie Historycze", "mini4.jpg") },
-                { "Jobs", ("Zawody", "gornik.jpg") },
-                { "Movies", ("Filmy", "filmy.jpg") },
-                { "Series", ("Seriale", "netflix.png") },
-                { "Tales", ("Bajki", "bajki.jpg") },
-                { "Words", ("Przysłowia", "przyslowia.jpg") },
+                { "Carols", ("Kolędy", "RockZagraniczny.jpg") },
+                { "ChristmasSongs", ("Świąteczne Piosenki", "RockZagraniczny.jpg") },
+               
             };
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))

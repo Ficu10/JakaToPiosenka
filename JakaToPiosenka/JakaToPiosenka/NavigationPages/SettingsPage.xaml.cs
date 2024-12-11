@@ -1,7 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
-using SQLite;
-using System.IO;
+﻿using Xamarin.Forms;
+using JakaToPiosenka.HelpClasses;
+using System;
 
 namespace JakaToPiosenka
 {
@@ -14,21 +13,12 @@ namespace JakaToPiosenka
         public static int Time4;
         public static int WordsNumber;
 
-        private static readonly SQLiteConnection dbConnection;
-
-        static SettingsPage()
-        {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Settings.db3");
-            dbConnection = new SQLiteConnection(dbPath);
-            dbConnection.CreateTable<Setting>();
-
-            // Inicjalizacja wartości statycznych
-            InitializeSettings();
-        }
-
         public SettingsPage()
         {
             InitializeComponent();
+
+            // Inicjalizacja ustawień
+            InitializeSettings();
 
             // Ustawienie wartości w polach
             Time1Entry.Text = Time1.ToString();
@@ -38,33 +28,18 @@ namespace JakaToPiosenka
             WordsEntry.Text = WordsNumber.ToString();
         }
 
-        private static void InitializeSettings()
+        private void InitializeSettings()
         {
-            Time1 = GetSetting("Time1", 15);
-            Time2 = GetSetting("Time2", 30);
-            Time3 = GetSetting("Time3", 45);
-            Time4 = GetSetting("Time4", 60);
-            WordsNumber = GetSetting("WordsNumber", 10);
+            Time1 = SettingsHelper.GetValue("Time1", 15);
+            Time2 = SettingsHelper.GetValue("Time2", 30);
+            Time3 = SettingsHelper.GetValue("Time3", 45);
+            Time4 = SettingsHelper.GetValue("Time4", 60);
+            WordsNumber = SettingsHelper.GetValue("WordsNumber", 10);
         }
 
-        private static int GetSetting(string key, int defaultValue)
+        private void SaveSetting(string key, int value)
         {
-            var setting = dbConnection.Find<Setting>(key);
-            return setting != null ? int.Parse(setting.Value) : defaultValue;
-        }
-
-        private static void SaveSetting(string key, int value)
-        {
-            var existingSetting = dbConnection.Find<Setting>(key);
-            if (existingSetting != null)
-            {
-                existingSetting.Value = value.ToString();
-                dbConnection.Update(existingSetting);
-            }
-            else
-            {
-                dbConnection.Insert(new Setting { Key = key, Value = value.ToString() });
-            }
+            SettingsHelper.SetValue(key, value);
         }
 
         // Timer 1 Handlers
@@ -194,6 +169,7 @@ namespace JakaToPiosenka
                 entry.Text = timeValue.ToString();
             }
         }
+
         protected override bool OnBackButtonPressed()
         {
             InitializeSettings();
@@ -212,16 +188,7 @@ namespace JakaToPiosenka
                 });
             }
 
-
             return true;
         }
-
-    }
-
-    public class Setting
-    {
-        [PrimaryKey]
-        public string Key { get; set; }
-        public string Value { get; set; }
     }
 }

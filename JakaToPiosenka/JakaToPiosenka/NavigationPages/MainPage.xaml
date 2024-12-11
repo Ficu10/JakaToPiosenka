@@ -74,6 +74,9 @@
 
                     <ImageButton Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Youtube_Clicked" x:Name="Youtube" Source="yt.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
+                    <Label Text="Kolędy" TextColor="white" Margin="0,60,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+
+                    <ImageButton Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Koledy_Clicked" x:Name="Koledy" Source="yt.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
 
 
                 </StackLayout>
@@ -101,6 +104,11 @@
                     <Label Text="Zagraniczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
                     <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="ZagraniczneLata80.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+
+                    <Label Text="Świąteczne Piosenki" TextColor="white" Margin="0,30,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" HorizontalTextAlignment="Center"/>
+
+                    <ImageButton Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Christmas_Songs_Clicked" x:Name="Christmas_Songs" Source="yt.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+
 
                 </StackLayout>
 

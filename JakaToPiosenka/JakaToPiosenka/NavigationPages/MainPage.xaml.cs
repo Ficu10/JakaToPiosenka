@@ -12,6 +12,8 @@ using SQLite;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using JakaToPiosenka.HelpClasses;
+using JakaToPiosenka.KalamburyClasses;
+using JakaToPiosenka.MusicClasses;
 
 namespace JakaToPiosenka
 {
@@ -22,7 +24,7 @@ namespace JakaToPiosenka
         public static bool isMainPage = true;
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 1250; // Maximum scroll position
+        private double maxScrollPosition = 1550; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public MainPage()
@@ -56,8 +58,16 @@ namespace JakaToPiosenka
                 new Movies(),
                 new Series(),
                 new Tales(),
-                new Words()
-
+                new AdultMixed(),
+                new Animals(),
+                new Celebrities(),
+                new DailyLife(),
+                new Poland(),
+                new Rhymes(),
+                new ScienceTopics(),
+                new Sports(),
+                new Carols(),
+                new ChristmasSongs(),
             };
 
             bool isTableCreated = AllPasswords.connection.GetTableInfo("Pop").Any();
@@ -264,6 +274,20 @@ namespace JakaToPiosenka
         private async void Multiplayer_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RankingPage());
+        }
+
+        private async void Koledy_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            gameMode = "Carols";
+            await Navigation.PushAsync(new BeforeGamePage());
+        }
+
+        private async void Christmas_Songs_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            gameMode = "ChristmasSongs";
+            await Navigation.PushAsync(new BeforeGamePage());
         }
     }
 }

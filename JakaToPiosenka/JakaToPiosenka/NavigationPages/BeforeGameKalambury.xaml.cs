@@ -29,19 +29,26 @@ namespace JakaToPiosenka
             Time60.Text = SettingsPage.Time4.ToString();
 
             Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
-    {
+            {
        
-        { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
-        { "Countries", ("Państwa", "panstwa.jpg") },
-        { "Emotions", ("Emocje", "emocje.jpg") },
-        { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
-        { "HistoricalCharacter", ("Postacie Historycze", "mini4.jpg") },
-        { "Jobs", ("Zawody", "gornik.jpg") },
-        { "Movies", ("Filmy", "filmy.jpg") },
-        { "Series", ("Seriale", "netflix.png") },
-        { "Tales", ("Bajki", "bajki.jpg") },
-        { "Words", ("Przysłowia", "przyslowia.jpg") },
-    };
+                { "Children", ("Dla Dzieci", "dladzieci1.jpg") },
+                { "Countries", ("Państwa", "panstwa.jpg") },
+                { "Emotions", ("Emocje", "emocje.jpg") },
+                { "FictionalCharacter", ("Postacie Fikcyjne", "postacfikcyjna.jpg") },
+                { "HistoricalCharacter", ("Postacie Historycze", "mini4.jpg") },
+                { "Jobs", ("Zawody", "gornik.jpg") },
+                { "Movies", ("Filmy", "filmy.jpg") },
+                { "Series", ("Seriale", "netflix.png") },
+                { "Tales", ("Bajki", "bajki.jpg") },
+                { "AdultMixed", ("+18", "przyslowia.jpg") },
+                { "Animals", ("Zwierzęta", "przyslowia.jpg") },
+                { "Celebrities", ("Celebryci", "przyslowia.jpg") },
+                { "DailyLife", ("Codzienne Życie", "przyslowia.jpg") },
+                { "Poland", ("Polska", "przyslowia.jpg") },
+                { "Rhymes", ("Rymy", "przyslowia.jpg") },
+                { "ScenceTopics", ("Nauka", "przyslowia.jpg") },
+                { "Sports", ("Sport", "przyslowia.jpg") },
+            };
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
             {
