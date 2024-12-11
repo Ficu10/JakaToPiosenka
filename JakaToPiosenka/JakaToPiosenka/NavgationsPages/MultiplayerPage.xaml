@@ -9,11 +9,11 @@
         <!-- Pole do wpisania imienia -->
         <Entry x:Name="PlayerNameEntry"
                Placeholder="Wprowadź imię gracza"
-               FontSize="18" 
+               FontSize="18"
                HorizontalOptions="Center"
                Scale="1.3"
                VerticalTextAlignment="Center"
-               Margin="0,30,0,0"/>
+               Margin="0,30,0,0" />
 
         <!-- Przycisk do dodania gracza -->
         <Button Text="Dodaj Gracza"
@@ -21,29 +21,33 @@
                 FontSize="18"
                 BackgroundColor="#28b87c"
                 CornerRadius="20"
-                TextColor="#c6f5e1"/>
+                TextColor="#c6f5e1" />
 
-        <Label Text="Liczba Graczy" FontSize="30" HorizontalOptions="Center"/>
-        <Label x:Name="NumberOfPlayer" Text="0" FontSize="30"  HorizontalOptions="Center"/>
+        <!-- Liczba graczy -->
+        <Label Text="Liczba Graczy" FontSize="30" HorizontalOptions="Center" />
+        <Label x:Name="NumberOfPlayer" Text="0" FontSize="30" HorizontalOptions="Center" />
 
         <!-- Lista graczy -->
         <CollectionView x:Name="PlayersList"
                         ItemsSource="{Binding Players}"
-                        SelectionMode="None">
+                        SelectionMode="None"
+                        HeightRequest="300">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal" Padding="10">
                         <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
-                        <Button  Text="Usuń" BackgroundColor="#bf454f"
+                        <Button Text="Usuń"
+                                BackgroundColor="#bf454f"
                                 Clicked="OnRemovePlayerClicked"
                                 HorizontalOptions="EndAndExpand"
                                 FontSize="16"
-                                 TextColor="#ffbac0"/>
+                                TextColor="#ffbac0" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+        <!-- Przełącznik trybu multiplayer -->
         <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
             <Label Text="Multiplayer" VerticalOptions="Center" FontSize="28" />
             <Switch x:Name="MultiplayerSwitch"
@@ -51,7 +55,7 @@
                     HorizontalOptions="EndAndExpand"
                     Scale="2"
                     OnColor="#6bf28f"
-                    ThumbColor="#00f541"/>
+                    ThumbColor="#00f541" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

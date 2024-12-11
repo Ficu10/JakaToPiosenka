@@ -1,108 +1,103 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel.Design;
+using System.Linq;
 using Xamarin.Forms;
+using JakaToPiosenka.HelpClasses;
 
 namespace JakaToPiosenka
 {
     public partial class MultiplayerPage : ContentPage
     {
-        // ObservableCollection for binding player data
-        public ObservableCollection<Player> Players { get; set; } = new ObservableCollection<Player>();
+        public ObservableCollection<Multiplayer> Players { get; set; } = new ObservableCollection<Multiplayer>();
         int numPlayers = 0;
+        public static bool isMultiplayerEnabled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
+
         public MultiplayerPage()
         {
             InitializeComponent();
+
+            // Upewnij się, że baza danych jest zainicjalizowana
+            Multiplayer.InitializeDatabase();
+
+            // Pobierz graczy z bazy danych
+            var playersFromDb = Multiplayer.GetAllPlayers();
+            foreach (var player in playersFromDb)
+            {
+                Players.Add(player);
+            }
+            numPlayers = Players.Count;
+
+            // Ustaw przełącznik na podstawie wartości w bazie danych
+            MultiplayerSwitch.IsToggled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
+
             BindingContext = this;
+            NumberOfPlayer.Text = numPlayers.ToString();
         }
 
         private async void OnAddPlayerClicked(object sender, EventArgs e)
         {
-            bool ifExist = false;
             if (!string.IsNullOrWhiteSpace(PlayerNameEntry.Text))
             {
-                for (int i = 0; i < numPlayers; i++)
-                {
-                    if (PlayerNameEntry.Text == Players[i].Name)
-                    {
-                        ifExist = true;
-                    }
-                    else
-                    {
-                        ifExist = false;
-                    }
-
-                }
-                if (ifExist)
+                if (Players.Any(p => p.Name == PlayerNameEntry.Text))
                 {
                     await DisplayAlert("Błąd", "Podana nazwa jest zajęta.", "OK");
                 }
                 else
                 {
-                    // Add the player to the list
+                    var newPlayer = new Multiplayer { Name = PlayerNameEntry.Text, Points = 0 };
+
+                    // Dodaj gracza do listy i bazy danych
+                    Players.Add(newPlayer);
+                    Multiplayer.AddPlayerToDatabase(newPlayer);
+
                     numPlayers++;
-                    Players.Add(new Player { Name = PlayerNameEntry.Text });
-                    PlayerNameEntry.Text = string.Empty; // Clear the input field
+                    PlayerNameEntry.Text = string.Empty;
                     NumberOfPlayer.Text = numPlayers.ToString();
                 }
-                
             }
             else
             {
                 await DisplayAlert("Błąd", "Wpisz nazwę gracza.", "OK");
             }
-            ifExist = false;
         }
 
         private async void OnRemovePlayerClicked(object sender, EventArgs e)
         {
-            // Get the button and its bound Player object
-            if (sender is Button button && button.BindingContext is Player player)
+            if (sender is Button button && button.BindingContext is Multiplayer player)
             {
+                // Usuń gracza z listy i bazy danych
                 Players.Remove(player);
+                Multiplayer.RemovePlayerFromDatabase(player);
+
                 numPlayers--;
                 NumberOfPlayer.Text = numPlayers.ToString();
-                if (numPlayers < 2 && MultiplayerSwitch.IsToggled == true)
+
+                if (numPlayers < 2 && MultiplayerSwitch.IsToggled)
                 {
                     await DisplayAlert("Błąd", "Potrzebujesz przynajmniej dwóch graczy", "OK");
-                    MultiplayerSwitch.IsToggled = false; // Wyłącz przełącznik
+                    MultiplayerSwitch.IsToggled = false;
                 }
             }
         }
 
-        private async void OnMultiplayerSwitchToggled(object sender, ToggledEventArgs e)
+        private void OnMultiplayerSwitchToggled(object sender, ToggledEventArgs e)
         {
-            if (e.Value) // Jeśli przełącznik jest włączony
+            if (e.Value) // Włączony tryb multiplayer
             {
                 if (Players.Count < 2)
                 {
-                    await DisplayAlert("Błąd", "Potrzebujesz przynajmniej dwóch graczy", "OK");
-                    MultiplayerSwitch.IsToggled = false; // Wyłącz przełącznik
+                    MultiplayerSwitch.IsToggled = false;
                     return;
                 }
 
-                await DisplayAlert("Tryb Multiplayer aktywowany", $"Włączono tryb Multiplayer.", "OK");
+                SettingsHelper.Set("MultiplayerEnabled", "true");
+                isMultiplayerEnabled = true;
             }
-            else // Jeśli przełącznik jest wyłączony
+            else // Wyłączony tryb multiplayer
             {
-                await DisplayAlert("Tryb Multiplayer dezaktywowany", "Wyłączono tryb Multiplayer.", "OK");
+                SettingsHelper.Set("MultiplayerEnabled", "false");
+                isMultiplayerEnabled = false;
             }
         }
-
-        protected override bool OnBackButtonPressed()
-        {
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                await Navigation.PushAsync(new MainPage());
-            });
-
-            return true;
-        }
-    }
-
-    // Player model
-    public class Player
-    {
-        public string Name { get; set; }
     }
 }
