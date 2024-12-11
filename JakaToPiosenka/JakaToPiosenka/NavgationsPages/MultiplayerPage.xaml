@@ -4,7 +4,7 @@
              x:Class="JakaToPiosenka.MultiplayerPage"
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False"
-             BackgroundColor="#7af0bf">
+             BackgroundColor="#9c9c9c">
     <StackLayout Padding="20" Spacing="10">
         <!-- Pole do wpisania imienia -->
         <Entry x:Name="PlayerNameEntry"
@@ -19,43 +19,48 @@
         <Button Text="Dodaj Gracza"
                 Clicked="OnAddPlayerClicked"
                 FontSize="18"
-                BackgroundColor="#28b87c"
+                BackgroundColor="#353635"
                 CornerRadius="20"
-                TextColor="#c6f5e1" />
+                TextColor="White" />
 
         <!-- Liczba graczy -->
         <Label Text="Liczba Graczy" FontSize="30" HorizontalOptions="Center" />
-        <Label x:Name="NumberOfPlayer" Text="0" FontSize="30" HorizontalOptions="Center" />
+        <Label x:Name="NumberOfPlayer" Text="0" FontAttributes="Bold" FontSize="40" HorizontalOptions="Center" TextColor="#212121" />
 
         <!-- Lista graczy -->
         <CollectionView x:Name="PlayersList"
-                        ItemsSource="{Binding Players}"
-                        SelectionMode="None"
-                        HeightRequest="300">
+                    ItemsSource="{Binding Players}"
+                    SelectionMode="None"
+                    HeightRequest="400">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal" Padding="10">
-                        <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
-                        <Button Text="Usuń"
+                    <StackLayout Spacing="0">
+                        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="#545454">
+                            <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" TextColor="White" />
+                            <Button Text="Usuń"
                                 BackgroundColor="#bf454f"
                                 Clicked="OnRemovePlayerClicked"
                                 HorizontalOptions="EndAndExpand"
                                 FontSize="16"
-                                TextColor="#ffbac0" />
+                                TextColor="White"/>
+                        </StackLayout>
+                        <!-- Separator -->
+                        <BoxView HeightRequest="1" BackgroundColor="#757575" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+
         <!-- Przełącznik trybu multiplayer -->
-        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-            <Label Text="Multiplayer" VerticalOptions="Center" FontSize="28" />
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Margin="0,-40,0,0">
+            <Label Text="Multiplayer" VerticalOptions="Center" FontSize="28" TextColor="Black"  />
             <Switch x:Name="MultiplayerSwitch"
                     Toggled="OnMultiplayerSwitchToggled"
                     HorizontalOptions="EndAndExpand"
                     Scale="2"
-                    OnColor="#6bf28f"
-                    ThumbColor="#00f541" />
+                    OnColor="#33ab33"
+                    ThumbColor="Black" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
