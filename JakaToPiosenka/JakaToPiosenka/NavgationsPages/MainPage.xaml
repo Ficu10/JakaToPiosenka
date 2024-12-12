@@ -50,63 +50,63 @@
 
                 <StackLayout Grid.Column="0"  VerticalOptions="FillAndExpand">
                     <Label Text="Wszystkie Piosenki" Margin="0,0,0,-20" HorizontalTextAlignment="Center" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Padding="5"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="Songs.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Rock" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="Songs.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Rock" TextColor="white"  HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20"  Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Pop" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20"  Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Pop" TextColor="white"  HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jp" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Piosenki z Bajek" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jp" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Piosenki z Bajek"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="DSongs.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Rap" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="DSongs.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Rap" TextColor="white"  HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="RapButton_Clicked" x:Name="RapButton" Source="Rap.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Twoja Muzyka" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="RapButton_Clicked" x:Name="RapButton" Source="Rap.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Twoja Muzyka"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="3" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="AIMusic.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Lata 80" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="3" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="AIMusic.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Lata 80" TextColor="white"  HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="3" Clicked="The80Button_Clicked" x:Name="The80Button" Source="a80s.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Youtube" TextColor="white" Margin="0,30,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="3" Clicked="The80Button_Clicked" x:Name="The80Button" Source="a80s.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Youtube" TextColor="white" Margin="0,30,0,0"  HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton BorderWidth="5" BorderColor="white" CornerRadius="20" Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Youtube_Clicked" x:Name="Youtube" Source="YTMusic.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton BorderWidth="5" BorderColor="white" CornerRadius="20" Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Youtube_Clicked" x:Name="Youtube" Source="YTMusic.jpg" BackgroundColor="Transparent" Margin="8"/>
 
-                    <Label Text="Kolędy" TextColor="white" Margin="0,60,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <Label Text="Kolędy" TextColor="white" Margin="0,30,0,0"  HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton BorderWidth="5" BorderColor="white" CornerRadius="20" Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Koledy_Clicked" x:Name="Koledy" Source="Carols.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton BorderWidth="5" BorderColor="white" CornerRadius="20" Padding="1" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Koledy_Clicked" x:Name="Koledy" Source="Carols.jpg" BackgroundColor="Transparent" Margin="8"/>
 
 
                 </StackLayout>
                 <StackLayout Grid.Column="1"  VerticalOptions="FillAndExpand">
                     <Label Text="Polskie lata 80" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" Padding="5" Margin="0,30,0,-20"/>
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="The80PolishButton_Clicked"  x:Name="The80PolishButton" Source="a80sPL.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Rock Polski" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="1" Clicked="The80PolishButton_Clicked"  x:Name="The80PolishButton" Source="a80sPL.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Rock Polski"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="RockPolishButton_Clicked" x:Name="RockPolishButton" Source="PRock.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Rock Zagraniczny" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white"  Grid.Column="0" Grid.Row="2" Clicked="RockPolishButton_Clicked" x:Name="RockPolishButton" Source="PRock.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Rock Zagraniczny"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="RockEnglishButton_Clicked" x:Name="RockEnglishButton" Source="IRock.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Rap Polski" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="0" Grid.Row="3" Clicked="RockEnglishButton_Clicked" x:Name="RockEnglishButton" Source="IRock.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Rap Polski"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="RapPolishButton_Clicked" x:Name="RapPolishButton" Source="PRap.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Rap Zagraniczny" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="1" Clicked="RapPolishButton_Clicked" x:Name="RapPolishButton" Source="PRap.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Rap Zagraniczny"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="RapEnglishButton_Clicked" x:Name="RapEnglishButton" Source="IRap.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Pop Polski" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="RapEnglishButton_Clicked" x:Name="RapEnglishButton" Source="IRap.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Pop Polski"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="PopPolishButton_Clicked" x:Name="PopPolishButton" Source="PPop.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Pop Zagraniczny" Margin="0,0,0,-20" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="PopPolishButton_Clicked" x:Name="PopPolishButton" Source="PPop.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Pop Zagraniczny"  TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="PopEnglishButton_Clicked" x:Name="PopEnglishButton" Source="IPop.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
-                    <Label Text="Zagraniczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" Margin="0,0,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="PopEnglishButton_Clicked" x:Name="PopEnglishButton" Source="IPop.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <Label Text="Zagraniczne Lata 80" HorizontalTextAlignment="Center" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25"/>
 
-                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="a80I.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton CornerRadius="20" Padding="5" Scale="1" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="white" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="a80I.jpg" BackgroundColor="Transparent" Margin="8"/>
 
-                    <Label Text="Świąteczne Piosenki" TextColor="white" Margin="0,30,0,-20" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" HorizontalTextAlignment="Center"/>
+                    <Label Text="Świąteczne Piosenki" TextColor="white" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" HorizontalTextAlignment="Center"/>
 
-                    <ImageButton BorderWidth="5" CornerRadius="20" BorderColor="white" Padding="5" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Christmas_Songs_Clicked" x:Name="Christmas_Songs" Source="ICarols.jpg" BackgroundColor="Transparent" Margin="20,20,20,20"/>
+                    <ImageButton BorderWidth="5" CornerRadius="20" BorderColor="white" Padding="5" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Christmas_Songs_Clicked" x:Name="Christmas_Songs" Source="ICarols.jpg" BackgroundColor="Transparent" Margin="8"/>
 
 
                 </StackLayout>
@@ -139,7 +139,7 @@
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>
 
                 <!-- Przyciski z obrazkami po prawej -->
-                <Grid Margin="5" BackgroundColor="#506cbf" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#6196ff" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Nucenie" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
     WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="nuta.png" VerticalOptions="Center" Scale="1.4" HorizontalOptions="End" 
@@ -149,7 +149,7 @@
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Grid Margin="5" BackgroundColor="#a68044" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#c49751" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Kalambury" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
     WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="kalambur.png" Scale="1.4" VerticalOptions="Center" HorizontalOptions="End" 

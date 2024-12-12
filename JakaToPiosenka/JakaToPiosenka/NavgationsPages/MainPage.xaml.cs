@@ -24,7 +24,7 @@ namespace JakaToPiosenka
         public static bool isMainPage = true;
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 1550; // Maximum scroll position
+        private double maxScrollPosition = 1750; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public MainPage()
@@ -78,7 +78,8 @@ namespace JakaToPiosenka
                 new ScienceTopics(),
                 new Sports(),
                 new Carols(),
-                new ChristmasSongs()
+                new ChristmasSongs(),
+                new Words()
 
             };
 
