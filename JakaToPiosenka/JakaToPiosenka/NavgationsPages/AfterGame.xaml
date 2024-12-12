@@ -69,8 +69,8 @@
         </ListView>
         <Label x:Name="NextPlayer" Text="" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="4" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" />
 
-        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="#0d5b82" x:Name="RestartGame" Grid.ColumnSpan="2" Text="Jeszcze raz" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="10" />
-        <Button CornerRadius="30"  BorderWidth="3" BorderColor="White" TextColor="White" BackgroundColor="#0d5b82" x:Name="Menu" Grid.ColumnSpan="2" Text="Menu głowne" Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="10"/>
+        <ImageButton BackgroundColor="Transparent" x:Name="RestartGame" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="25" Source="jeszczeRaz.png" />
+        <ImageButton BackgroundColor="Transparent" x:Name="Menu" Grid.ColumnSpan="2"  Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="25" Source="menug.png"/>
 
         <Label x:Name="Resut" Text="" Grid.Row="1" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" FontAttributes="Bold"/>
         <ImageButton x:Name="MultiplayerButton" Source="multim.png" Grid.Row="0" Clicked="Multiplayer_Clicked" Grid.ColumnSpan="2"  Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center" Scale="0.6" BackgroundColor="Transparent" />

@@ -33,6 +33,15 @@ namespace JakaToPiosenka
             BindingContext = this;
             NumberOfPlayer.Text = numPlayers.ToString();
         }
+        private void PlayerNameEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var entry = sender as Entry;
+            if (entry.Text.Length > 10)
+            {
+                // Przycięcie tekstu do maksymalnej długości
+                entry.Text = entry.Text.Substring(0, 10);
+            }
+        }
 
         private async void OnAddPlayerClicked(object sender, EventArgs e)
         {

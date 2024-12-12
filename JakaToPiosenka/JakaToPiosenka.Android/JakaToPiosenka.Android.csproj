@@ -59,6 +59,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp">
+      <Version>4.7.0</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.116</Version>
     </PackageReference>
@@ -310,6 +313,8 @@
     <AndroidResource Include="Resources\drawable\Mickiew.jpg" />
     <AndroidResource Include="Resources\drawable\Movies.jpg" />
     <AndroidResource Include="Resources\drawable\Poland.jpg" />
+    <AndroidResource Include="Resources\drawable\jeszczeRaz.png" />
+    <AndroidResource Include="Resources\drawable\menug.png" />
     <Content Include="Resources\drawable\Pop_logo_2021.png" />
     <AndroidResource Include="Resources\drawable\rymy.jpg" />
     <AndroidResource Include="Resources\drawable\sport.jpg" />
