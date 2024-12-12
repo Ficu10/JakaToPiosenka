@@ -22,6 +22,8 @@
     <None Remove="Sounds\goodScoreSound.wav" />
     <None Remove="Sounds\loseSound.wav" />
     <None Remove="Sounds\mediumScoreSound.wav" />
+    <None Remove="Sounds\opening.mp3" />
+    <None Remove="Sounds\toggle.mp3" />
     <None Remove="Sounds\winSound.wav" />
     <None Remove="TxtFiles\AdultMixed.txt" />
     <None Remove="TxtFiles\Animals.txt" />
@@ -70,6 +72,8 @@
     <EmbeddedResource Include="Sounds\deleteSound.wav" />
     <EmbeddedResource Include="Sounds\loseSound.wav" />
     <EmbeddedResource Include="Sounds\badScoreSound.wav" />
+    <EmbeddedResource Include="Sounds\opening.mp3" />
+    <EmbeddedResource Include="Sounds\toggle.mp3" />
     <EmbeddedResource Include="Sounds\winSound.wav" />
     <EmbeddedResource Include="TxtFiles\AdultMixed.txt" />
     <EmbeddedResource Include="TxtFiles\AllSongs.txt" />

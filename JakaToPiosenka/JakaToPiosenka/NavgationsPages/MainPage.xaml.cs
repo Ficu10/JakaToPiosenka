@@ -114,6 +114,7 @@ namespace JakaToPiosenka
         }
         private async void OnMenuButtonClicked(object sender, EventArgs e)
         {
+            sound.ClickSound();
             MenuView.IsVisible = true;
             LeftMenu.IsVisible = false;
             await MenuView.TranslateTo(0, 0, 500, Easing.CubicOut);
@@ -122,6 +123,7 @@ namespace JakaToPiosenka
 
         private async void OnCloseMenuClicked(object sender, EventArgs e)
         {
+            sound.ClickSound();
             await MenuView.TranslateTo(-200, 0, 500, Easing.CubicIn);
             MenuView.IsVisible = false;
             LeftMenu.IsVisible = true;
@@ -291,6 +293,7 @@ namespace JakaToPiosenka
         }
         private async void Multiplayer_Clicked(object sender, EventArgs e)
         {
+            sound.ClickSound();
             await Navigation.PushAsync(new RankingPage());
         }
     }

@@ -1,4 +1,5 @@
 ﻿using JakaToPiosenka;
+using JakaToPiosenka.HelpClasses;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -7,6 +8,8 @@ namespace JakaToPiosenka
 {
     public partial class SplashPage : ContentPage
     {
+        Sounds sound = new Sounds();
+
         public SplashPage()
         {
             InitializeComponent();
@@ -15,6 +18,7 @@ namespace JakaToPiosenka
 
         private async void AnimateSplash()
         {
+            sound.StartSound();
             // Logo: Pojawienie i powiększenie
             await Logo.FadeTo(1, 1000); // Stopniowe pojawienie
             await Task.WhenAll(

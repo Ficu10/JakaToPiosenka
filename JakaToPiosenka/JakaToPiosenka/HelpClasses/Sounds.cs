@@ -69,5 +69,15 @@ namespace JakaToPiosenka.HelpClasses
             Stream fileName = GetStreamFromFile("mediumScoreSound.wav");
             PlaySound(fileName);
         }
+        public void StartSound()
+        {
+            Stream fileName = GetStreamFromFile("opening.mp3");
+            PlaySound(fileName);
+        }
+        public void Toggle()
+        {
+            Stream fileName = GetStreamFromFile("toggle.mp3");
+            PlaySound(fileName);
+        }
     }
 }

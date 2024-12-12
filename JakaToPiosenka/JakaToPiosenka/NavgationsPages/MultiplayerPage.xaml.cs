@@ -8,6 +8,8 @@ namespace JakaToPiosenka
 {
     public partial class MultiplayerPage : ContentPage
     {
+        private readonly Sounds _sounds = new Sounds();
+
         public ObservableCollection<Multiplayer> Players { get; set; } = new ObservableCollection<Multiplayer>();
         int numPlayers = 0;
         public static bool isMultiplayerEnabled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
@@ -45,6 +47,7 @@ namespace JakaToPiosenka
 
         private async void OnAddPlayerClicked(object sender, EventArgs e)
         {
+            _sounds.ClickSound();
             if (!string.IsNullOrWhiteSpace(PlayerNameEntry.Text))
             {
                 if (Players.Any(p => p.Name == PlayerNameEntry.Text))
@@ -72,6 +75,7 @@ namespace JakaToPiosenka
 
         private async void OnRemovePlayerClicked(object sender, EventArgs e)
         {
+            _sounds.DeleteSound();
             if (sender is Button button && button.BindingContext is Multiplayer player)
             {
                 // Usuń gracza z listy i bazy danych
@@ -91,6 +95,7 @@ namespace JakaToPiosenka
 
         private void OnMultiplayerSwitchToggled(object sender, ToggledEventArgs e)
         {
+            _sounds.Toggle();
             if (e.Value) // Włączony tryb multiplayer
             {
                 if (Players.Count < 2)

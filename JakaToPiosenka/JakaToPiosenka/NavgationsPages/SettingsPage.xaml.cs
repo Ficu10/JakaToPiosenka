@@ -6,6 +6,9 @@ namespace JakaToPiosenka
 {
     public partial class SettingsPage : ContentPage
     {
+
+
+        private readonly Sounds _sounds = new Sounds();
         // Statyczne pola
         public static int Time1;
         public static int Time2;
@@ -48,6 +51,7 @@ namespace JakaToPiosenka
             Time1++;
             Time1Entry.Text = Time1.ToString();
             SaveSetting("Time1", Time1);
+            _sounds.ClickSound();
         }
 
         private void OnDecreaseTime1(object sender, EventArgs e)
@@ -57,6 +61,7 @@ namespace JakaToPiosenka
                 Time1--;
                 Time1Entry.Text = Time1.ToString();
                 SaveSetting("Time1", Time1);
+                _sounds.ClickSound();
             }
         }
 
@@ -66,6 +71,7 @@ namespace JakaToPiosenka
             Time2++;
             Time2Entry.Text = Time2.ToString();
             SaveSetting("Time2", Time2);
+            _sounds.ClickSound();
         }
 
         private void OnDecreaseTime2(object sender, EventArgs e)
@@ -75,6 +81,7 @@ namespace JakaToPiosenka
                 Time2--;
                 Time2Entry.Text = Time2.ToString();
                 SaveSetting("Time2", Time2);
+                _sounds.ClickSound();
             }
         }
 
@@ -84,6 +91,7 @@ namespace JakaToPiosenka
             Time3++;
             Time3Entry.Text = Time3.ToString();
             SaveSetting("Time3", Time3);
+            _sounds.ClickSound();
         }
 
         private void OnDecreaseTime3(object sender, EventArgs e)
@@ -93,6 +101,7 @@ namespace JakaToPiosenka
                 Time3--;
                 Time3Entry.Text = Time3.ToString();
                 SaveSetting("Time3", Time3);
+                _sounds.ClickSound();
             }
         }
 
@@ -102,6 +111,7 @@ namespace JakaToPiosenka
             Time4++;
             Time4Entry.Text = Time4.ToString();
             SaveSetting("Time4", Time4);
+            _sounds.ClickSound();
         }
 
         private void OnDecreaseTime4(object sender, EventArgs e)
@@ -111,6 +121,7 @@ namespace JakaToPiosenka
                 Time4--;
                 Time4Entry.Text = Time4.ToString();
                 SaveSetting("Time4", Time4);
+                _sounds.ClickSound();
             }
         }
 
@@ -120,6 +131,7 @@ namespace JakaToPiosenka
             WordsNumber++;
             WordsEntry.Text = WordsNumber.ToString();
             SaveSetting("WordsNumber", WordsNumber);
+            _sounds.ClickSound();
         }
 
         private void WordsDecrease_Clicked(object sender, EventArgs e)
@@ -129,6 +141,7 @@ namespace JakaToPiosenka
                 WordsNumber--;
                 WordsEntry.Text = WordsNumber.ToString();
                 SaveSetting("WordsNumber", WordsNumber);
+                _sounds.ClickSound();
             }
         }
 

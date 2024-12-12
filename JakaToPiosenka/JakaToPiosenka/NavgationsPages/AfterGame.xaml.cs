@@ -134,6 +134,7 @@ namespace JakaToPiosenka
         /// </summary>
         private async void RestartGame_Clicked(object sender, EventArgs e)
         {
+            _sounds.ClickSound();
             await Navigation.PushAsync(new RulesPage());
         }
 
@@ -142,6 +143,7 @@ namespace JakaToPiosenka
         /// </summary>
         private async void Menu_Clicked(object sender, EventArgs e)
         {
+            _sounds.ClickSound();
             await Navigation.PushAsync(new MainPage());
         }
 
@@ -155,6 +157,7 @@ namespace JakaToPiosenka
 
         private async void Multiplayer_Clicked(object sender, EventArgs e)
         {
+            _sounds.ClickSound();
             await Navigation.PushAsync(new RankingPage());
         }
     }
