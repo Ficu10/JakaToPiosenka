@@ -68,16 +68,12 @@ namespace JakaToPiosenka
 
             if (MultiplayerPage.isMultiplayerEnabled)
             {
-                MultiplayerButton.IsVisible = true;
-                PlayerName.IsVisible = true;
-
                 // Załaduj i wyświetl graczy
                 LoadAndDisplayPlayers(BeforeGameKalambury.SortedPlayers, PlayerName);
             }
             else
             {
-                MultiplayerButton.IsVisible = false;
-                PlayerName.IsVisible = false;
+                PlayerName.Text = "";
             }
         }
 
@@ -174,9 +170,5 @@ namespace JakaToPiosenka
             return true;
         }
 
-        private async void Multiplayer_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new RankingPage());
-        }
     }
 }

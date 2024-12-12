@@ -5,15 +5,23 @@
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#9c9c9c">
+    
+    
     <StackLayout Padding="20" Spacing="10">
+        <Frame Scale="1.34" VerticalOptions="Fill" BackgroundColor="#4a4a4a">
+            <Label Text="MultiPlayer"  TextColor="Black" FontSize="30" Scale="1.4" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,20" />
+        </Frame>
+        <BoxView HeightRequest="9" HorizontalOptions="FillAndExpand" VerticalOptions="End" Grid.Row="0" BackgroundColor="Black" Scale="1.5" />
+
         <!-- Pole do wpisania imienia -->
         <Entry x:Name="PlayerNameEntry"
                Placeholder="Wprowadź imię gracza"
                FontSize="18"
                HorizontalOptions="Center"
                Scale="1.3"
-               VerticalTextAlignment="Center"
-               Margin="0,30,0,0" />
+               HorizontalTextAlignment="Center"
+               Margin="0,30,0,0" 
+               VerticalTextAlignment="Center"/>
 
         <!-- Przycisk do dodania gracza -->
         <Button Text="Dodaj Gracza"
@@ -31,7 +39,7 @@
         <CollectionView x:Name="PlayersList"
                     ItemsSource="{Binding Players}"
                     SelectionMode="None"
-                    HeightRequest="400">
+                    HeightRequest="300">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Spacing="0">
@@ -53,7 +61,7 @@
 
 
         <!-- Przełącznik trybu multiplayer -->
-        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Margin="0,-40,0,0">
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
             <Label Text="Multiplayer" VerticalOptions="Center" FontSize="28" TextColor="Black"  />
             <Switch x:Name="MultiplayerSwitch"
                     Toggled="OnMultiplayerSwitchToggled"

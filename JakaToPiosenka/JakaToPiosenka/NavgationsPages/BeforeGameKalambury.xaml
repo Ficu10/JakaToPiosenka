@@ -10,25 +10,28 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="PhotoCategory" Source="disney.jpg" Grid.ColumnSpan="2" Margin="20"/>
-            <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
-                <Label x:Name="PlayerName" Text="Gracz: Adam" TextColor="#3d2f08" FontSize="30" HorizontalTextAlignment="Center"/>
+            <StackLayout Grid.ColumnSpan="2" Grid.Row="0">
                 <Label x:Name="Category" Text="Piosenki Disneya" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" FontAttributes="Bold" TextColor="White"/>
-                <Label  Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Start" FontSize="30" TextColor="White"/>
-
-                <Label Text="Wybierz czas [sekundy]" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" TextColor="White" Margin="0,-30,0,0"/>
-
+                <Frame CornerRadius="20" Margin="40,-20,40,60" Scale="0.9" BackgroundColor="#cc820a">
+                    <Image x:Name="PhotoCategory" Source="disney.jpg" Grid.ColumnSpan="2"  VerticalOptions="Start"/>
+                </Frame>
 
             </StackLayout>
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                <Label x:Name="PlayerName" Text="Gracz: Adam" TextColor="#08133d" FontSize="30" HorizontalTextAlignment="Center" VerticalOptions="End" Margin="0,120,0,0"/>
+                <Label Text="Wybierz czas [sekundy]" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" TextColor="White" />
+
+            </StackLayout>
+
 
             <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "15" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"  Grid.Column="0" Grid.Row="2"/>
             <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "30" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"   Grid.Column="1" Grid.Row="2"/>
@@ -37,7 +40,6 @@
 
 
             <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj hasła" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="#d98702"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
-            <ImageButton x:Name="MultiplayerButton" Source="multim.png" Grid.Row="0" Clicked="Multiplayer_Clicked"  Grid.Column="1" HorizontalOptions="End" Scale="0.6" BackgroundColor="Transparent" />
 
         </Grid>
 

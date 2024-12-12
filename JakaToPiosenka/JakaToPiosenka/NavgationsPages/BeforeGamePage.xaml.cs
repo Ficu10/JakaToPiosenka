@@ -22,14 +22,7 @@ namespace JakaToPiosenka
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
 
             InitializeComponent();
-            if (MultiplayerPage.isMultiplayerEnabled)
-            {
-                MultiplayerButton.IsVisible = true;
-            }
-            else
-            {
-                MultiplayerButton.IsVisible = false;
-            }
+           
             SettingsPage.Time1 = SettingsHelper.GetValue("Time1", 15);
             SettingsPage.Time2 = SettingsHelper.GetValue("Time2", 30);
             SettingsPage.Time3 = SettingsHelper.GetValue("Time3", 45);
@@ -73,16 +66,12 @@ namespace JakaToPiosenka
 
             if (MultiplayerPage.isMultiplayerEnabled)
             {
-                MultiplayerButton.IsVisible = true;
-                PlayerName.IsVisible = true;
-
                 // Załaduj i wyświetl graczy
                 LoadAndDisplayPlayers(BeforeGameKalambury.SortedPlayers, PlayerName);
             }
             else
             {
-                MultiplayerButton.IsVisible = false;
-                PlayerName.IsVisible = false;
+                PlayerName.Text = "";
             }
         }
 
@@ -175,9 +164,5 @@ namespace JakaToPiosenka
             return true;
         }
 
-        private async void Multiplayer_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new RankingPage());
-        }
     }
 }

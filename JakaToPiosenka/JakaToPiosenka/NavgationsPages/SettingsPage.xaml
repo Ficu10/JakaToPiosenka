@@ -5,84 +5,98 @@
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#9c9c9c">
-    <ScrollView>
-        <StackLayout Padding="30">
-            <!-- Nagłówek -->
-            <Button BackgroundColor="#4d4d4d" Scale="3.95" IsEnabled="False"/>
-            <Label Text="Ustawienia" TextColor="Black" FontSize="50" Padding="20" HorizontalOptions="Center" Margin="0,-60,0,0"/>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Frame BackgroundColor="#4a4a4a" VerticalOptions="Fill" Margin="0,0,0,0">
+            <Label Text="Ustawienia" TextColor="Black" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"  Scale="2" Padding="20"/>
+        </Frame>
+        <BoxView HeightRequest="9" HorizontalOptions="FillAndExpand" VerticalOptions="End" Grid.Row="0" BackgroundColor="Black" Scale="2.5" Margin="0,100,0,0"/>
 
 
-            <BoxView HeightRequest="9" HorizontalOptions="FillAndExpand" BackgroundColor="#2d2e2d" Scale="1.2"/>
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="30">
+                <!-- Nagłówek -->
+               
 
-            <!-- Sekcja liczby haseł -->
-            <Label Text="Zmiana ilości haseł w grze" TextColor="#2d2e2d" FontSize="27" Padding="10" HorizontalTextAlignment="Center"/>
-            <Grid Padding="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <Button HeightRequest="70" x:Name="WordsDecrease" Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="WordsDecrease_Clicked" Grid.Column="0"/>
-                <Entry  x:Name="WordsEntry" TextColor="White" FontSize="25" Text="10" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="WordsEntry_Completed" Grid.Column="1"/>
-                <Button x:Name="WordsIncrease" Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="WordsIncrease_Clicked" Grid.Column="2"/>
-            </Grid>
 
-            <BoxView HeightRequest="9" HorizontalOptions="FillAndExpand" BackgroundColor="#2d2e2d" Scale="1.2"/>
 
-            <!-- Sekcja czasu do gry -->
-            <Label Text="Wybór czasu do gry" TextColor="#2d2e2d" FontSize="30" Padding="10" HorizontalTextAlignment="Center"/>
-
-            <!-- Timery -->
-            <StackLayout Spacing="15">
-                <Label Text="Czas 1" FontSize="20" HorizontalOptions="Center"/>
-                <Grid Padding="10">
+                <!-- Sekcja liczby haseł -->
+                <Label Text="Zmiana ilości haseł w grze" TextColor="#2d2e2d" FontSize="27" Padding="10" HorizontalTextAlignment="Center"/>
+                <Grid Padding="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Button HeightRequest="70" Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime1" Grid.Column="0"/>
-                    <Entry x:Name="Time1Entry" FontSize="25" TextColor="White" Text="15" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted1" Grid.Column="1"/>
-                    <Button Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime1" Grid.Column="2"/>
+                    <Button HeightRequest="70" x:Name="WordsDecrease" Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="WordsDecrease_Clicked" Grid.Column="0"/>
+                    <Entry  x:Name="WordsEntry" TextColor="White" FontSize="25" Text="10" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="WordsEntry_Completed" Grid.Column="1"/>
+                    <Button x:Name="WordsIncrease" Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="WordsIncrease_Clicked" Grid.Column="2"/>
                 </Grid>
 
-                <Label Text="Czas 2" FontSize="20" HorizontalOptions="Center"/>
-                <Grid Padding="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Button HeightRequest="70"  Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime2" Grid.Column="0"/>
-                    <Entry x:Name="Time2Entry" FontSize="25" TextColor="White" Text="30" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted2" Grid.Column="1"/>
-                    <Button  Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime2" Grid.Column="2"/>
-                </Grid>
+                <BoxView HeightRequest="9" HorizontalOptions="FillAndExpand" BackgroundColor="#2d2e2d" Scale="1.2"/>
 
-                <Label Text="Czas 3" FontSize="20" HorizontalOptions="Center"/>
-                <Grid Padding="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Button HeightRequest="80" Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime3" Grid.Column="0"/>
-                    <Entry x:Name="Time3Entry" FontSize="25" TextColor="White" Text="45" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted3" Grid.Column="1"/>
-                    <Button  Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime3" Grid.Column="2"/>
-                </Grid>
+                <!-- Sekcja czasu do gry -->
+                <Label Text="Wybór czasu do gry" TextColor="#2d2e2d" FontSize="30" Padding="10" HorizontalTextAlignment="Center"/>
 
-                <Label Text="Czas 4" FontSize="20" HorizontalOptions="Center"/>
-                <Grid Padding="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Button HeightRequest="80"  Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime4" Grid.Column="0"/>
-                    <Entry x:Name="Time4Entry" FontSize="25" TextColor="White" Text="60" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted4" Grid.Column="1"/>
-                    <Button  Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime4" Grid.Column="2"/>
-                </Grid>
+                <!-- Timery -->
+                <StackLayout Spacing="15">
+                    <Label Text="Czas 1" FontSize="20" HorizontalOptions="Center"/>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button HeightRequest="70" Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime1" Grid.Column="0"/>
+                        <Entry x:Name="Time1Entry" FontSize="25" TextColor="White" Text="15" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted1" Grid.Column="1"/>
+                        <Button Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime1" Grid.Column="2"/>
+                    </Grid>
+
+                    <Label Text="Czas 2" FontSize="20" HorizontalOptions="Center"/>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button HeightRequest="70"  Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime2" Grid.Column="0"/>
+                        <Entry x:Name="Time2Entry" FontSize="25" TextColor="White" Text="30" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted2" Grid.Column="1"/>
+                        <Button  Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime2" Grid.Column="2"/>
+                    </Grid>
+
+                    <Label Text="Czas 3" FontSize="20" HorizontalOptions="Center"/>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button HeightRequest="80" Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime3" Grid.Column="0"/>
+                        <Entry x:Name="Time3Entry" FontSize="25" TextColor="White" Text="45" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted3" Grid.Column="1"/>
+                        <Button  Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime3" Grid.Column="2"/>
+                    </Grid>
+
+                    <Label Text="Czas 4" FontSize="20" HorizontalOptions="Center"/>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button HeightRequest="80"  Text="-" Scale="6" CornerRadius="30" FontSize="20" BackgroundColor="Transparent" TextColor="White" Clicked="OnDecreaseTime4" Grid.Column="0"/>
+                        <Entry x:Name="Time4Entry" FontSize="25" TextColor="White" Text="60" HorizontalTextAlignment="Center" Keyboard="Numeric" Completed="OnTimeCompleted4" Grid.Column="1"/>
+                        <Button  Text="+" CornerRadius="30" Scale="4" FontSize="20" BackgroundColor="transparent" TextColor="White" Clicked="OnIncreaseTime4" Grid.Column="2"/>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+    </Grid>
+    
+    
+   
 
 </ContentPage>
