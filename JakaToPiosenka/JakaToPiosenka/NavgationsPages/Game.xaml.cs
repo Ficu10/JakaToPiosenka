@@ -39,6 +39,7 @@ namespace JakaToPiosenka
         public Game()
         {
             InitializeComponent();
+            goodBadSongs = new int[SettingsPage.WordsNumber];
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
             ShowGame();
         }
@@ -253,36 +254,33 @@ namespace JakaToPiosenka
             Task modifyTaskOne = Task.Run(() => GameType());
         }
 
-        public void StartGame(List<string> PromptsList, List<string> songsList, List<string> PromptsListReset, List<string> songsListReset)
+        public async void StartGame(List<string> PromptsList, List<string> songsList, List<string> PromptsListReset, List<string> songsListReset)
         {
             sounds.CountdownSound();
             answered = true;
-            Thread.Sleep(3000);
+            await Task.Delay(3000);
             answered = false;
             songsFromGame.Clear();
-            int gameCounter = SettingsPage.WordsNumber;
+            int gameCounter = Math.Min(SettingsPage.WordsNumber, PromptsList.Count);
             Random r = new Random();
 
             while (gameCounter > 0)
             {
+                // Przywróć dane, jeśli lista jest pusta
                 if (PromptsList.Count < 1)
                 {
-                    for (int i = 0; i < PromptsListReset.Count; i++)
-                    {
-                        PromptsList.Add(PromptsListReset[i]);
-                        songsList.Add(songsListReset[i]);
-                    }
-
-
+                    PromptsList.AddRange(PromptsListReset);
+                    songsList.AddRange(songsListReset);
                 }
+
                 newGame = true;
                 songId = r.Next(PromptsList.Count);
 
-
                 seconds = BeforeGamePage.timeChanger + 1;
-                while (newGame == true)
+
+                while (newGame)
                 {
-                    Device.BeginInvokeOnMainThread(async () =>
+                    Device.BeginInvokeOnMainThread(() =>
                     {
                         WrongAnswearButton.IsEnabled = true;
                         TitlePrompt.IsVisible = true;
@@ -292,40 +290,50 @@ namespace JakaToPiosenka
                         SongTitle.Text = songsList[songId];
                         seconds--;
                         Time.Text = seconds.ToString();
+
                         if (seconds < 1)
                         {
                             sounds.LosingSound();
                             endOfQuestion = true;
                         }
-                        if (endOfQuestion == true)
-                        {
 
+                        if (endOfQuestion)
+                        {
+                            // Ukryj pytanie i czas
                             TitlePrompt.IsVisible = false;
                             Time.IsVisible = false;
                             newGame = false;
+
+                            // Dodaj do zakończonej listy
                             songsFromGame.Add(songsList[songId]);
                             endList = new AllData
                             {
                                 Title = songsList[songId],
                                 Prompt = PromptsList[songId]
                             };
+
                             gameCounter--;
+
+                            // Usuń dane z bazy i list
                             string titleToRemove = songsList[songId];
-                            string PromptToRemove = PromptsList[songId];
-
-
+                            string promptToRemove = PromptsList[songId];
                             string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
-                            AllPasswords.connection.Execute(deleteQuery, titleToRemove, PromptToRemove);
-                            PromptsList.RemoveAt(songId);
-                            songsList.RemoveAt(songId);
-                            if (goodAnswer == true)
+                            AllPasswords.connection.Execute(deleteQuery, titleToRemove, promptToRemove);
+
+                            if (songId < PromptsList.Count)
+                            {
+                                PromptsList.RemoveAt(songId);
+                                songsList.RemoveAt(songId);
+                            }
+
+                            if (goodAnswer)
                             {
                                 endOfQuestion = false;
                                 pointsCounter++;
                                 goodAnswer = false;
                                 BackgroundImageSource = "green.jpg";
                                 SongTitle.Text = "Dobrze";
-                                goodBadSongs[goodBadCounter] = 1; 
+                                goodBadSongs[goodBadCounter] = 1;
                             }
                             else
                             {
@@ -334,32 +342,36 @@ namespace JakaToPiosenka
                                 SongTitle.Text = "Brak odpowiedzi";
                                 goodBadSongs[goodBadCounter] = 0;
                             }
+
                             goodBadCounter++;
+
                             if (gameCounter == 0)
                             {
                                 Dispose();
                                 Accelerometer.Stop();
                                 if (MainPage.isMainPage)
                                 {
-                                    await Navigation.PushAsync(new AfterGame());
+                                    Device.BeginInvokeOnMainThread(async () =>
+                                    {
+                                        await Navigation.PushAsync(new AfterGame());
+                                    });
                                 }
                                 else
                                 {
-                                    await Navigation.PushAsync(new AfterGameKalambury());
+                                    Device.BeginInvokeOnMainThread(async () =>
+                                    {
+                                        await Navigation.PushAsync(new AfterGameKalambury());
+                                    });
                                 }
                             }
                         }
-
                     });
-                    Thread.Sleep(1000);
 
-
+                    await Task.Delay(1000);
                 }
             }
-
-
-
         }
+
         private void WrongAnswearButton_Clicked(object sender, EventArgs e)
         {
             if (answered == false)

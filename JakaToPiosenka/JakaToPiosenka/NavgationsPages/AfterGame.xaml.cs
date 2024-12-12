@@ -108,7 +108,7 @@ namespace JakaToPiosenka
         {
             var songsWithColors = new List<SongItem>();
 
-            for (int i = 0; i < Game.songsFromGame.Count; i++)
+            for (int i = 0; i < SettingsPage.WordsNumber; i++)
             {
                 songsWithColors.Add(new SongItem
                 {
