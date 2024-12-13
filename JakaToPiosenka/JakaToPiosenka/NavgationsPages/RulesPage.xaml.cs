@@ -52,7 +52,10 @@ namespace JakaToPiosenka
         }
         protected override bool OnBackButtonPressed()
         {
-            return true;
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
+            Dispose();
+            Accelerometer.Stop();
+            return false;
         }
     }
 }

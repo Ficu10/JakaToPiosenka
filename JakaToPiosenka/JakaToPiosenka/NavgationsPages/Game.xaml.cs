@@ -92,8 +92,42 @@ namespace JakaToPiosenka
         }
         protected override bool OnBackButtonPressed()
         {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                bool exitGame = await DisplayAlert("Zakończyć grę?", "Czy na pewno chcesz zakończyć grę? Wszystkie aktualne wyniki zostaną zresetowane.", "Tak", "Nie");
+
+                if (exitGame)
+                {
+                    // Zatrzymaj grę i wyczyść wyniki
+                    Dispose();
+                    Accelerometer.Stop();
+                    ResetGameState();
+
+                    // Przekieruj do BeforeGamePage
+                    await Navigation.PushAsync(new BeforeGamePage());
+                }
+            });
+
+            // Zablokuj domyślne zamykanie strony
             return true;
         }
+
+        private void ResetGameState()
+        {
+            // Resetuj wyniki
+            pointsCounter = 0;
+            goodBadCounter = 0;
+            goodBadSongs = new int[SettingsPage.WordsNumber];
+            songsFromGame.Clear();
+
+            // Resetuj inne flagi gry
+            newGame = false;
+            endOfQuestion = false;
+            goodAnswer = false;
+            answered = true;
+        }
+
+
         void GameType()
         {
             try
@@ -167,9 +201,35 @@ namespace JakaToPiosenka
                 // Przywróć dane, jeśli lista jest pusta
                 if (PromptsList.Count < 1)
                 {
+                    // Przywróć dane z bazy restart
+                    var resetData = AllPasswords.connectionRestart.GetType()
+                        .GetMethod("Table")?
+                        .MakeGenericMethod(NamesTable.namesTable[MainPage.gameMode])
+                        .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
+
+                    if (resetData != null)
+                    {
+                        PromptsList.AddRange(resetData.Select(x => (string)x.Prompt).ToList());
+                        songsList.AddRange(resetData.Select(x => (string)x.Title).ToList());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Brak danych do przywrócenia z bazy restart.");
+                    }
+                }
+
+                // Usuń tylko z listy, ale nie z bazy
+                PromptsList.RemoveAt(songId);
+                songsList.RemoveAt(songId);
+
+                // Zapisuj dane, jeśli chcesz przywrócić pełny reset
+                if (PromptsList.Count == 0)
+                {
                     PromptsList.AddRange(PromptsListReset);
                     songsList.AddRange(songsListReset);
                 }
+
+
 
                 newGame = true;
                 songId = r.Next(PromptsList.Count);
