@@ -34,6 +34,8 @@ namespace JakaToPiosenka
         public static AllData endList = new AllData();
         int goodBadCounter = 0;
         public static int[] goodBadSongs = new int[SettingsPage.WordsNumber];
+        int gameCounter = SettingsPage.WordsNumber;
+
 
         public static List<string> songsFromGame = new List<string>();
         public Game()
@@ -99,7 +101,6 @@ namespace JakaToPiosenka
                 if (exitGame)
                 {
                     // Zatrzymaj grę i wyczyść wyniki
-                    Dispose();
                     Accelerometer.Stop();
                     ResetGameState();
 
@@ -132,6 +133,7 @@ namespace JakaToPiosenka
             endOfQuestion = false;
             goodAnswer = false;
             answered = true;
+            gameCounter = -1;
         }
 
 
@@ -200,7 +202,6 @@ namespace JakaToPiosenka
             await Task.Delay(3000);
             answered = false;
             songsFromGame.Clear();
-            int gameCounter = SettingsPage.WordsNumber;
             Random r = new Random();
 
             while (gameCounter > 0)
