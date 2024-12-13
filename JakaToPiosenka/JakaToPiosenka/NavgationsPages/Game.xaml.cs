@@ -193,7 +193,7 @@ namespace JakaToPiosenka
             await Task.Delay(3000);
             answered = false;
             songsFromGame.Clear();
-            int gameCounter = Math.Min(SettingsPage.WordsNumber, PromptsList.Count);
+            int gameCounter = SettingsPage.WordsNumber;
             Random r = new Random();
 
             while (gameCounter > 0)
@@ -201,39 +201,29 @@ namespace JakaToPiosenka
                 // Przywróć dane, jeśli lista jest pusta
                 if (PromptsList.Count < 1)
                 {
-                    // Przywróć dane z bazy restart
-                    var resetData = AllPasswords.connectionRestart.GetType()
-                        .GetMethod("Table")?
-                        .MakeGenericMethod(NamesTable.namesTable[MainPage.gameMode])
-                        .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
-
-                    if (resetData != null)
+                    if (PromptsListReset.Any() && songsListReset.Any())
                     {
-                        PromptsList.AddRange(resetData.Select(x => (string)x.Prompt).ToList());
-                        songsList.AddRange(resetData.Select(x => (string)x.Title).ToList());
+                        PromptsList.AddRange(PromptsListReset);
+                        songsList.AddRange(songsListReset);
                     }
                     else
                     {
-                        Console.WriteLine("Brak danych do przywrócenia z bazy restart.");
+                        // Wyjdź z pętli, jeśli nie ma więcej danych do załadowania
+                        Console.WriteLine("Brak danych do odświeżenia z bazy restart.");
+                        break;
                     }
                 }
 
-                // Usuń tylko z listy, ale nie z bazy
-                PromptsList.RemoveAt(songId);
-                songsList.RemoveAt(songId);
-
-                // Zapisuj dane, jeśli chcesz przywrócić pełny reset
                 if (PromptsList.Count == 0)
                 {
-                    PromptsList.AddRange(PromptsListReset);
-                    songsList.AddRange(songsListReset);
+                    Console.WriteLine("PromptsList jest pusta. Nie można kontynuować gry.");
+                    break;
                 }
 
-
-
-                newGame = true;
+                // Losowanie indeksu
                 songId = r.Next(PromptsList.Count);
 
+                newGame = true;
                 seconds = BeforeGamePage.timeChanger + 1;
 
                 while (newGame)
@@ -257,12 +247,10 @@ namespace JakaToPiosenka
 
                         if (endOfQuestion)
                         {
-                            // Ukryj pytanie i czas
                             TitlePrompt.IsVisible = false;
                             Time.IsVisible = false;
                             newGame = false;
 
-                            // Dodaj do zakończonej listy
                             songsFromGame.Add(songsList[songId]);
                             endList = new AllData
                             {
@@ -272,12 +260,7 @@ namespace JakaToPiosenka
 
                             gameCounter--;
 
-                            // Usuń dane z bazy i list
-                            string titleToRemove = songsList[songId];
-                            string promptToRemove = PromptsList[songId];
-                            string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
-                            AllPasswords.connection.Execute(deleteQuery, titleToRemove, promptToRemove);
-
+                            // Usuń dane z list
                             if (songId < PromptsList.Count)
                             {
                                 PromptsList.RemoveAt(songId);
@@ -307,20 +290,17 @@ namespace JakaToPiosenka
                             {
                                 Dispose();
                                 Accelerometer.Stop();
-                                if (MainPage.isMainPage)
+                                Device.BeginInvokeOnMainThread(async () =>
                                 {
-                                    Device.BeginInvokeOnMainThread(async () =>
+                                    if (MainPage.isMainPage)
                                     {
                                         await Navigation.PushAsync(new AfterGame());
-                                    });
-                                }
-                                else
-                                {
-                                    Device.BeginInvokeOnMainThread(async () =>
+                                    }
+                                    else
                                     {
                                         await Navigation.PushAsync(new AfterGameKalambury());
-                                    });
-                                }
+                                    }
+                                });
                             }
                         }
                     });
@@ -329,6 +309,7 @@ namespace JakaToPiosenka
                 }
             }
         }
+
 
         private void WrongAnswearButton_Clicked(object sender, EventArgs e)
         {

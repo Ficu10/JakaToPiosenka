@@ -81,74 +81,77 @@ namespace JakaToPiosenka
         private async void addSongToList_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-            if (NewTitleName.Text != "" && NewPromptName.Text != "")
+
+            if (!string.IsNullOrWhiteSpace(NewTitleName.Text) && !string.IsNullOrWhiteSpace(NewPromptName.Text))
             {
-              
-
-                if (NamesTable.namesTable.ContainsKey(MainPage.gameMode))
+                // Sprawdź, czy tryb gry istnieje w mapowaniu NamesTable
+                if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
                 {
-                    var tableType = NamesTable.namesTable[MainPage.gameMode];
-                    var songsData = Activator.CreateInstance(tableType);
+                    // Utwórz instancję obiektu na podstawie typu tabeli
+                    var songData = Activator.CreateInstance(tableType);
 
-                    tableType.GetProperty("Title").SetValue(songsData, NewTitleName.Text);
-                    tableType.GetProperty("Prompt").SetValue(songsData, NewPromptName.Text);
+                    // Ustaw wartości tytułu i podpowiedzi
+                    tableType.GetProperty("Title")?.SetValue(songData, NewTitleName.Text);
+                    tableType.GetProperty("Prompt")?.SetValue(songData, NewPromptName.Text);
 
-                    AllPasswords.connection.Insert(songsData);
-                    AllPasswords.connectionRestart.Insert(songsData);
+                    // Dodaj dane do głównej bazy danych i bazy restart
+                    AllPasswords.connection.Insert(songData);
+                    AllPasswords.connectionRestart.Insert(songData);
 
-
-
-
-                }
-
-                await Navigation.PushAsync(new AddingNewSongs());
-                NewTitleName.Text = "";
-                NewPromptName.Text = "";
-            }
-            else
-            {
-                if (MainPage.isMainPage)
-                {
-                    await DisplayAlert("Blad", "Prosze podac autora oraz tytul piosenki", "OK");
-
+                  
                 }
                 else
                 {
-                    await DisplayAlert("Blad", "Prosze podac hasło oraz kategorie", "OK");
+                    await DisplayAlert("Błąd", "Nie znaleziono tabeli dla wybranego trybu gry.", "OK");
                 }
-            }
 
+                // Resetuj pola i wróć do listy
+                NewTitleName.Text = string.Empty;
+                NewPromptName.Text = string.Empty;
+                await Navigation.PushAsync(new AddingNewSongs());
+            }
+            else
+            {
+                // Wyświetl błąd, jeśli pola są puste
+                string errorMessage = MainPage.isMainPage
+                    ? "Proszę podać autora oraz tytuł piosenki."
+                    : "Proszę podać hasło oraz kategorię.";
+                await DisplayAlert("Błąd", errorMessage, "OK");
+            }
         }
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-
             var item = sender as SwipeItem;
-            var emp = item.CommandParameter as AllPasswords;
 
-            Type musicType = GetMusicTypeByGameMode(MainPage.gameMode);
-            if (musicType != null)
+            // Pobierz dane z parametru
+            if (item?.CommandParameter is AllPasswords emp &&
+                NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
             {
-                emp = item.CommandParameter as AllPasswords;
-                emp = Convert.ChangeType(emp, musicType) as AllPasswords;
+                // Spróbuj pobrać dane na podstawie typu tabeli
+                emp = Convert.ChangeType(emp, tableType) as AllPasswords;
+
+                if (emp != null)
+                {
+                    bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć: {emp.Title}?", "Tak", "Nie");
+                    if (result)
+                    {
+                        sound.DeleteSound();
+
+                        // Usuń dane z bazy danych
+                        string titleToRemove = emp.Title;
+                        string promptToRemove = emp.Prompt;
+
+                        AllPasswords.connection.Delete(emp);
+                        AllPasswords.connectionRestart.Delete(emp);
+
+                        // Odśwież listę
+                        await Navigation.PushAsync(new AddingNewSongs());
+                    }
+                }
             }
-
-            bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć: {emp.Title}?", "tak", "nie");
-            if (result)
-            {
-                sound.DeleteSound();
-                string titleToRemove = emp.Title;
-                string promptToRemove = emp.Prompt;
-
-                string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
-                AllPasswords.connection.Execute(deleteQuery, titleToRemove, promptToRemove);
-                AllPasswords.connectionRestart.Execute(deleteQuery, titleToRemove, promptToRemove);
-                await Navigation.PushAsync(new AddingNewSongs());
-            }
-
-
-
         }
+
 
         private Type GetMusicTypeByGameMode(string gameMode)
         {
