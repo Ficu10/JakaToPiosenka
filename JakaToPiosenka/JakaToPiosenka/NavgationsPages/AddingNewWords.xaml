@@ -61,8 +61,8 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <!--<Button  x:Name="Import" Clicked="Import_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Import" Grid.Row="5" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="Start" VerticalOptions="End"/>
-            <Button x:Name="Eksport" Clicked="Eksport_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Eksport" Grid.Row="5" Grid.Column="2" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="End" VerticalOptions="End"/>-->
+            <Button  x:Name="Import" Clicked="Import_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Import" Grid.Row="5" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="Start" VerticalOptions="End"/>
+            <Button x:Name="Eksport" Clicked="Eksport_Clicked" TextColor="White" BackgroundColor="Transparent" Text="Eksport" Grid.Row="5" Grid.Column="2" FontSize="Medium" Grid.ColumnSpan="3" HorizontalOptions="End" VerticalOptions="End"/>
 
         </Grid>
 

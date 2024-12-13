@@ -96,155 +96,53 @@ namespace JakaToPiosenka
         }
         void GameType()
         {
+            try
+            {
+                // Pobierz typ tabeli na podstawie trybu gry
+                if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+                {
+                    // Pobierz dane z tabel głównej i restartowej
+                    var mainPrompts = LoadDataFromTable(tableType, AllPasswords.connection, "Prompt");
+                    var mainTitles = LoadDataFromTable(tableType, AllPasswords.connection, "Title");
 
-            if (MainPage.gameMode == "AllSongs")
-            {
-                StartGame(AllPasswords.connection.Table<AllSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<AllSongs>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "FairyTales")
-            {
-                StartGame(AllPasswords.connection.Table<FairyTales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<FairyTales>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Pop")
-            {
-                StartGame(AllPasswords.connection.Table<Pop>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Pop>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Pop>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Rock")
-            {
-                StartGame(AllPasswords.connection.Table<Rock>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Rock>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Rock>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
+                    var restartPrompts = LoadDataFromTable(tableType, AllPasswords.connectionRestart, "Prompt");
+                    var restartTitles = LoadDataFromTable(tableType, AllPasswords.connectionRestart, "Title");
 
+                    // Uruchom grę
+                    StartGame(mainPrompts, mainTitles, restartPrompts, restartTitles);
+                }
+                else
+                {
+                    Console.WriteLine($"Nieznany tryb gry: {MainPage.gameMode}");
+                    throw new InvalidOperationException($"Nieznany tryb gry: {MainPage.gameMode}");
+                }
             }
-            else if (MainPage.gameMode == "UsersMusic")
+            catch (Exception ex)
             {
-                StartGame(AllPasswords.connection.Table<UsersMusic>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<UsersMusic>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
+                Console.WriteLine($"Wystąpił błąd w StartGameType: {ex.Message}");
             }
-            else if (MainPage.gameMode == "Rap")
-            {
-                StartGame(AllPasswords.connection.Table<Rap>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Rap>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Rap>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RapPolish")
-            {
-                StartGame(AllPasswords.connection.Table<RapPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RapPolish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RapEnglish")
-            {
-                StartGame(AllPasswords.connection.Table<RapEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RapEnglish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "PopPolish")
-            {
-                StartGame(AllPasswords.connection.Table<PopPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<PopPolish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "PopEnglish")
-            {
-                StartGame(AllPasswords.connection.Table<PopEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<PopEnglish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "The80")
-            {
-                StartGame(AllPasswords.connection.Table<The80>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<The80>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<The80>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "The80English")
-            {
-                StartGame(AllPasswords.connection.Table<The80English>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<The80English>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<The80English>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80English>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "The80Polish")
-            {
-                StartGame(AllPasswords.connection.Table<The80Polish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<The80Polish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RockEnglish")
-            {
-                StartGame(AllPasswords.connection.Table<RockEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RockEnglish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RockPolish")
-            {
-                StartGame(AllPasswords.connection.Table<RockPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<RockPolish>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Youtube")
-            {
-                StartGame(AllPasswords.connection.Table<Youtube>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Youtube>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Youtube>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Youtube>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Children")
-            {
-                StartGame(AllPasswords.connection.Table<Children>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Children>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Children>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Children>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Countries")
-            {
-                StartGame(AllPasswords.connection.Table<Countries>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Countries>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Countries>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Countries>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Emotions")
-            {
-                StartGame(AllPasswords.connection.Table<Emotions>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Emotions>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Emotions>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Emotions>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "FictionalCharacter")
-            {
-                StartGame(AllPasswords.connection.Table<FictionalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<FictionalCharacter>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<FictionalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<FictionalCharacter>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "HistoricalCharacter")
-            {
-                StartGame(AllPasswords.connection.Table<HistoricalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<HistoricalCharacter>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<HistoricalCharacter>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<HistoricalCharacter>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Jobs")
-            {
-                StartGame(AllPasswords.connection.Table<Jobs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Jobs>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Jobs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Jobs>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Movies")
-            {
-                StartGame(AllPasswords.connection.Table<Movies>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Movies>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Movies>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Movies>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Series")
-            {
-                StartGame(AllPasswords.connection.Table<Series>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Series>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Series>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Series>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Tales")
-            {
-                StartGame(AllPasswords.connection.Table<Tales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Tales>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Tales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Tales>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Words")
-            {
-                StartGame(AllPasswords.connection.Table<Words>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Words>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Words>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Words>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Carols")
-            {
-                StartGame(AllPasswords.connection.Table<Carols>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Carols>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Carols>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Carols>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "ChristmasSongs")
-            {
-                StartGame(AllPasswords.connection.Table<ChristmasSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<ChristmasSongs>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<ChristmasSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<ChristmasSongs>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Animals")
-            {
-                StartGame(AllPasswords.connection.Table<Animals>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Animals>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Animals>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Animals>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "AdultMixed")
-            {
-                StartGame(AllPasswords.connection.Table<AdultMixed>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<AdultMixed>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<AdultMixed>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<AdultMixed>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Celebrities")
-            {
-                StartGame(AllPasswords.connection.Table<Celebrities>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Celebrities>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Celebrities>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Celebrities>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "DailyLife")
-            {
-                StartGame(AllPasswords.connection.Table<DailyLife>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<DailyLife>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<DailyLife>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<DailyLife>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Poland")
-            {
-                StartGame(AllPasswords.connection.Table<Poland>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Poland>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Poland>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Poland>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Rhymes")
-            {
-                StartGame(AllPasswords.connection.Table<Rhymes>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Rhymes>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Rhymes>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rhymes>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "ScienceTopics")
-            {
-                StartGame(AllPasswords.connection.Table<ScienceTopics>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<ScienceTopics>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<ScienceTopics>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<ScienceTopics>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Sports")
-            {
-                StartGame(AllPasswords.connection.Table<Sports>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connection.Table<Sports>().ToList().Select(x => x.Title).ToList(), AllPasswords.connectionRestart.Table<Sports>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Sports>().ToList().Select(x => x.Title).ToList());
-            }
-
-
         }
+
+        private List<string> LoadDataFromTable(Type tableType, SQLiteConnection connection, string columnName)
+        {
+            try
+            {
+                // Pobierz nazwę tabeli z mapowania
+                var tableMapping = connection.GetMapping(tableType);
+
+                // Przygotuj zapytanie SQL
+                var query = $"SELECT {columnName} FROM {tableMapping.TableName}";
+
+                // Wykonaj zapytanie i zwróć wyniki
+                return connection.QueryScalars<string>(query).ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Błąd podczas ładowania danych: {ex.Message}");
+                return new List<string>();
+            }
+        }
+
         public void ShowGame()
         {
 

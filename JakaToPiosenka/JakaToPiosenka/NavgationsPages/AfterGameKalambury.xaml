@@ -78,7 +78,7 @@
 
         <ImageButton BackgroundColor="Transparent"  x:Name="RestartGame" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="25" Source="jeszczeRaz.png" />
         <ImageButton BackgroundColor="Transparent"  x:Name="Menu" Grid.ColumnSpan="2"  Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="25" Source="menug.png"/>
-        <Label x:Name="Resut" Text="" Grid.Row="1" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" FontAttributes="Bold"/>
+        <Label x:Name="Resut" Text="" Grid.Row="1" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" FontAttributes="Bold"/>
         <ImageButton x:Name="MultiplayerButton" Source="multim.png" Grid.Row="0" Clicked="Multiplayer_Clicked" Grid.ColumnSpan="2"  Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center" Scale="0.6" BackgroundColor="Transparent" />
 
     </Grid>

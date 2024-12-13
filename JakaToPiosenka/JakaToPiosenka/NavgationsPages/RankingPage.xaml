@@ -10,22 +10,45 @@
     <Frame BorderColor="#696968" BackgroundColor="#696968" Padding="5" Margin="15" CornerRadius="20">
 
         <StackLayout Padding="5" Spacing="15">
+            <Grid>
+                <!-- Definicje kolumn -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.6"/>
+                </Grid.RowDefinitions>
+                <BoxView Color="#d1d1cf" HeightRequest="1" HorizontalOptions="FillAndExpand" Scale="3" Grid.ColumnSpan="4" Grid.Row="3"/>
 
-            <Image Source="zgdulalogo.png" HeightRequest="120" VerticalOptions="End"/>
-            <!-- Nagłówek -->
-            <Label Text="Ranking Graczy" 
+                <Button Text="X" BackgroundColor="Transparent" TextColor="White" FontSize="30" VerticalOptions="Start" HorizontalOptions="End" Clicked="Button_Clicked" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+
+                <Image Source="zgdulalogo.png" Scale="0.7" VerticalOptions="End" Grid.Row="1" Grid.ColumnSpan="4"/>
+
+
+                <!-- Nagłówek -->
+                <Label Text="Ranking Graczy" 
                FontSize="36" 
                TextColor="#e0e0e0"
                HorizontalOptions="Center"
-               Margin="0,-20,0,10" />
+               Margin="0,-20,0,10" 
+               Grid.ColumnSpan="4"
+               Grid.Row="2"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
 
-            <BoxView Color="#d1d1cf" HeightRequest="1" HorizontalOptions="FillAndExpand" Scale="3" Grid.ColumnSpan="4" Grid.Row="1" Margin="0,-15,0,0"/>
+            </Grid>
+           
             <Grid Padding="10" ColumnSpacing="10" BackgroundColor="#adadac">
                 <!-- Definicje kolumn -->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.65*" />
                     <!-- Miejsce -->
-                    <ColumnDefinition Width="1.2*" />
+                    <ColumnDefinition Width="2*" />
                     <!-- Nazwa -->
                     <ColumnDefinition Width="1.3*" />
                     <!-- Liczba gier -->
@@ -52,7 +75,7 @@
                             <!-- Definicje kolumn -->
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3.5*" />
                                 <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
@@ -102,7 +125,7 @@
                        TextColor="#ff4500" 
                        HorizontalOptions="Center"
                        FontAttributes="Bold"/>
-                       <BoxView Color="#d1d1cf" HeightRequest="1" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="4" Grid.Row="1"/>
+                            <BoxView Color="#d1d1cf" HeightRequest="1" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="4" Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

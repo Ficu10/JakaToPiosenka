@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using JakaToPiosenka.HelpClasses;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -6,6 +7,8 @@ namespace JakaToPiosenka
 {
     public partial class RankingPage : ContentPage
     {
+        Sounds soumd = new Sounds();
+
         // Klasa pomocnicza dla graczy z miejscami w rankingu
         public class RankedPlayer
         {
@@ -14,6 +17,10 @@ namespace JakaToPiosenka
             public int Points { get; set; }
             public int GamesNumber { get; set; }
             public Color BackgroundColor { get; set; } // Kolor wiersza
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return false;
         }
 
         // Lista graczy z miejscami
@@ -65,6 +72,15 @@ namespace JakaToPiosenka
 
             // Ustaw BindingContext dla strony
             BindingContext = this;
+        }
+
+        private void Button_Clicked(object sender, System.EventArgs e)
+        {
+            soumd.ClickSound();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Navigation.PopAsync(); // Powrót do poprzedniej strony
+            });
         }
     }
 }

@@ -1,14 +1,24 @@
 ﻿using JakaToPiosenka.HelpClasses;
-using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using JakaToPiosenka.KalamburyClasses;
 using JakaToPiosenka.MusicClasses;
+using SQLite;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.Shapes;
+using Xamarin.Forms.Xaml;
+using static SQLite.SQLite3;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace JakaToPiosenka
 {
@@ -17,86 +27,43 @@ namespace JakaToPiosenka
     {
         Sounds sound = new Sounds();
 
-        // Dictionary dla mapowania tabel na typy
-        private static readonly Dictionary<string, Type> TableTypeMap = new Dictionary<string, Type>
-        {
-            { "AllSongs", typeof(AllSongs) },
-            { "FairyTales", typeof(FairyTales) },
-            { "Pop", typeof(Pop) },
-            { "Rock", typeof(Rock) },
-            { "UsersMusic", typeof(UsersMusic) },
-            { "Rap", typeof(Rap) },
-            { "The80", typeof(The80) },
-            { "The80English", typeof(The80English) },
-            { "The80Polish", typeof(The80Polish) },
-            { "RapEnglish", typeof(RapEnglish) },
-            { "RapPolish", typeof(RapPolish) },
-            { "PopEnglish", typeof(PopEnglish) },
-            { "PopPolish", typeof(PopPolish) },
-            { "RockEnglish", typeof(RockEnglish) },
-            { "RockPolish", typeof(RockPolish) },
-            { "Youtube", typeof(Youtube) },
-            { "Children", typeof(Children) },
-            { "Countries", typeof(Countries) },
-            { "Emotions", typeof(Emotions) },
-            { "FictionalCharacter", typeof(FictionalCharacter) },
-            { "HistoricalCharacter", typeof(HistoricalCharacter) },
-            { "Jobs", typeof(Jobs) },
-            { "Movies", typeof(Movies) },
-            { "Series", typeof(Series) },
-            { "Tales", typeof(Tales) },
-            { "Words", typeof(Words) },
-            { "Carols", typeof(Carols) },
-            { "ChristmasSongs", typeof(ChristmasSongs) },
-            { "Animals", typeof(Animals) },
-            { "AdultMixed", typeof(AdultMixed) },
-            { "Celebrities", typeof(Celebrities) },
-            { "DailyLife", typeof(DailyLife) },
-            { "Poland", typeof(Poland) },
-            { "Rhymes", typeof(Rhymes) },
-            { "ScienceTopics", typeof(ScienceTopics) },
-            { "Sports", typeof(Sports) }
 
-        };
 
         public AddingNewWords()
         {
             InitializeComponent();
 
-            // Wczytaj dane na podstawie trybu gry
-            LoadSongs(MainPage.gameMode);
-        }
 
-        private void LoadSongs(string gameMode)
-        {
-            if (TableTypeMap.TryGetValue(gameMode, out var tableType))
+            SongsCollection.ItemsSource = AllPasswords.connection.Table<Pop>().ToList<Pop>();
+
+            // Sprawdzenie, czy istnieje odpowiedni typ dla bieżącego trybu gry
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
             {
-                try
-                {
-                    // Get the Table method for the specific type
-                    var method = typeof(SQLiteConnection).GetMethod("Table").MakeGenericMethod(tableType);
-                    var query = method.Invoke(AllPasswords.connectionRestart, null);
-                    var list = ((IEnumerable<object>)query).ToList();
+                // Pobranie danych dynamicznie z odpowiedniej tabeli
+                var items = AllPasswords.connectionRestart.GetType()
+                    .GetMethod("Table")?
+                    .MakeGenericMethod(tableType)
+                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
 
-                    // Sort dynamically with null checks
-                    var sortedList = list
-                        .OrderBy(song => tableType.GetProperty("Prompt")?.GetValue(song)?.ToString() ?? string.Empty)
-                        .ThenBy(song => tableType.GetProperty("Title")?.GetValue(song)?.ToString() ?? string.Empty)
+                if (items != null)
+                {
+                    // Posortowanie danych i przypisanie do ItemsSource
+                    SongsCollection.ItemsSource = items
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
                         .ToList();
-
-                    SongsCollection.ItemsSource = sortedList;
-                }
-                catch (Exception ex)
-                {
-                    // Handle errors gracefully
-                    Console.WriteLine($"Error loading songs: {ex.Message}");
-                    SongsCollection.ItemsSource = null; // Clear the collection if an error occurs
                 }
             }
             else
             {
-                SongsCollection.ItemsSource = null; // Clear the collection if gameMode is invalid
+                // Obsługa przypadku, gdy tryb gry nie istnieje
+                SongsCollection.ItemsSource = null;
             }
+
+
+
+
+
         }
 
 
@@ -107,225 +74,329 @@ namespace JakaToPiosenka
             {
                 await Navigation.PushAsync(new BeforeGameKalambury());
             });
+
             return true;
         }
 
         private async void AddSongToList_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
-
-            if (!string.IsNullOrWhiteSpace(NewTitleName.Text) && !string.IsNullOrWhiteSpace(NewPromptName.Text))
+            if (NewTitleName.Text != "" && NewPromptName.Text != "")
             {
-                if (TableTypeMap.TryGetValue(MainPage.gameMode, out var tableType))
-                {
-                    var songData = Activator.CreateInstance(tableType);
-                    tableType.GetProperty("Title").SetValue(songData, NewPromptName.Text);
-                    tableType.GetProperty("Prompt").SetValue(songData, NewTitleName.Text);
 
-                    AllPasswords.connection.Insert(songData);
-                    AllPasswords.connectionRestart.Insert(songData);
 
-                    await Navigation.PushAsync(new AddingNewWords());
-                    NewTitleName.Text = string.Empty;
-                    NewPromptName.Text = string.Empty;
-                    LoadSongs(MainPage.gameMode);
-                }
-                else
+                if (NamesTable.namesTable.ContainsKey(MainPage.gameMode))
                 {
-                    await DisplayAlert("Błąd", "Nieznany tryb gry!", "OK");
+                    var tableType = NamesTable.namesTable[MainPage.gameMode];
+                    var songsData = Activator.CreateInstance(tableType);
+
+                    tableType.GetProperty("Title").SetValue(songsData, NewTitleName.Text);
+                    tableType.GetProperty("Prompt").SetValue(songsData, NewPromptName.Text);
+
+                    AllPasswords.connection.Insert(songsData);
+                    AllPasswords.connectionRestart.Insert(songsData);
+
+
+
+
                 }
+
+                await Navigation.PushAsync(new AddingNewWords());
+                NewTitleName.Text = "";
+                NewPromptName.Text = "";
             }
             else
             {
-                await DisplayAlert("Błąd", "Proszę podać tytuł i kategorię.", "OK");
+                if (MainPage.isMainPage)
+                {
+                    await DisplayAlert("Blad", "Prosze podac autora oraz tytul piosenki", "OK");
+
+                }
+                else
+                {
+                    await DisplayAlert("Blad", "Prosze podac hasło oraz kategorie", "OK");
+                }
             }
+
         }
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
+
             var item = sender as SwipeItem;
-            var song = item.CommandParameter;
+            var emp = item.CommandParameter as AllPasswords;
 
-            if (TableTypeMap.TryGetValue(MainPage.gameMode, out var tableType))
+            Type musicType = GetMusicTypeByGameMode(MainPage.gameMode);
+            if (musicType != null)
             {
-                song = Convert.ChangeType(song, tableType);
-                var title = tableType.GetProperty("Title").GetValue(song).ToString();
-                var prompt = tableType.GetProperty("Prompt").GetValue(song).ToString();
+                emp = item.CommandParameter as AllPasswords;
+                emp = Convert.ChangeType(emp, musicType) as AllPasswords;
+            }
 
-                bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć: {title}?", "Tak", "Nie");
-                if (result)
-                {
-                    sound.DeleteSound();
-                    string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
-                    AllPasswords.connection.Execute(deleteQuery, title, prompt);
-                    AllPasswords.connectionRestart.Execute(deleteQuery, title, prompt);
+            bool result = await DisplayAlert("Usuń", $"Czy chcesz usunąć: {emp.Title}?", "tak", "nie");
+            if (result)
+            {
+                sound.DeleteSound();
+                string titleToRemove = emp.Title;
+                string promptToRemove = emp.Prompt;
 
-                    LoadSongs(MainPage.gameMode);
-                }
+                string deleteQuery = $"DELETE FROM {MainPage.gameMode} WHERE Title = ? AND Prompt = ?";
+                AllPasswords.connection.Execute(deleteQuery, titleToRemove, promptToRemove);
+                AllPasswords.connectionRestart.Execute(deleteQuery, titleToRemove, promptToRemove);
+                await Navigation.PushAsync(new AddingNewWords());
+            }
+
+
+
+        }
+
+        private Type GetMusicTypeByGameMode(string gameMode)
+        {
+            string typeName = gameMode;
+            if (typeName.StartsWith("The80"))
+            {
+                typeName = typeName.Replace("The80", "The80");
+            }
+
+            typeName = char.ToUpper(typeName[0]) + typeName.Substring(1);
+            typeName += gameMode.EndsWith("English") ? "English" : "Polish";
+            typeName = "JakaToPiosenka." + typeName;
+
+            Type type = Type.GetType(typeName);
+            return type;
+        }
+
+
+
+
+        private async void Import_Clicked(object sender, EventArgs e)
+        {
+            sound.ClickSound();
+            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+            if (status == PermissionStatus.Granted)
+            {
+                ImportMethod();
+            }
+            else if (status == PermissionStatus.Denied)
+            {
+                await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
+            }
+            else if (status == PermissionStatus.Unknown)
+            {
+                await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
             }
         }
 
-        private void SearchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        private void Eksport_Clicked(object sender, EventArgs e)
         {
-            string searchText = e.NewTextValue;
+            sound.ClickSound();
 
-            if (TableTypeMap.TryGetValue(MainPage.gameMode, out var tableType))
+            // Sprawdzenie, czy tryb gry istnieje w słowniku
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
             {
-                try
+                // Pobranie danych z tabeli dynamicznie na podstawie typu
+                var tableData = AllPasswords.connectionRestart.GetType()
+                    .GetMethod("Table")?
+                    .MakeGenericMethod(tableType)
+                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
+
+                if (tableData != null)
                 {
-                    // Use reflection to get the Table<T>() method
-                    var method = typeof(SQLiteConnection).GetMethod("Table").MakeGenericMethod(tableType);
+                    // Przygotowanie list dla metody eksportu z jawnych rzutowaniem na string
+                    var prompts = tableData.Select(x => (string)x.Prompt).ToList();
+                    var titles = tableData.Select(x => (string)x.Title).ToList();
 
-                    // Invoke the Table<T>() method dynamically
-                    var query = method.Invoke(AllPasswords.connectionRestart, null);
-
-                    // Cast the result to IEnumerable<object> for processing
-                    var list = ((IEnumerable<object>)query).ToList();
-
-                    // Filter and sort dynamically
-                    var filteredList = list;
-
-                    if (!string.IsNullOrWhiteSpace(searchText))
-                    {
-                        filteredList = list.Where(song =>
-                            (tableType.GetProperty("Prompt")?.GetValue(song)?.ToString()?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) ?? -1) >= 0 ||
-                            (tableType.GetProperty("Title")?.GetValue(song)?.ToString()?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) ?? -1) >= 0)
-                        .ToList();
-                    }
-
-                    filteredList = filteredList
-                        .OrderBy(song => tableType.GetProperty("Prompt")?.GetValue(song)?.ToString())
-                        .ThenBy(song => tableType.GetProperty("Title")?.GetValue(song)?.ToString())
-                        .ToList();
-
-
-                    // Assign the filtered list to the CollectionView
-                    SongsCollection.ItemsSource = filteredList;
-                }
-                catch (Exception ex)
-                {
-                    // Handle errors gracefully
-                    Console.WriteLine($"Error searching songs: {ex.Message}");
-                    SongsCollection.ItemsSource = null;
+                    // Wywołanie metody eksportu
+                    ExportMethod(prompts, titles);
                 }
             }
             else
             {
-                SongsCollection.ItemsSource = null; // Clear the collection if gameMode is invalid
+                // Obsługa przypadku, gdy tryb gry nie istnieje
+                throw new InvalidOperationException($"Invalid game mode: {MainPage.gameMode}");
+            }
+
+        }
+
+
+        private async void ExportMethod(List<string> PromptsList, List<string> songsList)
+        {
+            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+            if (status == PermissionStatus.Granted)
+            {
+                string result = await DisplayPromptAsync("Eksport", "Wpisz nazwę pliku:", "OK", "Anuluj", placeholder: "Wprowadź tekst");
+
+                if (!string.IsNullOrEmpty(result))
+                {
+                    string fileName = result + "Zgadula.txt";
+
+
+                    //string documentsPath = FileSystem.AppDataDirectory;
+                    string documentsPath = "/storage/emulated/0/Documents";
+
+
+
+
+                    string filePath = System.IO.Path.Combine(documentsPath, fileName);
+
+                    using (StreamWriter writer = new StreamWriter(filePath))
+                    {
+                        for (int i = 0; i < PromptsList.Count(); i++)
+                        {
+                            await writer.WriteLineAsync(PromptsList[i] + ";" + songsList[i]);
+                        }
+                    }
+
+                    await Share.RequestAsync(new ShareFileRequest
+                    {
+                        Title = "Eksportuj",
+                        File = new ShareFile(filePath)
+                    });
+                }
+            }
+            else if (status == PermissionStatus.Denied)
+            {
+                await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź w zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
+            }
+            else if (status == PermissionStatus.Unknown)
+            {
+                await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź w zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
+            }
+
+        }
+        private async void ImportMethod()
+        {
+            try
+            {
+                // Wybór pliku
+                var file = await FilePicker.PickAsync();
+                if (file == null || !file.FileName.EndsWith(".txt"))
+                {
+                    await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                    return;
+                }
+
+
+                if (!NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+                {
+                    await App.Current.MainPage.DisplayAlert("Błąd", "Nieznany tryb gry", "OK");
+                    return;
+                }
+
+                // Usunięcie istniejących danych
+                var clearTableMethod = typeof(AllPasswords).GetMethod("ClearTable")?.MakeGenericMethod(tableType);
+                clearTableMethod?.Invoke(null, null);
+
+                // Importowanie danych z pliku
+                using (Stream stream = await file.OpenReadAsync())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] fields = line.Split(';');
+                        if (fields.Length == 2)
+                        {
+                            // Tworzenie nowego obiektu i ustawianie danych
+                            var instance = Activator.CreateInstance(tableType) as AllPasswords;
+                            if (instance != null)
+                            {
+                                instance.Prompt = fields[0];
+                                instance.Title = fields[1];
+
+                                // Wstawianie danych do bazy
+                                var insertDataMethod = typeof(AllPasswords).GetMethod("InsertData")?.MakeGenericMethod(tableType);
+                                insertDataMethod?.Invoke(null, new object[] { instance });
+                            }
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                            return;
+                        }
+                    }
+                }
+
+                await Navigation.PushAsync(new AddingNewWords());
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Błąd", $"Wystąpił problem podczas importu: {ex.Message}", "OK");
+            }
+        }
+
+
+        // Usuwanie wszystkich danych z tabeli
+        private void DeleteAllData(Type tableType)
+        {
+            // Znajdź metodę CreateTable z odpowiednią sygnaturą
+            var createTableMethod = AllPasswords.connection.GetType()
+                .GetMethod("CreateTable", BindingFlags.Public | BindingFlags.Instance)
+                ?.MakeGenericMethod(tableType);
+
+            createTableMethod?.Invoke(AllPasswords.connection, null);
+
+            var createTableRestartMethod = AllPasswords.connectionRestart.GetType()
+                .GetMethod("CreateTable", BindingFlags.Public | BindingFlags.Instance)
+                ?.MakeGenericMethod(tableType);
+
+            createTableRestartMethod?.Invoke(AllPasswords.connectionRestart, null);
+
+            // Znajdź metodę DeleteAll z odpowiednią sygnaturą
+            var deleteAllMethod = AllPasswords.connection.GetType()
+                .GetMethod("DeleteAll", BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null)
+                ?.MakeGenericMethod(tableType);
+
+            deleteAllMethod?.Invoke(AllPasswords.connection, null);
+
+            var deleteAllRestartMethod = AllPasswords.connectionRestart.GetType()
+                .GetMethod("DeleteAll", BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null)
+                ?.MakeGenericMethod(tableType);
+
+            deleteAllRestartMethod?.Invoke(AllPasswords.connectionRestart, null);
+        }
+
+        // Wstawianie danych do tabeli
+        private void InsertData(Type tableType, string prompt, string title)
+        {
+            var instance = Activator.CreateInstance(tableType) as AllPasswords;
+            if (instance != null)
+            {
+                instance.Prompt = prompt;
+                instance.Title = title;
+
+                AllPasswords.connection.Insert(instance);
+                AllPasswords.connectionRestart.Insert(instance);
             }
         }
 
 
 
-        //private async void ExportMethod(List<string> promptsList, List<string> titlesList)
-        //{
-        //    try
-        //    {
-        //        var result = await DisplayPromptAsync("Eksport", "Wpisz nazwę pliku:", "OK", "Anuluj", placeholder: "Wprowadź tekst");
-        //        if (!string.IsNullOrWhiteSpace(result))
-        //        {
-        //            var fileName = $"{result}_JakaToPiosenka.txt";
-        //            var documentsPath = "/storage/emulated/0/Documents";
-        //            var filePath = Path.Combine(documentsPath, fileName);
 
-        //            using (var writer = new StreamWriter(filePath))
-        //            {
-        //                for (int i = 0; i < promptsList.Count; i++)
-        //                {
-        //                    await writer.WriteLineAsync($"{promptsList[i]};{titlesList[i]}");
-        //                }
-        //            }
+        private void SearchEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = e.NewTextValue;
+            // Sprawdzenie, czy istnieje odpowiedni typ dla bieżącego trybu gry
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+            {
+                // Pobranie danych dynamicznie z odpowiedniej tabeli i ustawienie źródła
+                var items = AllPasswords.connectionRestart.GetType()
+                    .GetMethod("Table")?
+                    .MakeGenericMethod(tableType)
+                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
 
-        //            await DisplayAlert("Eksport zakończony", $"Plik zapisano jako {fileName}", "OK");
-
-        //            await Share.RequestAsync(new ShareFileRequest
-        //            {
-        //                Title = "Eksportuj",
-        //                File = new ShareFile(filePath)
-        //            });
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await DisplayAlert("Błąd eksportu", ex.Message, "OK");
-        //    }
-        //}
-
-        //private async void ImportMethod()
-        //{
-        //    try
-        //    {
-        //        // Request permissions to read storage
-        //        PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
-        //        if (status != PermissionStatus.Granted)
-        //        {
-        //            status = await Permissions.RequestAsync<Permissions.StorageRead>();
-        //        }
-
-        //        if (status == PermissionStatus.Granted)
-        //        {
-        //            // Open file picker to select the file
-        //            var file = await FilePicker.PickAsync(new PickOptions
-        //            {
-        //                PickerTitle = "Select a text file",
-        //                FileTypes = FilePickerFileType.PlainText
-        //            });
-
-        //            if (file != null && file.FileName.EndsWith(".txt"))
-        //            {
-        //                // Clear existing records for the current game mode
-        //                if (TableTypeMap.TryGetValue(MainPage.gameMode, out var tableType))
-        //                {
-        //                    AllPasswords.connection.DeleteAll(tableType);
-        //                    AllPasswords.connectionRestart.DeleteAll(tableType);
-
-        //                    using (var stream = await file.OpenReadAsync())
-        //                    using (var reader = new StreamReader(stream))
-        //                    {
-        //                        string line;
-        //                        while ((line = await reader.ReadLineAsync()) != null)
-        //                        {
-        //                            var fields = line.Split(';');
-        //                            if (fields.Length == 2)
-        //                            {
-        //                                // Dynamically create and populate a new object for the current table
-        //                                var newItem = Activator.CreateInstance(tableType);
-        //                                tableType.GetProperty("Prompt")?.SetValue(newItem, fields[0]);
-        //                                tableType.GetProperty("Title")?.SetValue(newItem, fields[1]);
-
-        //                                // Insert into both databases
-        //                                AllPasswords.connection.Insert(newItem);
-        //                                AllPasswords.connectionRestart.Insert(newItem);
-        //                            }
-        //                        }
-        //                    }
-
-        //                    // Reload the collection after import
-        //                    LoadSongs(MainPage.gameMode);
-        //                    await DisplayAlert("Success", "Import completed successfully.", "OK");
-        //                }
-        //                else
-        //                {
-        //                    await DisplayAlert("Error", "Invalid game mode. Cannot import data.", "OK");
-        //                }
-        //            }
-        //            else
-        //            {
-        //                await DisplayAlert("Error", "Invalid file format. Please select a .txt file.", "OK");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            await DisplayAlert("Permission Denied", "Storage access is required to import files.", "OK");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await DisplayAlert("Error", $"An error occurred during import: {ex.Message}", "OK");
-        //    }
-        //}
-
-
+                if (items != null)
+                {
+                    SongsCollection.ItemsSource = items
+                       .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower())).ToList();
+                }
+            }
+            else
+            {
+                // Obsługa przypadku, gdy tryb gry nie istnieje
+                SongsCollection.ItemsSource = null;
+            }
+        }
 
     }
 }

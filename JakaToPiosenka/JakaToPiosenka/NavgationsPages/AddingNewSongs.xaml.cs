@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,267 +27,37 @@ namespace JakaToPiosenka
     {
         Sounds sound = new Sounds();
 
+       
+
         public AddingNewSongs()
         {
             InitializeComponent();
            
 
             SongsCollection.ItemsSource = AllPasswords.connection.Table<Pop>().ToList<Pop>();
-            if (MainPage.isMainPage)
-            {
-                BackgroundColor = Color.FromHex("#77b3d1");
-                SearchEntry.BackgroundColor = Color.FromHex("#a8d6ed");
-                addSongToList.BackgroundColor = Color.FromHex("#0d5b82");
-                NewPromptName.BackgroundColor = Color.FromHex("#a8d6ed");
-                NewTitleName.BackgroundColor = Color.FromHex("#a8d6ed");
 
+            // Sprawdzenie, czy istnieje odpowiedni typ dla bieżącego trybu gry
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+            {
+                // Pobranie danych dynamicznie z odpowiedniej tabeli
+                var items = AllPasswords.connectionRestart.GetType()
+                    .GetMethod("Table")?
+                    .MakeGenericMethod(tableType)
+                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
+
+                if (items != null)
+                {
+                    // Posortowanie danych i przypisanie do ItemsSource
+                    SongsCollection.ItemsSource = items
+                        .OrderBy(song => song.Prompt)
+                        .ThenBy(song => song.Title)
+                        .ToList();
+                }
             }
             else
             {
-                BackgroundColor = Color.FromHex("#dba348");
-                SearchEntry.BackgroundColor = Color.FromHex("#e6c38c");
-                addSongToList.BackgroundColor = Color.FromHex("#fc9d03");
-                NewPromptName.BackgroundColor = Color.FromHex("#e6c38c");
-                NewTitleName.BackgroundColor = Color.FromHex("#e6c38c");
-
-            }
-            switch (MainPage.gameMode)
-            {
-                case "AllSongs":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<AllSongs>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "FairyTales":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<FairyTales>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "Pop":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Pop>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "Rock":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rock>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "UsersMusic":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<UsersMusic>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "Rap":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rap>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "RapPolish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RapPolish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "RapEnglish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RapEnglish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "PopPolish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<PopPolish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "PopEnglish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<PopEnglish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "The80":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "The80Polish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80Polish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "The80English":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80English>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "RockPolish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RockPolish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "RockEnglish":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RockEnglish>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "Youtube":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Youtube>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "Children":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Children>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-                case "Countries":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Countries>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Emotions":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Emotions>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "FictionalCharacter":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<FictionalCharacter>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "HistoricalCharacter":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<HistoricalCharacter>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Jobs":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Jobs>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Movies":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Movies>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Series":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Series>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Tales":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Tales>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Words":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Words>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Carols":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "ChristmasSongs":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Animals":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Animals>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "AdultMixed":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<AdultMixed>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Celebrities":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Celebrities>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "DailyLife":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<DailyLife>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Poland":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Poland>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Rhymes":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rhymes>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "ScienceTopics":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ScienceTopics>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
-                case "Sports":
-                    SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Sports>()
-                        .OrderBy(song => song.Prompt)
-                        .ThenBy(song => song.Title)
-                        .ToList();
-                    break;
-
+                // Obsługa przypadku, gdy tryb gry nie istnieje
+                SongsCollection.ItemsSource = null;
             }
 
 
@@ -312,50 +83,11 @@ namespace JakaToPiosenka
             sound.ClickSound();
             if (NewTitleName.Text != "" && NewPromptName.Text != "")
             {
-                // Define the mapping between game modes and table types
-                Dictionary<string, Type> tableTypeMap = new Dictionary<string, Type>
-                {
-                    { "AllSongs", typeof(AllSongs) },
-                    { "FairyTales", typeof(FairyTales) },
-                    { "Pop", typeof(Pop) },
-                    { "Rock", typeof(Rock) },
-                    { "UsersMusic", typeof(UsersMusic) },
-                    { "Rap", typeof(Rap) },
-                    { "The80", typeof(The80) },
-                    { "The80English", typeof(The80English) },
-                    { "The80Polish", typeof(The80Polish) },
-                    { "RapEnglish", typeof(RapEnglish) },
-                    { "RapPolish", typeof(RapPolish) },
-                    { "PopEnglish", typeof(PopEnglish) },
-                    { "PopPolish", typeof(PopPolish) },
-                    { "RockEnglish", typeof(RockEnglish) },
-                    { "RockPolish", typeof(RockPolish) },
-                    { "Youtube", typeof(Youtube) },
-                    { "Children", typeof(Children) },
-                    { "Countries", typeof(Countries) },
-                    { "Emotions", typeof(Emotions) },
-                    { "FictionalCharacter", typeof(FictionalCharacter) },
-                    { "HistoricalCharacter", typeof(HistoricalCharacter) },
-                    { "Jobs", typeof(Jobs) },
-                    { "Movies", typeof(Movies) },
-                    { "Series", typeof(Series) },
-                    { "Tales", typeof(Tales) },
-                    { "Words", typeof(Words) },
-                    { "Carols", typeof(Carols) },
-                    { "ChristmasSongs", typeof(ChristmasSongs) },
-                    { "Animals", typeof(Animals) },
-                    { "AdultMixed", typeof(AdultMixed) },
-                    { "Celebrities", typeof(Celebrities) },
-                    { "DailyLife", typeof(DailyLife) },
-                    { "Poland", typeof(Poland) },
-                    { "Rhymes", typeof(Rhymes) },
-                    { "ScienceTopics", typeof(ScienceTopics) },
-                    { "Sports", typeof(Sports) }
-                };
+              
 
-                if (tableTypeMap.ContainsKey(MainPage.gameMode))
+                if (NamesTable.namesTable.ContainsKey(MainPage.gameMode))
                 {
-                    var tableType = tableTypeMap[MainPage.gameMode];
+                    var tableType = NamesTable.namesTable[MainPage.gameMode];
                     var songsData = Activator.CreateInstance(tableType);
 
                     tableType.GetProperty("Title").SetValue(songsData, NewTitleName.Text);
@@ -453,78 +185,37 @@ namespace JakaToPiosenka
             {
                 await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
             }
-            ImportMethod();
         }
 
         private void Eksport_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
 
-            if (MainPage.gameMode == "AllSongs")
+            // Sprawdzenie, czy tryb gry istnieje w słowniku
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
             {
-                ExportMethod(AllPasswords.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<AllSongs>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "FairyTales")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<FairyTales>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Pop")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<Pop>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Pop>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Rock")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<Rock>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rock>().ToList().Select(x => x.Title).ToList());
+                // Pobranie danych z tabeli dynamicznie na podstawie typu
+                var tableData = AllPasswords.connectionRestart.GetType()
+                    .GetMethod("Table")?
+                    .MakeGenericMethod(tableType)
+                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
 
+                if (tableData != null)
+                {
+                    // Przygotowanie list dla metody eksportu z jawnych rzutowaniem na string
+                    var prompts = tableData.Select(x => (string)x.Prompt).ToList();
+                    var titles = tableData.Select(x => (string)x.Title).ToList();
+
+                    // Wywołanie metody eksportu
+                    ExportMethod(prompts, titles);
+                }
             }
-            else if (MainPage.gameMode == "UsersMusic")
+            else
             {
-                ExportMethod(AllPasswords.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<UsersMusic>().ToList().Select(x => x.Title).ToList());
+                // Obsługa przypadku, gdy tryb gry nie istnieje
+                throw new InvalidOperationException($"Invalid game mode: {MainPage.gameMode}");
             }
-            else if (MainPage.gameMode == "Rap")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<Rap>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Rap>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RapPolish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RapPolish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RapEnglish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RapEnglish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "PopPolish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<PopPolish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "PopEnglish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<PopEnglish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "The80")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<The80>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "The80English")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<The80English>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80English>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "The80Polish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<The80Polish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RockEnglish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RockEnglish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "RockPolish")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<RockPolish>().ToList().Select(x => x.Title).ToList());
-            }
-            else if (MainPage.gameMode == "Youtube")
-            {
-                ExportMethod(AllPasswords.connectionRestart.Table<Youtube>().ToList().Select(x => x.Prompt).ToList(), AllPasswords.connectionRestart.Table<Youtube>().ToList().Select(x => x.Title).ToList());
-            }
+
         }
 
 
@@ -537,7 +228,7 @@ namespace JakaToPiosenka
 
                 if (!string.IsNullOrEmpty(result))
                 {
-                    string fileName = result + "JakaToPiosenka.txt";
+                    string fileName = result + "Zgadula.txt";
 
 
                     //string documentsPath = FileSystem.AppDataDirectory;
@@ -555,7 +246,6 @@ namespace JakaToPiosenka
                             await writer.WriteLineAsync(PromptsList[i] + ";" + songsList[i]);
                         }
                     }
-                    await App.Current.MainPage.DisplayAlert("Eksport powiódł się", "Plik został wyeksportowany pomyślnie", "OK");
 
                     await Share.RequestAsync(new ShareFileRequest
                     {
@@ -576,509 +266,135 @@ namespace JakaToPiosenka
         }
         private async void ImportMethod()
         {
-            var file = await FilePicker.PickAsync();
-            string fileName = file.FileName;
-
-
-            if (file != null)
+            try
             {
-                if (fileName.EndsWith(".txt"))
+                // Wybór pliku
+                var file = await FilePicker.PickAsync();
+                if (file == null || !file.FileName.EndsWith(".txt"))
                 {
-                    if (MainPage.gameMode == "AllSongs")
-                    {
-                        AllPasswords.connection.DeleteAll<AllSongs>();
-                        AllPasswords.connectionRestart.DeleteAll<AllSongs>();
-                    }
-                    else if (MainPage.gameMode == "FairyTales")
-                    {
-                        AllPasswords.connection.DeleteAll<FairyTales>();
-                        AllPasswords.connectionRestart.DeleteAll<FairyTales>();
-                    }
-                    else if (MainPage.gameMode == "Pop")
-                    {
-                        AllPasswords.connection.DeleteAll<Pop>();
-                        AllPasswords.connectionRestart.DeleteAll<Pop>();
-                    }
-                    else if (MainPage.gameMode == "Rock")
-                    {
-                        AllPasswords.connection.DeleteAll<Rock>();
-                        AllPasswords.connectionRestart.DeleteAll<Rock>();
-                    }
-                    else if (MainPage.gameMode == "UsersMusic")
-                    {
-                        AllPasswords.connection.DeleteAll<UsersMusic>();
-                        AllPasswords.connectionRestart.DeleteAll<UsersMusic>();
-                    }
-                    else if (MainPage.gameMode == "Rap")
-                    {
-                        AllPasswords.connection.DeleteAll<Rap>();
-                        AllPasswords.connectionRestart.DeleteAll<Rap>();
-                    }
-                    else if (MainPage.gameMode == "RapPolish")
-                    {
-                        AllPasswords.connection.DeleteAll<RapPolish>();
-                        AllPasswords.connectionRestart.DeleteAll<RapPolish>();
-                    }
-                    else if (MainPage.gameMode == "RapEnglish")
-                    {
-                        AllPasswords.connection.DeleteAll<RapEnglish>();
-                        AllPasswords.connectionRestart.DeleteAll<RapEnglish>();
-                    }
-                    else if (MainPage.gameMode == "PopPolish")
-                    {
-                        AllPasswords.connection.DeleteAll<PopPolish>();
-                        AllPasswords.connectionRestart.DeleteAll<PopPolish>();
-                    }
-                    else if (MainPage.gameMode == "PopEnglish")
-                    {
-                        AllPasswords.connection.DeleteAll<PopEnglish>();
-                        AllPasswords.connectionRestart.DeleteAll<PopEnglish>();
-                    }
-                    else if (MainPage.gameMode == "The80")
-                    {
-                        AllPasswords.connection.DeleteAll<The80>();
-                        AllPasswords.connectionRestart.DeleteAll<The80>();
-                    }
-                    else if (MainPage.gameMode == "The80English")
-                    {
-                        AllPasswords.connection.DeleteAll<The80English>();
-                        AllPasswords.connectionRestart.DeleteAll<The80English>();
-                    }
-                    else if (MainPage.gameMode == "The80Polish")
-                    {
-                        AllPasswords.connection.DeleteAll<The80Polish>();
-                        AllPasswords.connectionRestart.DeleteAll<The80Polish>();
-                    }
-                    else if (MainPage.gameMode == "RockEnglish")
-                    {
-                        AllPasswords.connection.DeleteAll<RockEnglish>();
-                        AllPasswords.connectionRestart.DeleteAll<RockEnglish>();
-                    }
-                    else if (MainPage.gameMode == "RockPolish")
-                    {
-                        AllPasswords.connection.DeleteAll<RockPolish>();
-                        AllPasswords.connectionRestart.DeleteAll<RockPolish>();
-                    }
-                    else if (MainPage.gameMode == "Youtube")
-                    {
-                        AllPasswords.connection.DeleteAll<Youtube>();
-                        AllPasswords.connectionRestart.DeleteAll<Youtube>();
-                    }
+                    await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                    return;
+                }
 
-                    using (Stream stream = await file.OpenReadAsync())
+
+                if (!NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+                {
+                    await App.Current.MainPage.DisplayAlert("Błąd", "Nieznany tryb gry", "OK");
+                    return;
+                }
+
+                // Usunięcie istniejących danych
+                var clearTableMethod = typeof(AllPasswords).GetMethod("ClearTable")?.MakeGenericMethod(tableType);
+                clearTableMethod?.Invoke(null, null);
+
+                // Importowanie danych z pliku
+                using (Stream stream = await file.OpenReadAsync())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        using (StreamReader reader2 = new StreamReader(stream))
+                        string[] fields = line.Split(';');
+                        if (fields.Length == 2)
                         {
-
-                            string line;
-
-
-                            while ((line = reader2.ReadLine()) != null)
+                            // Tworzenie nowego obiektu i ustawianie danych
+                            var instance = Activator.CreateInstance(tableType) as AllPasswords;
+                            if (instance != null)
                             {
-                                string[] fields = line.Split(';');
-                                if (fields.Length == 2)
-                                {
-                                    if (MainPage.gameMode == "AllSongs")
-                                    {
-                                        var songsData = new AllSongs
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "FairyTales")
-                                    {
-                                        var songsData = new FairyTales
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "Pop")
-                                    {
-                                        var songsData = new Pop
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "Rock")
-                                    {
-                                        var songsData = new Rock
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "UsersMusic")
-                                    {
-                                        var songsData = new UsersMusic
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "Rap")
-                                    {
-                                        var songsData = new Rap
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "RapPolish")
-                                    {
-                                        var songsData = new RapPolish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "RapEnglish")
-                                    {
-                                        var songsData = new RapEnglish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "PopPolish")
-                                    {
-                                        var songsData = new PopPolish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "PopEnglish")
-                                    {
-                                        var songsData = new PopEnglish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "The80")
-                                    {
-                                        var songsData = new The80
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "The80English")
-                                    {
-                                        var songsData = new The80English
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "The80Polish")
-                                    {
-                                        var songsData = new The80Polish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "RockEnglish")
-                                    {
-                                        var songsData = new RockEnglish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "RockPolish")
-                                    {
-                                        var songsData = new RockPolish
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
-                                    else if (MainPage.gameMode == "Youtube")
-                                    {
-                                        var songsData = new Youtube
-                                        {
-                                            Title = fields[1],
-                                            Prompt = fields[0]
-                                        };
-                                        AllPasswords.connection.Insert(songsData);
-                                        AllPasswords.connectionRestart.Insert(songsData);
-                                    }
+                                instance.Prompt = fields[0];
+                                instance.Title = fields[1];
 
-
-
-                                    else
-                                    {
-                                        await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
-                                        break;
-                                    }
-                                }
+                                // Wstawianie danych do bazy
+                                var insertDataMethod = typeof(AllPasswords).GetMethod("InsertData")?.MakeGenericMethod(tableType);
+                                insertDataMethod?.Invoke(null, new object[] { instance });
                             }
-
-                            await Navigation.PushAsync(new AddingNewSongs());
-
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
+                            return;
                         }
                     }
                 }
-                else
-                {
-                    await App.Current.MainPage.DisplayAlert("Błąd pliku", "Nieprawidłowy format pliku", "OK");
-                }
 
+                await Navigation.PushAsync(new AddingNewSongs());
             }
-
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Błąd", $"Wystąpił problem podczas importu: {ex.Message}", "OK");
+            }
         }
+
+
+        // Usuwanie wszystkich danych z tabeli
+        private void DeleteAllData(Type tableType)
+        {
+            // Znajdź metodę CreateTable z odpowiednią sygnaturą
+            var createTableMethod = AllPasswords.connection.GetType()
+                .GetMethod("CreateTable", BindingFlags.Public | BindingFlags.Instance)
+                ?.MakeGenericMethod(tableType);
+
+            createTableMethod?.Invoke(AllPasswords.connection, null);
+
+            var createTableRestartMethod = AllPasswords.connectionRestart.GetType()
+                .GetMethod("CreateTable", BindingFlags.Public | BindingFlags.Instance)
+                ?.MakeGenericMethod(tableType);
+
+            createTableRestartMethod?.Invoke(AllPasswords.connectionRestart, null);
+
+            // Znajdź metodę DeleteAll z odpowiednią sygnaturą
+            var deleteAllMethod = AllPasswords.connection.GetType()
+                .GetMethod("DeleteAll", BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null)
+                ?.MakeGenericMethod(tableType);
+
+            deleteAllMethod?.Invoke(AllPasswords.connection, null);
+
+            var deleteAllRestartMethod = AllPasswords.connectionRestart.GetType()
+                .GetMethod("DeleteAll", BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null)
+                ?.MakeGenericMethod(tableType);
+
+            deleteAllRestartMethod?.Invoke(AllPasswords.connectionRestart, null);
+        }
+
+        // Wstawianie danych do tabeli
+        private void InsertData(Type tableType, string prompt, string title)
+        {
+            var instance = Activator.CreateInstance(tableType) as AllPasswords;
+            if (instance != null)
+            {
+                instance.Prompt = prompt;
+                instance.Title = title;
+
+                AllPasswords.connection.Insert(instance);
+                AllPasswords.connectionRestart.Insert(instance);
+            }
+        }
+
+
 
 
         private void SearchEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             string searchText = e.NewTextValue;
-
-            if (string.IsNullOrEmpty(searchText))
+            // Sprawdzenie, czy istnieje odpowiedni typ dla bieżącego trybu gry
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
             {
-                switch (MainPage.gameMode)
-                {
-                    case "AllSongs":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<AllSongs>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "FairyTales":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<FairyTales>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "Pop":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Pop>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "Rock":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rock>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "UsersMusic":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<UsersMusic>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "Rap":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rap>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "RapPolish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RapPolish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "RapEnglish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RapEnglish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "PopPolish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<PopPolish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "PopEnglish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<PopEnglish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "The80":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "The80Polish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80Polish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "The80English":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80English>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "RockPolish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RockPolish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "RockEnglish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RockEnglish>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "Youtube":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Youtube>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
-                    case "Carols":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
+                // Pobranie danych dynamicznie z odpowiedniej tabeli i ustawienie źródła
+                var items = AllPasswords.connectionRestart.GetType()
+                    .GetMethod("Table")?
+                    .MakeGenericMethod(tableType)
+                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
 
-                    case "ChristmasSongs":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
-                            .OrderBy(song => song.Prompt)
-                            .ThenBy(song => song.Title)
-                            .ToList();
-                        break;
+                if (items != null)
+                {
+                    SongsCollection.ItemsSource = items
+                       .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower())).ToList();
                 }
             }
             else
             {
-                switch (MainPage.gameMode)
-                {
-                    case "AllSongs":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<AllSongs>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "FairyTales":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<FairyTales>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "Pop":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Pop>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "Rock":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rock>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "UsersMusic":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<UsersMusic>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "Rap":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Rap>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "RapPolish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RapPolish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "RapEnglish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RapEnglish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "PopPolish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<PopPolish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "PopEnglish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<PopEnglish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "The80":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "The80Polish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80Polish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "The80English":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<The80English>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "RockPolish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RockPolish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "RockEnglish":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<RockEnglish>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "Youtube":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Youtube>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                    case "Carols":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<Carols>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-
-                    case "ChristmasSongs":
-                        SongsCollection.ItemsSource = AllPasswords.connectionRestart.Table<ChristmasSongs>()
-                            .Where(song => song.Prompt.ToLower().Contains(searchText.ToLower()) || song.Title.ToLower().Contains(searchText.ToLower()))
-                            .ToList();
-                        break;
-                }
+                // Obsługa przypadku, gdy tryb gry nie istnieje
+                SongsCollection.ItemsSource = null;
             }
         }
 

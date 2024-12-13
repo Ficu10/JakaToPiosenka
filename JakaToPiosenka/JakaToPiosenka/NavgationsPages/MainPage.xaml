@@ -129,11 +129,11 @@
         <ContentView x:Name="MenuView" 
     BackgroundColor="#919191" 
     IsVisible="False" 
-    HorizontalOptions="StartAndExpand" 
-    VerticalOptions="StartAndExpand"
+    HorizontalOptions="Fill" 
+    VerticalOptions="Fill"
     TranslationX="-200"
-    Grid.RowSpan="3"
-    Margin="0,0,0,0">
+    Grid.RowSpan="4"
+    Margin="0,0,0,-20">
             <StackLayout Grid.RowSpan="2">
                 <Button Text="X" FontSize="20" TextColor="White" Clicked="OnCloseMenuClicked" Margin="150,0,0,0" BackgroundColor="Transparent" />
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>

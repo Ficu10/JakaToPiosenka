@@ -36,6 +36,10 @@ public class Multiplayer
     {
         connection.Update(player);
     }
+    public static Multiplayer GetPlayerByName(string name)
+    {
+        return connection.Table<Multiplayer>().FirstOrDefault(player => player.Name == name);
+    }
 
 }
 

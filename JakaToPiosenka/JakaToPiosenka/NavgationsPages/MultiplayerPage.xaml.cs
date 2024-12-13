@@ -50,7 +50,9 @@ namespace JakaToPiosenka
             _sounds.ClickSound();
             if (!string.IsNullOrWhiteSpace(PlayerNameEntry.Text))
             {
-                if (Players.Any(p => p.Name == PlayerNameEntry.Text))
+                // Sprawdź w bazie danych
+                var existingPlayer = Multiplayer.GetPlayerByName(PlayerNameEntry.Text);
+                if (existingPlayer != null || Players.Any(p => p.Name == PlayerNameEntry.Text))
                 {
                     await DisplayAlert("Błąd", "Podana nazwa jest zajęta.", "OK");
                 }
@@ -72,6 +74,7 @@ namespace JakaToPiosenka
                 await DisplayAlert("Błąd", "Wpisz nazwę gracza.", "OK");
             }
         }
+
 
         private async void OnRemovePlayerClicked(object sender, EventArgs e)
         {

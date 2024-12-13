@@ -79,5 +79,22 @@ namespace JakaToPiosenka.HelpClasses
         {
             Console.WriteLine($"Starting game for {GetType().Name}");
         }
+
+        // Tworzy tabelę i usuwa wszystkie dane
+        public static void ClearTable<T>() where T : new()
+        {
+            connection.CreateTable<T>();
+            connection.DeleteAll<T>();
+
+            connectionRestart.CreateTable<T>();
+            connectionRestart.DeleteAll<T>();
+        }
+
+        // Wstawia dane do tabel
+        public static void InsertData<T>(T data) where T : new()
+        {
+            connection.Insert(data);
+            connectionRestart.Insert(data);
+        }
     }
 }
