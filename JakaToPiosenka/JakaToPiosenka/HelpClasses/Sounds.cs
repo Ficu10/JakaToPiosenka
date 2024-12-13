@@ -18,9 +18,16 @@ namespace JakaToPiosenka.HelpClasses
 
         void PlaySound(Stream fileName)
         {
-            var audio = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-            audio.Load(fileName);
-            audio.Play();
+            if (SettingsPage.isMuted)
+            {
+            }
+            else
+            {
+                var audio = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                audio.Load(fileName);
+                audio.Play();
+            }
+          
         }
         public void WinningSound()
         {

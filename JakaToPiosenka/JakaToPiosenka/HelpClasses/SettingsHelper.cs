@@ -54,6 +54,8 @@ namespace JakaToPiosenka.HelpClasses
         {
             Set(key, value.ToString());
         }
+
+
     }
 
     // Klasa do reprezentowania ustawień

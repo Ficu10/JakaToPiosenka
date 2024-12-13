@@ -108,7 +108,7 @@ namespace JakaToPiosenka
                 // Resetuj pola i wróć do listy
                 NewTitleName.Text = string.Empty;
                 NewPromptName.Text = string.Empty;
-                await Navigation.PushAsync(new AddingNewSongs());
+                await Navigation.PushAsync(new AddingNewWords());
             }
             else
             {

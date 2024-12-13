@@ -18,26 +18,9 @@ namespace JakaToPiosenka
         public static ObservableCollection<Multiplayer> SortedPlayers { get; set; } = new ObservableCollection<Multiplayer>();
 
         Sounds sound = new Sounds();
-        public BeforeGameKalambury()
-        {
-            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
 
 
-            InitializeComponent();
-
-            SettingsPage.Time1 = SettingsHelper.GetValue("Time1", 15);
-            SettingsPage.Time2 = SettingsHelper.GetValue("Time2", 30);
-            SettingsPage.Time3 = SettingsHelper.GetValue("Time3", 45);
-            SettingsPage.Time4 = SettingsHelper.GetValue("Time4", 60);
-            SettingsPage.WordsNumber = SettingsHelper.GetValue("WordsNumber", 10);
-
-
-            Time15.Text = SettingsPage.Time1.ToString();
-            Time30.Text = SettingsPage.Time2.ToString();
-            Time45.Text = SettingsPage.Time3.ToString();
-            Time60.Text = SettingsPage.Time4.ToString();
-
-            Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
+        Dictionary<string, (string, string)> gameModeMappings = new Dictionary<string, (string, string)>
             {
 
                 { "Children", ("Dla Dzieci", "CKal.jpg") },
@@ -59,6 +42,25 @@ namespace JakaToPiosenka
                 { "ScienceTopics", ("Nauka", "Science.jpg") },
                 { "Sports", ("Sport", "Sports.jpg") },
             };
+
+        public BeforeGameKalambury()
+        {
+            MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
+
+
+            InitializeComponent();
+
+            SettingsPage.Time1 = SettingsHelper.GetValue("Time1", 15);
+            SettingsPage.Time2 = SettingsHelper.GetValue("Time2", 30);
+            SettingsPage.Time3 = SettingsHelper.GetValue("Time3", 45);
+            SettingsPage.Time4 = SettingsHelper.GetValue("Time4", 60);
+            SettingsPage.WordsNumber = SettingsHelper.GetValue("WordsNumber", 10);
+
+
+            Time15.Text = SettingsPage.Time1.ToString();
+            Time30.Text = SettingsPage.Time2.ToString();
+            Time45.Text = SettingsPage.Time3.ToString();
+            Time60.Text = SettingsPage.Time4.ToString();
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
             {
@@ -114,33 +116,59 @@ namespace JakaToPiosenka
         }
 
 
+        bool CheckIsEmpty()
+        {
+            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+            {
+                int rowCount = AllPasswords.connectionRestart.ExecuteScalar<int>($"SELECT COUNT(*) FROM {MainPage.gameMode}");
+                return rowCount == 0;
+            }
+            return true; // Jeśli tryb gry jest nieprawidłowy, traktuj tabelę jako pustą
+        }
+
+        async Task HandleTimeClickAsync(int timeSetting)
+        {
+            if (CheckIsEmpty())
+            {
+
+                if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
+                {
+                    await DisplayAlert(
+                   "Baza danych pusta",
+                   $"Tabela {mappings.Item1} jest pusta. Uzupełnij dane, aby kontynuować.",
+                   "OK"
+               );
+                }
+               
+            }
+            else
+            {
+                sound.ClickSound();
+                BeforeGamePage.timeChanger = timeSetting;
+                await Navigation.PushAsync(new RulesPage());
+            }
+        }
+
         async void Time15_Clicked(object sender, EventArgs e)
         {
-            sound.ClickSound();
-            BeforeGamePage.timeChanger = SettingsPage.Time1;
-            await Navigation.PushAsync(new RulesPage());
+            await HandleTimeClickAsync(SettingsPage.Time1);
         }
 
         async void Time30_Clicked(object sender, EventArgs e)
         {
-            sound.ClickSound();
-            BeforeGamePage.timeChanger = SettingsPage.Time2;
-            await Navigation.PushAsync(new RulesPage());
+            await HandleTimeClickAsync(SettingsPage.Time2);
         }
 
         async void Time45_Clicked(object sender, EventArgs e)
         {
-            sound.ClickSound();
-            BeforeGamePage.timeChanger = SettingsPage.Time3;
-            await Navigation.PushAsync(new RulesPage());
+            await HandleTimeClickAsync(SettingsPage.Time3);
         }
 
         async void Time60_Clicked(object sender, EventArgs e)
         {
-            sound.ClickSound();
-            BeforeGamePage.timeChanger = SettingsPage.Time4;
-            await Navigation.PushAsync(new RulesPage());
+            await HandleTimeClickAsync(SettingsPage.Time4);
         }
+
 
         private async void AddNewSongs_Clicked(object sender, EventArgs e)
         {

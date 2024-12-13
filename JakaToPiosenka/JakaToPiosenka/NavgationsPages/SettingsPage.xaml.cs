@@ -15,6 +15,7 @@ namespace JakaToPiosenka
         public static int Time3;
         public static int Time4;
         public static int WordsNumber;
+        public static bool isMuted;
 
         public SettingsPage()
         {
@@ -203,5 +204,26 @@ namespace JakaToPiosenka
 
             return true;
         }
+
+
+
+
+        private void MuteButton_Clicked(object sender, EventArgs e)
+        {
+            isMuted = !isMuted; // Toggle the state
+
+            if (isMuted)
+            {
+                MuteButton.Source = "mute.png";
+            }
+            else
+            {
+                MuteButton.Source = "unmute.png";
+            }
+
+            // Save the state to the database
+            MuteHelper.SaveMuteState(isMuted);
+        }
+
     }
 }
