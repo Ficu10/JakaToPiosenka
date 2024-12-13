@@ -18,6 +18,7 @@ namespace JakaToPiosenka.HelpClasses
 
         void PlaySound(Stream fileName)
         {
+            SettingsPage.isMuted = MuteHelper.GetMuteState();
             if (SettingsPage.isMuted)
             {
             }

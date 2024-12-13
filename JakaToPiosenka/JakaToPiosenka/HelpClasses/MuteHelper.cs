@@ -1,48 +1,49 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
 namespace JakaToPiosenka.HelpClasses
 {
     public static class MuteHelper
     {
-        private static readonly SQLiteConnection db;
+        private static readonly SQLiteConnection connection;
 
+        // Static constructor to initialize the database
         static MuteHelper()
         {
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Settings.db3");
-            db = new SQLiteConnection(dbPath);
-            db.CreateTable<AppSettings>();
-           
+            connection = new SQLiteConnection(dbPath);
+            connection.CreateTable<MuteSetting>();
         }
 
+        // Get the mute state (default to false if not set)
         public static bool GetMuteState()
         {
-            var setting = db.Table<AppSettings>().FirstOrDefault();
+            var setting = connection.Find<MuteSetting>("Mute");
             return setting?.IsMuted ?? false; // Default to false if no record exists
         }
 
-        public static void SaveMuteState(bool isMuted)
+        // Set the mute state
+        public static void SetMuteState(bool isMuted)
         {
-            var setting = db.Table<AppSettings>().FirstOrDefault();
-            if (setting == null)
+            var existingSetting = connection.Find<MuteSetting>("Mute");
+            if (existingSetting != null)
             {
-                db.Insert(new AppSettings { IsMuted = isMuted });
+                existingSetting.IsMuted = isMuted;
+                connection.Update(existingSetting);
             }
             else
             {
-                setting.IsMuted = isMuted;
-                db.Update(setting);
+                connection.Insert(new MuteSetting { Key = "Mute", IsMuted = isMuted });
             }
         }
     }
-    public class AppSettings
+
+    // Class to represent the mute setting
+    public class MuteSetting
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey]
+        public string Key { get; set; }
         public bool IsMuted { get; set; }
     }
-
 }

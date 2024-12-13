@@ -104,7 +104,14 @@ namespace JakaToPiosenka
                     ResetGameState();
 
                     // Przekieruj do BeforeGamePage
-                    await Navigation.PushAsync(new BeforeGamePage());
+                    if (MainPage.isMainPage)
+                    {
+                        await Navigation.PushAsync(new BeforeGamePage());
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new BeforeGameKalambury());
+                    }
                 }
             });
 

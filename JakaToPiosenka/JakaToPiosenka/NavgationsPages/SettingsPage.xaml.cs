@@ -39,6 +39,9 @@ namespace JakaToPiosenka
             Time3 = SettingsHelper.GetValue("Time3", 45);
             Time4 = SettingsHelper.GetValue("Time4", 60);
             WordsNumber = SettingsHelper.GetValue("WordsNumber", 10);
+            isMuted = MuteHelper.GetMuteState();
+            UpdateMuteButton();
+
         }
 
         private void SaveSetting(string key, int value)
@@ -207,23 +210,22 @@ namespace JakaToPiosenka
 
 
 
-
         private void MuteButton_Clicked(object sender, EventArgs e)
         {
-            isMuted = !isMuted; // Toggle the state
+            _sounds.ClickSound();
+            // Toggle the mute state
+            isMuted = !isMuted;
 
-            if (isMuted)
-            {
-                MuteButton.Source = "mute.png";
-            }
-            else
-            {
-                MuteButton.Source = "unmute.png";
-            }
+            // Save the new state to the database
+            MuteHelper.SetMuteState(isMuted);
 
-            // Save the state to the database
-            MuteHelper.SaveMuteState(isMuted);
+            // Update the button appearance
+            UpdateMuteButton();
         }
 
+        private void UpdateMuteButton()
+        {
+            MuteButton.Source = isMuted ? "mute.png" : "unmute.png";
+        }
     }
 }
