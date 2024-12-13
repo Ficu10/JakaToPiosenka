@@ -14,6 +14,7 @@ using System.Runtime.InteropServices;
 using JakaToPiosenka.HelpClasses;
 using JakaToPiosenka.KalamburyClasses;
 using JakaToPiosenka.MusicClasses;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace JakaToPiosenka
 {
@@ -24,7 +25,7 @@ namespace JakaToPiosenka
         public static bool isMainPage = true;
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 1750; // Maximum scroll position
+        private double maxScrollPosition = 1350; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public MainPage()
@@ -33,7 +34,6 @@ namespace JakaToPiosenka
            
             MessagingCenter.Send(new OrientationMessage { IsLandscape = false }, "SetOrientation");
             InitializeComponent();
-
             if (MultiplayerPage.isMultiplayerEnabled)
             {
                 MultiplayerButton.IsVisible = true;
@@ -95,6 +95,7 @@ namespace JakaToPiosenka
 
         }
 
+      
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
             sound.ClickSound();
@@ -296,5 +297,77 @@ namespace JakaToPiosenka
             sound.ClickSound();
             await Navigation.PushAsync(new RankingPage());
         }
+        private async void Logo_Clicked(object sender, EventArgs e)
+        {
+            Logo.IsEnabled= false;
+            sound.Drum(); // Play the drum sound
+
+            // List of buttons and image buttons to animate
+            var buttons = new List<Xamarin.Forms.VisualElement> // Explicitly use Xamarin.Forms.VisualElement
+    {
+        AllSongsButton,
+        RockButton,
+        PopButton,
+        DisneyButton,
+        RapButton,
+        UsersMusicButton,
+        The80Button,
+        Koledy,
+        The80PolishButton,
+        RockPolishButton,
+        RockEnglishButton,
+        RapPolishButton,
+        RapEnglishButton,
+        PopPolishButton,
+        PopEnglishButton,
+        The80English,
+        Christmas_Songs,
+        Logo,
+    };
+
+            double beatDuration = 470; // 470ms for a beat
+
+            // Scale and sync to the rhythm
+            for (int i = 0; i < 7; i++)
+            {
+                await Task.WhenAll(buttons.Select(button =>
+                    button.ScaleTo(0.8, (uint)(beatDuration / 2), Easing.CubicOut)));
+                await Task.WhenAll(buttons.Select(button =>
+                    button.ScaleTo(1.1, (uint)(beatDuration / 2), Easing.CubicIn)));
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                await Task.WhenAll(buttons.Select(button =>
+                    button.ScaleTo(0.8, (uint)(beatDuration / 8), Easing.CubicOut)));
+                await Task.WhenAll(buttons.Select(button =>
+                    button.ScaleTo(1.1, (uint)(beatDuration / 8), Easing.CubicIn)));
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                await Task.WhenAll(buttons.Select(button =>
+                    button.ScaleTo(0.8, (uint)(beatDuration / 2), Easing.CubicOut)));
+                await Task.WhenAll(buttons.Select(button =>
+                    button.ScaleTo(1.1, (uint)(beatDuration / 2), Easing.CubicIn)));
+            }
+
+            // Final scaling effect
+            await Task.WhenAll(buttons.Select(button => button.ScaleTo(1.3, 200, Easing.CubicOut)));
+            await Task.WhenAll(buttons.Select(button => button.ScaleTo(1.05, 200, Easing.CubicIn)));
+
+            // Rotate all buttons
+            await Task.WhenAll(buttons.Select(button => button.RotateTo(360, 500))); // Rotate all to 360 degrees
+            await Logo.ScaleTo(1.3, 100, Easing.CubicInOut);
+            foreach (var button in buttons)
+            {
+                button.Rotation = 0; // Reset rotation angle
+            }
+            Logo.IsEnabled = true;
+        }
+
+
+
+
     }
 }

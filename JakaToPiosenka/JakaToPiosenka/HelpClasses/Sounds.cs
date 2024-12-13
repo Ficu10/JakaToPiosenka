@@ -87,5 +87,16 @@ namespace JakaToPiosenka.HelpClasses
             Stream fileName = GetStreamFromFile("toggle.mp3");
             PlaySound(fileName);
         }
+
+        public void Bomb()
+        {
+            Stream fileName = GetStreamFromFile("bomba.mp3");
+            PlaySound(fileName);
+        }
+        public void Drum()
+        {
+            Stream fileName = GetStreamFromFile("drum.mp3");
+            PlaySound(fileName);
+        }
     }
 }

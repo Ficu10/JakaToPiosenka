@@ -21,7 +21,7 @@ namespace JakaToPiosenka
         public static string gameMode = "allSongs";
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 1650; // Maximum scroll position
+        private double maxScrollPosition = 1350; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public KalamburyPage()
@@ -39,7 +39,7 @@ namespace JakaToPiosenka
             }
 
         }
-
+       
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
             sound.ClickSound();
@@ -261,5 +261,104 @@ namespace JakaToPiosenka
             sound.ClickSound();
             await Navigation.PushAsync(new RankingPage());
         }
+
+        private async void Logo_Clicked(object sender, EventArgs e)
+        {
+            sound.Bomb();
+            Logo.IsEnabled = false;
+
+            // List of other buttons
+            var otherButtons = new List<ImageButton>
+    {
+        dladzieciButton, emocjeButton, filmyButton, bajkiButton, zawodyButton, AnimalsButton,
+        AdultMixed, PolandButton, ScienceTopicsButton, netflixButton, panstwaButton,
+        przyslowiaButton, fictionButton, postaciehistoryczne, CelebritiesButton, DailyLifeButton,
+        RhymesButton, SportsButton
+    };
+
+            await Logo.ScaleTo(0.6, 500, Easing.CubicIn);
+
+            // Add a short "shake" effect by quickly scaling up and down
+            await Logo.ScaleTo(0.7, 80, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 80, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 80, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 80, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 80, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 80, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 70, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 70, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 70, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 70, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 70, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 70, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 70, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 70, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 60, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 60, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 60, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 60, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 60, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 60, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 60, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 60, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 50, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 50, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 50, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 50, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 50, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 50, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 50, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 50, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 40, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 40, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 40, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 40, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.7, 30, Easing.CubicOut);
+            await Logo.ScaleTo(0.65, 30, Easing.CubicIn);
+            await Logo.ScaleTo(0.65, 1000, Easing.CubicOut);
+
+            // Move other buttons outward
+            foreach (var button in otherButtons)
+            {
+                var randomX = new Random().Next(-1000, 1000); // Random X movement
+                var randomY = new Random().Next(-1000, 1000); // Random Y movement
+                _ = button.TranslateTo(randomX, randomY, 500, Easing.CubicOut);
+            }
+
+            // Scale Logo up
+            await Logo.ScaleTo(1.6, 500, Easing.CubicOut);
+
+            // Wait and scale Logo down
+            await Logo.ScaleTo(1.3, 100, Easing.CubicIn);
+
+            // Bring other buttons back to original positions
+            foreach (var button in otherButtons)
+            {
+                _ = button.TranslateTo(0, 0, 2000, Easing.CubicOut);
+            }
+
+            // Rotate Logo
+            await Logo.RotateTo(360, 1500); // Rotate to 360 degrees in 1.5 seconds
+            Logo.Rotation = 0; // Reset rotation angle
+
+            Logo.IsEnabled = true;
+        }
+
     }
 }

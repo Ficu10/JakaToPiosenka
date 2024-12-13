@@ -49,6 +49,8 @@ namespace JakaToPiosenka
 
 
             InitializeComponent();
+            StartRotation();
+
 
             SettingsPage.Time1 = SettingsHelper.GetValue("Time1", 15);
             SettingsPage.Time2 = SettingsHelper.GetValue("Time2", 30);
@@ -79,7 +81,14 @@ namespace JakaToPiosenka
             }
         }
 
-
+        private async void StartRotation()
+        {
+            while (true) // Loop to keep rotating
+            {
+                await RotatingImage.RotateTo(360, 8000); // Rotate to 360 degrees in 1 second
+                RotatingImage.Rotation = 0; // Reset rotation angle
+            }
+        }
         public void LoadAndDisplayPlayers(ObservableCollection<Multiplayer> sortedPlayers, Label playerNameLabel, SelectionChangedEventArgs e = null)
         {
             // Pobierz i posortuj graczy

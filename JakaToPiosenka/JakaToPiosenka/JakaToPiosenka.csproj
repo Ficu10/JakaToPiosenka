@@ -16,9 +16,11 @@
     <None Remove="Rap.txt" />
     <None Remove="Rock.txt" />
     <None Remove="Sounds\badScoreSound.wav" />
+    <None Remove="Sounds\bomba.mp3" />
     <None Remove="Sounds\clickSound.wav" />
     <None Remove="Sounds\countdownSound.wav" />
     <None Remove="Sounds\deleteSound.wav" />
+    <None Remove="Sounds\drum.mp3" />
     <None Remove="Sounds\goodScoreSound.wav" />
     <None Remove="Sounds\loseSound.wav" />
     <None Remove="Sounds\mediumScoreSound.wav" />
@@ -65,6 +67,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Sounds\bomba.mp3" />
+    <EmbeddedResource Include="Sounds\drum.mp3" />
     <EmbeddedResource Include="Sounds\goodScoreSound.wav" />
     <EmbeddedResource Include="Sounds\mediumScoreSound.wav" />
     <EmbeddedResource Include="Sounds\clickSound.wav" />
