@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using JakaToPiosenka.HelpClasses;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,21 +31,14 @@ namespace JakaToPiosenka
                 Resut.Text = $"Twój wynik to {Game.pointsCounter}/{SettingsPage.WordsNumber}";
             }
 
-            // Ustawienie dźwięku w zależności od wyniku
+            // Play sound based on score
             PlayScoreSound();
 
+            // Animate the songs
+            _ = AnimateSongsAsync();
 
-
-            // Przygotowanie danych dla ListView z kolorami komórek
-            var songsWithColors = PrepareSongsWithColors();
-
-            // Przypisanie danych do ListView
-            myListView.ItemsSource = songsWithColors;
-
-            // Resetowanie licznika punktów
+            // Reset game state
             ResetGameState();
-
-
         }
 
         public void AddGamesAndPoints(ObservableCollection<Multiplayer> sortedPlayers)
@@ -157,6 +151,64 @@ namespace JakaToPiosenka
         }
 
         /// <summary>
+        /// Animates the sequential reveal of songs in the ListView, with scrolling starting from the third item.
+        /// </summary>
+        /// <returns></returns>
+        private async Task AnimateSongsAsync()
+        {
+            // Clear the ListView initially
+            myListView.ItemsSource = null;
+
+            var songsWithColors = PrepareSongsWithColors();
+            var displayedSongs = new ObservableCollection<SongItem>();
+
+            myListView.ItemsSource = displayedSongs;
+
+            // Populate the ListView with songs
+            foreach (var song in songsWithColors)
+            {
+                displayedSongs.Add(song);
+            }
+
+            // Initial setup: make all items covered (invisible)
+            for (int i = 0; i < songsWithColors.Count; i++)
+            {
+                var viewCell = myListView.TemplatedItems[i] as ViewCell;
+                if (viewCell?.View != null)
+                {
+                    var cellView = viewCell.View;
+                    cellView.Opacity = 0; // Start fully transparent
+                    cellView.Scale = 0.8; // Start slightly smaller
+                }
+            }
+
+            // Sequentially uncover items with animations
+            // Sequentially uncover items with animations
+            for (int i = 0; i < songsWithColors.Count; i++)
+            {
+                var viewCell = myListView.TemplatedItems[i] as ViewCell;
+                if (viewCell?.View != null)
+                {
+                    if (i > 1) // Third item (zero-based index)
+                    {
+                        myListView.ScrollTo(displayedSongs[i], ScrollToPosition.Center, true);
+                    }
+                    await Task.Delay(200); // Adjust for pacing
+
+                    var cellView = viewCell.View;
+
+                    // Animate the opacity and scale for reveal effect
+                    await cellView.FadeTo(1, 100, Easing.CubicInOut); // Fade in
+                    await cellView.ScaleTo(1.4, 300, Easing.CubicOut); // Scale up
+                    await cellView.ScaleTo(1.0, 300, Easing.CubicIn); // Return to normal size
+                }
+
+                // Delay before revealing the next item
+                await Task.Delay(450); // Adjust for pacing
+            }
+        }
+
+        /// <summary>
         /// Zablokowanie przycisku "Wstecz".
         /// </summary>
         protected override bool OnBackButtonPressed()
@@ -171,5 +223,8 @@ namespace JakaToPiosenka
         }
     }
 
+   
 
-}
+    }
+
+
