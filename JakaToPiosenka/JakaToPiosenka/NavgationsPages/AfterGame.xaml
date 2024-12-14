@@ -9,7 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"/>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.7*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.5*"/>
@@ -25,54 +25,93 @@
 
         <BoxView Grid.Row="0" Grid.ColumnSpan="5" BackgroundColor="#0d5b82" Scale="1.3" />
         <ImageButton IsEnabled="False" Source="Logo.png" Scale="1.3" Grid.ColumnSpan="5" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
-        <Button  CornerRadius="10" Grid.Row="2" Grid.ColumnSpan="5" Grid.RowSpan="2" IsEnabled="False" Margin="18" BackgroundColor="#011452"/>
+        
+        
+        <StackLayout  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
+
+                <Frame Grid.Row="1"
+             Grid.Column="1"
+             Grid.ColumnSpan="3"
+             Margin="80,50,80,0"
+             Scale="1.5"
+             Padding="0"
+             x:Name="ScoreBackground">   
+                <Frame.Background>
+                    <!-- Radial Gradient -->
+                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                        <GradientStop Color="#D2A679" Offset="0.0" />
+                        <!-- Bright gold center -->
+                        <GradientStop Color="#A0522D" Offset="0.5" />
+                        <!-- Gold -->
+                        <GradientStop Color="#8B4513" Offset="1.0" />
+                        <!-- Darker gold edges -->
+                    </RadialGradientBrush>
+                </Frame.Background>
+
+                <!-- Content -->
+                <Grid>
+                    <!-- Centered Label -->
+                    <Label x:Name="Result"
+                       Text="{Binding CurrentScore}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       TextColor="White" />
 
 
-        <ListView x:Name="myListView" 
-          Grid.Column="0" 
-          VerticalScrollBarVisibility="Never" 
-          Grid.ColumnSpan="5" 
-          Grid.Row="2" 
-          Grid.RowSpan="2" 
-          BackgroundColor="#0d5b82" 
-          Margin="30" 
-          RowHeight="100" 
-          SeparatorVisibility="Default" 
-          SeparatorColor="White">
+                </Grid>
+            </Frame>
+
+           
+            <Label x:Name="PlayerName" FontSize="40" Text="Adaś" HorizontalTextAlignment="Center" Margin="0,10,0,-50"/>
+        </StackLayout>
+      
+
+        <ListView x:Name="myListView"
+     Grid.Column="0"
+     Grid.Row="2"
+     Grid.ColumnSpan="5"
+     Grid.RowSpan="2"
+     BackgroundColor="Transparent"
+     Margin="30"
+     RowHeight="60"
+     SeparatorVisibility="Default"
+     SeparatorColor="Transparent"
+     SelectionMode="None"
+     VerticalScrollBarVisibility="Never">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid BackgroundColor="{Binding CellColor}">
-                            <!-- Dynamiczne tło -->
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="2*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Title}" 
-                           IsEnabled="False" 
-                           TextColor="White" 
-                           HorizontalTextAlignment="Center" 
-                           Grid.Column="0" 
-                           Grid.ColumnSpan="3" 
-                           Grid.Row="0" 
-                           FontSize="25" 
-                           VerticalOptions="Center" 
-                           HorizontalOptions="Center" />
+                        <!-- Item Container -->
+                        <Grid Margin="1">
+                            <!-- Gradient Background -->
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="{Binding StartColor}" Offset="0.0" />
+                                    <GradientStop Color="{Binding MiddleColor}" Offset="0.5" />
+                                    <GradientStop Color="{Binding EndColor}" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+
+                            <!-- Title Label -->
+                            <Label Text="{Binding Title}"
+                      TextColor="White"
+                      FontSize="25"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      HorizontalTextAlignment="Center"
+                      VerticalTextAlignment="Center"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
         <Label x:Name="NextPlayer" Text="" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="4" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" />
 
         <ImageButton BackgroundColor="Transparent" x:Name="RestartGame" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Clicked="RestartGame_Clicked" Margin="25" Source="jeszczeRaz.png" />
         <ImageButton BackgroundColor="Transparent" x:Name="Menu" Grid.ColumnSpan="2"  Grid.Row="4" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" Clicked="Menu_Clicked" Margin="25" Source="menug.png"/>
-
-        <Label x:Name="Resut" Text="" Grid.Row="1" Grid.ColumnSpan="5" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" FontAttributes="Bold"/>
         <ImageButton x:Name="MultiplayerButton" Source="multim.png" Grid.Row="0" Clicked="Multiplayer_Clicked" Grid.ColumnSpan="2"  Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center" Scale="0.6" BackgroundColor="Transparent" />
 
     </Grid>
