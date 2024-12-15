@@ -278,10 +278,28 @@ namespace JakaToPiosenka
             await Navigation.PushAsync(new RankingPage());
         }
 
+        private void EnableLogoClick()
+        {
+            if (LogoClick.GestureRecognizers.Count == 0)
+            {
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += Logo_Clicked;
+                LogoClick.GestureRecognizers.Add(tapGestureRecognizer);
+            }
+        }
+
+        private void DisableLogoClick()
+        {
+            if (LogoClick.GestureRecognizers.Count > 0)
+            {
+                LogoClick.GestureRecognizers.Clear();
+            }
+        }
+
         private async void Logo_Clicked(object sender, EventArgs e)
         {
             sound.Bomb();
-            Logo.IsEnabled = false;
+            DisableLogoClick();
 
             // List of other buttons
             var otherButtons = new List<ImageButton>
@@ -373,7 +391,7 @@ namespace JakaToPiosenka
             await Logo.RotateTo(360, 1500); // Rotate to 360 degrees in 1.5 seconds
             Logo.Rotation = 0; // Reset rotation angle
 
-            Logo.IsEnabled = true;
+            EnableLogoClick();
         }
 
     }

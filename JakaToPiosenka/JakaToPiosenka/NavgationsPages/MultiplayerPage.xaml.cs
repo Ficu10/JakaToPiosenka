@@ -13,6 +13,7 @@ namespace JakaToPiosenka
         public ObservableCollection<Multiplayer> Players { get; set; } = new ObservableCollection<Multiplayer>();
         int numPlayers = 0;
         public static bool isMultiplayerEnabled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
+        int clickNum = 0;
 
         public MultiplayerPage()
         {
@@ -31,6 +32,8 @@ namespace JakaToPiosenka
 
             // Ustaw przełącznik na podstawie wartości w bazie danych
             MultiplayerSwitch.IsToggled = SettingsHelper.Get("MultiplayerEnabled", "false") == "true";
+            clickNum++;
+
 
             BindingContext = this;
             NumberOfPlayer.Text = numPlayers.ToString();
@@ -98,7 +101,10 @@ namespace JakaToPiosenka
 
         private void OnMultiplayerSwitchToggled(object sender, ToggledEventArgs e)
         {
-            _sounds.Toggle();
+            if (clickNum>0)
+            {
+                _sounds.Toggle();
+            }
             if (e.Value) // Włączony tryb multiplayer
             {
                 if (Players.Count < 2)
@@ -106,7 +112,6 @@ namespace JakaToPiosenka
                     MultiplayerSwitch.IsToggled = false;
                     return;
                 }
-
                 SettingsHelper.Set("MultiplayerEnabled", "true");
                 isMultiplayerEnabled = true;
             }

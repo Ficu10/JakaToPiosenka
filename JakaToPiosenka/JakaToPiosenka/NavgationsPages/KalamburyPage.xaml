@@ -76,7 +76,7 @@
                     <!-- Dark brown (edges) -->
                 </RadialGradientBrush>
             </Frame.Background>
-            <Image  Source="kalamburyLogo.png"
+            <Image x:Name="LogoClick"  Source="kalamburyLogo.png"
            Aspect="AspectFit"
            Scale="1.3"
            VerticalOptions="Center"

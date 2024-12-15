@@ -314,9 +314,29 @@ namespace JakaToPiosenka
             sound.ClickSound();
             await Navigation.PushAsync(new RankingPage());
         }
+
+        private void EnableLogoClick()
+        {
+            if (LogoClick.GestureRecognizers.Count == 0)
+            {
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += Logo_Clicked;
+                LogoClick.GestureRecognizers.Add(tapGestureRecognizer);
+            }
+        }
+
+        private void DisableLogoClick()
+        {
+            if (LogoClick.GestureRecognizers.Count > 0)
+            {
+                LogoClick.GestureRecognizers.Clear();
+            }
+        }
+
+
         private async void Logo_Clicked(object sender, EventArgs e)
         {
-            Logo.IsEnabled= false;
+            DisableLogoClick();
             sound.Drum(); // Play the drum sound
 
             // List of buttons and image buttons to animate
@@ -380,7 +400,7 @@ namespace JakaToPiosenka
             {
                 button.Rotation = 0; // Reset rotation angle
             }
-            Logo.IsEnabled = true;
+            EnableLogoClick();
         }
 
 
