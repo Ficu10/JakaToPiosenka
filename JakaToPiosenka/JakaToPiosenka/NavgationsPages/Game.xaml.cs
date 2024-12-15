@@ -46,8 +46,14 @@ namespace JakaToPiosenka
             ShowGame();
         }
 
+        public void AccStart()
+        {
+            Accelerometer.Start(SensorSpeed.Game);
+            Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
+        }
         public void Dispose()
         {
+            Accelerometer.Stop();
             Accelerometer.ReadingChanged -= Accelerometer_ReadingChanged;
         }
         private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
@@ -63,11 +69,6 @@ namespace JakaToPiosenka
             {
                 if (x <= 0.6 && y < 0.2 && z > 0.6)
                 {
-                    sounds.WinningSound();
-                    BackgroundImageSource = "green.jpg";
-                    SongTitle.Text = "Dobrze";
-                    Time.IsVisible = false;
-                    TitlePrompt.IsVisible = false;
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
                     goodAnswer = true;
@@ -75,11 +76,6 @@ namespace JakaToPiosenka
                 }
                 else if (z < -0.6 && x < 0.9)
                 {
-                    sounds.LosingSound();
-                    BackgroundImageSource = "red.jpg";
-                    SongTitle.Text = "Brak odpowiedzi";
-                    Time.IsVisible = false;
-                    TitlePrompt.IsVisible = false;
                     WrongAnswearButton.IsEnabled = false;
                     endOfQuestion = true;
                     answered = true;
@@ -113,6 +109,7 @@ namespace JakaToPiosenka
                     {
                         await Navigation.PushAsync(new BeforeGameKalambury());
                     }
+                    sounds.StopAllSounds();
                 }
             });
 
@@ -198,14 +195,14 @@ namespace JakaToPiosenka
         public async void StartGame(List<string> PromptsList, List<string> songsList, List<string> PromptsListReset, List<string> songsListReset)
         {
             sounds.CountdownSound();
-            answered = true;
+            Dispose();
             await Task.Delay(3000);
-            answered = false;
             songsFromGame.Clear();
             Random r = new Random();
 
             while (gameCounter > 0)
             {
+                AccStart();
                 // Przywróć dane, jeśli lista jest pusta
                 if (PromptsList.Count < 1)
                 {
@@ -236,7 +233,7 @@ namespace JakaToPiosenka
 
                 while (newGame)
                 {
-                    Device.BeginInvokeOnMainThread(() =>
+                    Device.BeginInvokeOnMainThread(async () =>
                     {
                         WrongAnswearButton.IsEnabled = true;
                         TitlePrompt.IsVisible = true;
@@ -249,7 +246,6 @@ namespace JakaToPiosenka
 
                         if (seconds < 1)
                         {
-                            sounds.LosingSound();
                             endOfQuestion = true;
                         }
 
@@ -277,6 +273,7 @@ namespace JakaToPiosenka
 
                             if (goodAnswer)
                             {
+                                sounds.WinningSound();
                                 endOfQuestion = false;
                                 pointsCounter++;
                                 goodAnswer = false;
@@ -286,6 +283,7 @@ namespace JakaToPiosenka
                             }
                             else
                             {
+                                sounds.LosingSound();
                                 endOfQuestion = false;
                                 BackgroundImageSource = "red.jpg";
                                 SongTitle.Text = "Brak odpowiedzi";
@@ -296,7 +294,7 @@ namespace JakaToPiosenka
 
                             if (gameCounter == 0)
                             {
-                                Dispose();
+                                await Task.Delay(500);
                                 Accelerometer.Stop();
                                 Device.BeginInvokeOnMainThread(async () =>
                                 {
@@ -310,27 +308,29 @@ namespace JakaToPiosenka
                                     }
                                 });
                             }
+                            Dispose();
                         }
                     });
 
-                    await Task.Delay(1000);
+                    await Task.Delay(500);
                 }
             }
         }
 
 
-        private void WrongAnswearButton_Clicked(object sender, EventArgs e)
+        private async void WrongAnswearButton_Clicked(object sender, EventArgs e)
         {
             if (answered == false)
             {
-                sounds.LosingSound();
                 BackgroundImageSource = "red.jpg";
                 SongTitle.Text = "Brak odpowiedzi";
                 Time.IsVisible = false;
                 TitlePrompt.IsVisible = false;
                 WrongAnswearButton.IsEnabled = false;
                 endOfQuestion = true;
+                Dispose();
             }
+            await Task.Delay(500);
 
         }
 

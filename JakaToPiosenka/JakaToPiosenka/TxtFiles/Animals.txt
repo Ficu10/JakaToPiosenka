@@ -1,94 +1,94 @@
-ocean;wieloryb
-las;lis
-sawanna;lew
-rzeka;krokodyl
-góry;kozica
-pustynia;wielbłąd
-biegun północny;niedźwiedź polarny
-ocean;rekin
-jezioro;żaba
-sawanna;słoń
-las;sarna
-rzeka;hipopotam
-pustynia;skorpion
-góry;orzeł
-biegun południowy;pingwin
-ocean;delfin
-sawanna;gepard
-las;wiewiórka
-rzeka;żółw
-pustynia;jaszczurka
-góry;jelen
-biegun północny;foka
-ocean;kałamarnica
-jezioro;ryba
-sawanna;zebra
-las;niedźwiedź
-rzeka;anakonda
-pustynia;fenek
-góry;koziorożec
-biegun południowy;foka
-ocean;meduza
-jezioro;kaczka
-sawanna;struś
-las;bóbr
-rzeka;aligator
-pustynia;antylopa
-góry;śnieżna pantera
-biegun północny;walrus
-ocean;koral
-jezioro;krab
-sawanna;hiena
-las;jelonek
-rzeka;krewetka
-pustynia;waran
-góry;muflon
 biegun południowy;albatros
-ocean;płaszczka
-jezioro;karp
-sawanna;nosorożec
-las;zając
-rzeka;manat
-pustynia;dromader
-góry;kozioł
-biegun północny;lis polarny
-ocean;ślimak morski
-jezioro;rybitwa
-sawanna;bawół
-las;dzik
-rzeka;pirania
-pustynia;kobra
-góry;wilk
-biegun południowy;orzeł morski
-ocean;krab morski
-jezioro;sum
-sawanna;gazela
-las;borsuk
-rzeka;krokodyl nilowy
-pustynia;szakal
-góry;wiewiórka ziemna
-biegun północny;sowa śnieżna
-ocean;ryba młot
-jezioro;węgorz
-sawanna;antylopa gnu
-las;sowa
-rzeka;karp koi
-pustynia;królik pustynny
-góry;zając bielak
+biegun południowy;foka
 biegun południowy;fulmar
-ocean;konik morski
-jezioro;pstrąg
-sawanna;pantera
-las;jarząbek
-rzeka;wydra
-pustynia;szarańcza
-góry;ptak skalny
-biegun północny;borsuk arktyczny
-ocean;langusta
-jezioro;kormoran
-sawanna;czapla
-las;łoś
-rzeka;rekinek słodkowodny
-pustynia;kangur rudzik
-góry;orlik
 biegun południowy;meduza antarktyczna
+biegun południowy;orzeł morski
+biegun południowy;pingwin
+biegun północny;borsuk arktyczny
+biegun północny;foka
+biegun północny;lis polarny
+biegun północny;niedźwiedź polarny
+biegun północny;sowa śnieżna
+biegun północny;walrus
+góry;jelen
+góry;kozica
+góry;koziorożec
+góry;kozioł
+góry;muflon
+góry;orlik
+góry;orzeł
+góry;ptak skalny
+góry;wiewiórka ziemna
+góry;wilk
+góry;zając bielak
+góry;śnieżna pantera
+jezioro;kaczka
+jezioro;karp
+jezioro;kormoran
+jezioro;krab
+jezioro;pstrąg
+jezioro;ryba
+jezioro;rybitwa
+jezioro;sum
+jezioro;węgorz
+jezioro;żaba
+las;borsuk
+las;bóbr
+las;dzik
+las;jarząbek
+las;jelonek
+las;lis
+las;niedźwiedź
+las;sarna
+las;sowa
+las;wiewiórka
+las;zając
+las;łoś
+ocean;delfin
+ocean;kałamarnica
+ocean;konik morski
+ocean;koral
+ocean;krab morski
+ocean;langusta
+ocean;meduza
+ocean;płaszczka
+ocean;rekin
+ocean;ryba młot
+ocean;wieloryb
+ocean;ślimak morski
+pustynia;antylopa
+pustynia;dromader
+pustynia;fenek
+pustynia;jaszczurka
+pustynia;kangur rudzik
+pustynia;kobra
+pustynia;królik pustynny
+pustynia;skorpion
+pustynia;szakal
+pustynia;szarańcza
+pustynia;waran
+pustynia;wielbłąd
+rzeka;aligator
+rzeka;anakonda
+rzeka;hipopotam
+rzeka;karp koi
+rzeka;krewetka
+rzeka;krokodyl
+rzeka;krokodyl nilowy
+rzeka;manat
+rzeka;pirania
+rzeka;rekinek słodkowodny
+rzeka;wydra
+rzeka;żółw
+sawanna;antylopa gnu
+sawanna;bawół
+sawanna;czapla
+sawanna;gazela
+sawanna;gepard
+sawanna;hiena
+sawanna;lew
+sawanna;nosorożec
+sawanna;pantera
+sawanna;struś
+sawanna;słoń
+sawanna;zebra

@@ -1,90 +1,90 @@
-Golden Life;Oprócz(błękitnego nieba)
-Eric Clapton;Tears in Heaven
-Myslovitz;Długość dźwięku samotności
-Myslovitz;Scenariusz dla moich sąsiadów
-Myslovitz;Peggy Brown
-Happysad;Zanim pójdę
-Republika;Mamona
-Republika;Telefony
-Wilki;Nie Stało Się Nic
-Wilki;Baśka
-Kombii;Słodkiego miłego życia
-Urszula;Koń na Biegunach
-Urszula;Dmuchawce, latawce
-Luxtorpeda;Autystyczny
-Maanam;Cykady na Cykladach
-Maanam;Kocham Cię, kochanie moje
+AC/DC;Highway To Hell
+Beatles;Here Comes the Sun
+Beatles;Hey Jude
+Beatles;I Want To Hold Your Hand
+Beatles;Let It Be
+Beatles;Please Mr. Postman
+Beatles;Twist and Shout
+Beatles;Yesterday
+Billy Talent;Devil in a Midnight Mass
+Billy Talent;Devil on My Shoulder
+Billy Talent;Fallen Leaves
+Billy Talent;Red Flag
+Billy Talent;Rusted from the Rain
+Billy Talent;Surrender
+Bob Dylan;Knockin' on heaven's door
+Bon Jovi;It's My Life
+Budka Suflera;Bal wszystkich świętych
+Budka Suflera;Jolka, Jolka pamiętasz
+Budka Suflera;Takie Tango
 Czerwone Gitary;Ciągle pada
-Kobranocka;Kocham Cię jak Irlandię
-Lady Pank;Zawsze Tam Gdzie Ty
-Lady Pank;Kryzysowa Narzeczona
-Lady Pank;Tańcz głupia, tańcz
-Lady Pank;Mniej niż Zero
-Lady Pank;Stacja Warszawa
 Czesław Niemen;Dziwny jest ten świat
 Dżem;Wehikuł czasu
 Dżem;Whisky
-Budka Suflera;Jolka, Jolka pamiętasz
-Budka Suflera;Takie Tango
-Budka Suflera;Bal wszystkich świętych
-Perfect;Nie płacz Ewka
-Perfect;Wszystko ma swój czas 
-Perfect;Chcemy być sobą
-Perfect;Autobiografia 
-Perfect;Kołysanka dla nieznajomej
-Perfect;Ale w koło jest wesoło
-Bob Dylan;Knockin' on heaven's door
-Rammstein;DEUTSCHLAND
-Rammstein;Du Hast
-Rammstein;Sonne
-Oasis;Wonderwall 
-Panic! at the Disco;Girls / Girls / Boys
-Panic! at the Disco;High Hopes
-Panic! at the Disco;Let's Kill Tonight
-Pink Floyd;High Hopes
-Pink Floyd;Another brick in the wall
-Red Hot Chili Peppers;Californication
-Bon Jovi;It's My Life
-The Cranberries;Zombie
-Metallica;Nothing Else Matters
-Metallica;Enter Sandman
-Metallica;Master of Puppets
-Guns N' Roses;Sweet Child O' Mine
-Guns N' Roses;Knockin' On Heaven's Door
-The Doors;Riders On The Storm
-System of a Down;Chop Suey
-System of a Down;Aerials
-System of a Down;Lonely Day
+Eric Clapton;Tears in Heaven
+Golden Life;Oprócz(błękitnego nieba)
+Green Day;American Idiot
 Green Day;Boulevard of Broken Dreams
 Green Day;Holiday
 Green Day;Wake Me Up When September Ends
-Green Day;American Idiot
-Linking Park;Numb
-Linking Park;What I've Done
+Guns N' Roses;Knockin' On Heaven's Door
+Guns N' Roses;Sweet Child O' Mine
+Happysad;Zanim pójdę
+Kobranocka;Kocham Cię jak Irlandię
+Kombii;Słodkiego miłego życia
+Lady Pank;Kryzysowa Narzeczona
+Lady Pank;Mniej niż Zero
+Lady Pank;Stacja Warszawa
+Lady Pank;Tańcz głupia, tańcz
+Lady Pank;Zawsze Tam Gdzie Ty
 Linking Park;Castle of Glas
 Linking Park;In The End
+Linking Park;Numb
 Linking Park;Somewhere I Belong
+Linking Park;What I've Done
+Luxtorpeda;Autystyczny
+Maanam;Cykady na Cykladach
+Maanam;Kocham Cię, kochanie moje
+Metallica;Enter Sandman
+Metallica;Master of Puppets
+Metallica;Nothing Else Matters
+Myslovitz;Długość dźwięku samotności
+Myslovitz;Peggy Brown
+Myslovitz;Scenariusz dla moich sąsiadów
 Nirvana;Smells Like Teen Spirit
+Oasis;Wonderwall
+Panic! at the Disco;Girls / Girls / Boys
+Panic! at the Disco;High Hopes
+Panic! at the Disco;Let's Kill Tonight
+Perfect;Ale w koło jest wesoło
+Perfect;Autobiografia
+Perfect;Chcemy być sobą
+Perfect;Kołysanka dla nieznajomej
+Perfect;Nie płacz Ewka
+Perfect;Wszystko ma swój czas
+Pink Floyd;Another brick in the wall
+Pink Floyd;High Hopes
+Queen;Bohemian Rhapsody
+Queen;Don't Stop Me Now
 Queen;Good Old-Fashioned Lover Boy
+Queen;I Want to Break Free
 Queen;Killer Queen
 Queen;Love of My Life
-Queen;The Show Must Go On
 Queen;Radio Ga Ga
-Queen;I Want to Break Free
-Queen;Don't Stop Me Now
-Queen;Bohemian Rhapsody
+Queen;The Show Must Go On
 Queen;We Will Rock You
-Beatles;Please Mr. Postman
-Beatles;Yesterday
-Beatles;Twist and Shout
-Beatles;I Want To Hold Your Hand
-Beatles;Let It Be
-Beatles;Hey Jude
-Beatles;Here Comes the Sun
-Billy Talent;Fallen Leaves
-Billy Talent;Red Flag
-Billy Talent;Surrender
-Billy Talent;Rusted from the Rain
-Billy Talent;Devil in a Midnight Mass
-Billy Talent;Devil on My Shoulder
-AC/DC;Highway To Hell
+Rammstein;DEUTSCHLAND
+Rammstein;Du Hast
+Rammstein;Sonne
+Red Hot Chili Peppers;Californication
+Republika;Mamona
+Republika;Telefony
+System of a Down;Aerials
+System of a Down;Chop Suey
+System of a Down;Lonely Day
+The Cranberries;Zombie
+The Doors;Riders On The Storm
+Urszula;Dmuchawce, latawce
+Urszula;Koń na Biegunach
+Wilki;Baśka
+Wilki;Nie Stało Się Nic

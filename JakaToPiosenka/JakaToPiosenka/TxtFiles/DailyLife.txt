@@ -1,90 +1,90 @@
-czynność;gotowanie obiadu
-czynność;sprzątanie domu
-czynność;zakupy spożywcze
-czynność;pranie ubrań
-czynność;zmywanie naczyń
-czynność;prasowanie
+czynność;chodzenie na zakupy
 czynność;czytanie książek
-czynność;oglądanie telewizji
-czynność;spacer z psem
-czynność;rozmowa z rodziną
-rzecz;lodówka
-rzecz;telewizor
-rzecz;pralka
-rzecz;żelazko
-rzecz;stół kuchenny
-rzecz;kanapa
-rzecz;dywan
-rzecz;telefon
-rzecz;laptop
-rzecz;rower
+czynność;dbanie o zdrowie
+czynność;gotowanie na parze
+czynność;gotowanie obiadu
+czynność;gra na instrumentach
+czynność;gra w gry planszowe
 czynność;korzystanie z telefonu
-czynność;planowanie dnia
+czynność;malowanie lub rysowanie
+czynność;medytacja
+czynność;naprawy domowe
+czynność;odkurzanie
+czynność;odrabianie lekcji
+czynność;oglądanie filmów
+czynność;oglądanie telewizji
 czynność;opieka nad dziećmi
+czynność;organizacja dokumentów
+czynność;pielęgnacja roślin
+czynność;pisanie dziennika
+czynność;pisanie wiadomości
+czynność;planowanie dnia
+czynność;pranie ubrań
+czynność;prasowanie
+czynność;przeglądanie internetu
+czynność;relaks w wannie
+czynność;robienie kawy
+czynność;robienie zakupów online
 czynność;robienie śniadania
+czynność;rozmowa z rodziną
+czynność;rozwiązywanie krzyżówek
+czynność;sortowanie śmieci
+czynność;spacer z psem
+czynność;sprzątanie domu
+czynność;spędzanie czasu z przyjaciółmi
+czynność;słuchanie muzyki
+czynność;wychodzenie do parku
+czynność;zabawa z dziećmi
+czynność;zabawy z dziećmi
+czynność;zakupy spożywcze
+czynność;zakładanie ogrodu
+czynność;zmywanie naczyń
+rzecz;album fotograficzny
+rzecz;butelka na wodę
+rzecz;czajnik
+rzecz;czajnik elektryczny
+rzecz;deska do krojenia
+rzecz;drukarka
+rzecz;dywan
+rzecz;garnek
+rzecz;gitara
+rzecz;głośnik
+rzecz;kanapa
+rzecz;klawiatura
+rzecz;klej
+rzecz;klucz francuski
+rzecz;koc
+rzecz;komputer
+rzecz;kostka do gry
+rzecz;kołdra
 rzecz;krzesło
 rzecz;książka
-rzecz;poduszka
-rzecz;kołdra
-czynność;pielęgnacja roślin
-czynność;odkurzanie
-czynność;relaks w wannie
-rzecz;wanna
-rzecz;lustro
-rzecz;szafa
-rzecz;czajnik
-czynność;chodzenie na zakupy
-czynność;spędzanie czasu z przyjaciółmi
-czynność;pisanie wiadomości
-rzecz;klawiatura
-rzecz;drukarka
-rzecz;zegar
-czynność;odrabianie lekcji
-czynność;organizacja dokumentów
-czynność;zabawy z dziećmi
-czynność;robienie kawy
 rzecz;kubek
-rzecz;talerz
-rzecz;czajnik elektryczny
 rzecz;lampka nocna
-czynność;malowanie lub rysowanie
-czynność;rozwiązywanie krzyżówek
-czynność;słuchanie muzyki
-rzecz;słuchawki
-rzecz;głośnik
-rzecz;album fotograficzny
-czynność;oglądanie filmów
-czynność;wychodzenie do parku
-rzecz;plecak
-rzecz;butelka na wodę
-rzecz;koc
-czynność;dbanie o zdrowie
-czynność;medytacja
-czynność;robienie zakupów online
-rzecz;komputer
-rzecz;smartwatch
-rzecz;notatnik
-czynność;zabawa z dziećmi
-czynność;pisanie dziennika
-czynność;naprawy domowe
-rzecz;śrubokręt
-rzecz;klucz francuski
-rzecz;klej
-czynność;gra na instrumentach
-rzecz;gitara
-rzecz;pianino
-rzecz;skrzypce
-czynność;zakładanie ogrodu
-czynność;gotowanie na parze
-rzecz;garnek
-rzecz;patelnia
-rzecz;deska do krojenia
-czynność;sortowanie śmieci
-czynność;przeglądanie internetu
-rzecz;router
+rzecz;laptop
+rzecz;lodówka
+rzecz;lustro
 rzecz;modem
 rzecz;monitor
-czynność;gra w gry planszowe
-rzecz;plansza do gry
-rzecz;kostka do gry
+rzecz;notatnik
+rzecz;patelnia
+rzecz;pianino
 rzecz;pionki
+rzecz;plansza do gry
+rzecz;plecak
+rzecz;poduszka
+rzecz;pralka
+rzecz;router
+rzecz;rower
+rzecz;skrzypce
+rzecz;smartwatch
+rzecz;stół kuchenny
+rzecz;szafa
+rzecz;słuchawki
+rzecz;talerz
+rzecz;telefon
+rzecz;telewizor
+rzecz;wanna
+rzecz;zegar
+rzecz;śrubokręt
+rzecz;żelazko

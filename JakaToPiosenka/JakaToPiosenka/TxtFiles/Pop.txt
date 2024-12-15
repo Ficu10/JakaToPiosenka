@@ -137,8 +137,8 @@ Rihanna;Only Girl (In the World)
 Rihanna;Umbrella
 Rihanna;We Found Love
 Rihanna;Where Have You Been
-Sam Smith;I'm Not the Only One
 Sam Smith;I Know I'm Not the Only One
+Sam Smith;I'm Not the Only One
 Sam Smith;Stay with Me
 Sam Smith;Too Good at Goodbyes
 Sam Smith;Writing's on the Wall

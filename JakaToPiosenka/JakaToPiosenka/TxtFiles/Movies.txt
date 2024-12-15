@@ -1,73 +1,140 @@
-Filmy;Skazani na Shawshank
-Filmy;Forrest Gump
-Filmy;Pulp Fiction
-Filmy;Ojciec Chrzestny
-Filmy;Władca Pierścieni: Powrót Króla
-Filmy;Mroczny Rycerz
-Filmy;Titanic
-Filmy;Avatar
-Filmy;Incepcja
-Filmy;Matrix
-Filmy;Fight Club
-Filmy;Gwiezdne Wojny: Nowa Nadzieja
-Filmy;Jurassic Park
-Filmy;Gladiator
-Filmy;Piraci z Karaibów: Klątwa Czarnej Perły
-Filmy;Spider-Man: Bez drogi do domu
-Filmy;Avengers: Koniec gry
-Filmy;Iron Man
-Filmy;Czarna Pantera
-Filmy;Deadpool
-Filmy;Joker
-Filmy;Mad Max: Na drodze gniewu
-Filmy;Obcy: Ósmy pasażer Nostromo
-Filmy;Braveheart - Waleczne Serce
-Filmy;Terminator 2: Dzień Sądu
-Filmy;Powrót do Przyszłości
-Filmy;To Wspaniałe Życie
-Filmy;Siedem
-Filmy;Schindler's List
-Filmy;Amelia
-Filmy;La La Land
-Filmy;Parasite
-Filmy;Interstellar
-Filmy;Dunkierka
-Filmy;Król Lew
-Filmy;Toy Story
-Filmy;W głowie się nie mieści
-Filmy;Coco
-Filmy;Shrek
-Filmy;Zootopia
-Filmy;Pianista
-Filmy;Czas Apokalipsy
-Filmy;Requiem dla snu
-Filmy;Wielki Gatsby
-Filmy;Gran Torino
-Filmy;Birdman
-Filmy;Zjawa
-Filmy;The Social Network
-Filmy;Slumdog. Milioner z ulicy
-Filmy;Up
-Filmy;Ratatouille
-Filmy;Wall-E
-Filmy;Człowiek z blizną
-Filmy;Lśnienie
-Filmy;To
-Filmy;Harry Potter i Kamień Filozoficzny
-Filmy;Fantastyczne Zwierzęta i Jak Je Znaleźć
-Filmy;Hobbit: Niezwykła Podróż
-Filmy;Bohemian Rhapsody
-Filmy;Rocketman
-Filmy;Człowiek Pająk
-Filmy;Batman Początek
-Filmy;Liga Sprawiedliwości
-Filmy;Kac Vegas
-Filmy;Wielka Szóstka
-Filmy;Piąty Element
-Filmy;Cicha Noc
-Filmy;Green Book
-Filmy;Miasto Boga
-Filmy;Grawitacja
-Filmy;Życie Pi
-Filmy;Wielki Mike
-Filmy;Dzień Niepodległości
+Agnieszka Holland;Europa, Europa
+Agnieszka Holland;W ciemności
+Alejandro G. Iñárritu;Zjawa
+Aleksiej Bałabanow;Brat
+Aleksiej Bałabanow;Brat 2
+Aleksiej German;Trudno być Bogiem
+Alfonso Cuarón;Grawitacja
+Alfred Hitchcock;Psychoza
+Alfred Hitchcock;Zawrót głowy
+Andrew Adamson, Vicky Jenson;Shrek
+Andrew Stanton;Wall-E
+Andrzej Wajda;Człowiek z marmuru
+Andrzej Wajda;Człowiek z żelaza
+Andy Muschietti;To
+Ang Lee;Tajemnica Brokeback Mountain
+Ang Lee;Życie Pi
+Baz Luhrmann;Wielki Gatsby
+Bong Joon-ho;Parasite
+Brad Bird;Ratatouille
+Byron Howard, Rich Moore;Zootopia
+Chris Columbus;Harry Potter i Kamień Filozoficzny
+Christopher Nolan;Incepcja
+Christopher Nolan;Interstellar
+Christopher Nolan;Mroczny Rycerz
+Christopher Nolan;Tenet
+Clint Eastwood;Bez przebaczenia
+Clint Eastwood;Gran Torino
+Céline Sciamma;Portret kobiety w ogniu
+Damien Chazelle;La La Land
+Danny Boyle;Slumdog. Milioner z ulicy
+Darren Aronofsky;Requiem dla snu
+David Fincher;Siedem
+David Fincher;The Social Network
+David Lynch;Blue Velvet
+David Lynch;Mulholland Drive
+Denis Villeneuve;Blade Runner 2049
+Denis Villeneuve;Diuna
+Dexter Fletcher;Rocketman
+Don Hall, Chris Williams;Wielka Szóstka
+Fernando Meirelles;Miasto Boga
+Francis Ford Coppola;Czas Apokalipsy
+Francis Ford Coppola;Ojciec Chrzestny
+Frank Capra;To Wspaniałe Życie
+Frank Darabont;Skazani na Shawshank
+George Lucas;Gwiezdne Wojny: Nowa Nadzieja
+George Miller;Mad Max: Na drodze gniewu
+Gore Verbinski;Piraci z Karaibów: Klątwa Czarnej Perły
+Greta Gerwig;Lady Bird
+Greta Gerwig;Małe kobietki
+Grzegorz Królikiewicz;Na wylot
+Guy Ritchie;Dżentelmeni
+Guy Ritchie;Przekręt
+J.J. Abrams;Gwiezdne wojny: Przebudzenie Mocy
+James Cameron;Avatar
+James Cameron;Terminator 2: Dzień Sądu
+James Cameron;Titanic
+Jan Komasa;Boże Ciało
+Jan Komasa;Sala samobójców
+Jean-Pierre Jeunet;Amelia
+Jean-Pierre Jeunet;Miasto zaginionych dzieci
+Jerzy Antczak;Noce i dnie
+Jerzy Hoffman;Ogniem i mieczem
+Jerzy Hoffman;Pan Wołodyjowski
+Jerzy Skolimowski;Essential Killing
+Jerzy Skolimowski;IO
+Joe Russo, Anthony Russo;Avengers: Koniec gry
+Joe Russo, Anthony Russo;Avengers: Wojna bez granic
+John G. Avildsen;Rocky
+John Lasseter;Toy Story
+John Lee Hancock;Wielki Mike
+Jon Favreau;Iron Man
+Jon Watts;Spider-Man: Bez drogi do domu
+Julia Ducournau;Titane
+Kenneth Branagh;Morderstwo w Orient Expressie
+Kenneth Branagh;Śmierć na Nilu
+Kirill Serebrennikov;Uczeń
+Krzysztof Kieślowski;Trzy kolory: Biały
+Krzysztof Kieślowski;Trzy kolory: Czerwony
+Krzysztof Kieślowski;Trzy kolory: Niebieski
+Lana Wachowski, Lilly Wachowski;Matrix
+Lars von Trier;Dogville
+Lars von Trier;Melancholia
+Luc Besson;Piąty Element
+Luca Guadagnino;Tamte dni, tamte noce
+Marek Koterski;Dzień świra
+Marek Koterski;Nic śmiesznego
+Martin Scorsese;Taksówkarz
+Martin Scorsese;Wilk z Wall Street
+Mel Gibson;Braveheart - Waleczne Serce
+Mel Gibson;Pasja
+Mike Newell;Cztery wesela i pogrzeb
+Mike Newell;Donnie Brasco
+Nora Ephron;Bezsenność w Seattle
+Nora Ephron;Masz wiadomość
+Park Chan-wook;Oldboy
+Park Chan-wook;Służąca
+Patryk Vega;Botoks
+Patryk Vega;Pitbull
+Paweł Pawlikowski;Ida
+Paweł Pawlikowski;Zimna wojna
+Pete Docter, Bob Peterson;Up
+Pete Docter;W głowie się nie mieści
+Peter Farrelly;Green Book
+Peter Jackson;Hobbit: Niezwykła Podróż
+Peter Jackson;Władca Pierścieni: Powrót Króla
+Peter Weir;Stowarzyszenie Umarłych Poetów
+Piotr Domalewski;Cicha noc
+Quentin Tarantino;Bękarty wojny
+Quentin Tarantino;Django
+Quentin Tarantino;Pulp Fiction
+Rian Johnson;Gwiezdne wojny: Ostatni Jedi
+Rian Johnson;Na noże
+Ridley Scott;Gladiator
+Ridley Scott;Obcy: Ósmy pasażer Nostromo
+Robert Eggers;Czarownica: Bajka ludowa z Nowej Anglii
+Robert Eggers;Lighthouse
+Robert Zemeckis;Powrót do Przyszłości
+Roger Allers, Rob Minkoff;Król Lew
+Roman Polański;Chinatown
+Roman Polański;Dziecko Rosemary
+Roman Polański;Pianista
+Sam Mendes;1917
+Sam Mendes;American Beauty
+Sofia Coppola;Maria Antonina
+Sofia Coppola;Między słowami
+Stanley Kubrick;Lśnienie
+Steven Spielberg;E.T.
+Steven Spielberg;Jurassic Park
+Steven Spielberg;Lista Schindlera
+Steven Spielberg;Schindler's List
+Taika Waititi;Jojo Rabbit
+Taika Waititi;Thor: Ragnarok
+Thomas Vinterberg;Na rauszu
+Todd Phillips;Joker
+Todd Phillips;Kac Vegas
+Tomasz Bagiński;Katedra
+Tomasz Wasilewski;Płynące wieżowce
+Wojciech Smarzowski;Dom zły
+Wojciech Smarzowski;Wołyń
+Zack Snyder;Liga Sprawiedliwości

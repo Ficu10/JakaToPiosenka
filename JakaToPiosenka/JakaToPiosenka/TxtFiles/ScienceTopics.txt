@@ -1,88 +1,88 @@
+astronomia;czarne dziury
+astronomia;eksoplanety
+astronomia;eksploracja kosmosu
+astronomia;kosmologia
+astronomia;meteoryty
+astronomia;misje kosmiczne
+astronomia;planety Układu Słonecznego
+astronomia;supernowe
+biologia;biotechnologia
+biologia;ekologia
+biologia;ewolucja
+biologia;genetyka
+biologia;genomika
+biologia;komórki macierzyste
+biologia;mikrobiologia
+biologia;neurobiologia
+chemia;chemia organiczna
+chemia;elektrochemia
+chemia;kinetyka chemiczna
+chemia;polimery
+chemia;reakcje chemiczne
+chemia;spektroskopia
+chemia;tablica Mendelejewa
+chemia;wiązania chemiczne
+ekonomia;ekonomia behawioralna
+ekonomia;gospodarka globalna
+ekonomia;inflacja
+ekonomia;makroekonomia
+ekonomia;rynki finansowe
+ekonomia;rynki kapitałowe
+ekonomia;teoria decyzji
+ekonomia;teoria podaży i popytu
+fizyka;akustyka
+fizyka;elektromagnetyzm
+fizyka;fizyka cząstek elementarnych
+fizyka;fizyka jądrowa
 fizyka;mechanika kwantowa
+fizyka;optyka
 fizyka;teoria względności
 fizyka;termodynamika
-chemia;wiązania chemiczne
-chemia;reakcje chemiczne
-chemia;tablica Mendelejewa
-biologia;genetyka
-biologia;ewolucja
-biologia;komórki macierzyste
-astronomia;czarne dziury
-astronomia;planety Układu Słonecznego
-astronomia;eksploracja kosmosu
-matematyka;algebra
-matematyka;geometria
-matematyka;rachunek różniczkowy
-informatyka;sztuczna inteligencja
-informatyka;algorytmy
-informatyka;programowanie
-geografia;zmiany klimatyczne
-geografia;procesy tektoniczne
+geografia;erozja gleby
+geografia;geologia
+geografia;geomorfologia
 geografia;hydrologia
-psychologia;mechanizmy poznawcze
+geografia;kartografia
+geografia;procesy tektoniczne
+geografia;wulkanologia
+geografia;zmiany klimatyczne
+informatyka;algorytmy
+informatyka;cyberbezpieczeństwo
+informatyka;grafika komputerowa
+informatyka;internet rzeczy
+informatyka;programowanie
+informatyka;przetwarzanie danych
+informatyka;sieci neuronowe
+informatyka;sztuczna inteligencja
+matematyka;algebra
+matematyka;analiza numeryczna
+matematyka;geometria
+matematyka;kombinatoryka
+matematyka;rachunek różniczkowy
+matematyka;statystyka
+matematyka;teoria liczb
+matematyka;topologia
+medycyna;chirurgia robotyczna
+medycyna;choroby zakaźne
+medycyna;immunologia
+medycyna;medycyna regeneracyjna
+medycyna;medycyna sportowa
+medycyna;neurobiologia
+medycyna;onkologia
+medycyna;psychiatria
 psychologia;emocje
+psychologia;mechanizmy poznawcze
+psychologia;psychologia kliniczna
+psychologia;psychologia sportu
+psychologia;psychoterapia
+psychologia;rozwój dziecka
 psychologia;teoria osobowości
-socjologia;struktura społeczna
+psychologia;terapia poznawczo-behawioralna
+socjologia;analiza danych społecznych
+socjologia;badania nad migracjami
 socjologia;globalizacja
 socjologia;media społecznościowe
-ekonomia;teoria podaży i popytu
-ekonomia;inflacja
-ekonomia;rynki finansowe
-medycyna;choroby zakaźne
-medycyna;neurobiologia
-medycyna;medycyna regeneracyjna
-fizyka;optyka
-chemia;kinetyka chemiczna
-biologia;biotechnologia
-astronomia;supernowe
-matematyka;statystyka
-informatyka;cyberbezpieczeństwo
-geografia;wulkanologia
-psychologia;psychoterapia
-socjologia;teoria konfliktu
-ekonomia;makroekonomia
-medycyna;onkologia
-fizyka;elektromagnetyzm
-chemia;chemia organiczna
-biologia;mikrobiologia
-astronomia;eksoplanety
-matematyka;teoria liczb
-informatyka;sieci neuronowe
-geografia;kartografia
-psychologia;rozwój dziecka
-socjologia;analiza danych społecznych
-ekonomia;ekonomia behawioralna
-medycyna;chirurgia robotyczna
-fizyka;fizyka cząstek elementarnych
-chemia;spektroskopia
-biologia;ekologia
-astronomia;kosmologia
-matematyka;topologia
-informatyka;przetwarzanie danych
-geografia;geologia
-psychologia;psychologia sportu
-socjologia;zachowania społeczne
-ekonomia;gospodarka globalna
-medycyna;immunologia
-fizyka;akustyka
-chemia;elektrochemia
-biologia;neurobiologia
-astronomia;meteoryty
-matematyka;analiza numeryczna
-informatyka;internet rzeczy
-geografia;erozja gleby
-psychologia;terapia poznawczo-behawioralna
 socjologia;rola kultury
-ekonomia;rynki kapitałowe
-medycyna;medycyna sportowa
-fizyka;fizyka jądrowa
-chemia;polimery
-biologia;genomika
-astronomia;misje kosmiczne
-matematyka;kombinatoryka
-informatyka;grafika komputerowa
-geografia;geomorfologia
-psychologia;psychologia kliniczna
-socjologia;badania nad migracjami
-ekonomia;teoria decyzji
-medycyna;psychiatria
+socjologia;struktura społeczna
+socjologia;teoria konfliktu
+socjologia;zachowania społeczne

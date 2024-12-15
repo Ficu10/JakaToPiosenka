@@ -1,71 +1,70 @@
-Emocje;Szczęście
-Emocje;Smutek
-Emocje;Złość
-Emocje;Strach
-Emocje;Wstyd
-Emocje;Radość
-Emocje;Euforia
-Emocje;Zazdrość
-Emocje;Wdzięczność
-Emocje;Miłość
-Emocje;Ekscytacja
-Emocje;Zaskoczenie
-Emocje;Frustracja
-Emocje;Poczucie winy
-Emocje;Rozczarowanie
-Emocje;Nadzieja
-Emocje;Ulga
+Emocje;Akceptacja
+Emocje;Ambicja
+Emocje;Beznadziejność
+Emocje;Chciwość
 Emocje;Ciekawość
 Emocje;Duma
-Emocje;Spokój
-Emocje;Zmęczenie
-Emocje;Nostalgia
-Emocje;Upokorzenie
-Emocje;Obawa
-Emocje;Tęsknota
-Emocje;Żal
-Emocje;Wrogość
-Emocje;Niepewność
-Emocje;Zachwyt
-Emocje;Akceptacja
-Emocje;Uwielbienie
+Emocje;Egoizm
+Emocje;Ekscytacja
 Emocje;Empatia
-Emocje;Wściekłość
-Emocje;Przerażenie
-Emocje;Satysfakcja
-Emocje;Ambicja
-Emocje;Poczucie bezpieczeństwa
-Emocje;Beznadziejność
-Emocje;Rozpacz
-Emocje;Poczucie krzywdy
-Emocje;Podekscytowanie
-Emocje;Spokojna radość
-Emocje;Zadowolenie
-Emocje;Pokora
-Emocje;Poczucie winy
-Emocje;Poczucie sukcesu
-Emocje;Rozdrażnienie
-Emocje;Wybuch radości
-Emocje;Niezdecydowanie
-Emocje;Niechęć
-Emocje;Podejrzliwość
-Emocje;Złość na siebie
-Emocje;Strach przed porażką
-Emocje;Wdzięczność za pomoc
+Emocje;Euforia
+Emocje;Frustracja
+Emocje;Harmonia
+Emocje;Lęk przed przyszłością
+Emocje;Miłość
 Emocje;Miłość rodzinna
 Emocje;Miłość romantyczna
+Emocje;Nadzieja
+Emocje;Niechęć
+Emocje;Niepewność
+Emocje;Niezdecydowanie
+Emocje;Nostalgia
+Emocje;Obawa
+Emocje;Obojętność
+Emocje;Poczucie bezpieczeństwa
+Emocje;Poczucie krzywdy
+Emocje;Poczucie sukcesu
+Emocje;Poczucie winy
+Emocje;Podejrzliwość
+Emocje;Podekscytowanie
+Emocje;Podziw
+Emocje;Pokora
+Emocje;Pożądanie
+Emocje;Przerażenie
+Emocje;Przyjaźń
 Emocje;Przywiązanie
+Emocje;Radość
+Emocje;Rozczarowanie
+Emocje;Rozdrażnienie
+Emocje;Rozpacz
+Emocje;Satysfakcja
+Emocje;Sentyment
+Emocje;Smutek
+Emocje;Spokojna radość
+Emocje;Spokój
+Emocje;Strach
+Emocje;Strach przed porażką
+Emocje;Szczęście
+Emocje;Tęsknota
+Emocje;Ulga
+Emocje;Upokorzenie
+Emocje;Uwielbienie
+Emocje;Wdzięczność
+Emocje;Wdzięczność za pomoc
+Emocje;Wewnętrzny spokój
+Emocje;Wrogość
+Emocje;Współczucie
+Emocje;Wstyd
+Emocje;Wybuch radości
+Emocje;Wściekłość
+Emocje;Zachwyt
+Emocje;Zadowolenie
+Emocje;Zaskoczenie
+Emocje;Zazdrość
+Emocje;Zmęczenie
+Emocje;Złość
 Emocje;Złość na innych
 Emocje;Złość na los
-Emocje;Podziw
-Emocje;Lęk przed przyszłością
-Emocje;Przyjaźń
+Emocje;Złość na siebie
+Emocje;Żal
 Emocje;Życzliwość
-Emocje;Współczucie
-Emocje;Obojętność
-Emocje;Harmonia
-Emocje;Wewnętrzny spokój
-Emocje;Chciwość
-Emocje;Pożądanie
-Emocje;Egoizm
-Emocje;Sentyment

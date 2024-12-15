@@ -39,12 +39,12 @@ Coldplay;Clocks
 Coldplay;Fix You
 Coldplay;Paradise
 Coldplay;Viva La Vida
-David Guetta ft. Sia;Titanium
-Demi Lovato;Heart Attack
-Demi Lovato;Sorry Not Sorry
 DJ Khaled ft. Justin Bieber, Quavo, Chance The Rapper, Lil Wayne;I'm The One
 DJ Snake ft. Justin Bieber;Let Me Love You
 DJ Snake ft. Selena Gomez, Ozuna, Cardi B;Taki Taki
+David Guetta ft. Sia;Titanium
+Demi Lovato;Heart Attack
+Demi Lovato;Sorry Not Sorry
 Drake ft. Rihanna;Take Care
 Drake ft. WizKid, Kyla;One Dance
 Drake;God's Plan
@@ -63,7 +63,7 @@ Ellie Goulding;Love Me Like You Do
 Eminem ft. Rihanna;Love the Way You Lie
 Eminem;Not Afraid
 Enrique Iglesias ft. Descemer Bueno, Gente De Zona;Bailando
-Enrique Iglesias;Bailando 
+Enrique Iglesias;Bailando
 Fifth Harmony ft. Kid Ink;Worth It
 Fifth Harmony ft. Ty Dolla $ign;Work from Home
 Foster The People;Pumped Up Kicks
@@ -100,20 +100,20 @@ Katy Perry;Last Friday Night (T.G.I.F.)
 Katy Perry;Roar
 Katy Perry;Teenage Dream
 Katy Perry;Wide Awake
+LMFAO ft. Lauren Bennett, GoonRock;Party Rock Anthem
+LMFAO ft. Lil Jon;Shots
+LMFAO;Party Rock Anthem
+LMFAO;Sexy and I Know It
 Lady Gaga;Bad Romance
 Lady Gaga;Just Dance
 Lady Gaga;Poker Face
 Lionel Richie;Hello
 Little Baby Bum;Wheels on the Bus
-LMFAO ft. Lauren Bennett, GoonRock;Party Rock Anthem
-LMFAO ft. Lil Jon;Shots
-LMFAO;Party Rock Anthem
-LMFAO;Sexy and I Know It
 Luis Fonsi ft. Daddy Yankee;Despacito
 Macklemore & Ryan Lewis ft. Wanz;Thrift Shop
 Magic!;Rude
-Major Lazer;Lean On
 Major Lazer;Cold Water
+Major Lazer;Lean On
 Mariah Carey;All I Want For Christmas Is You
 Mark Ronson ft. Bruno Mars;Uptown Funk
 Maroon 5 ft. Cardi B;Girls Like You
@@ -133,13 +133,13 @@ One Direction;Story of My Life
 One Direction;What Makes You Beautiful
 OneRepublic;Apologize
 OneRepublic;Counting Stars
+PSY;Gangnam Style
+PSY;Gentleman
 Passenger;Let Her Go
 Pinkfong;Baby Shark Dance
 Pitbull ft. Ke$ha;Timber
 Pitbull ft. Kesha;Timber
 Pitbull ft. Ne-Yo, Afrojack, Nayer;Give Me Everything
-PSY;Gangnam Style
-PSY;Gentleman
 Rihanna ft. Calvin Harris;We Found Love
 Rihanna ft. Drake;Work
 Rihanna ft. Jay-Z;Umbrella

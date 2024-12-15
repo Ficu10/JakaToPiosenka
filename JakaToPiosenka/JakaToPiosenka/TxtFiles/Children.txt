@@ -1,69 +1,69 @@
-dla dzieci;Krzesło
-dla dzieci;Stół
-dla dzieci;Łóżko
-dla dzieci;Samochód
-dla dzieci;Pociąg
-dla dzieci;Rower
-dla dzieci;Zegar
-dla dzieci;Książka
-dla dzieci;Długopis
-dla dzieci;Kredki
-dla dzieci;Farby
-dla dzieci;Plecak
-dla dzieci;Piłka
-dla dzieci;Komputer
-dla dzieci;Telewizor
-dla dzieci;Telefon
-dla dzieci;Poduszka
-dla dzieci;Koc
-dla dzieci;Lampa
-dla dzieci;Piórnik
-dla dzieci;Buty
-dla dzieci;Skarpetki
-dla dzieci;Kapcie
-dla dzieci;Zabawka
-dla dzieci;Miś
-dla dzieci;Klocki
-dla dzieci;Puzzle
-dla dzieci;Lalka
+
 dla dzieci;Balon
-dla dzieci;Gitara
 dla dzieci;Bębenek
-dla dzieci;Trampolina
-dla dzieci;Karta
-dla dzieci;Rower
-dla dzieci;Hulajnoga
-dla dzieci;Rolki
-dla dzieci;Księżyc
-dla dzieci;Słońce
-dla dzieci;Gwiazda
-dla dzieci;Samolot
-dla dzieci;Rakieta
-dla dzieci;Chmura
-dla dzieci;Drzewo
-dla dzieci;Kwiat
-dla dzieci;Jabłko
-dla dzieci;Banan
-dla dzieci;Lód
-dla dzieci;Czekolada
-dla dzieci;Ciastko
-dla dzieci;Talerz
-dla dzieci;Widelec
-dla dzieci;Łyżka
-dla dzieci;Kubek
-dla dzieci;Zegarek
-dla dzieci;Okulary
-dla dzieci;Kurtka
-dla dzieci;Czapka
-dla dzieci;Pies
-dla dzieci;Kot
-dla dzieci;Ryba
-dla dzieci;Królik
-dla dzieci;Papuga
-dla dzieci;Konik
-dla dzieci;Słoń
-dla dzieci;Lew
-dla dzieci;Tygrys
-dla dzieci;Zebra
-dla dzieci;Kura
-dla dzieci;Krowa
+dla dzieci;Klocki
+jedzenie;Banan
+jedzenie;Ciastko
+jedzenie;Czekolada
+jedzenie;Jabłko
+jedzenie;Lód
+przedmiot;Długopis
+przedmiot;Farby
+przedmiot;Gitara
+przedmiot;Hulajnoga
+przedmiot;Karta
+przedmiot;Koc
+przedmiot;Komputer
+przedmiot;Kredki
+przedmiot;Krzesło
+przedmiot;Książka
+przedmiot;Kubek
+przedmiot;Lampa
+przedmiot;Okulary
+przedmiot;Piórnik
+przedmiot;Plecak
+przedmiot;Pociąg
+przedmiot;Poduszka
+przedmiot;Rakieta
+przedmiot;Rolki
+przedmiot;Rower
+przedmiot;Samochód
+przedmiot;Samolot
+przedmiot;Stół
+przedmiot;Talerz
+przedmiot;Telefon
+przedmiot;Telewizor
+przedmiot;Widelec
+przedmiot;Zegar
+przedmiot;Zegarek
+przedmiot;Łyżka
+przedmiot;Łóżko
+przyroda;Chmura
+przyroda;Drzewo
+przyroda;Gwiazda
+przyroda;Księżyc
+przyroda;Kwiat
+przyroda;Słońce
+ubranie;Buty
+ubranie;Czapka
+ubranie;Kapcie
+ubranie;Kurtka
+ubranie;Skarpetki
+zabawka;Konik
+zabawka;Lalka
+zabawka;Miś
+zabawka;Piłka
+zabawka;Puzzle
+zabawka;Trampolina
+zabawka;Zabawka
+zwierzę;Kot
+zwierzę;Krowa
+zwierzę;Królik
+zwierzę;Kura
+zwierzę;Lew
+zwierzę;Papuga
+zwierzę;Pies
+zwierzę;Ryba
+zwierzę;Słoń
+zwierzę;Tygrys
+zwierzę;Zebra

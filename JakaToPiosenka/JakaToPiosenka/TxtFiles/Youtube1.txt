@@ -1,9 +1,7 @@
 Adele; Hello
-Adele; Hello
 Adele; Rolling in the Deep
 Adele; Someone Like You
 Alan Walker; Faded
-Ariana Grande ft. Iggy Azalea; Problem
 Ariana Grande ft. Iggy Azalea; Problem
 Ariana Grande ft. Mac Miller; The Way
 Ariana Grande ft. Nicki Minaj; Side to Side
@@ -13,7 +11,6 @@ Ariana Grande; Into You
 Ariana Grande; thank u, next
 Avicii ft. Aloe Blacc; Wake Me Up
 Avicii; Levels
-Avicii; Wake Me Up
 Avicii; Wake Me Up
 Beyoncé; Formation
 Beyoncé; Halo
@@ -42,12 +39,12 @@ Coldplay; Clocks
 Coldplay; Fix You
 Coldplay; Paradise
 Coldplay; Viva La Vida
-David Guetta ft. Sia; Titanium
-Demi Lovato; Heart Attack
-Demi Lovato; Sorry Not Sorry
 DJ Khaled ft. Justin Bieber, Quavo, Chance The Rapper, Lil Wayne; I'm The One
 DJ Snake ft. Justin Bieber; Let Me Love You
 DJ Snake ft. Selena Gomez, Ozuna, Cardi B; Taki Taki
+David Guetta ft. Sia; Titanium
+Demi Lovato; Heart Attack
+Demi Lovato; Sorry Not Sorry
 Drake ft. Rihanna; Take Care
 Drake ft. WizKid, Kyla; One Dance
 Drake; God's Plan
@@ -59,10 +56,8 @@ Ed Sheeran; Galway Girl
 Ed Sheeran; Perfect
 Ed Sheeran; Photograph
 Ed Sheeran; Shape of You
-Ed Sheeran; Shape of You
 Ed Sheeran; Sing
 Ed Sheeran; The A Team
-Ed Sheeran; Thinking Out Loud
 Ed Sheeran; Thinking Out Loud
 Ellie Goulding; Love Me Like You Do
 Eminem ft. Rihanna; Love the Way You Lie
@@ -92,12 +87,10 @@ Justin Bieber; Baby
 Justin Bieber; Boyfriend
 Justin Bieber; Love Yourself
 Justin Bieber; Sorry
-Justin Bieber; Sorry
 Justin Bieber; What Do You Mean?
 Justin Timberlake; Can't Stop the Feeling!
 Justin Timberlake; Mirrors
 Justin Timberlake; SexyBack
-Katy Perry ft. Juicy J; Dark Horse
 Katy Perry ft. Juicy J; Dark Horse
 Katy Perry ft. Snoop Dogg; California Gurls
 Katy Perry; Chained To The Rhythm ft. Skip Marley
@@ -107,16 +100,15 @@ Katy Perry; Last Friday Night (T.G.I.F.)
 Katy Perry; Roar
 Katy Perry; Teenage Dream
 Katy Perry; Wide Awake
-Lady Gaga; Bad Romance
-Lady Gaga; Just Dance
-Lady Gaga; Poker Face
-Lady Gaga; Poker Face
-Lionel Richie; Hello
-Little Baby Bum; Wheels on the Bus
 LMFAO ft. Lauren Bennett, GoonRock; Party Rock Anthem
 LMFAO ft. Lil Jon; Shots
 LMFAO; Party Rock Anthem ft. Lauren Bennett, GoonRock
 LMFAO; Sexy and I Know It
+Lady Gaga; Bad Romance
+Lady Gaga; Just Dance
+Lady Gaga; Poker Face
+Lionel Richie; Hello
+Little Baby Bum; Wheels on the Bus
 Luis Fonsi ft. Daddy Yankee; Despacito
 Luis Fonsi, Daddy Yankee ft. Justin Bieber; Despacito (Remix)
 Macklemore & Ryan Lewis ft. Wanz; Thrift Shop
@@ -130,10 +122,8 @@ Maroon 5 ft. Kendrick Lamar; Don't Wanna Know
 Maroon 5; Moves Like Jagger ft. Christina Aguilera
 Maroon 5; Payphone ft. Wiz Khalifa
 Maroon 5; Sugar
-Maroon 5; Sugar
 Marshmello ft. Bastille; Happier
 Meghan Trainor ft. John Legend; Like I'm Gonna Lose You
-Meghan Trainor; All About That Bass
 Meghan Trainor; All About That Bass
 Meghan Trainor; Dear Future Husband
 Meghan Trainor; Lips Are Movin
@@ -144,14 +134,13 @@ One Direction; Story of My Life
 One Direction; What Makes You Beautiful
 OneRepublic; Apologize
 OneRepublic; Counting Stars
+PSY; Gangnam Style
+PSY; Gentleman
 Passenger; Let Her Go
 Pinkfong; Baby Shark Dance
 Pitbull ft. Ke$ha; Timber
 Pitbull ft. Kesha; Timber
 Pitbull ft. Ne-Yo, Afrojack, Nayer; Give Me Everything
-PSY; Gangnam Style
-PSY; Gentleman
-PSY; Gentleman
 Rihanna ft. Calvin Harris; We Found Love
 Rihanna ft. Drake; Work
 Rihanna ft. Jay-Z; Umbrella
@@ -178,9 +167,7 @@ Sia; Elastic Heart
 Taylor Swift ft. Kendrick Lamar; Bad Blood
 Taylor Swift; Bad Blood
 Taylor Swift; Blank Space
-Taylor Swift; Blank Space
 Taylor Swift; Love Story
-Taylor Swift; Shake It Off
 Taylor Swift; Shake It Off
 Taylor Swift; Style
 Taylor Swift; Wildest Dreams
@@ -188,7 +175,6 @@ Taylor Swift; You Belong with Me
 The Black Eyed Peas; I Gotta Feeling
 The Chainsmokers ft. Coldplay; Something Just Like This
 The Chainsmokers ft. Daya; Don't Let Me Down
-The Chainsmokers ft. Halsey; Closer
 The Chainsmokers ft. Halsey; Closer
 The Weeknd ft. Daft Punk; Starboy
 The Weeknd; Blinding Lights

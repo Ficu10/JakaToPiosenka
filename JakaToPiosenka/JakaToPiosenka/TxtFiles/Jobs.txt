@@ -1,70 +1,70 @@
-zawód;stolarz
-zawód;nauczyciel
-zawód;lekarz
-zawód;informatyk
-zawód;piekarz
-zawód;mechanik
-zawód;kierowca
-zawód;elektryk
-zawód;budowlaniec
-zawód;hydraulik
-zawód;sprzedawca
-zawód;kucharz
-zawód;pielęgniarka
-zawód;programista
-zawód;rolnik
-zawód;policjant
-zawód;strażak
-zawód;księgowy
-zawód;fryzjer
-zawód;weterynarz
-zawód;prawnik
-zawód;architekt
-zawód;projektant
-zawód;logistyk
-zawód;psycholog
+zawód;administrator sieci
 zawód;aktor
-zawód;muzyk
-zawód;dziennikarz
-zawód;fotograf
-zawód;pilot
-zawód;stewardessa
-zawód;inżynier
-zawód;geodeta
-zawód;kosmetyczka
-zawód;biolog
-zawód;chemik
-zawód;fizyk
-zawód;socjolog
+zawód;aktor głosowy
 zawód;analityk
-zawód;tłumacz
-zawód;copywriter
-zawód;marketingowiec
-zawód;przedsiębiorca
 zawód;aptekarz
-zawód;statystyk
-zawód;operator maszyn
-zawód;spawacz
-zawód;górnik
-zawód;rolnik ekologiczny
-zawód;naukowiec
-zawód;projektant wnętrz
-zawód;przewodnik turystyczny
-zawód;sędzia
-zawód;prokurator
-zawód;notariusz
-zawód;kurator
-zawód;terapeuta
-zawód;trener personalny
+zawód;architekt
+zawód;biolog
+zawód;budowlaniec
+zawód;chemik
+zawód;copywriter
 zawód;dietetyk
-zawód;grafik
+zawód;doradca finansowy
 zawód;drukarz
+zawód;dziennikarz
+zawód;elektryk
+zawód;fizyk
+zawód;fotograf
+zawód;fryzjer
+zawód;geodeta
+zawód;grafik
+zawód;górnik
+zawód;hydraulik
+zawód;informatyk
+zawód;inżynier
+zawód;kierowca
+zawód;kosmetyczka
+zawód;księgowy
+zawód;kucharz
+zawód;kurator
+zawód;lekarz
+zawód;logistyk
+zawód;marketingowiec
+zawód;mechanik
+zawód;muzyk
+zawód;nauczyciel
+zawód;naukowiec
+zawód;notariusz
+zawód;operator maszyn
+zawód;piekarz
+zawód;pielęgniarka
+zawód;pilot
+zawód;policjant
+zawód;prawnik
+zawód;programista
+zawód;projektant
+zawód;projektant gier
+zawód;projektant wnętrz
+zawód;prokurator
+zawód;przedsiębiorca
+zawód;przedstawiciel handlowy
+zawód;przewodnik turystyczny
+zawód;psycholog
 zawód;ratownik medyczny
 zawód;ratownik wodny
-zawód;aktor głosowy
-zawód;projektant gier
-zawód;tester oprogramowania
-zawód;administrator sieci
+zawód;rolnik
+zawód;rolnik ekologiczny
+zawód;socjolog
+zawód;spawacz
 zawód;specjalista IT
-zawód;doradca finansowy
-zawód;przedstawiciel handlowy
+zawód;sprzedawca
+zawód;statystyk
+zawód;stewardessa
+zawód;stolarz
+zawód;strażak
+zawód;sędzia
+zawód;terapeuta
+zawód;tester oprogramowania
+zawód;trener personalny
+zawód;tłumacz
+zawód;weterynarz

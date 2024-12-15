@@ -8,6 +8,8 @@ namespace JakaToPiosenka.HelpClasses
 {
     internal class Sounds
     {
+        private readonly Plugin.SimpleAudioPlayer.ISimpleAudioPlayer audio = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+
         Stream GetStreamFromFile(string filename)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
@@ -21,14 +23,13 @@ namespace JakaToPiosenka.HelpClasses
             SettingsPage.isMuted = MuteHelper.GetMuteState();
             if (SettingsPage.isMuted)
             {
+                return;
             }
             else
             {
-                var audio = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
                 audio.Load(fileName);
                 audio.Play();
             }
-          
         }
         public void WinningSound()
         {
@@ -97,6 +98,11 @@ namespace JakaToPiosenka.HelpClasses
         {
             Stream fileName = GetStreamFromFile("drum.mp3");
             PlaySound(fileName);
+        }
+        public void StopAllSounds()
+        {
+            // Stop any currently playing sound
+            audio.Stop();
         }
     }
 }

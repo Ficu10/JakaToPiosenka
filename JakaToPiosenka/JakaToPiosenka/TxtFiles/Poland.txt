@@ -1,93 +1,93 @@
-miasto;Warszawa
-rzeka;Wisła
-góra;Rysy
-jezioro;Śniardwy
-park narodowy;Białowieski Park Narodowy
-miasto;Kraków
-zabytek;Zamek Królewski w Warszawie
-region;Podhale
-miasto;Wrocław
-rzeka;Odra
-góra;Kasprowy Wierch
-jezioro;Mamry
-park narodowy;Tatrzański Park Narodowy
-miasto;Poznań
-zabytek;Kopalnia Soli w Wieliczce
-region;Kaszuby
-miasto;Gdańsk
-rzeka;Bug
-góra;Śnieżka
-jezioro;Wigry
-park narodowy;Słowiński Park Narodowy
-miasto;Łódź
-zabytek;Bazylika Mariacka w Krakowie
-region;Mazowsze
-miasto;Szczecin
-rzeka;Warta
-góra;Giewont
-jezioro;Hańcza
-park narodowy;Biebrzański Park Narodowy
-miasto;Katowice
-zabytek;Malbork - Zamek Krzyżacki
-region;Śląsk
-miasto;Lublin
-rzeka;San
 góra;Babia Góra
-jezioro;Drawsko
-park narodowy;Kampinoski Park Narodowy
-miasto;Białystok
-zabytek;Stare Miasto w Gdańsku
-region;Warmia i Mazury
-miasto;Rzeszów
-rzeka;Narew
-góra;Tarnica
-jezioro;Gopło
-park narodowy;Woliński Park Narodowy
-miasto;Bydgoszcz
-zabytek;Katedra na Wawelu
-region;Lubelszczyzna
-miasto;Toruń
-rzeka;Wieprz
 góra;Czupel
-jezioro;Jamno
-park narodowy;Roztoczański Park Narodowy
-miasto;Opole
-zabytek;Kościół Mariacki w Gdańsku
-region;Małopolska
-miasto;Gdynia
-rzeka;Pilica
-góra;Łysica
-jezioro;Czorsztyńskie
-park narodowy;Ojcowski Park Narodowy
-miasto;Radom
-zabytek;Muzeum Auschwitz-Birkenau
-region;Podlasie
-miasto;Zielona Góra
-rzeka;Brda
+góra;Giewont
+góra;Kasprowy Wierch
 góra;Lubomir
-jezioro;Rożnowskie
-park narodowy;Poleski Park Narodowy
-miasto;Koszalin
-zabytek;Pałac w Wilanowie
-region;Pomorze
-miasto;Olsztyn
-rzeka;Łyna
-góra;Rudawiec
-jezioro;Turawa
-park narodowy;Magurski Park Narodowy
-miasto;Kielce
-zabytek;Ruiny zamku w Ogrodzieńcu
-region;Podkarpacie
-miasto;Częstochowa
-rzeka;Prosna
-góra;Wysoka
-jezioro;Miedwie
-park narodowy;Gorczański Park Narodowy
-miasto;Legnica
-zabytek;Zamek Czocha
-region;Wielkopolska
-miasto;Elbląg
-rzeka;Drawa
 góra;Rokitnica
+góra;Rudawiec
+góra;Rysy
+góra;Tarnica
+góra;Wysoka
+góra;Łysica
+góra;Śnieżka
+jezioro;Czorsztyńskie
+jezioro;Drawsko
+jezioro;Gopło
+jezioro;Hańcza
+jezioro;Jamno
+jezioro;Mamry
+jezioro;Miedwie
+jezioro;Rożnowskie
+jezioro;Turawa
+jezioro;Wigry
 jezioro;Łebsko
+jezioro;Śniardwy
+miasto;Białystok
+miasto;Bydgoszcz
+miasto;Częstochowa
+miasto;Elbląg
+miasto;Gdańsk
+miasto;Gdynia
+miasto;Katowice
+miasto;Kielce
+miasto;Koszalin
+miasto;Kraków
+miasto;Legnica
+miasto;Lublin
+miasto;Olsztyn
+miasto;Opole
+miasto;Poznań
+miasto;Radom
+miasto;Rzeszów
+miasto;Szczecin
+miasto;Toruń
+miasto;Warszawa
+miasto;Wrocław
+miasto;Zielona Góra
+miasto;Łódź
+park narodowy;Białowieski Park Narodowy
+park narodowy;Biebrzański Park Narodowy
 park narodowy;Bieszczadzki Park Narodowy
+park narodowy;Gorczański Park Narodowy
+park narodowy;Kampinoski Park Narodowy
+park narodowy;Magurski Park Narodowy
+park narodowy;Ojcowski Park Narodowy
+park narodowy;Poleski Park Narodowy
+park narodowy;Roztoczański Park Narodowy
+park narodowy;Słowiński Park Narodowy
+park narodowy;Tatrzański Park Narodowy
+park narodowy;Woliński Park Narodowy
+region;Kaszuby
+region;Lubelszczyzna
+region;Mazowsze
+region;Małopolska
+region;Podhale
+region;Podkarpacie
+region;Podlasie
+region;Pomorze
+region;Warmia i Mazury
+region;Wielkopolska
+region;Śląsk
+rzeka;Brda
+rzeka;Bug
+rzeka;Drawa
+rzeka;Narew
+rzeka;Odra
+rzeka;Pilica
+rzeka;Prosna
+rzeka;San
+rzeka;Warta
+rzeka;Wieprz
+rzeka;Wisła
+rzeka;Łyna
+zabytek;Bazylika Mariacka w Krakowie
+zabytek;Katedra na Wawelu
+zabytek;Kopalnia Soli w Wieliczce
+zabytek;Kościół Mariacki w Gdańsku
+zabytek;Malbork - Zamek Krzyżacki
+zabytek;Muzeum Auschwitz-Birkenau
+zabytek;Pałac w Wilanowie
+zabytek;Ruiny zamku w Ogrodzieńcu
+zabytek;Stare Miasto w Gdańsku
+zabytek;Zamek Czocha
+zabytek;Zamek Królewski w Warszawie

@@ -1,58 +1,107 @@
-Łona i Webber;Głęboko
-Łona i Webber;Północ
-Łona i Webber;Pierwsze słowo
-Łona i Webber;Wiśniewski
-Łona i Webber;Wszystko na sprzedaż
+Avi x Louis Villain;AMG
+Bedoes;1998 (mam to we krwi)
+Bedoes;Hymn 20/20
+Bedoes;Janosik
+Białas;Rewolucja romantyczna
+Bisz;Pollock
+Bonus RPK;Latające dywany
 Eldo;Człowiek z liściem
-Eldo;Nie pytaj o nią
+Eldo;Człowiek, który chciał ukraść alfabet
 Eldo;Nie pytaj o Polskę
+Eldo;Nie pytaj o nią
 Eldo;Nieważne
 Eldo;Wiadomość
+Eripe;Serial Killer
 Fisz Emade Tworzywo;Mamut
 Fisz Emade Tworzywo;Nie boję się
 Fisz Emade Tworzywo;Politycznie niepoprawny
 Fisz Emade Tworzywo;Sznurowadła 2
 Fisz Emade Tworzywo;Trudno mnie kochać
-Hemp Gru;Światła miasta
+Guzior;Ból nie znika
+Guzior;Fala
 Hemp Gru;Amnezja
 Hemp Gru;Diament
 Hemp Gru;Klucz
 Hemp Gru;To jest to
+Hemp Gru;Światła miasta
+Kali;Chudy chłopak
+Kali;Pamiętaj
+Kaliber 44;Plus i minus
+Kartky;Hollywood$
+Kartky;Pamiętasz mnie?
+KęKę;Nowe rzeczy
+KęKę;To tu
+Malik Montana;Jagodzianki
+Malik Montana;Złote tarasy
+Mata;Patointeligencja
 O.S.T.R.;Czas i pieniądz
 O.S.T.R.;Dźwięki Strun
 O.S.T.R.;Gdyby nie ty
 O.S.T.R.;Ja tu tylko sprzątam
+O.S.T.R.;Ja, Ty, My, Wy, Oni
+O.S.T.R.;Kochana Polsko
 O.S.T.R.;Masz to jak w banku
 O.S.T.R.;Nasze złudzenia
+PRO8L3M;Molly
 Paktofonika;Chwile Ulotne
 Paktofonika;Jestem Bogiem
 Paktofonika;Mówią, że
 Paktofonika;Nie ma mnie dla nikogo
 Paktofonika;W moich kręgach
+Paluch;Bez strachu
+Paluch;Szaman
+Paluch;Złota owca
+Peja;Głucha noc
 Pezet;Czarny HIFI
 Pezet;Muzyka Rozrywkowa
 Pezet;Nie jestem dawno
 Pezet;Nie wrócę
+Pezet;Seniorita
 Pezet;Supergirl
 Pezet;Wiem, że nie jestem sam
+PlanBe;Tamagotchi
+Quebonafide;Candy
+Quebonafide;Half Dead
+Quebonafide;Między słowami
+Quebonafide;SZUBIENICAPESTYCYDYBROŃ
 Rasmentalism;Długa droga w dół
 Rasmentalism;Nasze Dni
 Rasmentalism;Niebiosa
+Rasmentalism;Niebomby
 Rasmentalism;Piękno
 Rasmentalism;W moim magicznym domu
+SB Maffija;Dzieci duchy
 Sobota;Będę czekał
 Sobota;Jestem Sobą
 Sobota;Kiedy światła gasną
 Sobota;Tancz glupia
 Sobota;Weekend
 Sobota;Wojownik
+Sokół i Pono;W aucie
+Sokół;Chcemy być wyżej
+Szpaku;Płomień 81
+Słoń;Sick Rap
 Taco Hemingway;6 zer
 Taco Hemingway;Chodź
 Taco Hemingway;Deszcz na Betonie
 Taco Hemingway;Gdybyś Nie Istniała
+Taco Hemingway;Następna stacja
 Taco Hemingway;Nostalgia
+Taco Hemingway;W piątki leżę w wannie
+Tede;Drin za drinem
+Tede;S.P.O.R.T
 W.E.N.A.;Chcesz to powiedz
 W.E.N.A.;Mam na imię Aleksander
 W.E.N.A.;Nie będę gadał
 W.E.N.A.;Nie czekam na cud
 W.E.N.A.;Pewnego dnia
+White 2115;California
+Włodi;Eldorado
+Łona i Webber;Głęboko
+Łona i Webber;Nie pytaj nas
+Łona i Webber;Pierwsze słowo
+Łona i Webber;Północ
+Łona i Webber;Wiśniewski
+Łona i Webber;Wszystko na sprzedaż
+Żabson;Do ziomów
+Żabson;Trapollo

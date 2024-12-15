@@ -1,73 +1,71 @@
-seriale;Gra o tron
-seriale;Breaking Bad
-seriale;Stranger Things
-seriale;House of the Dragon
-seriale;The Crown
-seriale;Przyjaciele
-seriale;The Office
-seriale;Chirurdzy
-seriale;Czarnobyl
-seriale;The Mandalorian
-seriale;Sherlock
-seriale;Wikingowie
-seriale;Westworld
-seriale;Better Call Saul
-seriale;Dark
-seriale;Lucyfer
-seriale;Dexter
-seriale;Rodzina Soprano
-seriale;Orange is the New Black
-seriale;Ozark
-seriale;Narcos
-seriale;Mindhunter
-seriale;Pamiętniki Wampirów
-seriale;The Walking Dead
-seriale;Homeland
-seriale;How I Met Your Mother
-seriale;Lost
-seriale;Supernatural
-seriale;Doctor Who
-seriale;The Boys
-seriale;Peaky Blinders
-seriale;The Handmaid's Tale
-seriale;Brooklyn Nine-Nine
-seriale;Big Bang Theory
-seriale;Sukcesja
-seriale;Euforia
-seriale;Rick and Morty
-seriale;Simpsonowie
-seriale;Fargo
-seriale;Castle Rock
-seriale;Hannibal
-seriale;American Horror Story
-seriale;The Umbrella Academy
-seriale;Arcane
-seriale;BoJack Horseman
-seriale;Stranger Things
-seriale;The Punisher
-seriale;Jessica Jones
-seriale;Luke Cage
-seriale;Defenders
-seriale;Wiedźmin
-seriale;Glow
-seriale;Cobra Kai
-seriale;Daredevil
-seriale;Shadow and Bone
-seriale;Outlander
-seriale;Riverdale
-seriale;Sex Education
-seriale;Skins
-seriale;Downton Abbey
-seriale;The Witcher
-seriale;Glee
-seriale;Shameless
-seriale;House M.D.
-seriale;Good Doctor
-seriale;Mad Men
-seriale;Six Feet Under
-seriale;The Americans
-seriale;Blacklist
-seriale;White Collar
-seriale;Suits
-seriale;Arrow
-seriale;Flash
+Aaron Korsh;W garniturach
+Alan Ball;Sześć stóp pod ziemią
+Baran bo Odar, Jantje Friese;Dark
+Bill Dubuque, Mark Williams;Ozark
+Bruce Miller;Opowieść podręcznej
+Bryan Elsley, Jamie Brittain;Skins
+Bryan Fuller;Hannibal
+Carter Bays, Craig Thomas;Jak poznałem waszą matkę
+Cheo Hodari Coker;Luke Cage
+Chris Brancato, Carlo Bernard, Doug Miro;Narcos
+Christian Linke, Alex Yee;Arcane
+Chuck Lorre, Bill Prady;Teoria wielkiego podrywu
+Dan Harmon, Justin Roiland;Rick i Morty
+David Benioff, D.B. Weiss;Gra o tron
+David Chase;Rodzina Soprano
+David Crane, Marta Kauffman;Przyjaciele
+David Shore;Dr House
+David Shore;The Good Doctor
+Douglas Petrie, Marco Ramirez;Defenders
+Drew Goddard;Daredevil
+Duffer Brothers;Stranger Things
+Eric Heisserer;Cień i kość
+Eric Kripke;Chłopaki
+Eric Kripke;Nie z tego świata
+Frank Darabont;Żywe trupy
+Greg Berlanti;Arrow
+Greg Berlanti;Flash
+Greg Daniels;Biuro
+Howard Gordon, Alex Gansa;Homeland
+J.J. Abrams, Jeffrey Lieber, Damon Lindelof;Zagubieni
+James Manos Jr.;Dexter
+Jeff Eastin;Białe kołnierzyki
+Jenji Kohan;Orange Is the New Black
+Jeremy Slater;Umbrella Academy
+Jesse Armstrong;Sukcesja
+Joe Penhall;Mindhunter
+Johan Renck;Czarnobyl
+Jon Bokenkamp;Czarna lista
+Jon Favreau;Mandalorian
+Jonathan Nolan, Lisa Joy;Westworld
+Joseph Weisberg;Amerykanie
+Josh Heald, Jon Hurwitz, Hayden Schlossberg;Cobra Kai
+Julian Fellowes;Downton Abbey
+Kevin Williamson, Julie Plec;Pamiętniki wampirów
+Lauren Schmidt Hissrich;Wiedźmin
+Laurie Nunn;Sex Education
+Liz Flahive, Carly Mensch;GLOW
+Matt Groening;Simpsonowie
+Matthew Weiner;Mad Men
+Melissa Rosenberg;Jessica Jones
+Michael Hirst;Wikingowie
+Michael Schur, Dan Goor;Brooklyn 9-9
+Noah Hawley;Fargo
+Paul Abbott;Niepokorni
+Peter Morgan;The Crown
+Raphael Bob-Waksberg;BoJack Horseman
+Roberto Aguirre-Sacasa;Riverdale
+Ronald D. Moore;Outlander
+Ryan Condal, Miguel Sapochnik;Ród smoka
+Ryan Murphy, Brad Falchuk;Glee
+Ryan Murphy;American Horror Story
+Sam Levinson;Euforia
+Sam Shaw, Dustin Thomason;Castle Rock
+Shonda Rhimes;Chirurdzy
+Steve Lightfoot;Punisher
+Steven Knight;Peaky Blinders
+Steven Moffat, Mark Gatiss;Sherlock
+Sydney Newman;Doktor Who
+Tom Kapinos;Lucyfer
+Vince Gilligan, Peter Gould;Zadzwoń do Saula
+Vince Gilligan;Breaking Bad

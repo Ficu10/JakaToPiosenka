@@ -1,124 +1,74 @@
-Maryla Rodowicz;Małgośka
-Krzysztof Krawczyk;Parostatek
-Irena Jarocka;Gondolierzy znad Wisły
-Andrzej Piaseczny;Jest gejem
-Ewa Bem;Tylko z tobą chcę być sobą
-Kombii;Pokolenie
-Izabela Trojanowska;Jestem twoim grzechem
-Justyna Steczkowska;Dziewczyna szamana
-Doda;Katharsis
-Kayah;Supermenka
-Blue Cafe;You May Be In Love
+Andrzej Piaseczny;Chodź, przytul, przebacz
+Ania Dąbrowska;Charlie, Charlie
+Ania Dąbrowska;Z Tobą nie umiem wygrać
+Ania Wyszkoni;Wiem, że jesteś tam
 Ania Wyszkoni;Zapytaj mnie o to kochany
-Kasia Kowalska;Coś optymistycznego
+Anna Jantar;Tyle słońca w całym mieście
+Beata Kozidrak;Co mi Panie dasz
+Big Cyc;Makumba
+Blue Cafe;Buena
+Blue Cafe;You May Be In Love
+Blue Café;Do nieba
+Brodka;Granda
+Cleo;Za krokiem krok
+Czesław Niemen;Dziwny jest ten świat
+Dawid Podsiadło;Małomiasteczkowy
+De Mono;Statki na niebie
+Doda;Katharsis
+Doda;Nie daj się
 Edyta Górniak;To nie ja
-Renata Dąbkowska;Samotność
+Elektryczne Gitary;Co ty tutaj robisz
+Enej;Skrzydlate ręce
+Ewa Bem;Tylko z tobą chcę być sobą
+Ewa Farna;Cicho
+Ewa Farna;Ewakuacja
+Ewelina Lisowska;W stronę słońca
+Feel;Jak anioła głos
+Golec uOrkiestra;Ściernisko
+Grzegorz Hyży;Pod wiatr
+Halina Frąckowiak;Papierowy księżyc
+Ich Troje;Powiedz
+Irena Jarocka;Gondolierzy znad Wisły
+Irena Santor;Już nie ma dzikich plaż
+Izabela Trojanowska;Jestem twoim grzechem
+Justyna Steczkowska;Daj mi chwilę
+Justyna Steczkowska;Dziewczyna szamana
+K.A.S.A.;Piękniejsza
 Kasia Cerekwicka;S.O.S
-Marta Mirska;Naucz mnie
-Sylwia Grzeszczak;Tamta dziewczyna
+Kasia Kowalska;Coś optymistycznego
+Kasia Kowalska;Prowadź mnie
+Kasia Stankiewicz;Ruchome piaski
+Kayah;Supermenka
+Kayah;Testosteron
+Kombi;Słodkiego miłego życia
 Kombii;Awinion
+Kombii;Jak pierwszy raz
+Kombii;Pokolenie
+Kortez;Zostań
+Krzysztof Krawczyk;Parostatek
+Lady Pank;Zawsze tam, gdzie ty
+Maanam;Kocham cię, kochanie moje
+Margaret;Cool Me Down
+Marta Mirska;Naucz mnie
+Maryla Rodowicz;Małgośka
+Michał Szpak;Color of Your Life
 Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
+Natalia Kukulska;Im więcej ciebie tym mniej
+Natalia Szroeder;Powietrze
+Paweł Domagała;Weź nie pytaj
+Perfect;Autobiografia
+Piotr Rubik;Niech mówią, że to nie jest miłość
+Ralph Kaminski;Kosmiczne energie
+Renata Dąbkowska;Samotność
+Renata Przemyk;Kasia Nosowska;Obława
 Renata Przemyk;Kasia nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
+Reni Jusis;Kiedyś cię znajdę
+Ryszard Rynkowski;Za młodzi za starzy
+Sanah;Szampan
+Stachursky;Typ niepokorny
 Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
-Ania Wyszkoni;Wiem, że jesteś tam
-Kombii;Jak pierwszy raz
-Sylwia Grzeszczak;Małe rzeczy
-Myslovitz;Długość dźwięku samotności
-Feel;Jak anioła głos
-Kayah;Testosteron
-Ania Dąbrowska;Charlie, Charlie
-Blue Cafe;Buena
-Ewa Farna;Ewakuacja
-Kasia Stankiewicz;Ruchome piaski
-Justyna Steczkowska;Daj mi chwilę
-Renata Przemyk;Kasia Nosowska;Obława
+Sylwia Grzeszczak;Tamta dziewczyna
+T.Love;Chłopaki nie płaczą
+Urszula;Na sen
+Varius Manx;Orła cień
+Video;Wszystko jedno

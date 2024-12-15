@@ -58,22 +58,22 @@ Guns N' Roses;Paradise City
 Guns N' Roses;Sweet Child O' Mine
 Guns N' Roses;Welcome to the Jungle
 Journey;Don't Stop Believin'
-Kombi;Ślad
-Kombi;Święty spokój
 Kombi;Królowie życia
 Kombi;Nasze rendez-vous
 Kombi;Pokolenie
 Kombi;Słodkiego, miłego życia
+Kombi;Ślad
+Kombi;Święty spokój
 Kult;Arahja
 Kult;Do Ani
 Kult;Gdy nie ma dzieci
 Kult;Marysia
 Kult;Polska
 Lady Pank;Kryzysowa narzeczona
-Lady Pank;Młode gołębie
 Lady Pank;Mamy tylko siebie
 Lady Pank;Minus zero
 Lady Pank;Mniej niż zero
+Lady Pank;Młode gołębie
 Lady Pank;Spacer po linie
 Lady Pank;Stacja Warszawa
 Lady Pank;Tacy sami
@@ -120,7 +120,6 @@ Queen;Bohemian Rhapsody
 Queen;Don't Stop Me Now
 Queen;Radio Ga Ga
 Queen;We Will Rock You
-Republika;Śmierć w bikini
 Republika;Biała flaga
 Republika;Kombinat
 Republika;Mamona
@@ -129,6 +128,7 @@ Republika;Nieustanne tango
 Republika;Obcy astronom
 Republika;Odchodząc
 Republika;Wielki las
+Republika;Śmierć w bikini
 Rick Astley;Never Gonna Give You Up
 Survivor;Burning Heart
 Survivor;Eye of the Tiger

@@ -1,68 +1,68 @@
-Przysłowia;Co ma wisieć, nie utonie
-Przysłowia;Lepszy wróbel w garści niż gołąb na dachu
-Przysłowia;Kto pod kim dołki kopie, ten sam w nie wpada
-Przysłowia;Nie chwal dnia przed zachodem słońca
 Przysłowia;Apetyt rośnie w miarę jedzenia
-Przysłowia;Darowanemu koniowi w zęby się nie zagląda
-Przysłowia;Kuj żelazo, póki gorące
-Przysłowia;Cicha woda brzegi rwie
-Przysłowia;Gdyby kózka nie skakała, to by nóżki nie złamała
-Przysłowia;Jak sobie pościelesz, tak się wyśpisz
-Przysłowia;Co za dużo, to niezdrowo
-Przysłowia;Gdzie dwóch się bije, tam trzeci korzysta
-Przysłowia;Nie wszystko złoto, co się świeci
-Przysłowia;Z dużej chmury mały deszcz
-Przysłowia;Pierwsze koty za płoty
-Przysłowia;Każdy kij ma dwa końce
-Przysłowia;Gdy kota nie ma, myszy harcują
-Przysłowia;Lepszy późno niż wcale
-Przysłowia;Nie myli się tylko ten, kto nic nie robi
-Przysłowia;Co kraj, to obyczaj
-Przysłowia;Zgoda buduje, niezgoda rujnuje
-Przysłowia;Fortuna kołem się toczy
-Przysłowia;W zdrowym ciele zdrowy duch
-Przysłowia;Czego Jaś się nie nauczy, tego Jan nie będzie umiał
-Przysłowia;Nie ma dymu bez ognia
-Przysłowia;Diabeł tkwi w szczegółach
-Przysłowia;Kto rano wstaje, temu Pan Bóg daje
+Przysłowia;Baba z wozu, koniom lżej
 Przysłowia;Bez pracy nie ma kołaczy
-Przysłowia;Pieniądze szczęścia nie dają
 Przysłowia;Chytry dwa razy traci
-Przysłowia;Kropla drąży skałę
+Przysłowia;Cicha woda brzegi rwie
+Przysłowia;Co kraj, to obyczaj
+Przysłowia;Co ma wisieć, nie utonie
 Przysłowia;Co nagle, to po diable
-Przysłowia;Gdzie kucharek sześć, tam nie ma co jeść
-Przysłowia;Nie taki diabeł straszny, jak go malują
-Przysłowia;Kłamstwo ma krótkie nogi
-Przysłowia;Każdy jest kowalem swojego losu
-Przysłowia;Nosił wilk razy kilka, ponieśli i wilka
-Przysłowia;Łaska pańska na pstrym koniu jeździ
-Przysłowia;Mądry Polak po szkodzie
-Przysłowia;Ziarnko do ziarnka, a zbierze się miarka
-Przysłowia;Jak Kuba Bogu, tak Bóg Kubie
-Przysłowia;Nie taki strach, jak go malują
-Przysłowia;Jak nie drzwiami, to oknem
-Przysłowia;Z niewolnika nie ma pracownika
-Przysłowia;Wilk syty i owca cała
-Przysłowia;Kiedy wejdziesz między wrony, musisz krakać jak i one
+Przysłowia;Co za dużo, to niezdrowo
+Przysłowia;Czas leczy rany
+Przysłowia;Czego Jaś się nie nauczy, tego Jan nie będzie umiał
 Przysłowia;Czego oczy nie widzą, tego sercu nie żal
-Przysłowia;Łatwiej mówić, niż robić
-Przysłowia;Nie ma róży bez kolców
-Przysłowia;Na pochyłe drzewo każda koza skacze
-Przysłowia;Z rodziną najlepiej wychodzi się na zdjęciu
 Przysłowia;Człowiek człowiekowi wilkiem
+Przysłowia;Darowanemu koniowi w zęby się nie zagląda
+Przysłowia;Diabeł tkwi w szczegółach
+Przysłowia;Fortuna kołem się toczy
+Przysłowia;Gdy kota nie ma, myszy harcują
+Przysłowia;Gdyby kózka nie skakała, to by nóżki nie złamała
+Przysłowia;Gdzie dwóch się bije, tam trzeci korzysta
+Przysłowia;Gdzie kucharek sześć, tam nie ma co jeść
 Przysłowia;Grosz do grosza, a będzie kokosza
-Przysłowia;Mówił dziad do obrazu, a obraz ani razu
-Przysłowia;Nie od razu Kraków zbudowano
-Przysłowia;Kiedy się nie ma, co się lubi, to się lubi, co się ma
-Przysłowia;Z pustego i Salomon nie naleje
+Przysłowia;Jak Kuba Bogu, tak Bóg Kubie
+Przysłowia;Jak nie drzwiami, to oknem
+Przysłowia;Jak sobie pościelesz, tak się wyśpisz
 Przysłowia;Jak trwoga, to do Boga
 Przysłowia;Jaka praca, taka płaca
+Przysłowia;Każdy jest kowalem swojego losu
+Przysłowia;Każdy kij ma dwa końce
+Przysłowia;Kiedy się nie ma, co się lubi, to się lubi, co się ma
+Przysłowia;Kiedy wejdziesz między wrony, musisz krakać jak i one
 Przysłowia;Kij ma dwa końce
-Przysłowia;Nie czas żałować róż, gdy płoną lasy
-Przysłowia;Wszystko dobre, co się dobrze kończy
-Przysłowia;Czas leczy rany
-Przysłowia;Baba z wozu, koniom lżej
-Przysłowia;Słowo się rzekło, kobyłka u płotu
+Przysłowia;Kropla drąży skałę
 Przysłowia;Kto nie ryzykuje, ten nie pije szampana
+Przysłowia;Kto pod kim dołki kopie, ten sam w nie wpada
+Przysłowia;Kto rano wstaje, temu Pan Bóg daje
+Przysłowia;Kuj żelazo, póki gorące
+Przysłowia;Kłamstwo ma krótkie nogi
+Przysłowia;Lepiej późno niż wcale
+Przysłowia;Lepszy wróbel w garści niż gołąb na dachu
+Przysłowia;Mówił dziad do obrazu, a obraz ani razu
+Przysłowia;Mądry Polak po szkodzie
+Przysłowia;Na pochyłe drzewo każda koza skacze
+Przysłowia;Nie chwal dnia przed zachodem słońca
+Przysłowia;Nie czas żałować róż, gdy płoną lasy
+Przysłowia;Nie ma dymu bez ognia
 Przysłowia;Nie ma nic za darmo
+Przysłowia;Nie ma róży bez kolców
+Przysłowia;Nie myli się tylko ten, kto nic nie robi
+Przysłowia;Nie od razu Kraków zbudowano
+Przysłowia;Nie taki diabeł straszny, jak go malują
+Przysłowia;Nie taki strach, jak go malują
+Przysłowia;Nie wszystko złoto, co się świeci
+Przysłowia;Nosił wilk razy kilka, ponieśli i wilka
+Przysłowia;Pieniądze szczęścia nie dają
+Przysłowia;Pierwsze koty za płoty
 Przysłowia;Początek jest najtrudniejszy
+Przysłowia;Słowo się rzekło, kobyłka u płotu
+Przysłowia;W zdrowym ciele zdrowy duch
+Przysłowia;Wilk syty i owca cała
+Przysłowia;Wszystko dobre, co się dobrze kończy
+Przysłowia;Z dużej chmury mały deszcz
+Przysłowia;Z niewolnika nie ma pracownika
+Przysłowia;Z pustego i Salomon nie naleje
+Przysłowia;Z rodziną najlepiej wychodzi się na zdjęciu
+Przysłowia;Zgoda buduje, niezgoda rujnuje
+Przysłowia;Ziarnko do ziarnka, a zbierze się miarka
+Przysłowia;Łaska pańska na pstrym koniu jeździ
+Przysłowia;Łatwiej mówić, niż robić

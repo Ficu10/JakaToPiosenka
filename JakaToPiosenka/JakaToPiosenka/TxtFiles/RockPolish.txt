@@ -1,4 +1,3 @@
-Budka Suflera;Światła mijają
 Budka Suflera;Bal wszystkich świętych
 Budka Suflera;Cień wielkiej góry
 Budka Suflera;Czas czekania, czas olśnienia
@@ -10,6 +9,7 @@ Budka Suflera;Ratujmy co się da
 Budka Suflera;Za ostatni grosz
 Budka Suflera;Zawsze czegoś brakuje
 Budka Suflera;Zostać mistrzem
+Budka Suflera;Światła mijają
 Dżem;Czerwony jak cegła
 Dżem;List do M
 Dżem;Mała aleja róż
@@ -63,12 +63,12 @@ Myslovitz;Z twarzą Marilyn Monroe
 Perfect;Ale wkoło jest wesoło
 Perfect;Autobiografia
 Perfect;Chcemy być sobą
-Perfect;Kołysanka dla nieznajomej
 Perfect;Kolejny raz
+Perfect;Kołysanka dla nieznajomej
 Perfect;Lokomotywa z ogłoszenia
 Perfect;Mój przyjacielu
-Perfect;Nie płacz Ewka
 Perfect;Nie powiem jak
+Perfect;Nie płacz Ewka
 Perfect;Niepokonani
 Perfect;Odlotowe agentki
 Perfect;Raz po raz

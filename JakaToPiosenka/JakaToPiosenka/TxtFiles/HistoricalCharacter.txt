@@ -1,71 +1,71 @@
-Starożytność;Juliusz Cezar
-Starożytność;Kleopatra
+Oświecenie;Benjamin Franklin
+Oświecenie;Isaac Newton
+Oświecenie;Jean-Jacques Rousseau
+Oświecenie;Voltaire
+Renesans;Ferdynand Magellan
+Renesans;Galileusz
+Renesans;Krzysztof Kolumb
+Renesans;Machiavelli
+Renesans;Michelangelo
+Renesans;William Szekspir
+Rewolucja Francuska;Maria Antonina
+Rewolucja Francuska;Napoleon Bonaparte
 Starożytność;Aleksander Wielki
-Starożytność;Sokrates
-Starożytność;Platon
 Starożytność;Arystoteles
 Starożytność;Hammurabi
-Starożytność;Tutanchamon
 Starożytność;Hannibal
-Średniowiecze;Karol Wielki
-Średniowiecze;Joanna d’Arc
-Średniowiecze;Richard Lwie Serce
-Średniowiecze;Mikołaj Kopernik
-Średniowiecze;Leonardo da Vinci
-Średniowiecze;Dante Alighieri
-Renesans;Galileusz
-Renesans;Michelangelo
-Renesans;Machiavelli
-Renesans;William Szekspir
-Renesans;Krzysztof Kolumb
-Renesans;Ferdynand Magellan
-Oświecenie;Isaac Newton
-Oświecenie;Voltaire
-Oświecenie;Jean-Jacques Rousseau
-Oświecenie;Benjamin Franklin
-Rewolucja Francuska;Napoleon Bonaparte
-Rewolucja Francuska;Maria Antonina
+Starożytność;Juliusz Cezar
+Starożytność;Kleopatra
+Starożytność;Platon
+Starożytność;Sokrates
+Starożytność;Tutanchamon
 XIX wiek;Abraham Lincoln
-XIX wiek;Karol Marks
 XIX wiek;Charles Darwin
 XIX wiek;Florence Nightingale
+XIX wiek;Karol Marks
 XIX wiek;Ludwig van Beethoven
 XIX wiek;Winston Churchill
-XX wiek;Albert Einstein
-XX wiek;Mahatma Gandhi
-XX wiek;Władimir Lenin
 XX wiek;Adolf Hitler
-XX wiek;Franklin D. Roosevelt
-XX wiek;Joseph Stalin
-XX wiek;John F. Kennedy
-XX wiek;Martin Luther King Jr.
-XX wiek;Nelson Mandela
-XX wiek;Margaret Thatcher
-XX wiek;Matka Teresa
-XX wiek;Lech Wałęsa
-XX wiek;Papież Jan Paweł II
-XX wiek;Elvis Presley
-XX wiek;Marilyn Monroe
-XX wiek;Steve Jobs
+XX wiek;Albert Einstein
 XX wiek;Barack Obama
-XX wiek;Mao Zedong
-XX wiek;Nikola Tesla
-XX wiek;Marie Curie
-XX wiek;Frida Kahlo
-XX wiek;Pablo Picasso
-XX wiek;Ernest Hemingway
 XX wiek;Che Guevara
-XX wiek;Yuri Gagarin
-XX wiek;Neil Armstrong
+XX wiek;Elvis Presley
+XX wiek;Ernest Hemingway
+XX wiek;Franklin D. Roosevelt
+XX wiek;Frida Kahlo
+XX wiek;John F. Kennedy
+XX wiek;Joseph Stalin
+XX wiek;Lech Wałęsa
+XX wiek;Mahatma Gandhi
 XX wiek;Malcolm X
+XX wiek;Mao Zedong
+XX wiek;Margaret Thatcher
+XX wiek;Marie Curie
+XX wiek;Marilyn Monroe
+XX wiek;Martin Luther King Jr.
+XX wiek;Matka Teresa
+XX wiek;Neil Armstrong
+XX wiek;Nelson Mandela
+XX wiek;Nikola Tesla
+XX wiek;Pablo Picasso
+XX wiek;Papież Jan Paweł II
+XX wiek;Steve Jobs
+XX wiek;Władimir Lenin
+XX wiek;Yuri Gagarin
 XXI wiek;Angela Merkel
-XXI wiek;Elon Musk
-XXI wiek;Greta Thunberg
 XXI wiek;Donald Trump
-XXI wiek;Vladimir Putin
-XXI wiek;Xi Jinping
+XXI wiek;Elon Musk
+XXI wiek;Emmanuel Macron
+XXI wiek;Greta Thunberg
 XXI wiek;Jacinda Ardern
 XXI wiek;Joe Biden
 XXI wiek;Kamala Harris
+XXI wiek;Vladimir Putin
 XXI wiek;Volodymyr Zelensky
-XXI wiek;Emmanuel Macron
+XXI wiek;Xi Jinping
+Średniowiecze;Dante Alighieri
+Średniowiecze;Joanna d’Arc
+Średniowiecze;Karol Wielki
+Średniowiecze;Leonardo da Vinci
+Średniowiecze;Mikołaj Kopernik
+Średniowiecze;Richard Lwie Serce

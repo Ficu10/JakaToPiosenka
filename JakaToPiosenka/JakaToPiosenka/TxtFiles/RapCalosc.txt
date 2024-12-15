@@ -1,18 +1,22 @@
-Łona i Webber;Głęboko
-Łona i Webber;Północ
-Łona i Webber;Pierwsze słowo
-Łona i Webber;Wiśniewski
-Łona i Webber;Wszystko na sprzedaż
 2Pac ft. Dr. Dre;California Love
 2Pac ft. K-Ci & JoJo;How Do U Want It
 2Pac ft. Snoop Dogg;2 of Amerikaz Most Wanted
 2Pac;All Eyez on Me
 2Pac;Ambitionz Az a Ridah
+2Pac;California Love
 2Pac;Changes
 2Pac;Dear Mama
 2Pac;Hit 'Em Up
 2Pac;I Get Around
 50 Cent;In Da Club
+A$AP Ferg;Plain Jane
+A$AP Rocky;Praise The Lord
+Beastie Boys;Sabotage
+Big Sean;I Don't F*** With You
+Cardi B;Bodak Yellow
+Chief Keef;Love Sosa
+Childish Gambino;This Is America
+DMX;X Gon' Give It to Ya
 Dr. Dre ft. Eminem, Skylar Grey;I Need a Doctor
 Dr. Dre ft. Eminem, Xzibit, Nate Dogg;What's the Difference
 Dr. Dre ft. Eminem;Forgot About Dre
@@ -21,9 +25,11 @@ Dr. Dre ft. Snoop Dogg, Nate Dogg;The Next Episode
 Dr. Dre ft. Snoop Dogg;Let Me Ride
 Dr. Dre ft. Snoop Dogg;Nuthin' But a G Thang
 Dr. Dre ft. Snoop Dogg;Still D.R.E.
+Dr. Dre;Still D.R.E.
+Drake;God's Plan
 Eldo;Człowiek z liściem
-Eldo;Nie pytaj o nią
 Eldo;Nie pytaj o Polskę
+Eldo;Nie pytaj o nią
 Eldo;Nieważne
 Eldo;Wiadomość
 Eminem ft. Dido;Stan
@@ -36,16 +42,23 @@ Eminem;Sing for the Moment
 Eminem;Stan
 Eminem;The Real Slim Shady
 Eminem;Without Me
+Fetty Wap;Trap Queen
 Fisz Emade Tworzywo;Mamut
 Fisz Emade Tworzywo;Nie boję się
 Fisz Emade Tworzywo;Politycznie niepoprawny
 Fisz Emade Tworzywo;Sznurowadła 2
 Fisz Emade Tworzywo;Trudno mnie kochać
-Hemp Gru;Światła miasta
+Flo Rida;Low
+Future;Mask Off
+G-Eazy;No Limit
 Hemp Gru;Amnezja
 Hemp Gru;Diament
 Hemp Gru;Klucz
 Hemp Gru;To jest to
+Hemp Gru;Światła miasta
+Ice Cube;It Was a Good Day
+J. Cole;No Role Modelz
+Jay-Z & Alicia Keys;Empire State of Mind
 Jay-Z ft. Alicia Keys;Empire State of Mind
 Jay-Z ft. Beyoncé;Bonnie & Clyde
 Jay-Z ft. Kanye West;Ni**as in Paris
@@ -55,6 +68,7 @@ Jay-Z;99 Problems
 Jay-Z;Empire State of Mind (Part II) Broken Down
 Jay-Z;Hard Knock Life (Ghetto Anthem)
 Jay-Z;Numb/Encore
+Juice WRLD;Lucid Dreams
 Kanye West ft. Jay-Z;N****s in Paris
 Kanye West ft. Kid Cudi;Ghost Town
 Kanye West ft. Lupe Fiasco;Touch the Sky
@@ -69,10 +83,14 @@ Kendrick Lamar ft. Rihanna;Loyalty
 Kendrick Lamar ft. SZA;All the Stars
 Kendrick Lamar ft. U2;XXX.
 Kendrick Lamar ft. Zacari;Love.
+Kendrick Lamar;Alright
 Kendrick Lamar;DNA.
+Kendrick Lamar;HUMBLE.
 Kendrick Lamar;Humble
 Kendrick Lamar;King Kunta
 Kendrick Lamar;Swimming Pools (Drank)
+Lil Baby;Drip Too Hard
+Lil Nas X;Old Town Road
 Lil Wayne ft. Bruno Mars;Mirror
 Lil Wayne ft. Drake, Future;Love Me
 Lil Wayne ft. Drake, Jadakiss;It's Good
@@ -82,6 +100,10 @@ Lil Wayne ft. Static Major;Lollipop
 Lil Wayne;A Milli
 Lil Wayne;Go D.J.
 Lil Wayne;Got Money
+Macklemore & Ryan Lewis;Thrift Shop
+Megan Thee Stallion;Savage
+Migos;Bad and Boujee
+Missy Elliott;Work It
 Nas ft. Lauryn Hill;If I Ruled the World (Imagine That)
 Nas;Ether
 Nas;If I Ruled the World (Imagine That)
@@ -91,6 +113,8 @@ Nas;N.Y. State of Mind
 Nas;One Love
 Nas;One Mic
 Nas;The World Is Yours
+Nelly;Ride Wit Me
+Nicki Minaj;Super Bass
 Notorious B.I.G.;Big Poppa
 Notorious B.I.G.;Gimme the Loot
 Notorious B.I.G.;Hypnotize
@@ -126,17 +150,22 @@ Pezet;Nie jestem dawno
 Pezet;Nie wrócę
 Pezet;Supergirl
 Pezet;Wiem, że nie jestem sam
+Pop Smoke;Dior
+Post Malone;Rockstar
 Rasmentalism;Długa droga w dół
 Rasmentalism;Nasze Dni
 Rasmentalism;Niebiosa
 Rasmentalism;Piękno
 Rasmentalism;W moim magicznym domu
+Roddy Ricch;The Box
+Run-D.M.C.;It's Tricky
 Snoop Dogg ft. Dr. Dre, D'Angelo;Imagine
 Snoop Dogg ft. Dr. Dre;Still D.R.E.
 Snoop Dogg ft. Dr. Dre;The Next Episode
 Snoop Dogg ft. Pharrell Williams;Beautiful
 Snoop Dogg ft. Pharrell Williams;Drop It Like It's Hot
 Snoop Dogg ft. Warren G, Nate Dogg;Regulate
+Snoop Dogg;Drop It Like It's Hot
 Snoop Dogg;Gin and Juice
 Snoop Dogg;Who Am I (What's My Name)?
 Sobota;Będę czekał
@@ -150,8 +179,20 @@ Taco Hemingway;Chodź
 Taco Hemingway;Deszcz na Betonie
 Taco Hemingway;Gdybyś Nie Istniała
 Taco Hemingway;Nostalgia
+Travis Scott;Goosebumps
+Travis Scott;SICKO MODE
+Tyga;Taste
+Tyler, The Creator;EARFQUAKE
 W.E.N.A.;Chcesz to powiedz
 W.E.N.A.;Mam na imię Aleksander
 W.E.N.A.;Nie będę gadał
 W.E.N.A.;Nie czekam na cud
 W.E.N.A.;Pewnego dnia
+Wiz Khalifa;Black and Yellow
+Wu-Tang Clan;C.R.E.A.M.
+XXXTentacion;SAD!
+Łona i Webber;Głęboko
+Łona i Webber;Pierwsze słowo
+Łona i Webber;Północ
+Łona i Webber;Wiśniewski
+Łona i Webber;Wszystko na sprzedaż

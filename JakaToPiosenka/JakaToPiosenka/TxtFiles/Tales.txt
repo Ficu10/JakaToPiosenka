@@ -1,70 +1,120 @@
-Bajki;Kubuś Puchatek
-Bajki;Królewna Śnieżka i siedmiu krasnoludków
-Bajki;Kopciuszek
-Bajki;Piękna i Bestia
-Bajki;Mała Syrenka
-Bajki;Król Lew
-Bajki;Shrek
-Bajki;Toy Story
-Bajki;W głowie się nie mieści
-Bajki;Madagaskar
-Bajki;Epoka Lodowcowa
-Bajki;Potwory i spółka
-Bajki;Ratatouille
-Bajki;Coco
-Bajki;Wall-E
-Bajki;Auta
-Bajki;WALL-E
-Bajki;Pocahontas
-Bajki;Mulan
-Bajki;Frozen: Kraina Lodu
-Bajki;Zaplątani
-Bajki;Tarzan
-Bajki;Aladyn
-Bajki;Pinokio
-Bajki;Dumbo
-Bajki;Zootopia
-Bajki;Herkules
-Bajki;Bambi
-Bajki;Alicja w Krainie Czarów
-Bajki;Peter Pan
-Bajki;101 Dalmatyńczyków
-Bajki;Lilo i Stich
-Bajki;Atlantyda: Zaginiony Ląd
-Bajki;Robin Hood
-Bajki;Księga Dżungli
-Bajki;Aristocats
-Bajki;Lis i Pies
-Bajki;Anastazja
-Bajki;Brave: Waleczna
-Bajki;Wielka Szóstka
-Bajki;Zakochany Kundel
-Bajki;Trolle
-Bajki;Rio
-Bajki;Minionki
-Bajki;Sekretne życie zwierzaków domowych
-Bajki;Hotel Transylwania
-Bajki;Kung Fu Panda
-Bajki;Jak wytresować smoka
-Bajki;Mała stopa
-Bajki;Paddington
-Bajki;Księżniczka i Żaba
-Bajki;Stalowy Gigant
-Bajki;Kraina cudów
-Bajki;Kot w Butach
-Bajki;Sing
-Bajki;Zwierzogród
-Bajki;Happy Feet
-Bajki;Super Spark: Gwiezdna Misja
-Bajki;Kraina Smoka
-Bajki;Lorax
-Bajki;SpongeBob Kanciastoporty
-Bajki;Chłopiec z burzy
-Bajki;Mój brat niedźwiedź
-Bajki;Planeta Skarbów
-Bajki;Książę Egiptu
-Bajki;Ant Z
-Bajki;Życie Mrówek
-Bajki;Rodzinka Robinsonów
-Bajki;Polowanie na niedźwiedzia
-Bajki;Pan Peabody i Sherman
+
+A.A. Milne;Kubuś Puchatek
+Aaron Blaise, Robert Walker;Mój brat niedźwiedź
+Aaron Woodley;Super Spark: Gwiezdna Misja
+Alan Alexander Milne;Chatka Puchatka
+Andrew Adamson, Vicky Jenson;Shrek
+Andrew Stanton;WALL-E
+Antoine de Saint-Exupéry;Mały Książę
+Art Stevens, Ted Berman, Richard Rich;Lis i Pies
+Astrid Lindgren;Dzieci z Bullerbyn
+Astrid Lindgren;Pippi Pończoszanka
+Beatrix Potter;Opowieść o Piotrusiu Króliku
+Ben Sharpsteen;Dumbo
+Brad Bird;Ratatouille
+Brad Bird;Stalowy Gigant
+Brenda Chapman, Steve Hickner;Książę Egiptu
+Byron Howard, Rich Moore;Zwierzogród
+C.S. Lewis;Lew, Czarownica i Stara Szafa
+Carlo Collodi;Pinokio
+Carlos Saldanha;Rio
+Chris Buck, Jennifer Lee;Kraina Lodu (Frozen)
+Chris Miller;Kot w Butach
+Chris Renaud, Kyle Balda;Lorax
+Chris Renaud, Yarrow Cheney;Sekretne życie zwierzaków domowych
+Chris Sanders, Dean DeBlois;Jak wytresować smoka
+Chris Sanders, Dean DeBlois;Lilo i Stich
+Chris Wedge, Carlos Saldanha;Epoka Lodowcowa
+Clyde Geronimi, Wilfred Jackson, Hamilton Luske;Alicja w Krainie Czarów
+Clyde Geronimi, Wilfred Jackson, Hamilton Luske;Kopciuszek
+Clyde Geronimi, Wilfred Jackson, Hamilton Luske;Zakochany Kundel
+Clyde Geronimi, Wilfred Jackson;Piotruś Pan
+Cornelia Funke;Atramentowe serce
+David Hand;Bambi
+David Hand;Królewna Śnieżka i siedmiu krasnoludków
+Don Bluth;Anastazja
+Don Hall, Chris Williams;Wielka Szóstka
+Dr. Seuss;Grinch: Świąt nie będzie
+Dr. Seuss;Kot Prot
+E.B. White;Pajęczyna Charlotty
+Edward Wątor;Przygody Misia Colargola
+Eleanor H. Porter;Pollyanna
+Eric Carle;Bardzo głodna gąsienica
+Eric Darnell, Tim Johnson;Mrówka Z (Ant Z)
+Eric Darnell, Tom McGrath;Madagaskar
+Frances Hodgson Burnett;Mała księżniczka
+Frances Hodgson Burnett;Tajemniczy ogród
+Garth Jennings;Sing
+Gary Trousdale, Kirk Wise;Atlantyda: Zaginiony Ląd
+Gary Trousdale, Kirk Wise;Piękna i Bestia
+Genndy Tartakovsky;Hotel Transylwania
+George Miller;Happy Feet
+Hamilton Luske, Ben Sharpsteen;Pinokio
+Hans Christian Andersen;Królowa Śniegu
+Hergé;Przygody Tintina
+Hugh Lofting;Doktor Dolittle i jego zwierzęta
+J.M. Barrie;Piotruś Pan
+Jan Brzechwa;Akademia Pana Kleksa
+Jan Brzechwa;Pan Kleks w kosmosie
+Jean de Brunhoff;Babar
+Jerzy Kotowski;Bolek i Lolek
+Joanna Harrison, Robin Shaw;Polowanie na niedźwiedzia
+John Lasseter;Auta
+John Lasseter;Toy Story
+John Lasseter;Życie Mrówek
+John Lounsbery, Wolfgang Reitherman;Kubuś Puchatek
+Julian Tuwim;Lokomotywa
+Julian Tuwim;Rzepka
+Karey Kirkpatrick, Jason Reisig;Mała stopa
+Kenneth Grahame;O czym szumią wierzby
+Kevin Lima, Chris Buck;Tarzan
+Kyle Balda, Pierre Coffin;Minionki
+L. Frank Baum;Czarnoksiężnik z Krainy Oz
+Lee Unkrich;Coco
+Lewis Carroll;Alicja w Krainie Czarów
+Lisbeth Werner;Puc, Bursztyn i cała reszta
+Lisbeth Werner;Puc, Bursztyn i goście
+Lucjan Dembiński;Reksio
+Lucy Maud Montgomery;Ania z Zielonego Wzgórza
+Makoto Shinkai;Kraina cudów
+Marcin Przewoźniak;Tajemnica niebieskich drzwi
+Marian Cholerek;Pomysłowy Dobromir
+Mark Andrews, Brenda Chapman;Merida Waleczna (Brave: Waleczna)
+Mark Osborne, John Stevenson;Kung Fu Panda
+Mary Norton;Pożyczalscy
+Maurice Sendak;Tam, gdzie żyją dzikie stwory
+Michael Bond;Miś Paddington
+Mike Gabriel, Eric Goldberg;Pocahontas
+Mike Mitchell;Trolle
+Nathan Greno, Byron Howard;Zaplątani
+Ole Lund Kirkegaard;Albert
+Ole Lund Kirkegaard;Gumi Tarzan
+Paul King;Paddington
+Pete Docter, David Silverman, Lee Unkrich;Potwory i spółka
+Pete Docter;W głowie się nie mieści
+Peter Chung;Kraina Smoka
+Rene Goscinny;Mikołajek
+Rene Goscinny;Wakacje Mikołajka
+Roald Dahl;Charlie i fabryka czekolady
+Roald Dahl;Matylda
+Rob Minkoff;Pan Peabody i Sherman
+Roger Allers, Rob Minkoff;Król Lew
+Ron Clements, John Musker;Aladyn
+Ron Clements, John Musker;Herkules
+Ron Clements, John Musker;Księżniczka i Żaba
+Ron Clements, John Musker;Mała Syrenka
+Ron Clements, John Musker;Planeta Skarbów
+Rudyard Kipling;Księga Dżungli
+Shawn Seet;Chłopiec z burzy
+Shel Silverstein;Drzewo darów
+Stephen Hillenburg;SpongeBob Kanciastoporty
+Stephen J. Anderson;Rodzinka Robinsonów
+Tony Bancroft, Barry Cook;Mulan
+Tove Jansson;Opowieści z Doliny Muminków
+Tove Jansson;Zima Muminków
+Wolfgang Reitherman;101 Dalmatyńczyków
+Wolfgang Reitherman;Arystokraci (Aristocats)
+Wolfgang Reitherman;Księga Dżungli
+Wolfgang Reitherman;Robin Hood
+Władysław Nehrebecki;Porwanie Baltazara Gąbki
+Zbigniew Żmudzki;Miś Uszatek

@@ -26,7 +26,6 @@ Bon Jovi;Livin' on a Prayer
 Bon Jovi;Runaway
 Bon Jovi;Wanted Dead or Alive
 Bon Jovi;You Give Love a Bad Name
-Budka Suflera;Światła mijają
 Budka Suflera;Bal wszystkich świętych
 Budka Suflera;Cień wielkiej góry
 Budka Suflera;Czas czekania, czas olśnienia
@@ -38,6 +37,14 @@ Budka Suflera;Ratujmy co się da
 Budka Suflera;Za ostatni grosz
 Budka Suflera;Zawsze czegoś brakuje
 Budka Suflera;Zostać mistrzem
+Budka Suflera;Światła mijają
+Deep Purple;Burn
+Deep Purple;Highway Star
+Deep Purple;Hush
+Deep Purple;Perfect Strangers
+Deep Purple;Smoke on the Water
+Deep Purple;Soldier of Fortune
+Deep Purple;Space Truckin'
 Dżem;Czerwony jak cegła
 Dżem;List do M
 Dżem;Mała aleja róż
@@ -49,13 +56,6 @@ Dżem;Wehikuł czasu
 Dżem;Wehikuł czasu II
 Dżem;Whisky
 Dżem;Wokół sami lunatycy
-Deep Purple;Burn
-Deep Purple;Highway Star
-Deep Purple;Hush
-Deep Purple;Perfect Strangers
-Deep Purple;Smoke on the Water
-Deep Purple;Soldier of Fortune
-Deep Purple;Space Truckin'
 Foo Fighters;Best of You
 Foo Fighters;Everlong
 Foo Fighters;Learn to Fly
@@ -147,12 +147,12 @@ Nirvana;The Man Who Sold the World
 Perfect;Ale wkoło jest wesoło
 Perfect;Autobiografia
 Perfect;Chcemy być sobą
-Perfect;Kołysanka dla nieznajomej
 Perfect;Kolejny raz
+Perfect;Kołysanka dla nieznajomej
 Perfect;Lokomotywa z ogłoszenia
 Perfect;Mój przyjacielu
-Perfect;Nie płacz Ewka
 Perfect;Nie powiem jak
+Perfect;Nie płacz Ewka
 Perfect;Niepokonani
 Perfect;Odlotowe agentki
 Perfect;Raz po raz
@@ -191,6 +191,14 @@ T.Love;King
 T.Love;Nie, nie, nie
 T.Love;Przyjazny duszek
 T.Love;Warszawa
+TSA;51
+TSA;Heavy metal świat
+TSA;Live
+TSA;Manekin disco
+TSA;Mass Media
+TSA;Proceder
+TSA;Spowiedź
+TSA;Trzy zapałki
 The Beatles;All You Need Is Love
 The Beatles;Blackbird
 The Beatles;Eleanor Rigby
@@ -224,14 +232,6 @@ The Who;Love, Reign o'er Me
 The Who;My Generation
 The Who;Pinball Wizard
 The Who;Squeeze Box
-TSA;51
-TSA;Heavy metal świat
-TSA;Live
-TSA;Manekin disco
-TSA;Mass Media
-TSA;Proceder
-TSA;Spowiedź
-TSA;Trzy zapałki
 U2;Beautiful Day
 U2;One
 U2;Pride (In the Name of Love)
