@@ -301,6 +301,8 @@
     <AndroidResource Include="Resources\drawable\multim.png" />
     <AndroidResource Include="Resources\drawable\blask.png" />
     <AndroidResource Include="Resources\drawable\zloto.png" />
+    <AndroidResource Include="Resources\drawable\kalamburyNapis.png" />
+    <AndroidResource Include="Resources\drawable\nucenieNapis.png" />
     <Content Include="Resources\drawable\jedzenie.jpg" />
     <AndroidResource Include="Resources\drawable\panstwa.jpg" />
     <AndroidResource Include="Resources\drawable\disney1.jpg" />
@@ -318,6 +320,7 @@
     <AndroidResource Include="Resources\drawable\jeszczeRaz.png" />
     <AndroidResource Include="Resources\drawable\menug.png" />
     <AndroidResource Include="Resources\drawable\mute.png" />
+    <AndroidResource Include="Resources\drawable\zLogo.png" />
     <Content Include="Resources\drawable\polish_20241213_193547442-1.jpg" />
     <Content Include="Resources\drawable\Pop_logo_2021.png" />
     <AndroidResource Include="Resources\drawable\rymy.jpg" />

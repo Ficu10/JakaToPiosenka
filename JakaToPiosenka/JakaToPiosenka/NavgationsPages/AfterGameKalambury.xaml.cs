@@ -112,9 +112,9 @@ namespace JakaToPiosenka
                     songsWithColors.Add(new SongItem
                     {
                         Title = Game.songsFromGame[i],
-                        StartColor = Color.FromHex("#d19d49"), // Light green at the top-left
+                        StartColor = Color.FromHex("#ab7b48"), // Light green at the top-left
                         MiddleColor = Color.FromHex("#64b840"), // Dark green in the center
-                        EndColor = Color.FromHex("#d19d49") // Light green at the bottom-right
+                        EndColor = Color.FromHex("#ab7b48") // Light green at the bottom-right
                     });
 
                 }
@@ -123,9 +123,9 @@ namespace JakaToPiosenka
                     songsWithColors.Add(new SongItem
                     {
                         Title = Game.songsFromGame[i],
-                        StartColor = Color.FromHex("#d19d49"), // Light red at the top-left
+                        StartColor = Color.FromHex("#ab7b48"), // Light red at the top-left
                         MiddleColor = Color.FromHex("#a63430"), // Dark red in the center
-                        EndColor = Color.FromHex("#d19d49")    // Light red at the bottom-right
+                        EndColor = Color.FromHex("#ab7b48")    // Light red at the bottom-right
                     });
                 }
             }

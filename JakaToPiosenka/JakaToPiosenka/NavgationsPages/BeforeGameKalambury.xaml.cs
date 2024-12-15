@@ -66,7 +66,6 @@ namespace JakaToPiosenka
 
             if (gameModeMappings.TryGetValue(MainPage.gameMode, out var mappings))
             {
-                Category.Text = mappings.Item1;
                 PhotoCategory.Source = mappings.Item2;
             }
 

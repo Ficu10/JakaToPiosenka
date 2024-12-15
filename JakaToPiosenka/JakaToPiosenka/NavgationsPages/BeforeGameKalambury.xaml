@@ -5,6 +5,17 @@
              x:Class="JakaToPiosenka.BeforeGameKalambury"
              BackgroundColor="#d19d49"
              NavigationPage.HasNavigationBar="false" >
+    <ContentPage.Background>
+        <!-- Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#b55f04" Offset="0.0" />
+            <!-- Top Color -->
+            <GradientStop Color="#fc9621" Offset="0.2" />
+            <!-- Middle Color -->
+            <GradientStop Color="#4f2d06" Offset="1.0" />
+            <!-- Bottom Color -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
     <ContentPage.Content >
         <Grid>
             <Grid.RowDefinitions>
@@ -14,14 +25,13 @@
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="0.6*"/>
             </Grid.RowDefinitions>
-
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Source="blask.png" Grid.ColumnSpan="2" Scale="1.3" Grid.RowSpan="2" Margin="0,0,0,60" x:Name="RotatingImage"/>
-            <StackLayout Grid.ColumnSpan="2" Grid.Row="0">
-                <Label x:Name="Category" Text="Piosenki Disneya" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" FontSize="30" FontAttributes="Bold" TextColor="White"/>
+            <StackLayout Grid.ColumnSpan="2" Grid.Row="0" Margin="0,40,0,0">
                 <Frame CornerRadius="20" Margin="40,-20,40,60" Scale="0.9" BackgroundColor="#cc820a">
                     <Image x:Name="PhotoCategory" Source="disney.jpg" Grid.ColumnSpan="2"  VerticalOptions="Start"/>
                 </Frame>
@@ -33,14 +43,144 @@
 
             </StackLayout>
 
+            <Button Padding="10"
+FontAttributes="Bold"
+Text="15"
+TextTransform="None"
+FontSize="40"
+TextColor="White"
+x:Name="Time15"
+Clicked="Time15_Clicked"
+CornerRadius="30"
+Margin="17,7,7,7"
+Grid.Column="0"
+Grid.Row="2">
+                <Button.Background>
+                    <!-- Linear Gradient Background -->
+                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                        <GradientStop Color="#472a09" Offset="0.1" />
+                        <GradientStop Color="#59350c" Offset="0.2" />
+                        <GradientStop Color="#6e410e" Offset="0.3" />
+                        <GradientStop Color="#804c11" Offset="0.4" />
+                        <GradientStop Color="#8c5312" Offset="0.5" />
+                        <GradientStop Color="#995c15" Offset="0.6" />
+                        <GradientStop Color="#a66216" Offset="0.7" />
+                        <GradientStop Color="#b06a1a" Offset="0.8" />
+                        <GradientStop Color="#bd7019" Offset="0.9" />
+                        <GradientStop Color="#c9791e" Offset="1.0" />
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
 
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "15" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time15"  Clicked="Time15_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"  Grid.Column="0" Grid.Row="2"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "30" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time30"  Clicked="Time30_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"   Grid.Column="1" Grid.Row="2"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "45" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time45"  Clicked="Time45_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"    Grid.Column="0" Grid.Row="3"/>
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "60" TextTransform="None" FontSize="40" TextColor = "White"  x:Name="Time60"  Clicked="Time60_Clicked" CornerRadius="30" Margin = "7" BackgroundColor="#cc820a"   Grid.Column="1" Grid.Row="3"/>
+            <Button Padding="10"
+FontAttributes="Bold"
+Text="30"
+TextTransform="None"
+FontSize="40"
+TextColor="White"
+x:Name="Time30"
+Clicked="Time30_Clicked"
+CornerRadius="30"
+Margin="7,7,17,7"
+Grid.Column="1"
+Grid.Row="2">
+                <Button.Background>
+                    <!-- Linear Gradient Background -->
+                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                        <GradientStop Color="#472a09" Offset="0.1" />
+                        <GradientStop Color="#59350c" Offset="0.2" />
+                        <GradientStop Color="#6e410e" Offset="0.3" />
+                        <GradientStop Color="#804c11" Offset="0.4" />
+                        <GradientStop Color="#8c5312" Offset="0.5" />
+                        <GradientStop Color="#995c15" Offset="0.6" />
+                        <GradientStop Color="#a66216" Offset="0.7" />
+                        <GradientStop Color="#b06a1a" Offset="0.8" />
+                        <GradientStop Color="#bd7019" Offset="0.9" />
+                        <GradientStop Color="#c9791e" Offset="1.0" />
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
 
+            <Button Padding="10"
+FontAttributes="Bold"
+Text="45"
+TextTransform="None"
+FontSize="40"
+TextColor="White"
+x:Name="Time45"
+Clicked="Time45_Clicked"
+CornerRadius="30"
+Margin="17,7,7,7"
+Grid.Column="0"
+Grid.Row="3">
+                <Button.Background>
+                    <!-- Linear Gradient Background -->
+                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                        <GradientStop Color="#472a09" Offset="0.1" />
+                        <GradientStop Color="#59350c" Offset="0.2" />
+                        <GradientStop Color="#6e410e" Offset="0.3" />
+                        <GradientStop Color="#804c11" Offset="0.4" />
+                        <GradientStop Color="#8c5312" Offset="0.5" />
+                        <GradientStop Color="#995c15" Offset="0.6" />
+                        <GradientStop Color="#a66216" Offset="0.7" />
+                        <GradientStop Color="#b06a1a" Offset="0.8" />
+                        <GradientStop Color="#bd7019" Offset="0.9" />
+                        <GradientStop Color="#c9791e" Offset="1.0" />
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
 
-            <Button FontAttributes="Bold" BorderWidth="3" BorderColor = "White" Text = "Dodaj hasła" TextTransform="None" FontSize="20" TextColor = "White"  x:Name="AddNewSongs"  Clicked="AddNewSongs_Clicked" CornerRadius="30" BackgroundColor="#d98702"   Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="60,40,60,40"/>
+            <Button Padding="10"
+FontAttributes="Bold"
+Text="60"
+TextTransform="None"
+FontSize="40"
+TextColor="White"
+x:Name="Time60"
+Clicked="Time60_Clicked"
+CornerRadius="30"
+Margin="7,7,17,7"
+Grid.Column="1"
+Grid.Row="3">
+                <Button.Background>
+                    <!-- Linear Gradient Background -->
+                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                        <GradientStop Color="#472a09" Offset="0.1" />
+                        <GradientStop Color="#59350c" Offset="0.2" />
+                        <GradientStop Color="#6e410e" Offset="0.3" />
+                        <GradientStop Color="#804c11" Offset="0.4" />
+                        <GradientStop Color="#8c5312" Offset="0.5" />
+                        <GradientStop Color="#995c15" Offset="0.6" />
+                        <GradientStop Color="#a66216" Offset="0.7" />
+                        <GradientStop Color="#b06a1a" Offset="0.8" />
+                        <GradientStop Color="#bd7019" Offset="0.9" />
+                        <GradientStop Color="#c9791e" Offset="1.0" />
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button FontAttributes="Bold"
+Text="Lista haseł"
+TextTransform="None"
+FontSize="20"
+TextColor="White"
+x:Name="AddNewSongs"
+Clicked="AddNewSongs_Clicked"
+CornerRadius="30"
+Margin="30"
+Grid.Column="0"
+Grid.Row="4"
+Grid.ColumnSpan="2">
+                <Button.Background>
+                    <!-- Linear Gradient Background -->
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#c9791e" Offset="0.0" />
+                        <GradientStop Color="#8a4d11" Offset="0.3" />
+                        <GradientStop Color="#8a4d11" Offset="0.7" />
+                        <GradientStop Color="#c9791e" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
         </Grid>
 

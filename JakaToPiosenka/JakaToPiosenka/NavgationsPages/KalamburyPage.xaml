@@ -8,12 +8,23 @@
              NavigationPage.HasBackButton="False"
              BackgroundColor="#705831">
 
-
+    <ContentPage.Background>
+        <!-- Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#633a08" Offset="0.0" />
+            <!-- Top Color -->
+            <GradientStop Color="#c27019" Offset="0.4" />
+            <!-- Middle Color -->
+            <GradientStop Color="#633a08" Offset="1.0" />
+            <!-- Bottom Color -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"/>
+            <RowDefinition x:Name="KalamburyHeight" Height="100"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -24,14 +35,62 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <!-- Menu -->
-        <Button IsEnabled="False" Grid.ColumnSpan="2" BackgroundColor="#c49751" Margin="-6"/>
+        <Button IsEnabled="False"
+ Grid.ColumnSpan="2"
+ Grid.RowSpan="2"
+ Margin="-6"
+ CornerRadius="0">
+            <Button.Background>
+                <!-- Linear Gradient Background -->
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#854e0b" Offset="0.0" />
+                    <!-- Light blue -->
+                    <GradientStop Color="#ff931f" Offset="0.25" />
+                    <GradientStop Color="#ff931f" Offset="0.68" />
+                    <!-- Richer blue -->
+                    <GradientStop Color="#854e0b" Offset="1.0" />
+                    <!-- Light blue -->
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image Source="kalamburyNapis.png" Scale="2.5" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+
+        <Frame Grid.ColumnSpan="2"
+       Margin="0,30,0,20"
+       VerticalOptions="Start"
+       HorizontalOptions="CenterAndExpand"
+       CornerRadius="60"
+       Scale="1.2"
+       BorderColor="#291601"
+       Padding="0"
+       x:Name="Logo">
+            <Frame.Background>
+                <!-- Radial Gradient Background -->
+                <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                    <GradientStop Color="#291601" Offset="0.4" /> 
+                    <!-- Light brown/orange (center) -->
+                    <GradientStop Color="#855622" Offset="0.7" />
+                    <!-- Medium brown -->
+                    <GradientStop Color="#faba73" Offset="1.0" />
+                    <!-- Dark brown (edges) -->
+                </RadialGradientBrush>
+            </Frame.Background>
+            <Image  Source="kalamburyLogo.png"
+           Aspect="AspectFit"
+           Scale="1.3"
+           VerticalOptions="Center"
+           HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Logo_Clicked" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Frame>
 
 
 
-        <ImageButton x:Name="Logo" Clicked="Logo_Clicked" IsEnabled="True" Source="kalamburyLogo.png" Scale="1.3" Grid.ColumnSpan="2" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#f7a539" BorderWidth="5" BorderColor="#26414a"/>
 
-
-        <ScrollView x:Name="Scroll" Grid.Row="1" Grid.RowSpan="3" VerticalScrollBarVisibility="Never" Margin="0,0,0,-20" Padding="4"  Grid.ColumnSpan="2"  Scrolled="Scroll_Scrolled"  VerticalOptions="FillAndExpand">
+        <ScrollView x:Name="Scroll" Grid.Row="2" Grid.RowSpan="3" VerticalScrollBarVisibility="Never" Margin="0,0,0,-20" Padding="4"  Grid.ColumnSpan="2"  Scrolled="Scroll_Scrolled"  VerticalOptions="FillAndExpand">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -39,29 +98,29 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Column="0">
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="0" Grid.Row="1" Clicked="dladzieciButton_Clicked"  x:Name="dladzieciButton" Source="CKal.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831"  Grid.Column="0" Grid.Row="2" Clicked="emocjeButton_Clicked" x:Name="emocjeButton" Source="Emotes.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="0" Grid.Row="3" Clicked="filmyButton_Clicked"  x:Name="filmyButton" Source="Movies.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="bajkiButton_Clicked"  x:Name="bajkiButton" Source="Fairy.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="zawodyButton_Clicked"  x:Name="zawodyButton" Source="Jobs.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="AnimalsButton_Clicked"  x:Name="AnimalsButton" Source="animals.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="AdultMixed_Clicked"  x:Name="AdultMixed" Source="Art18.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="PolandButton_Clicked"  x:Name="PolandButton" Source="Poland.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="ScienceTopicsButton_Clicked"  x:Name="ScienceTopicsButton" Source="Science.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="1" Clicked="dladzieciButton_Clicked"  x:Name="dladzieciButton" Source="CKal.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="2" Clicked="emocjeButton_Clicked" x:Name="emocjeButton" Source="Emotes.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="3" Clicked="filmyButton_Clicked"  x:Name="filmyButton" Source="Movies.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="bajkiButton_Clicked"  x:Name="bajkiButton" Source="Fairy.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="zawodyButton_Clicked"  x:Name="zawodyButton" Source="Jobs.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="AnimalsButton_Clicked"  x:Name="AnimalsButton" Source="animals.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="AdultMixed_Clicked"  x:Name="AdultMixed" Source="Art18.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="PolandButton_Clicked"  x:Name="PolandButton" Source="Poland.jpg" BackgroundColor="Transparent"/>
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="ScienceTopicsButton_Clicked"  x:Name="ScienceTopicsButton" Source="Science.jpg" BackgroundColor="Transparent" />
 
 
 
                 </StackLayout>
                 <StackLayout Grid.Column="1">
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="0" Grid.Row="1" Clicked="netflixButton_Clicked"  x:Name="netflixButton" Source="Series.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831"  Grid.Column="0" Grid.Row="2" Clicked="panstwaButton_Clicked" x:Name="panstwaButton" Source="World.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="0" Grid.Row="3" Clicked="przyslowiaButton_Clicked"  x:Name="przyslowiaButton" Source="Proverb.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="fictionButton_Clicked"  x:Name="fictionButton" Source="Fiction.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="postaciehistoryczne_Clicked"  x:Name="postaciehistoryczne" Source="History.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="CelebritiesButton_Clicked"  x:Name="CelebritiesButton" Source="Celebs.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="DailyLifeButton_Clicked"  x:Name="DailyLifeButton" Source="daily.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="RhymesButton_Clicked"  x:Name="RhymesButton" Source="Mickiew.jpg" BackgroundColor="Transparent" Margin="8"/>
-                    <ImageButton Scale="1.15" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#705831" Grid.Column="1" Grid.Row="1" Clicked="SportsButton_Clicked"  x:Name="SportsButton" Source="Sports.jpg" BackgroundColor="Transparent" Margin="8"/>
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="1" Clicked="netflixButton_Clicked"  x:Name="netflixButton" Source="Series.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="2" Clicked="panstwaButton_Clicked" x:Name="panstwaButton" Source="World.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="3" Clicked="przyslowiaButton_Clicked"  x:Name="przyslowiaButton" Source="Proverb.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="fictionButton_Clicked"  x:Name="fictionButton" Source="Fiction.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="postaciehistoryczne_Clicked"  x:Name="postaciehistoryczne" Source="History.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="CelebritiesButton_Clicked"  x:Name="CelebritiesButton" Source="Celebs.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="DailyLifeButton_Clicked"  x:Name="DailyLifeButton" Source="daily.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="RhymesButton_Clicked"  x:Name="RhymesButton" Source="Mickiew.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="SportsButton_Clicked"  x:Name="SportsButton" Source="Sports.jpg" BackgroundColor="Transparent"/>
 
                 </StackLayout>
 
@@ -73,27 +132,38 @@
 
         </ScrollView>
 
-        <BoxView Grid.Row="1" 
+        <BoxView Grid.Row="2" 
           Grid.ColumnSpan="2"
           VerticalOptions="Start"
           HorizontalOptions="Fill"
-          BackgroundColor="#705831"
-          HeightRequest="9"/>
+          BackgroundColor="#633a08"
+          HeightRequest="3"/>
 
         <ContentView x:Name="MenuView" 
-BackgroundColor="#919191" 
 IsVisible="False" 
 HorizontalOptions="Fill" 
 VerticalOptions="Fill"
 TranslationX="-200"
-Grid.RowSpan="4"
+Grid.RowSpan="5"
 Margin="0,0,0,-20">
+            <ContentView.Background>
+                <!-- Linear Gradient Background -->
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#545454" Offset="0.0" />
+                    <!-- Light blue -->
+                    <GradientStop Color="#a6a6a6" Offset="0.25" />
+                    <GradientStop Color="#a6a6a6" Offset="0.75" />
+                    <!-- Richer blue -->
+                    <GradientStop Color="#545454" Offset="1.0" />
+                    <!-- Light blue -->
+                </LinearGradientBrush>
+            </ContentView.Background>
             <StackLayout Grid.RowSpan="2">
                 <Button Text="X" FontSize="20" TextColor="White" Clicked="OnCloseMenuClicked" Margin="150,0,0,0" BackgroundColor="Transparent" />
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>
 
                 <!-- Przyciski z obrazkami po prawej -->
-                <Grid Margin="5" BackgroundColor="#6196ff" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#21b4ff" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Nucenie" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
 WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="nuta.png" VerticalOptions="Center" Scale="1.4" HorizontalOptions="End" 
@@ -103,7 +173,7 @@ WidthRequest="40" HeightRequest="40" Margin="10,0"/>
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Grid Margin="5" BackgroundColor="#c49751" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#ff931f" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Kalambury" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
 WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="kalambur.png" Scale="1.4" VerticalOptions="Center" HorizontalOptions="End" 
@@ -113,11 +183,39 @@ WidthRequest="40" HeightRequest="40" Margin="10,0"/>
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#6e6e6e" CornerRadius="10" Clicked="Multiplayer_Click" />
-                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#6e6e6e" CornerRadius="10" Clicked="Settings_Click" />
+                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#454545" CornerRadius="10" Clicked="Multiplayer_Click" />
+                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#454545" CornerRadius="10" Clicked="Settings_Click" />
                 <Image Source="AFTM.png" />
-                <ImageButton IsEnabled="False" Margin="0,-50,0,0" Source="zgadulaLogo.png" Scale="0.4" Grid.ColumnSpan="2" VerticalOptions="Start" 
-                 CornerRadius="100" HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
+                <Frame 
+VerticalOptions="Start"
+HorizontalOptions="CenterAndExpand"
+CornerRadius="100"
+Scale="0.4"
+BorderColor="#0a0a0a"
+Padding="0"
+Margin="0,-60,0,40">
+                    <Frame.Background>
+                        <!-- Radial Gradient Background -->
+                        <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                            <GradientStop Color="#323333" Offset="0.4" />
+                            <!-- Light brown/orange (center) -->
+                            <GradientStop Color="#4f4e4e" Offset="0.7" />
+                            <!-- Medium brown -->
+                            <GradientStop Color="#9a9b9c" Offset="1.0" />
+                            <!-- Dark brown (edges) -->
+                        </RadialGradientBrush>
+                    </Frame.Background>
+                    <Image  Source="zLogo.png"
+    Aspect="AspectFit"
+    Scale="1.1"
+    VerticalOptions="Center"
+    HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Logo_Clicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
             </StackLayout>
         </ContentView>
         <ImageButton x:Name="LeftMenu" Source="menu.png" Grid.Row="0" Clicked="OnMenuButtonClicked"  BackgroundColor="Transparent" Scale="0.3" Margin="-70,-10,50,50" />

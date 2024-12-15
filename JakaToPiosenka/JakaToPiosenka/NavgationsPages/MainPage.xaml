@@ -8,14 +8,25 @@
              NavigationPage.HasBackButton="False"
              BackgroundColor="#304e8a">
 
+    <ContentPage.Background>
+        <!-- Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#084663" Offset="0.0" />
+            <!-- Top Color -->
+            <GradientStop Color="#1987bf" Offset="0.4" />
+            <!-- Middle Color -->
+            <GradientStop Color="#084663" Offset="1.0" />
+            <!-- Bottom Color -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
 
-  
 
     <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"/>
+            <RowDefinition x:Name="NucenieHeight" Height="100"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -26,12 +37,59 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <!-- Menu -->
-        <Button IsEnabled="False" Grid.ColumnSpan="2" BackgroundColor="#6196ff" Margin="-6"/>
+        <Button IsEnabled="False"
+        Grid.ColumnSpan="2"
+        Margin="-6"
+        Grid.RowSpan="2"
+        CornerRadius="0">
+            <Button.Background>
+                <!-- Linear Gradient Background -->
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#0a5c82" Offset="0.0" />
+                    <!-- Light blue -->
+                    <GradientStop Color="#21b4ff" Offset="0.25" />
+                    <GradientStop Color="#21b4ff" Offset="0.68" />
+                    <!-- Richer blue -->
+                    <GradientStop Color="#0a5c82" Offset="1.0" />
+                    <!-- Light blue -->
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
-        <ImageButton x:Name="Logo" IsEnabled="True" Source="Logo.png" Clicked="Logo_Clicked" Scale="1.3" Grid.ColumnSpan="2" Margin="0,30,0,20" VerticalOptions="Start" CornerRadius="60"  HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
+        <Image Source="nucenieNapis.png" Scale="2.5" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Frame Grid.ColumnSpan="2"
+Margin="0,30,0,20"
+VerticalOptions="Start"
+HorizontalOptions="CenterAndExpand"
+CornerRadius="60"
+Scale="1.3"
+BorderColor="#291601"
+Padding="0"
+               x:Name="Logo">
+            <Frame.Background>
+                <!-- Radial Gradient Background -->
+                <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                    <GradientStop Color="#0d4661" Offset="0.4" />
+                    <!-- Light brown/orange (center) -->
+                    <GradientStop Color="#226482" Offset="0.7" />
+                    <!-- Medium brown -->
+                    <GradientStop Color="#74d1fc" Offset="1.0" />
+                    <!-- Dark brown (edges) -->
+                </RadialGradientBrush>
+            </Frame.Background>
+            <Image  Source="kalamburyLogo.png"
+    Aspect="AspectFit"
+    Scale="1.3"
+    VerticalOptions="Center"
+    HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Logo_Clicked" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Frame>
 
 
-        <ScrollView x:Name="Scroll" Grid.Row="1" Grid.RowSpan="3" VerticalScrollBarVisibility="Never" Margin="0,0,0,-20" Padding="4"  Grid.ColumnSpan="2"  Scrolled="Scroll_Scrolled"  VerticalOptions="FillAndExpand">
+        <ScrollView x:Name="Scroll" Grid.Row="2" Grid.RowSpan="3" VerticalScrollBarVisibility="Never" Margin="0,0,0,-20" Padding="4"  Grid.ColumnSpan="2"  Scrolled="Scroll_Scrolled"  VerticalOptions="FillAndExpand">
             <Grid  VerticalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -39,27 +97,27 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Column="0"  VerticalOptions="FillAndExpand">
-                    <ImageButton  Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="Songs.jpg" BackgroundColor="Transparent"/>
-                    <ImageButton  Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a"  Grid.Column="0" Grid.Row="2" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg" BackgroundColor="Transparent" />
-                    <ImageButton  Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="0" Grid.Row="3" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jp" BackgroundColor="Transparent" />
-                    <ImageButton  Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="1" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="DSongs.jpg" BackgroundColor="Transparent" />
-                    <ImageButton  Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="2" Clicked="RapButton_Clicked" x:Name="RapButton" Source="Rap.jpg" BackgroundColor="Transparent" />
-                    <ImageButton  Scale="1.05" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="3" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="AIMusic.jpg" BackgroundColor="Transparent"/>
-                    <ImageButton  Scale="1.05" HorizontalOptions="Start" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="3" Clicked="The80Button_Clicked" x:Name="The80Button" Source="a80s.jpg" BackgroundColor="Transparent" />
-                    <ImageButton BorderWidth="5" Scale="1.05" BorderColor="#304e8a" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Koledy_Clicked" x:Name="Koledy" Source="Carols.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="End" VerticalOptions="End"  Grid.Column="0" Grid.Row="1" Clicked="AllSongsButton_Clicked"  x:Name="AllSongsButton" Source="Songs.jpg" BackgroundColor="Transparent"/>
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="End" VerticalOptions="End"   Grid.Column="0" Grid.Row="2" Clicked="RockButton_Clicked" x:Name="RockButton" Source="rock.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="End" VerticalOptions="End"  Grid.Column="0" Grid.Row="3" Clicked="PopButton_Clicked" x:Name="PopButton" Source="pop.jp" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="End" VerticalOptions="End"  Grid.Column="1" Grid.Row="1" Clicked="DisneyButton_Clicked" x:Name="DisneyButton" Source="DSongs.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="End" VerticalOptions="End"  Grid.Column="1" Grid.Row="2" Clicked="RapButton_Clicked" x:Name="RapButton" Source="Rap.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="UsersMusicButton_Clicked" x:Name="UsersMusicButton" Source="AIMusic.jpg" BackgroundColor="Transparent"/>
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="The80Button_Clicked" x:Name="The80Button" Source="a80s.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10"  Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Koledy_Clicked" x:Name="Koledy" Source="Carols.jpg" BackgroundColor="Transparent" />
 
 
                 </StackLayout>
                 <StackLayout Grid.Column="1"  VerticalOptions="FillAndExpand">
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="0" Grid.Row="1" Clicked="The80PolishButton_Clicked"  x:Name="The80PolishButton" Source="a80sPL.jpg" BackgroundColor="Transparent" />
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a"  Grid.Column="0" Grid.Row="2" Clicked="RockPolishButton_Clicked" x:Name="RockPolishButton" Source="PRock.jpg" BackgroundColor="Transparent" />
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="0" Grid.Row="3" Clicked="RockEnglishButton_Clicked" x:Name="RockEnglishButton" Source="IRock.jpg" BackgroundColor="Transparent" />
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="1" Clicked="RapPolishButton_Clicked" x:Name="RapPolishButton" Source="PRap.jpg" BackgroundColor="Transparent"/>
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="2" Clicked="RapEnglishButton_Clicked" x:Name="RapEnglishButton" Source="IRap.jpg" BackgroundColor="Transparent" />
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="2" Clicked="PopPolishButton_Clicked" x:Name="PopPolishButton" Source="PPop.jpg" BackgroundColor="Transparent" />
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="2" Clicked="PopEnglishButton_Clicked" x:Name="PopEnglishButton" Source="IPop.jpg" BackgroundColor="Transparent" />
-                    <ImageButton Scale="1.05" HorizontalOptions="End" VerticalOptions="End" BorderWidth="5" BorderColor="#304e8a" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="a80I.jpg" BackgroundColor="Transparent" />
-                    <ImageButton BorderWidth="5" Scale="1.05"  BorderColor="#304e8a"  HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Christmas_Songs_Clicked" x:Name="Christmas_Songs" Source="ICarols.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="1" Clicked="The80PolishButton_Clicked"  x:Name="The80PolishButton" Source="a80sPL.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End"  Grid.Column="0" Grid.Row="2" Clicked="RockPolishButton_Clicked" x:Name="RockPolishButton" Source="PRock.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="0" Grid.Row="3" Clicked="RockEnglishButton_Clicked" x:Name="RockEnglishButton" Source="IRock.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="1" Clicked="RapPolishButton_Clicked" x:Name="RapPolishButton" Source="PRap.jpg" BackgroundColor="Transparent"/>
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="2" Clicked="RapEnglishButton_Clicked" x:Name="RapEnglishButton" Source="IRap.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="2" Clicked="PopPolishButton_Clicked" x:Name="PopPolishButton" Source="PPop.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="2" Clicked="PopEnglishButton_Clicked" x:Name="PopEnglishButton" Source="IPop.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="End" VerticalOptions="End" Grid.Column="1" Grid.Row="2" Clicked="The80English_Clicked" x:Name="The80English" Source="a80I.jpg" BackgroundColor="Transparent" />
+                    <ImageButton Margin="4" CornerRadius="10" Scale="1" HorizontalOptions="Start" VerticalOptions="End"  Grid.Column="1" Grid.Row="3" Clicked="Christmas_Songs_Clicked" x:Name="Christmas_Songs" Source="ICarols.jpg" BackgroundColor="Transparent" />
 
 
                 </StackLayout>
@@ -72,28 +130,39 @@
 
         </ScrollView>
 
-        <BoxView Grid.Row="1" 
+        <BoxView Grid.Row="2" 
           Grid.ColumnSpan="2"
           VerticalOptions="Start"
           HorizontalOptions="Fill"
-          BackgroundColor="#304e8a"
-          HeightRequest="9"/>
+          BackgroundColor="#084663"
+          HeightRequest="3"/>
        
 
         <ContentView x:Name="MenuView" 
-    BackgroundColor="#919191" 
     IsVisible="False" 
     HorizontalOptions="Fill" 
     VerticalOptions="Fill"
     TranslationX="-200"
-    Grid.RowSpan="4"
+    Grid.RowSpan="5"
     Margin="0,0,0,-20">
+            <ContentView.Background>
+                <!-- Linear Gradient Background -->
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#545454" Offset="0.0" />
+                    <!-- Light blue -->
+                    <GradientStop Color="#a6a6a6" Offset="0.25" />
+                    <GradientStop Color="#a6a6a6" Offset="0.75" />
+                    <!-- Richer blue -->
+                    <GradientStop Color="#545454" Offset="1.0" />
+                    <!-- Light blue -->
+                </LinearGradientBrush>
+            </ContentView.Background>
             <StackLayout Grid.RowSpan="2">
                 <Button Text="X" FontSize="20" TextColor="White" Clicked="OnCloseMenuClicked" Margin="150,0,0,0" BackgroundColor="Transparent" />
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>
 
                 <!-- Przyciski z obrazkami po prawej -->
-                <Grid Margin="5" BackgroundColor="#6196ff" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#21b4ff" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Nucenie" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
     WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="nuta.png" VerticalOptions="Center" Scale="1.4" HorizontalOptions="End" 
@@ -103,7 +172,7 @@
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Grid Margin="5" BackgroundColor="#c49751" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Grid Margin="5" BackgroundColor="#ff931f" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Label Text="Kalambury" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
     WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
                     <Image Source="kalambur.png" Scale="1.4" VerticalOptions="Center" HorizontalOptions="End" 
@@ -113,11 +182,38 @@
                     </Grid.GestureRecognizers>
                 </Grid>
 
-                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#6e6e6e" CornerRadius="10" Clicked="Multiplayer_Click" />
-                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#6e6e6e" CornerRadius="10" Clicked="Settings_Click" />
+                <Button Text="Multiplayer" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#454545" CornerRadius="10" Clicked="Multiplayer_Click" />
+                <Button Text="Ustawienia" FontSize="16" Margin="5" TextColor="#e3eafc" BackgroundColor="#454545" CornerRadius="10" Clicked="Settings_Click" />
                 <Image Source="AFTM.png" />
-                <ImageButton IsEnabled="False" Margin="0,-50,0,0" Source="zgadulaLogo.png" Scale="0.4" Grid.ColumnSpan="2" VerticalOptions="Start" 
-      CornerRadius="100" HorizontalOptions="CenterAndExpand" BackgroundColor="#7ab9cf" BorderWidth="5" BorderColor="#26414a"/>
+                <Frame 
+VerticalOptions="Start"
+HorizontalOptions="CenterAndExpand"
+CornerRadius="100"
+Scale="0.4"
+BorderColor="#0a0a0a"
+Padding="0"
+Margin="0,-60,0,40">
+                    <Frame.Background>
+                        <!-- Radial Gradient Background -->
+                        <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                            <GradientStop Color="#323333" Offset="0.4" />
+                            <!-- Light brown/orange (center) -->
+                            <GradientStop Color="#4f4e4e" Offset="0.7" />
+                            <!-- Medium brown -->
+                            <GradientStop Color="#9a9b9c" Offset="1.0" />
+                            <!-- Dark brown (edges) -->
+                        </RadialGradientBrush>
+                    </Frame.Background>
+                    <Image  Source="zLogo.png"
+    Aspect="AspectFit"
+    Scale="1.1"
+    VerticalOptions="Center"
+    HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Logo_Clicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
             </StackLayout>
         </ContentView>
 

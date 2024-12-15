@@ -25,7 +25,7 @@ namespace JakaToPiosenka
         public static bool isMainPage = true;
 
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
-        private double maxScrollPosition = 1200; // Maximum scroll position
+        private double maxScrollPosition = 1300; // Maximum scroll position
 
         Sounds sound = new Sounds();
         public MainPage()
@@ -259,7 +259,24 @@ namespace JakaToPiosenka
                     Scroll.ScrollToAsync(Scroll.ScrollX, maxScrollPosition, false);
                 }
             }
+
+            // Adjust KalamburyHeight dynamically
+            double initialHeight = 100; // Initial height of the row
+            double minHeight = 0;     // Minimum allowed height
+
+            // Calculate the new height based on ScrollY
+            double newHeight = initialHeight - (Scroll.ScrollY * 0.1); // Adjust multiplier as needed
+
+            // Ensure the height does not go below the minimum height
+            newHeight = Math.Max(newHeight, minHeight);
+
+            // Update the row height (assuming KalamburyHeight is a RowDefinition)
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                NucenieHeight.Height = new GridLength(newHeight);
+            });
         }
+
 
         private async void Youtube_Clicked(object sender, EventArgs e)
         {
@@ -354,7 +371,7 @@ namespace JakaToPiosenka
 
             // Final scaling effect
             await Task.WhenAll(buttons.Select(button => button.ScaleTo(1.3, 200, Easing.CubicOut)));
-            await Task.WhenAll(buttons.Select(button => button.ScaleTo(1.05, 200, Easing.CubicIn)));
+            await Task.WhenAll(buttons.Select(button => button.ScaleTo(1, 200, Easing.CubicIn)));
 
             // Rotate all buttons
             await Task.WhenAll(buttons.Select(button => button.RotateTo(360, 500))); // Rotate all to 360 degrees

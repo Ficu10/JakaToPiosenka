@@ -4,6 +4,18 @@
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#77b3d1">
+    <ContentPage.Background>
+        <!-- Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#20b1fa" Offset="0.0" />
+            <!-- Top Color -->
+            <GradientStop Color="#0a5c82" Offset="0.4" />
+            <GradientStop Color="#0a5c82" Offset="0.6" />
+            <!-- Middle Color -->
+            <GradientStop Color="#20b1fa" Offset="1.0" />
+            <!-- Bottom Color -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -24,10 +36,10 @@
 
             <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="30" Scale="3"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,60" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent"/>
 
-            <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Spacing="30">
-                <Label/>
-                <Entry x:Name="NewPromptName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
-                <Entry x:Name="NewTitleName" Placeholder="Tytuł"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Text=""/>
+            <StackLayout Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" Spacing="10">
+                <Label Text="Lista piosenek" HorizontalOptions="Center" Margin="10" FontSize="40" TextColor="#021252"/>
+                <Entry x:Name="NewPromptName" Placeholder="Autor" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text="" Margin="80,0,80,0"/>
+                <Entry x:Name="NewTitleName" Placeholder="Tytuł"  HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text="" Margin="80,0,80,0"/>
             </StackLayout>
 
 
@@ -35,7 +47,7 @@
             <Button Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#021252" Margin="30,110,30,40" CornerRadius="10" />
 
 
-            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#a8d6ed" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#72b0cf" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
             <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="40,0,40,50">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -52,9 +64,9 @@
                                     </Grid.RowDefinitions>
                                     <Grid.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                            <GradientStop Color="#72c4ed" Offset="0.0" />
+                                            <GradientStop Color="#48a5d4" Offset="0.0" />
                                             <GradientStop Color="#0d5b82" Offset="0.5" />
-                                            <GradientStop Color="#72c4ed" Offset="1.0" />
+                                            <GradientStop Color="#48a5d4" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Grid.Background>
                                     <Label Text="{Binding Title}" HorizontalTextAlignment="Center" TextColor="White" Grid.Row="0"  FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />

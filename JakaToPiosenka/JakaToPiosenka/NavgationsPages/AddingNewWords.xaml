@@ -4,6 +4,19 @@
              NavigationPage.HasNavigationBar="false"
              NavigationPage.HasBackButton="False"
              BackgroundColor="#d19d49">
+    <ContentPage.Background>
+        <!-- Gradient Background -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#fc9221" Offset="0.0" />
+            <!-- Top Color -->
+            <GradientStop Color="#80560a" Offset="0.4" />
+            <GradientStop Color="#80560a" Offset="0.6" />
+            <!-- Middle Color -->
+            <GradientStop Color="#fc9221" Offset="1.0" />
+            <!-- Bottom Color -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -24,8 +37,8 @@
 
             <Button x:Name="addSongToList" Clicked="AddSongToList_Clicked" Grid.RowSpan="2" FontSize="30" Scale="3"  CornerRadius="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,60" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent"/>
 
-            <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Spacing="30">
-                <Label/>
+            <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Spacing="10">
+                <Label Text="Lista haseł" HorizontalOptions="Center" Margin="10" FontSize="40" TextColor="#423501"/>
                 <Entry x:Name="NewPromptName" Placeholder="Hasło" HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
                 <Entry x:Name="NewTitleName" Placeholder="Kategoria"  HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
             </StackLayout>
@@ -53,9 +66,9 @@
                                     </Grid.RowDefinitions>
                                     <Grid.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                            <GradientStop Color="#ab8b55" Offset="0.0" />
+                                            <GradientStop Color="#a6803f" Offset="0.0" />
                                             <GradientStop Color="#ad6d05" Offset="0.5" />
-                                            <GradientStop Color="#ab8b55" Offset="1.0" />
+                                            <GradientStop Color="#a6803f" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Grid.Background>
                                     <Label Text="{Binding Title}" HorizontalTextAlignment="Center" TextColor="White" Grid.Row="0"  FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />

@@ -79,7 +79,7 @@ namespace JakaToPiosenka
             return true;
         }
 
-       
+
 
         private void Scroll_Scrolled(object sender, ScrolledEventArgs e)
         {
@@ -100,9 +100,25 @@ namespace JakaToPiosenka
                     Scroll.ScrollToAsync(Scroll.ScrollX, maxScrollPosition, false);
                 }
             }
+
+            // Adjust KalamburyHeight dynamically
+            double initialHeight = 100; // Initial height of the row
+            double minHeight = 0;     // Minimum allowed height
+
+            // Calculate the new height based on ScrollY
+            double newHeight = initialHeight - (Scroll.ScrollY * 0.1); // Adjust multiplier as needed
+
+            // Ensure the height does not go below the minimum height
+            newHeight = Math.Max(newHeight, minHeight);
+
+            // Update the row height (assuming KalamburyHeight is a RowDefinition)
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                KalamburyHeight.Height = new GridLength(newHeight);
+            });
         }
 
-       
+
         private async void NoteButton_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
