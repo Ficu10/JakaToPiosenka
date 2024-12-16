@@ -47,7 +47,7 @@
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#0a5c82" Offset="0.0" />
                     <!-- Light blue -->
-                    <GradientStop Color="#21b4ff" Offset="0.25" />
+                    <GradientStop Color="#21b4ff" Offset="0.32" />
                     <GradientStop Color="#21b4ff" Offset="0.68" />
                     <!-- Richer blue -->
                     <GradientStop Color="#0a5c82" Offset="1.0" />

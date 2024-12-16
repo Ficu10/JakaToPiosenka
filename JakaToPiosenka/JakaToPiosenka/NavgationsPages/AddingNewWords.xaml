@@ -35,12 +35,15 @@
 
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="addSongToList" Clicked="AddSongToList_Clicked" Grid.RowSpan="2" FontSize="30" Scale="3"  CornerRadius="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,60" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent"/>
+            <Button x:Name="addSongToList" TextTransform="None" HeightRequest="100" WidthRequest="100" Clicked="AddSongToList_Clicked" Grid.RowSpan="2" FontSize="50" Scale="0.6"  CornerRadius="90" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,30" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="#423501" BorderColor="#423501" BorderWidth="8" BackgroundColor="Transparent" FontAttributes="Bold">
+               
+
+            </Button>
 
             <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Spacing="10">
                 <Label Text="Lista haseł" HorizontalOptions="Center" Margin="10" FontSize="40" TextColor="#423501"/>
-                <Entry x:Name="NewPromptName" Placeholder="Hasło" HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
-                <Entry x:Name="NewTitleName" Placeholder="Kategoria"  HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Text=""/>
+                <Entry x:Name="NewPromptName" Placeholder="Hasło" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text=""/>
+                <Entry x:Name="NewTitleName" Placeholder="Kategoria"  HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text=""/>
             </StackLayout>
 
 
@@ -49,7 +52,16 @@
 
 
 
-            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#deb46f" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#c99c53" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged">
+                <Entry.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#423501" Offset="0.0" />
+                        <GradientStop Color="#c79a4a" Offset="0.4" />
+                        <GradientStop Color="#c79a4a" Offset="0.6" />
+                        <GradientStop Color="#423501" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Entry.Background>
+            </Entry>
             <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="40,0,40,50">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

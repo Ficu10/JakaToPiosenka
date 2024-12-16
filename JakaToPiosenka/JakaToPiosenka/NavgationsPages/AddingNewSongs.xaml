@@ -34,7 +34,10 @@
 
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="addSongToList" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="30" Scale="3"  CornerRadius="30" Grid.Column="1" Margin="0,0,0,60" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent"/>
+            <Button x:Name="addSongToList" TextTransform="None" HeightRequest="100" WidthRequest="100" Clicked="addSongToList_Clicked" Grid.RowSpan="2" FontSize="50" Scale="0.6"  CornerRadius="90" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,30" Grid.ColumnSpan="3" Grid.Row="1" Text="+" TextColor="#021252" BorderColor="#021252" BorderWidth="8" BackgroundColor="Transparent" FontAttributes="Bold">
+
+
+            </Button>
 
             <StackLayout Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" Spacing="10">
                 <Label Text="Lista piosenek" HorizontalOptions="Center" Margin="10" FontSize="40" TextColor="#021252"/>
@@ -47,7 +50,16 @@
             <Button Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#021252" Margin="30,110,30,40" CornerRadius="10" />
 
 
-            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#72b0cf" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged" />
+            <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#c99c53" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged">
+                <Entry.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#021252" Offset="0.0" />
+                        <GradientStop Color="#2b85b3" Offset="0.4" />
+                        <GradientStop Color="#2b85b3" Offset="0.6" />
+                        <GradientStop Color="#021252" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Entry.Background>
+            </Entry>
             <CollectionView x:Name="SongsCollection" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" Grid.RowSpan="3" Margin="40,0,40,50">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
