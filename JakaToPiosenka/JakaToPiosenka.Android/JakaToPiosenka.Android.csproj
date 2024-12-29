@@ -155,67 +155,16 @@
     <AndroidResource Include="Resources\drawable\AFTM.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pSekund.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\settingss.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\pop.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\rock.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\disney.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\music.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\rap.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\yourMusic.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\PolskieLata80.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\PopPolski.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\PopZagraniczny.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\RapPolski.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\RapZagraniczny.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\RockPolski.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\RockZagraniczny.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\WszystkiePiosenki.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ZagraniczneLata80.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Lata80.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\PiosenkiZBajek.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\yt.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Logo.png" />
@@ -239,9 +188,6 @@
     <AndroidResource Include="Resources\drawable\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\NUTKI.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\kalambury.png" />
   </ItemGroup>
   <ItemGroup>
@@ -249,38 +195,13 @@
     <AndroidResource Include="Resources\drawable\kalambur.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\dladzieci.jpg" />
     <AndroidResource Include="Resources\drawable\kalamburyLogo.png" />
     <AndroidResource Include="Resources\drawable\zgdulaLogo.png" />
-    <AndroidResource Include="Resources\drawable\rapzag.jpg" />
-    <AndroidResource Include="Resources\drawable\roczek.jpg" />
-    <AndroidResource Include="Resources\drawable\musica.jpg" />
-    <AndroidResource Include="Resources\drawable\filmy.jpg" />
-    <AndroidResource Include="Resources\drawable\przyslowia.jpg" />
-    <AndroidResource Include="Resources\drawable\emocje.jpg" />
-    <AndroidResource Include="Resources\drawable\popjak.jpg" />
-    <AndroidResource Include="Resources\drawable\rappol.jpg" />
-    <AndroidResource Include="Resources\drawable\postacfikcyjna.jpg" />
-    <AndroidResource Include="Resources\drawable\mini4.jpg" />
-    <AndroidResource Include="Resources\drawable\netflix.png" />
     <AndroidResource Include="Resources\drawable\zgadulaLogo.png" />
     <AndroidResource Include="Resources\drawable\kalLogo.png" />
-    <AndroidResource Include="Resources\drawable\bajki.jpg" />
-    <AndroidResource Include="Resources\drawable\zwierzeta.jpg" />
-    <AndroidResource Include="Resources\drawable\dladzieci1.jpg" />
-    <AndroidResource Include="Resources\drawable\gornik.jpg" />
     <AndroidResource Include="Resources\drawable\dobreLogo.png" />
-    <AndroidResource Include="Resources\drawable\up18.jpg" />
     <AndroidResource Include="Resources\drawable\animals.jpg" />
-    <AndroidResource Include="Resources\drawable\celebrities.jpg" />
-    <AndroidResource Include="Resources\drawable\christmasSongs.jpg" />
-    <AndroidResource Include="Resources\drawable\countries.jpg" />
     <AndroidResource Include="Resources\drawable\daily.jpg" />
-    <AndroidResource Include="Resources\drawable\allrap.jpg" />
-    <AndroidResource Include="Resources\drawable\allrock.jpg" />
-    <AndroidResource Include="Resources\drawable\EngLata80.jpg" />
-    <AndroidResource Include="Resources\drawable\enrap.jpg" />
-    <AndroidResource Include="Resources\drawable\eight.jpg" />
     <AndroidResource Include="Resources\drawable\a80s.jpg" />
     <AndroidResource Include="Resources\drawable\a80I.jpg" />
     <AndroidResource Include="Resources\drawable\a80sPL.jpg" />
@@ -300,19 +221,8 @@
     <AndroidResource Include="Resources\drawable\ICarols.jpg" />
     <AndroidResource Include="Resources\drawable\multim.png" />
     <AndroidResource Include="Resources\drawable\blask.png" />
-    <AndroidResource Include="Resources\drawable\zloto.png" />
     <AndroidResource Include="Resources\drawable\kalamburyNapis.png" />
     <AndroidResource Include="Resources\drawable\nucenieNapis.png" />
-    <Content Include="Resources\drawable\jedzenie.jpg" />
-    <AndroidResource Include="Resources\drawable\panstwa.jpg" />
-    <AndroidResource Include="Resources\drawable\disney1.jpg" />
-    <AndroidResource Include="Resources\drawable\rockpol.jpg" />
-    <AndroidResource Include="Resources\drawable\poppol.jpg" />
-    <AndroidResource Include="Resources\drawable\MultiKalambury.png" />
-    <AndroidResource Include="Resources\drawable\MultiMain.png" />
-    <AndroidResource Include="Resources\drawable\koledy.jpg" />
-    <AndroidResource Include="Resources\drawable\nauka.jpg" />
-    <AndroidResource Include="Resources\drawable\polLata80.jpg" />
     <AndroidResource Include="Resources\drawable\Jobs.jpg" />
     <AndroidResource Include="Resources\drawable\Mickiew.jpg" />
     <AndroidResource Include="Resources\drawable\Movies.jpg" />
@@ -321,10 +231,6 @@
     <AndroidResource Include="Resources\drawable\menug.png" />
     <AndroidResource Include="Resources\drawable\mute.png" />
     <AndroidResource Include="Resources\drawable\zLogo.png" />
-    <Content Include="Resources\drawable\polish_20241213_193547442-1.jpg" />
-    <Content Include="Resources\drawable\Pop_logo_2021.png" />
-    <AndroidResource Include="Resources\drawable\rymy.jpg" />
-    <AndroidResource Include="Resources\drawable\sport.jpg" />
     <AndroidResource Include="Resources\drawable\PPop.jpg" />
     <AndroidResource Include="Resources\drawable\PRap.jpg" />
     <AndroidResource Include="Resources\drawable\PRock.jpg" />

@@ -174,52 +174,113 @@ namespace JakaToPiosenka
         private async void Import_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
+
+            // Sprawdzenie aktualnego statusu uprawnień
             PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+
             if (status == PermissionStatus.Granted)
             {
+                // Jeśli uprawnienia są przyznane, wykonaj import
                 ImportMethod();
             }
-            else if (status == PermissionStatus.Denied)
+            else
             {
-                await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
-            }
-            else if (status == PermissionStatus.Unknown)
-            {
-                await App.Current.MainPage.DisplayAlert("Eksport nie powiódł się", "Sprawdź zezwoleniach aplikacji, czy można używać pamięci wewnętrznej", "OK");
+
+                // Użytkownik wybrał "Tak", poproś o uprawnienia
+                PermissionStatus newStatus = await Permissions.RequestAsync<Permissions.StorageRead>();
+
+                if (newStatus == PermissionStatus.Granted)
+                {
+                    // Uprawnienia zostały przyznane po prośbie
+                    ImportMethod();
+                }
+                else
+                {
+                    status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+                }
+
+
+
             }
         }
 
-        private void Eksport_Clicked(object sender, EventArgs e)
+
+        private async void Eksport_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
 
-            // Sprawdzenie, czy tryb gry istnieje w słowniku
-            if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+            // Sprawdzenie aktualnego statusu uprawnień
+            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+
+            if (status == PermissionStatus.Granted)
             {
-                // Pobranie danych z tabeli dynamicznie na podstawie typu
-                var tableData = AllPasswords.connectionRestart.GetType()
-                    .GetMethod("Table")?
-                    .MakeGenericMethod(tableType)
-                    .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
-
-                if (tableData != null)
+                // Sprawdzenie, czy tryb gry istnieje w słowniku
+                if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
                 {
-                    // Przygotowanie list dla metody eksportu z jawnych rzutowaniem na string
-                    var prompts = tableData.Select(x => (string)x.Prompt).ToList();
-                    var titles = tableData.Select(x => (string)x.Title).ToList();
+                    // Pobranie danych z tabeli dynamicznie na podstawie typu
+                    var tableData = AllPasswords.connectionRestart.GetType()
+                        .GetMethod("Table")?
+                        .MakeGenericMethod(tableType)
+                        .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
 
-                    // Wywołanie metody eksportu
-                    ExportMethod(prompts, titles);
+                    if (tableData != null)
+                    {
+                        // Przygotowanie list dla metody eksportu z jawnych rzutowaniem na string
+                        var prompts = tableData.Select(x => (string)x.Prompt).ToList();
+                        var titles = tableData.Select(x => (string)x.Title).ToList();
+
+                        // Wywołanie metody eksportu
+                        ExportMethod(prompts, titles);
+                    }
+                }
+                else
+                {
+                    // Obsługa przypadku, gdy tryb gry nie istnieje
+                    throw new InvalidOperationException($"Invalid game mode: {MainPage.gameMode}");
                 }
             }
             else
             {
-                // Obsługa przypadku, gdy tryb gry nie istnieje
-                throw new InvalidOperationException($"Invalid game mode: {MainPage.gameMode}");
+
+                // Użytkownik wybrał "Tak", poproś o uprawnienia
+                PermissionStatus newStatus = await Permissions.RequestAsync<Permissions.StorageRead>();
+
+                if (newStatus == PermissionStatus.Granted)
+                {
+                    // Sprawdzenie, czy tryb gry istnieje w słowniku
+                    if (NamesTable.namesTable.TryGetValue(MainPage.gameMode, out var tableType))
+                    {
+                        // Pobranie danych z tabeli dynamicznie na podstawie typu
+                        var tableData = AllPasswords.connectionRestart.GetType()
+                            .GetMethod("Table")?
+                            .MakeGenericMethod(tableType)
+                            .Invoke(AllPasswords.connectionRestart, null) as IEnumerable<dynamic>;
+
+                        if (tableData != null)
+                        {
+                            // Przygotowanie list dla metody eksportu z jawnych rzutowaniem na string
+                            var prompts = tableData.Select(x => (string)x.Prompt).ToList();
+                            var titles = tableData.Select(x => (string)x.Title).ToList();
+
+                            // Wywołanie metody eksportu
+                            ExportMethod(prompts, titles);
+                        }
+                    }
+                    else
+                    {
+                        // Obsługa przypadku, gdy tryb gry nie istnieje
+                        throw new InvalidOperationException($"Invalid game mode: {MainPage.gameMode}");
+                    }
+                }
+                else
+                {
+                    status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+                }
+
+
+
             }
-
         }
-
 
         private async void ExportMethod(List<string> PromptsList, List<string> songsList)
         {

@@ -158,13 +158,13 @@ x:Name="Logo">
                 </LinearGradientBrush>
             </ContentView.Background>
             <StackLayout Grid.RowSpan="2">
-                <Button Text="X" FontSize="20" TextColor="White" Clicked="OnCloseMenuClicked" Margin="150,0,0,0" BackgroundColor="Transparent" />
+                <Button x:Name="OnCloseMenu" Text="X" FontSize="20" TextColor="White" Clicked="OnCloseMenuClicked" Margin="150,0,0,0" BackgroundColor="Transparent" />
                 <Label Text="MENU" TextColor="White" HorizontalOptions="Center" FontSize="30"/>
 
                 <!-- Przyciski z obrazkami po prawej -->
                 <Grid Margin="5" BackgroundColor="#21b4ff" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Label Text="Nucenie" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
-    WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
+                    <Image Source="nucenieNapis.png" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
+           WidthRequest="150" HeightRequest="50" Margin="10,0" Scale="1.5"/>
                     <Image Source="nuta.png" VerticalOptions="Center" Scale="1.4" HorizontalOptions="End" 
     WidthRequest="40" HeightRequest="40" Margin="10,0"/>
                     <Grid.GestureRecognizers>
@@ -173,8 +173,8 @@ x:Name="Logo">
                 </Grid>
 
                 <Grid Margin="5" BackgroundColor="#ff931f" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Label Text="Kalambury" FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
-    WidthRequest="150" HeightRequest="50" TextColor="#e3eafc" Margin="10,0"/>
+                    <Image Source="kalamburyNapis.png" VerticalOptions="Center" HorizontalOptions="StartAndExpand" 
+WidthRequest="150" HeightRequest="50" Margin="10,0" Scale="1.5"/>
                     <Image Source="kalambur.png" Scale="1.4" VerticalOptions="Center" HorizontalOptions="End" 
     WidthRequest="40" HeightRequest="40" Margin="10,0"/>
                     <Grid.GestureRecognizers>
@@ -220,9 +220,9 @@ Margin="0,-60,0,40">
         <ImageButton x:Name="LeftMenu" Source="menu.png" Grid.Row="0" Clicked="OnMenuButtonClicked"  BackgroundColor="Transparent" Scale="0.3" Margin="-70,-10,50,50" />
         <ImageButton x:Name="MultiplayerButton" Source="multim.png" Grid.Row="0" Clicked="Multiplayer_Clicked"  Grid.Column="1" HorizontalOptions="End" Scale="0.6" BackgroundColor="Transparent" />
 
-
+        <Button x:Name="MenuClose" BackgroundColor="Transparent" Grid.RowSpan="5" Grid.Column="1" IsEnabled="False" Clicked="MenuClose_Clicked" />
     </Grid>
-
+   
 
 
 

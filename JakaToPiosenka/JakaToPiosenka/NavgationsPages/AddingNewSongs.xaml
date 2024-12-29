@@ -47,7 +47,7 @@
 
 
 
-            <Button Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#021252" Margin="30,110,30,40" CornerRadius="10" />
+            <Button Grid.Column="0" Grid.ColumnSpan="5" IsEnabled="False" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#021252" Margin="30,110,30,40" CornerRadius="10" />
 
 
             <Entry x:Name="SearchEntry" Grid.Row="2" Margin="40,120,40,-10"  HorizontalTextAlignment="Center" BackgroundColor="#c99c53" Grid.ColumnSpan="5" Placeholder="Szukaj" TextChanged="SearchEntry_TextChanged">

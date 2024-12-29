@@ -42,13 +42,13 @@
 
             <StackLayout Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Spacing="10">
                 <Label Text="Lista haseł" HorizontalOptions="Center" Margin="10" FontSize="40" TextColor="#423501"/>
-                <Entry x:Name="NewPromptName" Placeholder="Hasło" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text=""/>
-                <Entry x:Name="NewTitleName" Placeholder="Kategoria"  HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text=""/>
+                <Entry x:Name="NewPromptName" Placeholder="Kategoria" HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text=""/>
+                <Entry x:Name="NewTitleName" Placeholder="Hasło"  HorizontalTextAlignment="Center" BackgroundColor="Transparent" Text=""/>
             </StackLayout>
 
 
 
-            <Button Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#423501" Margin="30,110,30,40" CornerRadius="10" />
+            <Button Grid.Column="0" Grid.ColumnSpan="5" IsEnabled="False" Grid.Row="2" Grid.RowSpan="4" BackgroundColor="#423501" Margin="30,110,30,40" CornerRadius="10" />
 
 
 

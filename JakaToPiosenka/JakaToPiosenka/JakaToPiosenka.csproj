@@ -61,6 +61,7 @@
     <None Remove="TxtFiles\The80.txt" />
     <None Remove="TxtFiles\The80English.txt" />
     <None Remove="TxtFiles\The80Polish.txt" />
+    <None Remove="TxtFiles\UserMusic.txt" />
     <None Remove="TxtFiles\Words.txt" />
     <None Remove="TxtFiles\Youtube.txt" />
     <None Remove="TxtFiles\Youtube1.txt" />
@@ -117,6 +118,7 @@
     <EmbeddedResource Include="TxtFiles\RockCaly.txt" />
     <EmbeddedResource Include="TxtFiles\RockPolish.txt" />
     <EmbeddedResource Include="TxtFiles\RockEnglish.txt" />
+    <EmbeddedResource Include="TxtFiles\UserMusic.txt" />
     <EmbeddedResource Include="TxtFiles\Words.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube.txt" />
     <EmbeddedResource Include="TxtFiles\Youtube1.txt" />

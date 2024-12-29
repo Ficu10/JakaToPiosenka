@@ -242,14 +242,14 @@ namespace JakaToPiosenka
                     }
 
                     // Animate the cell view for reveal effect
-                    await cellView.ScaleTo(1.4, 300, Easing.CubicOut);
-                    await cellView.ScaleTo(1.0, 300, Easing.CubicIn); // Return to normal size
+                    await cellView.ScaleTo(1.4, 100, Easing.CubicOut);
+                    await cellView.ScaleTo(1.0, 100, Easing.CubicIn); // Return to normal size
 
 
                 }
 
                 // Delay before revealing the next item
-                await Task.Delay(450); // Adjust for pacing
+                await Task.Delay(100); // Adjust for pacing
             }
 
         }

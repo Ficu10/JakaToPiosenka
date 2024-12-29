@@ -27,6 +27,46 @@ namespace JakaToPiosenka
         private bool isScrollLocked = false; // Flag to indicate if scrolling is locked
         private double maxScrollPosition = 1300; // Maximum scroll position
 
+        private List<AllPasswords> AllPasswordsSongs = new List<AllPasswords>
+    {
+        new Pop(),
+        new Rock(),
+        new FairyTales(),
+        new AllSongs(),
+        new Rap(),
+        new UsersMusic(),
+        new The80(),
+        new The80English(),
+        new The80Polish(),
+        new RapEnglish(),
+        new RapPolish(),
+        new PopEnglish(),
+        new PopPolish(),
+        new RockEnglish(),
+        new RockPolish(),
+        new Youtube(),
+        new Children(),
+        new Countries(),
+        new Emotions(),
+        new FictionalCharacter(),
+        new HistoricalCharacter(),
+        new Jobs(),
+        new Movies(),
+        new Series(),
+        new Tales(),
+        new AdultMixed(),
+        new Animals(),
+        new Celebrities(),
+        new DailyLife(),
+        new Poland(),
+        new Rhymes(),
+        new ScienceTopics(),
+        new Sports(),
+        new Carols(),
+        new ChristmasSongs(),
+        new Words()
+    };
+
         Sounds sound = new Sounds();
         public MainPage()
         {
@@ -42,60 +82,18 @@ namespace JakaToPiosenka
             {
                 MultiplayerButton.IsVisible = false;
             }
-            var AllPasswordsSongs = new List<AllPasswords>()
-            {
-                new Pop(),
-                new Rock(),
-                new FairyTales(),
-                new AllSongs(),
-                new Rap(),
-                new UsersMusic(),
-                new The80(),
-                new The80English(),
-                new The80Polish(),
-                new RapEnglish(),
-                new RapPolish(),
-                new PopEnglish(),
-                new PopPolish(),
-                new RockEnglish(),
-                new RockPolish(),
-                new Youtube(),
-                new Children(),
-                new Countries(),
-                new Emotions(),
-                new FictionalCharacter(),
-                new HistoricalCharacter(),
-                new Jobs(),
-                new Movies(),
-                new Series(),
-                new Tales(),
-                new AdultMixed(),
-                new Animals(),
-                new Celebrities(),
-                new DailyLife(),
-                new Poland(),
-                new Rhymes(),
-                new ScienceTopics(),
-                new Sports(),
-                new Carols(),
-                new ChristmasSongs(),
-                new Words()
-
-            };
-
-            bool isTableCreated = AllPasswords.connection.GetTableInfo("Pop").Any();
-            if (!isTableCreated)
-            {
-                foreach (var item in AllPasswordsSongs)
-                {
-                    item.Load();
-                }
-            }
+            InitializeAsync();
             isMainPage = true;
 
         }
 
-      
+        public async Task InitializeAsync()
+        {
+            // Ładowanie wszystkich danych asynchronicznie
+            var loadTasks = AllPasswordsSongs.Select(song => song.EnsureDataLoadedAsync());
+            await Task.WhenAll(loadTasks);
+        }
+
         private async void Multiplayer_Click(object sender, EventArgs e)
         {
             sound.ClickSound();
@@ -118,6 +116,8 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MenuView.IsVisible = true;
             LeftMenu.IsVisible = false;
+            OnCloseMenu.IsEnabled = true;
+            MenuClose.IsEnabled = true;
             await MenuView.TranslateTo(0, 0, 500, Easing.CubicOut);
            
         }
@@ -128,8 +128,20 @@ namespace JakaToPiosenka
             await MenuView.TranslateTo(-200, 0, 500, Easing.CubicIn);
             MenuView.IsVisible = false;
             LeftMenu.IsVisible = true;
+            MenuClose.IsEnabled = false;
 
         }
+
+        private async void MenuClose_Clicked(object sender, EventArgs e)
+        {
+            OnCloseMenu.IsEnabled = false;
+            await MenuView.TranslateTo(-200, 0, 500, Easing.CubicIn);
+            MenuView.IsVisible = false;
+            LeftMenu.IsVisible = true;
+            MenuClose.IsEnabled = false;
+        }
+
+       
         async void AllSongsButton_Clicked(object sender, EventArgs e)
         {
             sound.ClickSound();
@@ -336,6 +348,8 @@ namespace JakaToPiosenka
 
         private async void Logo_Clicked(object sender, EventArgs e)
         {
+            LeftMenu.IsEnabled = false;
+            MultiplayerButton.IsEnabled = false;
             DisableLogoClick();
             sound.Drum(); // Play the drum sound
 
@@ -400,11 +414,11 @@ namespace JakaToPiosenka
             {
                 button.Rotation = 0; // Reset rotation angle
             }
+            LeftMenu.IsEnabled = true;
+            MultiplayerButton.IsEnabled = true;
             EnableLogoClick();
         }
 
-
-
-
+       
     }
 }

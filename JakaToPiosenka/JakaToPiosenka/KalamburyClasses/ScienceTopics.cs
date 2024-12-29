@@ -7,7 +7,7 @@ namespace JakaToPiosenka.KalamburyClasses
 {
     internal class ScienceTopics : AllPasswords
     {
-        public override string FileName => "Celebrities";
+        public override string FileName => "ScienceTopics";
 
     }
 }

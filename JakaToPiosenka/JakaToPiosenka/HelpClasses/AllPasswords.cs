@@ -1,7 +1,10 @@
 ﻿using SQLite;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace JakaToPiosenka.HelpClasses
 {
@@ -12,48 +15,53 @@ namespace JakaToPiosenka.HelpClasses
         public virtual string Title { get; set; }
         public virtual string Prompt { get; set; }
 
-        // Bazy danych dla głównej i restartowanej gry
         public static SQLiteConnection connection = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Zgadula.db3"));
         public static SQLiteConnection connectionRestart = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ZgadulaRestart.db3"));
 
-        // Nazwa pliku, którą definiują klasy pochodne
         public abstract string FileName { get; }
 
-        // Ładowanie danych z pliku do bazy danych
-        public virtual void Load()
+        public virtual async Task LoadAsync()
         {
-            var assembly = typeof(AllPasswords).GetTypeInfo().Assembly;
-
-            // Użycie strumienia do odczytu pliku
-            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream($"JakaToPiosenka.TxtFiles.{FileName}.txt")))
+            // Sprawdzanie i tworzenie tabel tylko raz
+            if (!connection.TableMappings.Any(m => m.TableName == GetType().Name))
             {
                 connection.CreateTable(GetType());
                 connectionRestart.CreateTable(GetType());
-                string line;
+            }
 
-                while ((line = streamReader.ReadLine()) != null)
+            var assembly = typeof(AllPasswords).GetTypeInfo().Assembly;
+            var records = new List<AllPasswords>();
+
+            using (var streamReader = new StreamReader(assembly.GetManifestResourceStream($"JakaToPiosenka.TxtFiles.{FileName}.txt")))
+            {
+                string line;
+                while ((line = await streamReader.ReadLineAsync()) != null)
                 {
                     var fields = line.Split(';');
-
-                    // Sprawdzenie, czy linia ma wystarczającą liczbę elementów
-                    if (fields.Length < 2)
-                    {
-                        Console.WriteLine($"Nieprawidłowa linia: {line}");
-                        continue; // Pomijamy linie z błędami
-                    }
+                    if (fields.Length < 2) continue; // Pomijanie błędnych linii
 
                     var data = Activator.CreateInstance(GetType()) as AllPasswords;
                     if (data != null)
                     {
                         data.Title = fields[1];
                         data.Prompt = fields[0];
-                        connection.Insert(data);
-                        connectionRestart.Insert(data);
+                        records.Add(data);
                     }
                 }
             }
+
+            // Wstawianie wsadowe
+            connection.InsertAll(records);
+            connectionRestart.InsertAll(records);
         }
 
+        public virtual async Task EnsureDataLoadedAsync()
+        {
+            if (!connection.GetTableInfo(GetType().Name).Any())
+            {
+                await LoadAsync();
+            }
+        }
         // Import danych do bazy danych (usuwanie wszystkich istniejących rekordów)
         public virtual void Import()
         {
@@ -74,11 +82,7 @@ namespace JakaToPiosenka.HelpClasses
             connectionRestart.Execute($"DELETE FROM {tableMappingRestart.TableName}");
         }
 
-        // Metoda, która może być używana do rozpoczęcia gry (do zaimplementowania w klasach pochodnych)
-        public virtual void StartGame()
-        {
-            Console.WriteLine($"Starting game for {GetType().Name}");
-        }
+       
 
         // Tworzy tabelę i usuwa wszystkie dane
         public static void ClearTable<T>() where T : new()

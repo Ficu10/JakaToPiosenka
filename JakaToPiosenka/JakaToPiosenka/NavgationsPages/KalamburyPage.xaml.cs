@@ -60,6 +60,8 @@ namespace JakaToPiosenka
             sound.ClickSound();
             MenuView.IsVisible = true;
             LeftMenu.IsVisible = false;
+            OnCloseMenu.IsEnabled = true;
+            MenuClose.IsEnabled = true;
             await MenuView.TranslateTo(0, 0, 500, Easing.CubicOut);
 
         }
@@ -70,9 +72,19 @@ namespace JakaToPiosenka
             await MenuView.TranslateTo(-200, 0, 500, Easing.CubicIn);
             MenuView.IsVisible = false;
             LeftMenu.IsVisible = true;
+            MenuClose.IsEnabled = false;
 
         }
-        
+
+        private async void MenuClose_Clicked(object sender, EventArgs e)
+        {
+            OnCloseMenu.IsEnabled = false;
+            await MenuView.TranslateTo(-200, 0, 500, Easing.CubicIn);
+            MenuView.IsVisible = false;
+            LeftMenu.IsVisible = true;
+            MenuClose.IsEnabled = false;
+        }
+
         protected override bool OnBackButtonPressed()
         {
 
@@ -298,6 +310,8 @@ namespace JakaToPiosenka
 
         private async void Logo_Clicked(object sender, EventArgs e)
         {
+            LeftMenu.IsEnabled = false;
+            MultiplayerButton.IsEnabled = false;
             sound.Bomb();
             DisableLogoClick();
 
@@ -390,7 +404,8 @@ namespace JakaToPiosenka
             // Rotate Logo
             await Logo.RotateTo(360, 1500); // Rotate to 360 degrees in 1.5 seconds
             Logo.Rotation = 0; // Reset rotation angle
-
+            LeftMenu.IsEnabled = true;
+            MultiplayerButton.IsEnabled = true;
             EnableLogoClick();
         }
 

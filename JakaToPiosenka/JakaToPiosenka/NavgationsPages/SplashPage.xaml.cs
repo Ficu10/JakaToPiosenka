@@ -19,19 +19,20 @@ namespace JakaToPiosenka
         private async void AnimateSplash()
         {
             sound.StartSound();
-            // Logo: Pojawienie i powiększenie
-            await Logo.FadeTo(1, 1000); // Stopniowe pojawienie
+
+            // Logo: Fade in and scale
+            await Logo.FadeTo(1, 1000);
             await Task.WhenAll(
-             ZgadujZgadula.TranslateTo(0, 400, 2000, Easing.CubicOut), // Przesunięcie w dół
-             Logo.ScaleTo(1.20, 2000) // Powiększenie
-             );
+                ZgadujZgadula.TranslateTo(0, Logo.Y - ZgadujZgadula.Height - 20, 2000, Easing.CubicOut), // Adjust for position above logo
+                Logo.ScaleTo(1.2, 2000) // Enlarge logo
+            );
 
-            // Tekst powitalny: Stopniowe pojawienie
-            await WelcomeText.FadeTo(1, 1000);
+            // Welcome Text: Fade in
+            await WelcomeText.FadeTo(1, 2000);
 
-            // Przejście do głównej strony
-            await Task.Delay(1000); // Pauza na wyświetlenie animacji
-            Application.Current.MainPage = new NavigationPage(new MainPage()); // Główna strona aplikacji
+            // Transition to main page
+            Application.Current.MainPage = new NavigationPage(new MainPage());
         }
+
     }
 }
