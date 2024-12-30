@@ -93,7 +93,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <!-- Item Container -->
-                        <Grid Margin="1">
+                        <Grid Margin="1" ColumnDefinitions="5*">
                             <!-- Gradient Background -->
                             <Grid.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -110,7 +110,11 @@
                  VerticalOptions="Center"
                  HorizontalOptions="Center"
                  HorizontalTextAlignment="Center"
-                 VerticalTextAlignment="Center"/>
+                 VerticalTextAlignment="Center"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="4"/>
+
+                            <ImageButton x:Name="LinkToItemButton" Source="googleIcon.jpg" Aspect="AspectFit" Grid.Column="4" Clicked="LinkToItemButton_Clicked"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using JakaToPiosenka.HelpClasses;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -101,12 +102,15 @@ namespace JakaToPiosenka
             }
         }
 
+        // TODO refactor: Mlody, to jest takie samo jak w piosenkach, moze wywalic to do jakiejs klasy statycznej? A zamiast SongItem bedzie ZgadulaItem (napisalem tez na to TODO w definicji klasy SongItem)
         private List<SongItem> PrepareSongsWithColors()
         {
             var songsWithColors = new List<SongItem>();
 
             for (int i = 0; i < SettingsPage.WordsNumber; i++)
             {
+                string searchQueryComponent = Game.songsFromGame[i].Replace(' ', '+');
+                string linkToItem = "https://www.google.pl/search?q=" + searchQueryComponent;
                 if (Game.goodBadSongs[i] == 1) // Correct answer
                 {
                     songsWithColors.Add(new SongItem
@@ -114,7 +118,8 @@ namespace JakaToPiosenka
                         Title = Game.songsFromGame[i],
                         StartColor = Color.FromHex("#ab7b48"), // Light green at the top-left
                         MiddleColor = Color.FromHex("#64b840"), // Dark green in the center
-                        EndColor = Color.FromHex("#ab7b48") // Light green at the bottom-right
+                        EndColor = Color.FromHex("#ab7b48"), // Light green at the bottom-right
+                        LinkToItem = linkToItem
                     });
 
                 }
@@ -125,7 +130,8 @@ namespace JakaToPiosenka
                         Title = Game.songsFromGame[i],
                         StartColor = Color.FromHex("#ab7b48"), // Light red at the top-left
                         MiddleColor = Color.FromHex("#a63430"), // Dark red in the center
-                        EndColor = Color.FromHex("#ab7b48")    // Light red at the bottom-right
+                        EndColor = Color.FromHex("#ab7b48"),    // Light red at the bottom-right
+                        LinkToItem = linkToItem
                     });
                 }
             }
@@ -323,20 +329,23 @@ namespace JakaToPiosenka
             );
         }
 
-
-
-
+        async private void LinkToItemButton_Clicked(object sender, EventArgs e)
+        {
+            await Launcher.OpenAsync(((SongItem)BindingContext).LinkToItem);
+        }
     }
 
     /// <summary>
     /// Klasa reprezentująca dane dla ListView.
     /// </summary>
+    // TODO refactor: Mlody, to chyba jest wykorzystywne i do piosenek i do kalamburow, wiec chyba powinno sie nazywac ZgadulaItem czy cos takiego? :p
     public class SongItem
     {
         public string Title { get; set; }
         public Color StartColor { get; set; } // Lighter color at the edges
         public Color MiddleColor { get; set; } // Darker color in the middle
         public Color EndColor { get; set; } // Lighter color at the edges
+        public string LinkToItem { get; internal set; }
     }
 
 
