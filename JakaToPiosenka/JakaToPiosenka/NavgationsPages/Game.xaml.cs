@@ -32,6 +32,7 @@ namespace JakaToPiosenka
         bool answered = true;
         Sounds sounds = new Sounds();
         public static AllData endList = new AllData();
+        public static List<AllData> endListList = new List<AllData>();
         int goodBadCounter = 0;
         public static int[] goodBadSongs = new int[SettingsPage.WordsNumber];
         int gameCounter = SettingsPage.WordsNumber;
@@ -229,7 +230,15 @@ namespace JakaToPiosenka
                 songId = r.Next(PromptsList.Count);
 
                 newGame = true;
-                seconds = BeforeGamePage.timeChanger + 1;
+                bool fastSkipGame = true;
+                if (!fastSkipGame)
+                {
+                    seconds = BeforeGamePage.timeChanger + 1;
+                }
+                else
+                {
+                    seconds = 1;
+                }
 
                 while (newGame)
                 {
@@ -261,6 +270,7 @@ namespace JakaToPiosenka
                                 Title = songsList[songId],
                                 Prompt = PromptsList[songId]
                             };
+                            endListList.Add(endList);
 
                             gameCounter--;
 

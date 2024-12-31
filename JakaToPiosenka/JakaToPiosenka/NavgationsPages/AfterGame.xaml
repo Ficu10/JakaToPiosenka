@@ -113,9 +113,8 @@
                       HorizontalTextAlignment="Center"
                       VerticalTextAlignment="Center"
                       Grid.Column="0"
-                      Grid.ColumnSpan="4"/>
-
-                            <ImageButton x:Name="LinkToItemButton" Source="ytIcon.jpg" Aspect="AspectFit" Grid.Column="4" Clicked="LinkToItemButton_Clicked"/>
+                      Grid.ColumnSpan="3"/>
+                            <ImageButton x:Name="LinkToItemButton" Source="ytIcon.png" Aspect="AspectFit" Grid.Column="4" Grid.ColumnSpan="1" Clicked="LinkToItemButton_Clicked" BindingContext="{Binding LinkToItem}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -109,8 +109,9 @@ namespace JakaToPiosenka
 
             for (int i = 0; i < SettingsPage.WordsNumber; i++)
             {
-                string searchQueryComponent = Game.songsFromGame[i].Replace(' ', '+');
-                string linkToItem = "https://www.google.pl/search?q=" + searchQueryComponent;
+                string linkToItem = LinkToItemHelper.GetLinkToItem(
+                    Game.songsFromGame[i], Game.endListList[i], LinkToItemHelper.LinkType.KALAMBURY
+                );
                 if (Game.goodBadSongs[i] == 1) // Correct answer
                 {
                     songsWithColors.Add(new SongItem
@@ -195,6 +196,7 @@ namespace JakaToPiosenka
             myListView.ItemsSource = null;
 
             var songsWithColors = PrepareSongsWithColors();
+            Game.endListList.Clear();
             var displayedSongs = new ObservableCollection<SongItem>();
 
             myListView.ItemsSource = displayedSongs;

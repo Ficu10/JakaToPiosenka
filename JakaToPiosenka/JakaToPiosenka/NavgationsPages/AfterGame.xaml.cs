@@ -104,11 +104,12 @@ namespace JakaToPiosenka
         private List<SongItem> PrepareSongsWithColors()
         {
             var songsWithColors = new List<SongItem>();
-
             for (int i = 0; i < SettingsPage.WordsNumber; i++)
             {
-                string searchQueryComponent = Game.songsFromGame[i].Replace(' ', '+');
-                string linkToItem = "https://www.youtube.com/results?search_query=" + searchQueryComponent;
+                string linkToItem = LinkToItemHelper.GetLinkToItem(
+                    Game.songsFromGame[i], Game.endListList[i], LinkToItemHelper.LinkType.SONGS
+                );
+                //string linkToItem = "google.com";
                 if (Game.goodBadSongs[i] == 1) // Correct answer
                 {
                     songsWithColors.Add(new SongItem
@@ -133,7 +134,6 @@ namespace JakaToPiosenka
                     });
                 }
             }
-
             return songsWithColors;
         }
 
@@ -193,6 +193,7 @@ namespace JakaToPiosenka
             myListView.ItemsSource = null;
 
             var songsWithColors = PrepareSongsWithColors();
+            Game.endListList.Clear();
             var displayedSongs = new ObservableCollection<SongItem>();
 
             myListView.ItemsSource = displayedSongs;
@@ -329,7 +330,8 @@ namespace JakaToPiosenka
 
         async private void LinkToItemButton_Clicked(object sender, EventArgs e)
         {
-            await Launcher.OpenAsync(((SongItem)BindingContext).LinkToItem);
+            string linkToItem = ((ImageButton)sender).BindingContext as string;
+            await Launcher.OpenAsync(linkToItem);
         }
     }
 
