@@ -81,6 +81,10 @@ namespace JakaToPiosenka
                     endOfQuestion = true;
                     answered = true;
                 }
+                else
+                {
+                    WrongAnswearButton.IsEnabled = true;
+                }
 
             }
             if (x >= 1 && y < 0.2 && z < 0.2)
@@ -246,6 +250,7 @@ namespace JakaToPiosenka
                         WrongAnswearButton.IsEnabled = true;
                         TitlePrompt.IsVisible = true;
                         Time.IsVisible = true;
+                        KomunikaPionizujLabel.IsVisible = false;
                         BackgroundImageSource = "blue.jpg";
                         TitlePrompt.Text = PromptsList[songId];
                         SongTitle.Text = songsList[songId];
@@ -338,6 +343,10 @@ namespace JakaToPiosenka
                 WrongAnswearButton.IsEnabled = false;
                 endOfQuestion = true;
                 Dispose();
+            }
+            else
+            {
+                KomunikaPionizujLabel.IsVisible = true;
             }
             await Task.Delay(500);
 
