@@ -81,6 +81,10 @@ namespace JakaToPiosenka
                     endOfQuestion = true;
                     answered = true;
                 }
+                else
+                {
+                    WrongAnswearButton.IsEnabled = true;
+                }
 
             }
             if (x >= 1 && y < 0.2 && z < 0.2)
