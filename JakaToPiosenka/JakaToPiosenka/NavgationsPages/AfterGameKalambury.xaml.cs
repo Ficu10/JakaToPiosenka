@@ -333,7 +333,7 @@ namespace JakaToPiosenka
 
         async private void LinkToItemButton_Clicked(object sender, EventArgs e)
         {
-            await Launcher.OpenAsync(((SongItem)BindingContext).LinkToItem);
+            await LinkToItemHelper.OpenURL(sender);
         }
     }
 

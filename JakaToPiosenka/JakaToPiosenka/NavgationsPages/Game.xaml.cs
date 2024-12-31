@@ -230,8 +230,7 @@ namespace JakaToPiosenka
                 songId = r.Next(PromptsList.Count);
 
                 newGame = true;
-                bool fastSkipGame = true;
-                if (!fastSkipGame)
+                if (!DebugHelper.FAST_GAME)
                 {
                     seconds = BeforeGamePage.timeChanger + 1;
                 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace JakaToPiosenka.HelpClasses
 {
@@ -38,6 +41,12 @@ namespace JakaToPiosenka.HelpClasses
                 throw new NotImplementedException(linkType.ToString());
             }
             return linkToItemBase + searchQueryComponent;
+        }
+
+        internal static async Task OpenURL(object sender)
+        {
+            string linkToItem = ((ImageButton)sender).BindingContext as string;
+            await Launcher.OpenAsync(linkToItem);
         }
     }
 }

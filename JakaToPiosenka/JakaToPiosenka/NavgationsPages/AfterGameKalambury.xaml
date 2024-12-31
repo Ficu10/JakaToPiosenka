@@ -113,7 +113,7 @@
                  VerticalTextAlignment="Center"
                  Grid.Column="0"
                  Grid.ColumnSpan="9"/>
-                            <ImageButton x:Name="LinkToItemButton" Source="googleIcon.png" BackgroundColor="Transparent" Aspect="AspectFit" Grid.Column="9" Grid.ColumnSpan="3" Clicked="LinkToItemButton_Clicked" BindingContext="{Binding LinkToItem}" Background="Transparent"/>
+                            <ImageButton x:Name="LinkToItemButton" Source="googleIconTransparent.png" BackgroundColor="Transparent" Aspect="AspectFit" Grid.Column="9" Grid.ColumnSpan="3" Clicked="LinkToItemButton_Clicked" BindingContext="{Binding LinkToItem}" Background="Transparent"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

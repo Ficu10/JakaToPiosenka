@@ -330,8 +330,7 @@ namespace JakaToPiosenka
 
         async private void LinkToItemButton_Clicked(object sender, EventArgs e)
         {
-            string linkToItem = ((ImageButton)sender).BindingContext as string;
-            await Launcher.OpenAsync(linkToItem);
+            await LinkToItemHelper.OpenURL(sender);
         }
     }
 
