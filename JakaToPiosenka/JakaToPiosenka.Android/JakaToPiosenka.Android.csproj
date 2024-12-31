@@ -264,10 +264,22 @@
     <AndroidResource Include="Resources\drawable\unmute.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\drawable\googleIcon.jpg" />
-    <Content Include="Resources\drawable\ytIcon.jpg" />
-    <Content Include="Resources\drawable\ytIcon.png" />
+    <AndroidResource Include="Resources\drawable\googleIcon.jpg">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ytIcon.jpg">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ytIcon.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\googleIconTransparent.jpg">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
     <Content Include="Resources\drawable\ytIconInSVG.html" />
+    <AndroidResource Include="Resources\drawable\ytTransparent.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
