@@ -38,7 +38,7 @@ namespace JakaToPiosenka
             //Rules1.Text = "x: " + x.ToString();
             //Rules2.Text = "y: " + y.ToString();
             //Rules3.Text = "z: " + z.ToString();
-            if (x >= 0.9 && y < 0.2 && z < 0.2)
+            if ((DebugHelper.BYPASS_FOREHEAD) || (x >= 0.9 && y < 0.2 && z < 0.2))
             {
                 Dispose();
                 await Navigation.PushAsync(new Game());

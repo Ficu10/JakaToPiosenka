@@ -94,7 +94,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <!-- Item Container -->
-                        <Grid Margin="1">
+                        <Grid Margin="1" ColumnDefinitions="12*">
                             <!-- Gradient Background -->
                             <Grid.Background>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -111,7 +111,10 @@
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       HorizontalTextAlignment="Center"
-                      VerticalTextAlignment="Center"/>
+                      VerticalTextAlignment="Center"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="9"/>
+                            <ImageButton x:Name="LinkToItemButton" Source="ytTransparent.png" BackgroundColor="Transparent" Aspect="AspectFit" Grid.Column="9" Grid.ColumnSpan="3" Clicked="LinkToItemButton_Clicked" BindingContext="{Binding LinkToItem}" Background="Transparent"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

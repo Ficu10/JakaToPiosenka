@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using JakaToPiosenka.HelpClasses;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -103,9 +104,12 @@ namespace JakaToPiosenka
         private List<SongItem> PrepareSongsWithColors()
         {
             var songsWithColors = new List<SongItem>();
-
             for (int i = 0; i < SettingsPage.WordsNumber; i++)
             {
+                string linkToItem = LinkToItemHelper.GetLinkToItem(
+                    Game.songsFromGame[i], Game.endListList[i], LinkToItemHelper.LinkType.SONGS
+                );
+                //string linkToItem = "google.com";
                 if (Game.goodBadSongs[i] == 1) // Correct answer
                 {
                     songsWithColors.Add(new SongItem
@@ -113,7 +117,8 @@ namespace JakaToPiosenka
                         Title = Game.songsFromGame[i],
                         StartColor = Color.FromHex("#4281a1"), // Light green at the top-left
                         MiddleColor = Color.FromHex("#64b840"), // Dark green in the center
-                        EndColor = Color.FromHex("#4281a1") // Light green at the bottom-right
+                        EndColor = Color.FromHex("#4281a1"), // Light green at the bottom-right
+                        LinkToItem = linkToItem
                     });
   
                 }
@@ -124,11 +129,11 @@ namespace JakaToPiosenka
                         Title = Game.songsFromGame[i],
                         StartColor = Color.FromHex("#4281a1"), // Light red at the top-left
                         MiddleColor = Color.FromHex("#a63430"), // Dark red in the center
-                        EndColor = Color.FromHex("#4281a1")    // Light red at the bottom-right
+                        EndColor = Color.FromHex("#4281a1"),    // Light red at the bottom-right
+                        LinkToItem = linkToItem
                     });
                 }
             }
-
             return songsWithColors;
         }
 
@@ -188,6 +193,7 @@ namespace JakaToPiosenka
             myListView.ItemsSource = null;
 
             var songsWithColors = PrepareSongsWithColors();
+            Game.endListList.Clear();
             var displayedSongs = new ObservableCollection<SongItem>();
 
             myListView.ItemsSource = displayedSongs;
@@ -322,9 +328,10 @@ namespace JakaToPiosenka
             );
         }
 
-
-
-
+        async private void LinkToItemButton_Clicked(object sender, EventArgs e)
+        {
+            await LinkToItemHelper.OpenURL(sender);
+        }
     }
 
     /// <summary>
