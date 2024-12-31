@@ -246,6 +246,7 @@ namespace JakaToPiosenka
                         WrongAnswearButton.IsEnabled = true;
                         TitlePrompt.IsVisible = true;
                         Time.IsVisible = true;
+                        KomunikaPionizujLabel.IsVisible = false;
                         BackgroundImageSource = "blue.jpg";
                         TitlePrompt.Text = PromptsList[songId];
                         SongTitle.Text = songsList[songId];
@@ -338,6 +339,10 @@ namespace JakaToPiosenka
                 WrongAnswearButton.IsEnabled = false;
                 endOfQuestion = true;
                 Dispose();
+            }
+            else
+            {
+                KomunikaPionizujLabel.IsVisible = true;
             }
             await Task.Delay(500);
 
